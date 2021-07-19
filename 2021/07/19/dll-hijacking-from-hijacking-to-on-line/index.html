@@ -461,7 +461,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    663
+                    696
                 </div>
                 
 
@@ -536,10 +536,10 @@ void test() &#123;
 
 调用成功效果如下<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="pic/1.png" alt="1"></p>
+<p>![1](../../img/DLL hijacking from hijacking to on-line/1.png)</p>
 <pre class="line-numbers language-none"><code class="language-none">再看下导出函数，确认test导出函数<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="pic/2.png" alt="2"></p>
+<p>![2](../../img/DLL hijacking from hijacking to on-line/2.png)</p>
 <pre class="line-numbers language-none"><code class="language-none">新的dll
 
 extern &quot;C&quot; __declspec(dllexport) void test();
@@ -581,7 +581,7 @@ void test() &#123;
 与这里不同的方式可使用预编译，更加快捷
 #pragma comment(linker, &quot;&#x2F;EXPORT:&lt;Function name&gt;&#x3D;&lt;Dll name&gt;.&lt;Function name&gt;&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="pic/3.png" alt="3"></p>
+<p>![3](../../img/DLL hijacking from hijacking to on-line/3.png)</p>
 <pre class="line-numbers language-none"><code class="language-none">上线利用：
 
 extern &quot;C&quot; __declspec(dllexport) void test();
@@ -631,7 +631,7 @@ void test()
 
 最终效果如下<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="pic/4.png" alt="4"></p>
+<p><img src="pic/4-6701287.png" alt="4"></p>
 
                 
             </div>
@@ -1065,7 +1065,7 @@ void test()
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">750</span>&nbsp;字
+                class="white-color">783</span>&nbsp;字
             
             
             
