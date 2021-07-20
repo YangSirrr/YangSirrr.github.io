@@ -461,7 +461,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    471
+                    469
                 </div>
                 
 
@@ -496,7 +496,7 @@
 
 DWORD WINAPI DDOS(LPVOID lpParameter)
 &#123;
-	加载器代码
+	your shellcode loader
 &#125;
 
 static
@@ -522,7 +522,7 @@ BOOL WINAPI Load()
 
 	GetSystemDirectory(tzPath, MAX_PATH); 
 
-	lstrcat(tzPath, TEXT(&quot;\\QQPCHwVedioDetect.dll&quot;));
+	lstrcat(tzPath, TEXT(&quot;\\dllname.dll&quot;));
 
 	g_OldModule &#x3D; LoadLibrary(tzPath);
 	if (g_OldModule &#x3D;&#x3D; NULL)
@@ -635,7 +635,7 @@ EXTERN_C __declspec(naked) void __cdecl AheadLib_GetVgaTemp(void)
 void test()
 &#123;
 	MessageBox(NULL, L&quot;XXX&quot;, L&quot;YYY&quot;, MB_OK);
-	HINSTANCE hDllInst &#x3D; LoadLibrary(L&quot;QQPCHwVedioDetect.dll&quot;);
+	HINSTANCE hDllInst &#x3D; LoadLibrary(L&quot;dllname.dll&quot;);
 	if (hDllInst)
 	&#123;
 		typedef DWORD(WINAPI *EXPFUNC)();
