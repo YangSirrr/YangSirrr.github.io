@@ -6,7 +6,7 @@
   <link href="https://yangsirrr.github.io/atom.xml" rel="self"/>
   
   <link href="https://yangsirrr.github.io/"/>
-  <updated>2021-07-19T14:04:05.999Z</updated>
+  <updated>2021-07-20T12:16:44.618Z</updated>
   <id>https://yangsirrr.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>DLL hijacking the whitelist application online</title>
+    <link href="https://yangsirrr.github.io/2021/07/20/dll-hijacking-the-whitelist-application-online/"/>
+    <id>https://yangsirrr.github.io/2021/07/20/dll-hijacking-the-whitelist-application-online/</id>
+    <published>2021-07-20T12:08:29.000Z</published>
+    <updated>2021-07-20T12:16:44.618Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;How-to-use&quot;&gt;&lt;a href=&quot;#How-to-use&quot; class=&quot;headerlink&quot; title=&quot;How to use&quot;&gt;&lt;/a&gt;How to use&lt;/h2&gt;&lt;p&gt;Application EXE unsigned white</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
+    
+    <category term="Bypass" scheme="https://yangsirrr.github.io/tags/Bypass/"/>
+    
+  </entry>
   
   <entry>
     <title>DLL hijacking from hijacking to on-line</title>
