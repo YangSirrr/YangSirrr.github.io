@@ -6,7 +6,7 @@
   <link href="https://yangsirrr.github.io/atom.xml" rel="self"/>
   
   <link href="https://yangsirrr.github.io/"/>
-  <updated>2021-07-21T09:00:19.325Z</updated>
+  <updated>2021-07-21T14:02:21.549Z</updated>
   <id>https://yangsirrr.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Sensitive path information concerns</title>
+    <link href="https://yangsirrr.github.io/2021/07/21/sensitive-path-information-concerns/"/>
+    <id>https://yangsirrr.github.io/2021/07/21/sensitive-path-information-concerns/</id>
+    <published>2021-07-21T13:56:50.000Z</published>
+    <updated>2021-07-21T14:02:21.549Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h6 id=&quot;If-there-is-insufficient-the-follow-up-to-continue&quot;&gt;&lt;a href=&quot;#If-there-is-insufficient-the-follow-up-to-continue&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Essays record" scheme="https://yangsirrr.github.io/categories/Essays-record/"/>
+    
+    
+    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
+    
+    <category term="Information collection" scheme="https://yangsirrr.github.io/tags/Information-collection/"/>
+    
+  </entry>
   
   <entry>
     <title>DLL hijacking the whitelist application online</title>
