@@ -6,7 +6,7 @@
   <link href="https://yangsirrr.github.io/atom.xml" rel="self"/>
   
   <link href="https://yangsirrr.github.io/"/>
-  <updated>2021-07-23T15:19:32.861Z</updated>
+  <updated>2021-07-23T15:27:28.773Z</updated>
   <id>https://yangsirrr.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://yangsirrr.github.io/2021/07/23/some-ways-to-download-files-remotely-from-github/"/>
     <id>https://yangsirrr.github.io/2021/07/23/some-ways-to-download-files-remotely-from-github/</id>
     <published>2021-07-23T15:10:02.000Z</published>
-    <updated>2021-07-23T15:19:32.861Z</updated>
+    <updated>2021-07-23T15:27:28.773Z</updated>
     
     
       
@@ -38,6 +38,8 @@
     <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
     
     <category term="Bypass" scheme="https://yangsirrr.github.io/tags/Bypass/"/>
+    
+    <category term="File download" scheme="https://yangsirrr.github.io/tags/File-download/"/>
     
   </entry>
   
