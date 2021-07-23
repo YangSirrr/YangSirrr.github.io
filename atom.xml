@@ -6,7 +6,7 @@
   <link href="https://yangsirrr.github.io/atom.xml" rel="self"/>
   
   <link href="https://yangsirrr.github.io/"/>
-  <updated>2021-07-23T15:08:29.990Z</updated>
+  <updated>2021-07-23T15:19:32.861Z</updated>
   <id>https://yangsirrr.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Some ways to download files remotely from Github</title>
+    <link href="https://yangsirrr.github.io/2021/07/23/some-ways-to-download-files-remotely-from-github/"/>
+    <id>https://yangsirrr.github.io/2021/07/23/some-ways-to-download-files-remotely-from-github/</id>
+    <published>2021-07-23T15:10:02.000Z</published>
+    <updated>2021-07-23T15:19:32.861Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;pre class=&quot;line-numbers</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
+    
+    <category term="Bypass" scheme="https://yangsirrr.github.io/tags/Bypass/"/>
+    
+  </entry>
   
   <entry>
     <title>Supplementary information about obtaining LDAP information</title>
