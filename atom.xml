@@ -6,7 +6,7 @@
   <link href="https://yangsirrr.github.io/atom.xml" rel="self"/>
   
   <link href="https://yangsirrr.github.io/"/>
-  <updated>2021-07-23T15:28:55.604Z</updated>
+  <updated>2021-07-24T06:28:20.022Z</updated>
   <id>https://yangsirrr.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Sqlserver common attack methods</title>
+    <link href="https://yangsirrr.github.io/2021/07/24/sqlserver-common-attack-methods/"/>
+    <id>https://yangsirrr.github.io/2021/07/24/sqlserver-common-attack-methods/</id>
+    <published>2021-07-24T06:09:50.000Z</published>
+    <updated>2021-07-24T06:28:20.022Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;pre class=&quot;line-numbers</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
+    
+    <category term="Information collection" scheme="https://yangsirrr.github.io/tags/Information-collection/"/>
+    
+    <category term="Sqlserver" scheme="https://yangsirrr.github.io/tags/Sqlserver/"/>
+    
+    <category term="Database" scheme="https://yangsirrr.github.io/tags/Database/"/>
+    
+    <category term="Command execution" scheme="https://yangsirrr.github.io/tags/Command-execution/"/>
+    
+  </entry>
   
   <entry>
     <title>Some ways to download files remotely from Github</title>
