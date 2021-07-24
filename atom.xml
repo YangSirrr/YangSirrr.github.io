@@ -6,7 +6,7 @@
   <link href="https://yangsirrr.github.io/atom.xml" rel="self"/>
   
   <link href="https://yangsirrr.github.io/"/>
-  <updated>2021-07-24T06:28:20.022Z</updated>
+  <updated>2021-07-24T06:36:03.410Z</updated>
   <id>https://yangsirrr.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://yangsirrr.github.io/2021/07/24/sqlserver-common-attack-methods/"/>
     <id>https://yangsirrr.github.io/2021/07/24/sqlserver-common-attack-methods/</id>
     <published>2021-07-24T06:09:50.000Z</published>
-    <updated>2021-07-24T06:28:20.022Z</updated>
+    <updated>2021-07-24T06:36:03.410Z</updated>
     
     
       
@@ -33,6 +33,8 @@
       
     
     
+    
+    <category term="Miscellaneous record" scheme="https://yangsirrr.github.io/categories/Miscellaneous-record/"/>
     
     
     <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
@@ -52,7 +54,7 @@
     <link href="https://yangsirrr.github.io/2021/07/23/some-ways-to-download-files-remotely-from-github/"/>
     <id>https://yangsirrr.github.io/2021/07/23/some-ways-to-download-files-remotely-from-github/</id>
     <published>2021-07-23T15:10:02.000Z</published>
-    <updated>2021-07-23T15:28:55.604Z</updated>
+    <updated>2021-07-24T06:35:56.736Z</updated>
     
     
       
@@ -64,6 +66,8 @@
       
     
     
+    
+    <category term="Miscellaneous record" scheme="https://yangsirrr.github.io/categories/Miscellaneous-record/"/>
     
     
     <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
