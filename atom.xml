@@ -6,7 +6,7 @@
   <link href="https://yangsirrr.github.io/atom.xml" rel="self"/>
   
   <link href="https://yangsirrr.github.io/"/>
-  <updated>2021-07-26T10:50:26.307Z</updated>
+  <updated>2021-07-27T09:28:55.453Z</updated>
   <id>https://yangsirrr.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ProxyLogon Utilization method (Manual use)</title>
+    <link href="https://yangsirrr.github.io/2021/07/27/proxylogon-utilization-method-manual-use/"/>
+    <id>https://yangsirrr.github.io/2021/07/27/proxylogon-utilization-method-manual-use/</id>
+    <published>2021-07-27T08:42:05.000Z</published>
+    <updated>2021-07-27T09:28:55.453Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Some-of-the-words&quot;&gt;&lt;a href=&quot;#Some-of-the-words&quot; class=&quot;headerlink&quot; title=&quot;Some of the words&quot;&gt;&lt;/a&gt;Some of the words&lt;/h2&gt;&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
+    
+    
+    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
+    
+    <category term="Exchange" scheme="https://yangsirrr.github.io/tags/Exchange/"/>
+    
+    <category term="ProxyLogon" scheme="https://yangsirrr.github.io/tags/ProxyLogon/"/>
+    
+    <category term="RCE" scheme="https://yangsirrr.github.io/tags/RCE/"/>
+    
+  </entry>
   
   <entry>
     <title>ProxyLogon Utilization method</title>

