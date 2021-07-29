@@ -6,7 +6,7 @@
   <link href="https://yangsirrr.github.io/atom.xml" rel="self"/>
   
   <link href="https://yangsirrr.github.io/"/>
-  <updated>2021-07-27T09:28:55.453Z</updated>
+  <updated>2021-07-29T09:28:16.641Z</updated>
   <id>https://yangsirrr.github.io/</id>
   
   <author>
@@ -17,11 +17,46 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Exchange RCE methods</title>
+    <link href="https://yangsirrr.github.io/2021/07/29/exchange-rce-methods/"/>
+    <id>https://yangsirrr.github.io/2021/07/29/exchange-rce-methods/</id>
+    <published>2021-07-29T08:51:05.000Z</published>
+    <updated>2021-07-29T09:28:16.641Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Get-exchange-version&quot;&gt;&lt;a href=&quot;#Get-exchange-version&quot; class=&quot;headerlink&quot; title=&quot;Get exchange version&quot;&gt;&lt;/a&gt;Get exchange</summary>
+        
+      
+    
+    
+    
+    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
+    
+    
+    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
+    
+    <category term="Exchange" scheme="https://yangsirrr.github.io/tags/Exchange/"/>
+    
+    <category term="RCE" scheme="https://yangsirrr.github.io/tags/RCE/"/>
+    
+    <category term="CVE-2020-17144" scheme="https://yangsirrr.github.io/tags/CVE-2020-17144/"/>
+    
+    <category term="CVE-2020-16875" scheme="https://yangsirrr.github.io/tags/CVE-2020-16875/"/>
+    
+    <category term="CVE-2020-0688" scheme="https://yangsirrr.github.io/tags/CVE-2020-0688/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ProxyLogon Utilization method (Manual use)</title>
     <link href="https://yangsirrr.github.io/2021/07/27/proxylogon-utilization-method-manual-use/"/>
     <id>https://yangsirrr.github.io/2021/07/27/proxylogon-utilization-method-manual-use/</id>
     <published>2021-07-27T08:42:05.000Z</published>
-    <updated>2021-07-27T09:28:55.453Z</updated>
+    <updated>2021-07-29T08:57:02.240Z</updated>
     
     
       
@@ -42,6 +77,10 @@
     <category term="Exchange" scheme="https://yangsirrr.github.io/tags/Exchange/"/>
     
     <category term="ProxyLogon" scheme="https://yangsirrr.github.io/tags/ProxyLogon/"/>
+    
+    <category term="CVE-2021-26855" scheme="https://yangsirrr.github.io/tags/CVE-2021-26855/"/>
+    
+    <category term="CVE-2021-27065" scheme="https://yangsirrr.github.io/tags/CVE-2021-27065/"/>
     
     <category term="RCE" scheme="https://yangsirrr.github.io/tags/RCE/"/>
     
@@ -52,7 +91,7 @@
     <link href="https://yangsirrr.github.io/2021/07/26/proxylogon-utilization-method/"/>
     <id>https://yangsirrr.github.io/2021/07/26/proxylogon-utilization-method/</id>
     <published>2021-07-26T10:16:50.000Z</published>
-    <updated>2021-07-26T10:50:26.307Z</updated>
+    <updated>2021-07-29T08:57:16.267Z</updated>
     
     
       
@@ -73,6 +112,10 @@
     <category term="Exchange" scheme="https://yangsirrr.github.io/tags/Exchange/"/>
     
     <category term="ProxyLogon" scheme="https://yangsirrr.github.io/tags/ProxyLogon/"/>
+    
+    <category term="CVE-2021-26855" scheme="https://yangsirrr.github.io/tags/CVE-2021-26855/"/>
+    
+    <category term="CVE-2021-27065" scheme="https://yangsirrr.github.io/tags/CVE-2021-27065/"/>
     
     <category term="RCE" scheme="https://yangsirrr.github.io/tags/RCE/"/>
     
@@ -145,7 +188,7 @@
     <link href="https://yangsirrr.github.io/2021/07/23/supplementary-information-about-obtaining-ldap-information/"/>
     <id>https://yangsirrr.github.io/2021/07/23/supplementary-information-about-obtaining-ldap-information/</id>
     <published>2021-07-23T14:59:20.000Z</published>
-    <updated>2021-07-23T15:08:29.990Z</updated>
+    <updated>2021-07-29T08:55:15.026Z</updated>
     
     
       
@@ -201,7 +244,7 @@
     <link href="https://yangsirrr.github.io/2021/07/21/sensitive-path-information-concerns/"/>
     <id>https://yangsirrr.github.io/2021/07/21/sensitive-path-information-concerns/</id>
     <published>2021-07-21T13:56:50.000Z</published>
-    <updated>2021-07-21T14:02:21.549Z</updated>
+    <updated>2021-07-29T08:55:11.670Z</updated>
     
     
       
