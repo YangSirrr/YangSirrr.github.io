@@ -6,7 +6,7 @@
   <link href="https://yangsirrr.github.io/atom.xml" rel="self"/>
   
   <link href="https://yangsirrr.github.io/"/>
-  <updated>2021-07-29T09:28:16.641Z</updated>
+  <updated>2021-07-29T09:38:53.056Z</updated>
   <id>https://yangsirrr.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://yangsirrr.github.io/2021/07/29/exchange-rce-methods/"/>
     <id>https://yangsirrr.github.io/2021/07/29/exchange-rce-methods/</id>
     <published>2021-07-29T08:51:05.000Z</published>
-    <updated>2021-07-29T09:28:16.641Z</updated>
+    <updated>2021-07-29T09:38:53.056Z</updated>
     
     
       
@@ -41,13 +41,13 @@
     
     <category term="Exchange" scheme="https://yangsirrr.github.io/tags/Exchange/"/>
     
-    <category term="RCE" scheme="https://yangsirrr.github.io/tags/RCE/"/>
-    
     <category term="CVE-2020-17144" scheme="https://yangsirrr.github.io/tags/CVE-2020-17144/"/>
     
     <category term="CVE-2020-16875" scheme="https://yangsirrr.github.io/tags/CVE-2020-16875/"/>
     
     <category term="CVE-2020-0688" scheme="https://yangsirrr.github.io/tags/CVE-2020-0688/"/>
+    
+    <category term="RCE" scheme="https://yangsirrr.github.io/tags/RCE/"/>
     
   </entry>
   
@@ -76,13 +76,13 @@
     
     <category term="Exchange" scheme="https://yangsirrr.github.io/tags/Exchange/"/>
     
+    <category term="RCE" scheme="https://yangsirrr.github.io/tags/RCE/"/>
+    
     <category term="ProxyLogon" scheme="https://yangsirrr.github.io/tags/ProxyLogon/"/>
     
     <category term="CVE-2021-26855" scheme="https://yangsirrr.github.io/tags/CVE-2021-26855/"/>
     
     <category term="CVE-2021-27065" scheme="https://yangsirrr.github.io/tags/CVE-2021-27065/"/>
-    
-    <category term="RCE" scheme="https://yangsirrr.github.io/tags/RCE/"/>
     
   </entry>
   
@@ -111,13 +111,13 @@
     
     <category term="Exchange" scheme="https://yangsirrr.github.io/tags/Exchange/"/>
     
+    <category term="RCE" scheme="https://yangsirrr.github.io/tags/RCE/"/>
+    
     <category term="ProxyLogon" scheme="https://yangsirrr.github.io/tags/ProxyLogon/"/>
     
     <category term="CVE-2021-26855" scheme="https://yangsirrr.github.io/tags/CVE-2021-26855/"/>
     
     <category term="CVE-2021-27065" scheme="https://yangsirrr.github.io/tags/CVE-2021-27065/"/>
-    
-    <category term="RCE" scheme="https://yangsirrr.github.io/tags/RCE/"/>
     
   </entry>
   

