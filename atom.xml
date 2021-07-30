@@ -6,7 +6,7 @@
   <link href="https://yangsirrr.github.io/atom.xml" rel="self"/>
   
   <link href="https://yangsirrr.github.io/"/>
-  <updated>2021-07-29T09:38:53.056Z</updated>
+  <updated>2021-07-30T08:50:45.416Z</updated>
   <id>https://yangsirrr.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Exchange Export email methods</title>
+    <link href="https://yangsirrr.github.io/2021/07/30/exchange-export-email-methods/"/>
+    <id>https://yangsirrr.github.io/2021/07/30/exchange-export-email-methods/</id>
+    <published>2021-07-30T08:17:10.000Z</published>
+    <updated>2021-07-30T08:50:45.416Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;pre class=&quot;line-numbers</summary>
+        
+      
+    
+    
+    
+    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
+    
+    
+    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
+    
+    <category term="Exchange" scheme="https://yangsirrr.github.io/tags/Exchange/"/>
+    
+    <category term="Information collection" scheme="https://yangsirrr.github.io/tags/Information-collection/"/>
+    
+  </entry>
   
   <entry>
     <title>Exchange RCE methods</title>
