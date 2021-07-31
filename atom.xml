@@ -6,7 +6,7 @@
   <link href="https://yangsirrr.github.io/atom.xml" rel="self"/>
   
   <link href="https://yangsirrr.github.io/"/>
-  <updated>2021-07-30T08:52:48.097Z</updated>
+  <updated>2021-07-31T15:33:07.714Z</updated>
   <id>https://yangsirrr.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Powershell bypass catch password</title>
+    <link href="https://yangsirrr.github.io/2021/07/31/powershell-bypass-catch-password/"/>
+    <id>https://yangsirrr.github.io/2021/07/31/powershell-bypass-catch-password/</id>
+    <published>2021-07-31T15:23:20.000Z</published>
+    <updated>2021-07-31T15:33:07.714Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Some-of-the-words&quot;&gt;&lt;a href=&quot;#Some-of-the-words&quot; class=&quot;headerlink&quot; title=&quot;Some of the words&quot;&gt;&lt;/a&gt;Some of the words&lt;/h2&gt;&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
+    
+    
+    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
+    
+    <category term="Bypass" scheme="https://yangsirrr.github.io/tags/Bypass/"/>
+    
+    <category term="Mimikatz" scheme="https://yangsirrr.github.io/tags/Mimikatz/"/>
+    
+    <category term="Catch Password" scheme="https://yangsirrr.github.io/tags/Catch-Password/"/>
+    
+  </entry>
   
   <entry>
     <title>Exchange Export email methods</title>

