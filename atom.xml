@@ -6,7 +6,7 @@
   <link href="https://yangsirrr.github.io/atom.xml" rel="self"/>
   
   <link href="https://yangsirrr.github.io/"/>
-  <updated>2021-08-01T15:28:35.945Z</updated>
+  <updated>2021-08-04T15:41:56.583Z</updated>
   <id>https://yangsirrr.github.io/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Attack the Outlook client</title>
+    <link href="https://yangsirrr.github.io/2021/08/04/attack-the-outlook-client/"/>
+    <id>https://yangsirrr.github.io/2021/08/04/attack-the-outlook-client/</id>
+    <published>2021-08-04T15:12:08.000Z</published>
+    <updated>2021-08-04T15:41:56.583Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Some-of-the-words&quot;&gt;&lt;a href=&quot;#Some-of-the-words&quot; class=&quot;headerlink&quot; title=&quot;Some of the words&quot;&gt;&lt;/a&gt;Some of the words&lt;/h2&gt;&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
+    
+    
+    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
+    
+    <category term="Exchange" scheme="https://yangsirrr.github.io/tags/Exchange/"/>
+    
+    <category term="Ruler" scheme="https://yangsirrr.github.io/tags/Ruler/"/>
+    
+    <category term="RCE" scheme="https://yangsirrr.github.io/tags/RCE/"/>
+    
+    <category term="Outlook" scheme="https://yangsirrr.github.io/tags/Outlook/"/>
+    
+  </entry>
   
   <entry>
     <title>A solution to the failure of the trust relationship between this workstation and the primary domain</title>
@@ -48,7 +81,7 @@
     <link href="https://yangsirrr.github.io/2021/07/31/powershell-bypass-catch-password/"/>
     <id>https://yangsirrr.github.io/2021/07/31/powershell-bypass-catch-password/</id>
     <published>2021-07-31T15:23:20.000Z</published>
-    <updated>2021-08-01T15:25:53.563Z</updated>
+    <updated>2021-08-01T15:28:58.802Z</updated>
     
     
       
@@ -132,13 +165,13 @@
     
     <category term="Exchange" scheme="https://yangsirrr.github.io/tags/Exchange/"/>
     
+    <category term="RCE" scheme="https://yangsirrr.github.io/tags/RCE/"/>
+    
     <category term="CVE-2020-17144" scheme="https://yangsirrr.github.io/tags/CVE-2020-17144/"/>
     
     <category term="CVE-2020-16875" scheme="https://yangsirrr.github.io/tags/CVE-2020-16875/"/>
     
     <category term="CVE-2020-0688" scheme="https://yangsirrr.github.io/tags/CVE-2020-0688/"/>
-    
-    <category term="RCE" scheme="https://yangsirrr.github.io/tags/RCE/"/>
     
   </entry>
   

