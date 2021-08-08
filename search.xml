@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Use IPC BypassUAC</title>
+      <link href="2021/08/08/use-ipc-bypassuac/"/>
+      <url>2021/08/08/use-ipc-bypassuac/</url>
+      
+        <content type="html"><![CDATA[<h6 id="After-the-actual-test-some-environments-can-be-successful"><a href="#After-the-actual-test-some-environments-can-be-successful" class="headerlink" title="After the actual test, some environments can be successful"></a>After the actual test, some environments can be successful</h6><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">In many scenarios<span class="token punctuation">,</span> you <span class="token keyword">do</span> not have <span class="token function">write</span> permission to the system directory<span class="token punctuation">.</span> Here you will use this method to obtain <span class="token function">write</span> permission to the fileC:\Windows\System32>net use A: \\127<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>1\c$命令成功完成。C:\Windows\System32>A:A:\>cd Windows\System32A:\Windows\System32><span class="token function">echo</span> test >test111A:\Windows\System32><span class="token function">dir</span> test111 驱动器 A 中的卷没有标签。 卷的序列号是 4C43<span class="token operator">-</span>ED5B A:\Windows\System32 的目录2021<span class="token operator">/</span>08<span class="token operator">/</span>08  15:01                 7 test111               1 个文件              7 字节               0 个目录 31<span class="token punctuation">,</span>098<span class="token punctuation">,</span>544<span class="token punctuation">,</span>128 可用字节A:\Windows\System32><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Use%20IPC%20BypassUAC/image-20210808150507232.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Tips </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Bypass </tag>
+            
+            <tag> UAC </tag>
+            
+            <tag> IPC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Attack the Outlook client</title>
       <link href="2021/08/04/attack-the-outlook-client/"/>
       <url>2021/08/04/attack-the-outlook-client/</url>

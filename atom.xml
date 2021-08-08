@@ -6,7 +6,7 @@
   <link href="https://yangsirrr.github.io/atom.xml" rel="self"/>
   
   <link href="https://yangsirrr.github.io/"/>
-  <updated>2021-08-04T15:41:56.583Z</updated>
+  <updated>2021-08-08T07:40:37.289Z</updated>
   <id>https://yangsirrr.github.io/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Use IPC BypassUAC</title>
+    <link href="https://yangsirrr.github.io/2021/08/08/use-ipc-bypassuac/"/>
+    <id>https://yangsirrr.github.io/2021/08/08/use-ipc-bypassuac/</id>
+    <published>2021-08-08T07:35:33.000Z</published>
+    <updated>2021-08-08T07:40:37.289Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h6 id=&quot;After-the-actual-test-some-environments-can-be-successful&quot;&gt;&lt;a href=&quot;#After-the-actual-test-some-environments-can-be-successful&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Tips" scheme="https://yangsirrr.github.io/categories/Tips/"/>
+    
+    
+    <category term="Bypass" scheme="https://yangsirrr.github.io/tags/Bypass/"/>
+    
+    <category term="UAC" scheme="https://yangsirrr.github.io/tags/UAC/"/>
+    
+    <category term="IPC" scheme="https://yangsirrr.github.io/tags/IPC/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Attack the Outlook client</title>
     <link href="https://yangsirrr.github.io/2021/08/04/attack-the-outlook-client/"/>
     <id>https://yangsirrr.github.io/2021/08/04/attack-the-outlook-client/</id>
     <published>2021-08-04T15:12:08.000Z</published>
-    <updated>2021-08-04T15:41:56.583Z</updated>
+    <updated>2021-08-04T15:44:55.573Z</updated>
     
     
       
