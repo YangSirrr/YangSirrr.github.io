@@ -26,6 +26,8 @@
             
             <tag> Bypass </tag>
             
+            <tag> Powershell </tag>
+            
             <tag> Cobaltstrike </tag>
             
         </tags>
@@ -149,6 +151,8 @@
             <tag> Mimikatz </tag>
             
             <tag> Catch Password </tag>
+            
+            <tag> Powershell </tag>
             
         </tags>
       
