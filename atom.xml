@@ -6,7 +6,7 @@
   <link href="https://yangsirrr.github.io/atom.xml" rel="self"/>
   
   <link href="https://yangsirrr.github.io/"/>
-  <updated>2021-08-17T15:26:08.472Z</updated>
+  <updated>2021-08-20T14:28:57.448Z</updated>
   <id>https://yangsirrr.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>CVE-2021-36934 Windows Privilege promotion</title>
-    <link href="https://yangsirrr.github.io/2021/08/17/cve-2021-36934-windows-privilege-promotion/"/>
-    <id>https://yangsirrr.github.io/2021/08/17/cve-2021-36934-windows-privilege-promotion/</id>
-    <published>2021-08-17T15:11:44.000Z</published>
-    <updated>2021-08-17T15:26:08.472Z</updated>
+    <title>CVE-2021-1675 Windows Privilege Promotion</title>
+    <link href="https://yangsirrr.github.io/2021/08/20/cve-2021-1675-windows-privilege-promotion/"/>
+    <id>https://yangsirrr.github.io/2021/08/20/cve-2021-1675-windows-privilege-promotion/</id>
+    <published>2021-08-20T14:05:57.000Z</published>
+    <updated>2021-08-20T14:28:57.448Z</updated>
     
     
       
@@ -39,11 +39,48 @@
     
     <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
     
-    <category term="CVE-2021-36934" scheme="https://yangsirrr.github.io/tags/CVE-2021-36934/"/>
+    <category term="RCE" scheme="https://yangsirrr.github.io/tags/RCE/"/>
+    
+    <category term="CVE-2021-1675" scheme="https://yangsirrr.github.io/tags/CVE-2021-1675/"/>
     
     <category term="Windows Privilege promotion" scheme="https://yangsirrr.github.io/tags/Windows-Privilege-promotion/"/>
     
     <category term="Mimikatz" scheme="https://yangsirrr.github.io/tags/Mimikatz/"/>
+    
+    <category term="LPE" scheme="https://yangsirrr.github.io/tags/LPE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CVE-2021-36934 Windows Privilege Promotion</title>
+    <link href="https://yangsirrr.github.io/2021/08/17/cve-2021-36934-windows-privilege-promotion/"/>
+    <id>https://yangsirrr.github.io/2021/08/17/cve-2021-36934-windows-privilege-promotion/</id>
+    <published>2021-08-17T15:11:44.000Z</published>
+    <updated>2021-08-20T14:28:15.734Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;pre class=&quot;line-numbers</summary>
+        
+      
+    
+    
+    
+    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
+    
+    
+    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
+    
+    <category term="Windows Privilege promotion" scheme="https://yangsirrr.github.io/tags/Windows-Privilege-promotion/"/>
+    
+    <category term="Mimikatz" scheme="https://yangsirrr.github.io/tags/Mimikatz/"/>
+    
+    <category term="LPE" scheme="https://yangsirrr.github.io/tags/LPE/"/>
+    
+    <category term="CVE-2021-36934" scheme="https://yangsirrr.github.io/tags/CVE-2021-36934/"/>
     
   </entry>
   
@@ -144,9 +181,9 @@ The other day ON the</summary>
     
     <category term="Bypass" scheme="https://yangsirrr.github.io/tags/Bypass/"/>
     
-    <category term="Cobaltstrike" scheme="https://yangsirrr.github.io/tags/Cobaltstrike/"/>
-    
     <category term="Powershell" scheme="https://yangsirrr.github.io/tags/Powershell/"/>
+    
+    <category term="Cobaltstrike" scheme="https://yangsirrr.github.io/tags/Cobaltstrike/"/>
     
   </entry>
   
@@ -268,9 +305,9 @@ The other day ON the</summary>
     
     <category term="Bypass" scheme="https://yangsirrr.github.io/tags/Bypass/"/>
     
-    <category term="Powershell" scheme="https://yangsirrr.github.io/tags/Powershell/"/>
-    
     <category term="Catch Password" scheme="https://yangsirrr.github.io/tags/Catch-Password/"/>
+    
+    <category term="Powershell" scheme="https://yangsirrr.github.io/tags/Powershell/"/>
     
   </entry>
   
@@ -608,27 +645,6 @@ The other day ON the</summary>
     <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
     
     <category term="Bypass" scheme="https://yangsirrr.github.io/tags/Bypass/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>最近太忙了，等过两天有空了开始更新！</title>
-    <link href="https://yangsirrr.github.io/2021/03/23/zui-jin-tai-mang-liao-deng-guo-liang-tian-you-kong-liao-kai-shi-geng-xin/"/>
-    <id>https://yangsirrr.github.io/2021/03/23/zui-jin-tai-mang-liao-deng-guo-liang-tian-you-kong-liao-kai-shi-geng-xin/</id>
-    <published>2021-03-23T14:48:52.000Z</published>
-    <updated>2021-03-23T14:49:43.486Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;博客暂未完全调试好，敬请期待&quot;&gt;&lt;a href=&quot;#博客暂未完全调试好，敬请期待&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
     
   </entry>
   
