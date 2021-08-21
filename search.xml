@@ -162,9 +162,9 @@
             
             <tag> Bypass </tag>
             
-            <tag> Powershell </tag>
-            
             <tag> Cobaltstrike </tag>
+            
+            <tag> Powershell </tag>
             
         </tags>
       
@@ -286,9 +286,9 @@
             
             <tag> Bypass </tag>
             
-            <tag> Catch Password </tag>
-            
             <tag> Powershell </tag>
+            
+            <tag> Catch Password </tag>
             
         </tags>
       
@@ -506,7 +506,7 @@
       
       <categories>
           
-          <category> Essays record </category>
+          <category> Tips </category>
           
       </categories>
       
@@ -562,7 +562,7 @@
       
       <categories>
           
-          <category> Essays record </category>
+          <category> Tips </category>
           
       </categories>
       

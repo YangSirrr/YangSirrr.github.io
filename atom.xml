@@ -181,9 +181,9 @@ The other day ON the</summary>
     
     <category term="Bypass" scheme="https://yangsirrr.github.io/tags/Bypass/"/>
     
-    <category term="Powershell" scheme="https://yangsirrr.github.io/tags/Powershell/"/>
-    
     <category term="Cobaltstrike" scheme="https://yangsirrr.github.io/tags/Cobaltstrike/"/>
+    
+    <category term="Powershell" scheme="https://yangsirrr.github.io/tags/Powershell/"/>
     
   </entry>
   
@@ -305,9 +305,9 @@ The other day ON the</summary>
     
     <category term="Bypass" scheme="https://yangsirrr.github.io/tags/Bypass/"/>
     
-    <category term="Catch Password" scheme="https://yangsirrr.github.io/tags/Catch-Password/"/>
-    
     <category term="Powershell" scheme="https://yangsirrr.github.io/tags/Powershell/"/>
+    
+    <category term="Catch Password" scheme="https://yangsirrr.github.io/tags/Catch-Password/"/>
     
   </entry>
   
@@ -516,7 +516,7 @@ The other day ON the</summary>
     <link href="https://yangsirrr.github.io/2021/07/23/supplementary-information-about-obtaining-ldap-information/"/>
     <id>https://yangsirrr.github.io/2021/07/23/supplementary-information-about-obtaining-ldap-information/</id>
     <published>2021-07-23T14:59:20.000Z</published>
-    <updated>2021-07-29T08:55:15.026Z</updated>
+    <updated>2021-08-21T01:59:09.232Z</updated>
     
     
       
@@ -529,7 +529,7 @@ The other day ON the</summary>
     
     
     
-    <category term="Essays record" scheme="https://yangsirrr.github.io/categories/Essays-record/"/>
+    <category term="Tips" scheme="https://yangsirrr.github.io/categories/Tips/"/>
     
     
     <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
@@ -572,7 +572,7 @@ The other day ON the</summary>
     <link href="https://yangsirrr.github.io/2021/07/21/sensitive-path-information-concerns/"/>
     <id>https://yangsirrr.github.io/2021/07/21/sensitive-path-information-concerns/</id>
     <published>2021-07-21T13:56:50.000Z</published>
-    <updated>2021-07-29T08:55:11.670Z</updated>
+    <updated>2021-08-21T01:59:22.169Z</updated>
     
     
       
@@ -585,7 +585,7 @@ The other day ON the</summary>
     
     
     
-    <category term="Essays record" scheme="https://yangsirrr.github.io/categories/Essays-record/"/>
+    <category term="Tips" scheme="https://yangsirrr.github.io/categories/Tips/"/>
     
     
     <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
