@@ -39,15 +39,15 @@
     
     <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
     
-    <category term="RCE" scheme="https://yangsirrr.github.io/tags/RCE/"/>
-    
-    <category term="CVE-2021-1675" scheme="https://yangsirrr.github.io/tags/CVE-2021-1675/"/>
-    
     <category term="Windows Privilege promotion" scheme="https://yangsirrr.github.io/tags/Windows-Privilege-promotion/"/>
     
     <category term="Mimikatz" scheme="https://yangsirrr.github.io/tags/Mimikatz/"/>
     
     <category term="LPE" scheme="https://yangsirrr.github.io/tags/LPE/"/>
+    
+    <category term="RCE" scheme="https://yangsirrr.github.io/tags/RCE/"/>
+    
+    <category term="CVE-2021-1675" scheme="https://yangsirrr.github.io/tags/CVE-2021-1675/"/>
     
   </entry>
   
@@ -74,13 +74,13 @@
     
     <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
     
+    <category term="CVE-2021-36934" scheme="https://yangsirrr.github.io/tags/CVE-2021-36934/"/>
+    
     <category term="Windows Privilege promotion" scheme="https://yangsirrr.github.io/tags/Windows-Privilege-promotion/"/>
     
     <category term="Mimikatz" scheme="https://yangsirrr.github.io/tags/Mimikatz/"/>
     
     <category term="LPE" scheme="https://yangsirrr.github.io/tags/LPE/"/>
-    
-    <category term="CVE-2021-36934" scheme="https://yangsirrr.github.io/tags/CVE-2021-36934/"/>
     
   </entry>
   
@@ -124,7 +124,7 @@ The other day ON the</summary>
     <link href="https://yangsirrr.github.io/2021/08/16/adcs-esc1-esc8-gong-ji-fang-shi/"/>
     <id>https://yangsirrr.github.io/2021/08/16/adcs-esc1-esc8-gong-ji-fang-shi/</id>
     <published>2021-08-16T12:36:19.000Z</published>
-    <updated>2021-08-16T15:29:41.671Z</updated>
+    <updated>2021-08-21T03:52:00.838Z</updated>
     
     
       
@@ -143,6 +143,8 @@ The other day ON the</summary>
     <category term="Domain environment" scheme="https://yangsirrr.github.io/tags/Domain-environment/"/>
     
     <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
+    
+    <category term="DPE" scheme="https://yangsirrr.github.io/tags/DPE/"/>
     
     <category term="ADCS" scheme="https://yangsirrr.github.io/tags/ADCS/"/>
     
@@ -181,9 +183,9 @@ The other day ON the</summary>
     
     <category term="Bypass" scheme="https://yangsirrr.github.io/tags/Bypass/"/>
     
-    <category term="Cobaltstrike" scheme="https://yangsirrr.github.io/tags/Cobaltstrike/"/>
-    
     <category term="Powershell" scheme="https://yangsirrr.github.io/tags/Powershell/"/>
+    
+    <category term="Cobaltstrike" scheme="https://yangsirrr.github.io/tags/Cobaltstrike/"/>
     
   </entry>
   
@@ -305,9 +307,9 @@ The other day ON the</summary>
     
     <category term="Bypass" scheme="https://yangsirrr.github.io/tags/Bypass/"/>
     
-    <category term="Powershell" scheme="https://yangsirrr.github.io/tags/Powershell/"/>
-    
     <category term="Catch Password" scheme="https://yangsirrr.github.io/tags/Catch-Password/"/>
+    
+    <category term="Powershell" scheme="https://yangsirrr.github.io/tags/Powershell/"/>
     
   </entry>
   

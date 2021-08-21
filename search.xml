@@ -22,15 +22,15 @@
             
             <tag> Redteam </tag>
             
-            <tag> RCE </tag>
-            
-            <tag> CVE-2021-1675 </tag>
-            
             <tag> Windows Privilege promotion </tag>
             
             <tag> Mimikatz </tag>
             
             <tag> LPE </tag>
+            
+            <tag> RCE </tag>
+            
+            <tag> CVE-2021-1675 </tag>
             
         </tags>
       
@@ -57,13 +57,13 @@
             
             <tag> Redteam </tag>
             
+            <tag> CVE-2021-36934 </tag>
+            
             <tag> Windows Privilege promotion </tag>
             
             <tag> Mimikatz </tag>
             
             <tag> LPE </tag>
-            
-            <tag> CVE-2021-36934 </tag>
             
         </tags>
       
@@ -125,6 +125,8 @@
             
             <tag> Redteam </tag>
             
+            <tag> DPE </tag>
+            
             <tag> ADCS </tag>
             
             <tag> ESC1 </tag>
@@ -162,9 +164,9 @@
             
             <tag> Bypass </tag>
             
-            <tag> Cobaltstrike </tag>
-            
             <tag> Powershell </tag>
+            
+            <tag> Cobaltstrike </tag>
             
         </tags>
       
@@ -286,9 +288,9 @@
             
             <tag> Bypass </tag>
             
-            <tag> Powershell </tag>
-            
             <tag> Catch Password </tag>
+            
+            <tag> Powershell </tag>
             
         </tags>
       
