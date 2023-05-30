@@ -6,7 +6,7 @@
   <link href="https://yangsirrr.github.io/atom.xml" rel="self"/>
   
   <link href="https://yangsirrr.github.io/"/>
-  <updated>2021-08-20T14:28:57.448Z</updated>
+  <updated>2022-05-14T13:48:53.217Z</updated>
   <id>https://yangsirrr.github.io/</id>
   
   <author>
@@ -17,18 +17,456 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>CVE-2021-1675 Windows Privilege Promotion</title>
-    <link href="https://yangsirrr.github.io/2021/08/20/cve-2021-1675-windows-privilege-promotion/"/>
-    <id>https://yangsirrr.github.io/2021/08/20/cve-2021-1675-windows-privilege-promotion/</id>
-    <published>2021-08-20T14:05:57.000Z</published>
-    <updated>2021-08-20T14:28:57.448Z</updated>
+    <title>AmazonS3攻击利用</title>
+    <link href="https://yangsirrr.github.io/2022/05/14/amazons3-gong-ji-li-yong/"/>
+    <id>https://yangsirrr.github.io/2022/05/14/amazons3-gong-ji-li-yong/</id>
+    <published>2022-05-14T13:35:34.000Z</published>
+    <updated>2022-05-14T13:48:53.217Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;pre class=&quot;line-numbers</summary>
+    <summary type="html">&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
+    
+    
+    <category term="CloudSecurity" scheme="https://yangsirrr.github.io/tags/CloudSecurity/"/>
+    
+    <category term="AmazonS3" scheme="https://yangsirrr.github.io/tags/AmazonS3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AmazonEC2攻击利用</title>
+    <link href="https://yangsirrr.github.io/2022/05/14/amazonec2-gong-ji-li-yong/"/>
+    <id>https://yangsirrr.github.io/2022/05/14/amazonec2-gong-ji-li-yong/</id>
+    <published>2022-05-14T13:35:23.000Z</published>
+    <updated>2022-05-14T13:51:20.262Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
+    
+    
+    <category term="CloudSecurity" scheme="https://yangsirrr.github.io/tags/CloudSecurity/"/>
+    
+    <category term="AmazonEC2" scheme="https://yangsirrr.github.io/tags/AmazonEC2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>腾讯云COS攻击利用</title>
+    <link href="https://yangsirrr.github.io/2022/05/10/teng-xun-yun-cos-gong-ji-li-yong/"/>
+    <id>https://yangsirrr.github.io/2022/05/10/teng-xun-yun-cos-gong-ji-li-yong/</id>
+    <published>2022-05-10T09:42:30.000Z</published>
+    <updated>2022-05-10T09:44:17.943Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
+    
+    
+    <category term="CloudSecurity" scheme="https://yangsirrr.github.io/tags/CloudSecurity/"/>
+    
+    <category term="TencentCOS" scheme="https://yangsirrr.github.io/tags/TencentCOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>阿里云OSS攻击利用</title>
+    <link href="https://yangsirrr.github.io/2022/05/08/a-li-yun-oss-gong-ji-li-yong/"/>
+    <id>https://yangsirrr.github.io/2022/05/08/a-li-yun-oss-gong-ji-li-yong/</id>
+    <published>2022-05-08T15:27:17.000Z</published>
+    <updated>2022-05-08T15:38:54.150Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
+    
+    
+    <category term="CloudSecurity" scheme="https://yangsirrr.github.io/tags/CloudSecurity/"/>
+    
+    <category term="AliyunOSS" scheme="https://yangsirrr.github.io/tags/AliyunOSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>钓鱼基本方法之自解压</title>
+    <link href="https://yangsirrr.github.io/2022/05/06/diao-yu-ji-ben-fang-fa-zhi-zi-jie-ya/"/>
+    <id>https://yangsirrr.github.io/2022/05/06/diao-yu-ji-ben-fang-fa-zhi-zi-jie-ya/</id>
+    <published>2022-05-06T13:54:39.000Z</published>
+    <updated>2022-05-06T14:02:46.558Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-powershell&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Tips" scheme="https://yangsirrr.github.io/categories/Tips/"/>
+    
+    
+    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
+    
+    <category term="Fishing" scheme="https://yangsirrr.github.io/tags/Fishing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>钓鱼基本方法之快捷方式</title>
+    <link href="https://yangsirrr.github.io/2022/05/06/diao-yu-ji-ben-fang-fa-zhi-kuai-jie-fang-shi/"/>
+    <id>https://yangsirrr.github.io/2022/05/06/diao-yu-ji-ben-fang-fa-zhi-kuai-jie-fang-shi/</id>
+    <published>2022-05-06T13:54:33.000Z</published>
+    <updated>2022-05-06T14:02:35.130Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-powershell&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Tips" scheme="https://yangsirrr.github.io/categories/Tips/"/>
+    
+    
+    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
+    
+    <category term="Fishing" scheme="https://yangsirrr.github.io/tags/Fishing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker容器利用思路(二)</title>
+    <link href="https://yangsirrr.github.io/2022/04/15/docker-rong-qi-li-yong-si-lu-er/"/>
+    <id>https://yangsirrr.github.io/2022/04/15/docker-rong-qi-li-yong-si-lu-er/</id>
+    <published>2022-04-15T09:42:58.000Z</published>
+    <updated>2022-04-15T10:19:00.582Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
+    
+    
+    <category term="CloudSecurity" scheme="https://yangsirrr.github.io/tags/CloudSecurity/"/>
+    
+    <category term="Docker" scheme="https://yangsirrr.github.io/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Capabilities机制</title>
+    <link href="https://yangsirrr.github.io/2022/04/15/capabilities-ji-zhi/"/>
+    <id>https://yangsirrr.github.io/2022/04/15/capabilities-ji-zhi/</id>
+    <published>2022-04-15T09:42:38.000Z</published>
+    <updated>2022-04-15T10:18:20.962Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-powershell&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
+    
+    
+    <category term="CloudSecurity" scheme="https://yangsirrr.github.io/tags/CloudSecurity/"/>
+    
+    <category term="Docker" scheme="https://yangsirrr.github.io/tags/Docker/"/>
+    
+    <category term="Capabilities" scheme="https://yangsirrr.github.io/tags/Capabilities/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker容器利用思路(一)</title>
+    <link href="https://yangsirrr.github.io/2022/04/08/docker-rong-qi-li-yong-si-lu-yi/"/>
+    <id>https://yangsirrr.github.io/2022/04/08/docker-rong-qi-li-yong-si-lu-yi/</id>
+    <published>2022-04-08T09:42:05.000Z</published>
+    <updated>2022-04-08T10:17:18.102Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-powershell&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
+    
+    
+    <category term="CloudSecurity" scheme="https://yangsirrr.github.io/tags/CloudSecurity/"/>
+    
+    <category term="Docker" scheme="https://yangsirrr.github.io/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker技术与原理实现</title>
+    <link href="https://yangsirrr.github.io/2022/04/08/docker-ji-zhu-yu-yuan-li-shi-xian/"/>
+    <id>https://yangsirrr.github.io/2022/04/08/docker-ji-zhu-yu-yuan-li-shi-xian/</id>
+    <published>2022-04-08T09:41:12.000Z</published>
+    <updated>2022-04-08T09:55:09.958Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-powershell&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
+    
+    
+    <category term="CloudSecurity" scheme="https://yangsirrr.github.io/tags/CloudSecurity/"/>
+    
+    <category term="Docker" scheme="https://yangsirrr.github.io/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kubernetes安全机制</title>
+    <link href="https://yangsirrr.github.io/2022/03/31/kubernetes-an-quan-ji-zhi/"/>
+    <id>https://yangsirrr.github.io/2022/03/31/kubernetes-an-quan-ji-zhi/</id>
+    <published>2022-03-31T08:50:17.000Z</published>
+    <updated>2022-03-31T08:58:15.908Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-powershell&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
+    
+    
+    <category term="CloudSecurity" scheme="https://yangsirrr.github.io/tags/CloudSecurity/"/>
+    
+    <category term="Kubernetes" scheme="https://yangsirrr.github.io/tags/Kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kubernetes权限维持</title>
+    <link href="https://yangsirrr.github.io/2022/03/31/kubernetes-quan-xian-wei-chi/"/>
+    <id>https://yangsirrr.github.io/2022/03/31/kubernetes-quan-xian-wei-chi/</id>
+    <published>2022-03-31T08:20:54.000Z</published>
+    <updated>2022-03-31T08:41:45.825Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-powershell&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
+    
+    
+    <category term="CloudSecurity" scheme="https://yangsirrr.github.io/tags/CloudSecurity/"/>
+    
+    <category term="Kubernetes" scheme="https://yangsirrr.github.io/tags/Kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从TrustedInstaller到停止WindowsDefender</title>
+    <link href="https://yangsirrr.github.io/2022/03/26/cong-trustedinstaller-dao-ting-zhi-windowsdefender/"/>
+    <id>https://yangsirrr.github.io/2022/03/26/cong-trustedinstaller-dao-ting-zhi-windowsdefender/</id>
+    <published>2022-03-26T06:15:00.000Z</published>
+    <updated>2022-03-26T06:35:40.552Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="Tips" scheme="https://yangsirrr.github.io/categories/Tips/"/>
+    
+    
+    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
+    
+    <category term="Bypass" scheme="https://yangsirrr.github.io/tags/Bypass/"/>
+    
+    <category term="WindowsDefender" scheme="https://yangsirrr.github.io/tags/WindowsDefender/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kubernetes组件常见漏洞利用</title>
+    <link href="https://yangsirrr.github.io/2022/03/25/kubernetes-zu-jian-chang-jian-lou-dong-li-yong/"/>
+    <id>https://yangsirrr.github.io/2022/03/25/kubernetes-zu-jian-chang-jian-lou-dong-li-yong/</id>
+    <published>2022-03-25T06:28:42.000Z</published>
+    <updated>2022-03-26T06:35:36.056Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
+    
+    
+    <category term="CloudSecurity" scheme="https://yangsirrr.github.io/tags/CloudSecurity/"/>
+    
+    <category term="RCE" scheme="https://yangsirrr.github.io/tags/RCE/"/>
+    
+    <category term="Kubernetes" scheme="https://yangsirrr.github.io/tags/Kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kubernetes部署应用</title>
+    <link href="https://yangsirrr.github.io/2022/03/25/kubernetes-bu-shu-ying-yong/"/>
+    <id>https://yangsirrr.github.io/2022/03/25/kubernetes-bu-shu-ying-yong/</id>
+    <published>2022-03-25T05:59:59.000Z</published>
+    <updated>2022-03-26T06:35:23.491Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
+    
+    
+    <category term="CloudSecurity" scheme="https://yangsirrr.github.io/tags/CloudSecurity/"/>
+    
+    <category term="Kubernetes" scheme="https://yangsirrr.github.io/tags/Kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kubernetes基础环境搭建</title>
+    <link href="https://yangsirrr.github.io/2022/03/25/kubernetes-ji-chu-huan-jing-da-jian/"/>
+    <id>https://yangsirrr.github.io/2022/03/25/kubernetes-ji-chu-huan-jing-da-jian/</id>
+    <published>2022-03-25T05:59:36.000Z</published>
+    <updated>2022-03-26T06:35:29.210Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
+    
+    
+    <category term="CloudSecurity" scheme="https://yangsirrr.github.io/tags/CloudSecurity/"/>
+    
+    <category term="Kubernetes" scheme="https://yangsirrr.github.io/tags/Kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SAMAccountName Spoofing利用&amp;简单分析&amp;修复方式</title>
+    <link href="https://yangsirrr.github.io/2021/12/15/samaccountname-spoofing-li-yong-jian-dan-fen-xi-xiu-fu-fang-shi/"/>
+    <id>https://yangsirrr.github.io/2021/12/15/samaccountname-spoofing-li-yong-jian-dan-fen-xi-xiu-fu-fang-shi/</id>
+    <published>2021-12-15T08:42:06.000Z</published>
+    <updated>2021-12-15T09:12:27.188Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code</summary>
         
       
     
@@ -39,614 +477,102 @@
     
     <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
     
-    <category term="Windows Privilege promotion" scheme="https://yangsirrr.github.io/tags/Windows-Privilege-promotion/"/>
+    <category term="Windows Privilege Promotion" scheme="https://yangsirrr.github.io/tags/Windows-Privilege-Promotion/"/>
     
     <category term="Mimikatz" scheme="https://yangsirrr.github.io/tags/Mimikatz/"/>
+    
+    <category term="RCE" scheme="https://yangsirrr.github.io/tags/RCE/"/>
+    
+    <category term="CVE-2021-42278" scheme="https://yangsirrr.github.io/tags/CVE-2021-42278/"/>
+    
+    <category term="CVE-2021-42287" scheme="https://yangsirrr.github.io/tags/CVE-2021-42287/"/>
+    
+    <category term="SAMAccountName Spoofing" scheme="https://yangsirrr.github.io/tags/SAMAccountName-Spoofing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Log4j JNDI RCE利用&amp;简单分析</title>
+    <link href="https://yangsirrr.github.io/2021/12/15/log4j-jndi-rce-li-yong-jian-dan-fen-xi/"/>
+    <id>https://yangsirrr.github.io/2021/12/15/log4j-jndi-rce-li-yong-jian-dan-fen-xi/</id>
+    <published>2021-12-15T08:10:11.000Z</published>
+    <updated>2021-12-16T09:34:23.483Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;务必遵循网络安全法，用于非法目的于本人无关，文章仅限java代码学习使用，所有环境为本人本地环境&quot;&gt;&lt;a href=&quot;#务必遵循网络安全法，用于非法目的于本人无关，文章仅限java代码学习使用，所有环境为本人本地环境&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
+    
+    
+    <category term="RCE" scheme="https://yangsirrr.github.io/tags/RCE/"/>
+    
+    <category term="Log4j" scheme="https://yangsirrr.github.io/tags/Log4j/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>编程实现LDAP基本信息收集</title>
+    <link href="https://yangsirrr.github.io/2021/11/16/shi-xian-ldap-xin-xi-shou-ji/"/>
+    <id>https://yangsirrr.github.io/2021/11/16/shi-xian-ldap-xin-xi-shou-ji/</id>
+    <published>2021-11-16T12:14:08.000Z</published>
+    <updated>2021-11-16T15:24:32.697Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
+    
+    
+    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
+    
+    <category term="Domain Environment" scheme="https://yangsirrr.github.io/tags/Domain-Environment/"/>
+    
+    <category term="LDAP" scheme="https://yangsirrr.github.io/tags/LDAP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Boot Logon Autostart Execution Windows Privilege Promotion</title>
+    <link href="https://yangsirrr.github.io/2021/11/14/boot-logon-autostart-execution-windows-privilege-promotion/"/>
+    <id>https://yangsirrr.github.io/2021/11/14/boot-logon-autostart-execution-windows-privilege-promotion/</id>
+    <published>2021-11-14T08:09:15.000Z</published>
+    <updated>2021-11-14T08:23:56.235Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Some-of-the-words&quot;&gt;&lt;a href=&quot;#Some-of-the-words&quot; class=&quot;headerlink&quot; title=&quot;Some of the words&quot;&gt;&lt;/a&gt;Some of the words&lt;/h2&gt;&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
+    
+    
+    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
+    
+    <category term="Windows Privilege Promotion" scheme="https://yangsirrr.github.io/tags/Windows-Privilege-Promotion/"/>
     
     <category term="LPE" scheme="https://yangsirrr.github.io/tags/LPE/"/>
-    
-    <category term="RCE" scheme="https://yangsirrr.github.io/tags/RCE/"/>
-    
-    <category term="CVE-2021-1675" scheme="https://yangsirrr.github.io/tags/CVE-2021-1675/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CVE-2021-36934 Windows Privilege Promotion</title>
-    <link href="https://yangsirrr.github.io/2021/08/17/cve-2021-36934-windows-privilege-promotion/"/>
-    <id>https://yangsirrr.github.io/2021/08/17/cve-2021-36934-windows-privilege-promotion/</id>
-    <published>2021-08-17T15:11:44.000Z</published>
-    <updated>2021-08-20T14:28:15.734Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;pre class=&quot;line-numbers</summary>
-        
-      
-    
-    
-    
-    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
-    
-    
-    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
-    
-    <category term="CVE-2021-36934" scheme="https://yangsirrr.github.io/tags/CVE-2021-36934/"/>
-    
-    <category term="Windows Privilege promotion" scheme="https://yangsirrr.github.io/tags/Windows-Privilege-promotion/"/>
-    
-    <category term="Mimikatz" scheme="https://yangsirrr.github.io/tags/Mimikatz/"/>
-    
-    <category term="LPE" scheme="https://yangsirrr.github.io/tags/LPE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Sqlserver focus command</title>
-    <link href="https://yangsirrr.github.io/2021/08/16/sqlserver-focus-command/"/>
-    <id>https://yangsirrr.github.io/2021/08/16/sqlserver-focus-command/</id>
-    <published>2021-08-16T14:22:07.000Z</published>
-    <updated>2021-08-16T14:43:10.137Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;Record a tips, maybe somebody&amp;amp;RT can use
-
-The other day ON the</summary>
-        
-      
-    
-    
-    
-    <category term="Miscellaneous record" scheme="https://yangsirrr.github.io/categories/Miscellaneous-record/"/>
-    
-    
-    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
-    
-    <category term="Information collection" scheme="https://yangsirrr.github.io/tags/Information-collection/"/>
-    
-    <category term="Sqlserver" scheme="https://yangsirrr.github.io/tags/Sqlserver/"/>
-    
-    <category term="Database" scheme="https://yangsirrr.github.io/tags/Database/"/>
-    
-    <category term="Command execution" scheme="https://yangsirrr.github.io/tags/Command-execution/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ADCS&amp;ESC1&amp;ESC8攻击方式</title>
-    <link href="https://yangsirrr.github.io/2021/08/16/adcs-esc1-esc8-gong-ji-fang-shi/"/>
-    <id>https://yangsirrr.github.io/2021/08/16/adcs-esc1-esc8-gong-ji-fang-shi/</id>
-    <published>2021-08-16T12:36:19.000Z</published>
-    <updated>2021-08-21T03:52:00.838Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;内容太多了，实在不想翻出来英文版本了，这回就中文冲了，凑合看即可&lt;span aria-hidden=&quot;true&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
-    
-    
-    <category term="Domain environment" scheme="https://yangsirrr.github.io/tags/Domain-environment/"/>
-    
-    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
-    
-    <category term="DPE" scheme="https://yangsirrr.github.io/tags/DPE/"/>
-    
-    <category term="ADCS" scheme="https://yangsirrr.github.io/tags/ADCS/"/>
-    
-    <category term="ESC1" scheme="https://yangsirrr.github.io/tags/ESC1/"/>
-    
-    <category term="ESC8" scheme="https://yangsirrr.github.io/tags/ESC8/"/>
-    
-    <category term="PTT" scheme="https://yangsirrr.github.io/tags/PTT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Powershell bypass tips</title>
-    <link href="https://yangsirrr.github.io/2021/08/11/powershell-bypass-tips/"/>
-    <id>https://yangsirrr.github.io/2021/08/11/powershell-bypass-tips/</id>
-    <published>2021-08-11T08:48:06.000Z</published>
-    <updated>2021-08-11T09:12:19.208Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Command-EXEC&quot;&gt;&lt;a href=&quot;#Command-EXEC&quot; class=&quot;headerlink&quot; title=&quot;Command EXEC&quot;&gt;&lt;/a&gt;Command EXEC&lt;/h2&gt;&lt;pre class=&quot;line-numbers</summary>
-        
-      
-    
-    
-    
-    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
-    
-    
-    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
-    
-    <category term="RCE" scheme="https://yangsirrr.github.io/tags/RCE/"/>
-    
-    <category term="Bypass" scheme="https://yangsirrr.github.io/tags/Bypass/"/>
-    
-    <category term="Powershell" scheme="https://yangsirrr.github.io/tags/Powershell/"/>
-    
-    <category term="Cobaltstrike" scheme="https://yangsirrr.github.io/tags/Cobaltstrike/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Use IPC BypassUAC</title>
-    <link href="https://yangsirrr.github.io/2021/08/08/use-ipc-bypassuac/"/>
-    <id>https://yangsirrr.github.io/2021/08/08/use-ipc-bypassuac/</id>
-    <published>2021-08-08T07:35:33.000Z</published>
-    <updated>2021-08-08T07:43:06.557Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h6 id=&quot;After-the-actual-test-some-environments-can-be-successful&quot;&gt;&lt;a href=&quot;#After-the-actual-test-some-environments-can-be-successful&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Tips" scheme="https://yangsirrr.github.io/categories/Tips/"/>
-    
-    
-    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
-    
-    <category term="Bypass" scheme="https://yangsirrr.github.io/tags/Bypass/"/>
-    
-    <category term="UAC" scheme="https://yangsirrr.github.io/tags/UAC/"/>
-    
-    <category term="IPC" scheme="https://yangsirrr.github.io/tags/IPC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Attack the Outlook client</title>
-    <link href="https://yangsirrr.github.io/2021/08/04/attack-the-outlook-client/"/>
-    <id>https://yangsirrr.github.io/2021/08/04/attack-the-outlook-client/</id>
-    <published>2021-08-04T15:12:08.000Z</published>
-    <updated>2021-08-04T15:44:55.573Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Some-of-the-words&quot;&gt;&lt;a href=&quot;#Some-of-the-words&quot; class=&quot;headerlink&quot; title=&quot;Some of the words&quot;&gt;&lt;/a&gt;Some of the words&lt;/h2&gt;&lt;pre</summary>
-        
-      
-    
-    
-    
-    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
-    
-    
-    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
-    
-    <category term="Exchange" scheme="https://yangsirrr.github.io/tags/Exchange/"/>
-    
-    <category term="Ruler" scheme="https://yangsirrr.github.io/tags/Ruler/"/>
-    
-    <category term="RCE" scheme="https://yangsirrr.github.io/tags/RCE/"/>
-    
-    <category term="Outlook" scheme="https://yangsirrr.github.io/tags/Outlook/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>A solution to the failure of the trust relationship between this workstation and the primary domain</title>
-    <link href="https://yangsirrr.github.io/2021/08/01/a-solution-to-the-failure-of-the-trust-relationship-between-this-workstation-and-the-primary-domain/"/>
-    <id>https://yangsirrr.github.io/2021/08/01/a-solution-to-the-failure-of-the-trust-relationship-between-this-workstation-and-the-primary-domain/</id>
-    <published>2021-08-01T15:21:17.000Z</published>
-    <updated>2021-08-01T15:28:35.945Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;The-cause&quot;&gt;&lt;a href=&quot;#The-cause&quot; class=&quot;headerlink&quot; title=&quot;The cause&quot;&gt;&lt;/a&gt;The cause&lt;/h2&gt;&lt;pre class=&quot;line-numbers</summary>
-        
-      
-    
-    
-    
-    <category term="Tips" scheme="https://yangsirrr.github.io/categories/Tips/"/>
-    
-    
-    <category term="Domain environment" scheme="https://yangsirrr.github.io/tags/Domain-environment/"/>
-    
-    <category term="Operations" scheme="https://yangsirrr.github.io/tags/Operations/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Powershell bypass catch password</title>
-    <link href="https://yangsirrr.github.io/2021/07/31/powershell-bypass-catch-password/"/>
-    <id>https://yangsirrr.github.io/2021/07/31/powershell-bypass-catch-password/</id>
-    <published>2021-07-31T15:23:20.000Z</published>
-    <updated>2021-08-11T09:12:26.951Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Some-of-the-words&quot;&gt;&lt;a href=&quot;#Some-of-the-words&quot; class=&quot;headerlink&quot; title=&quot;Some of the words&quot;&gt;&lt;/a&gt;Some of the words&lt;/h2&gt;&lt;pre</summary>
-        
-      
-    
-    
-    
-    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
-    
-    
-    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
-    
-    <category term="Mimikatz" scheme="https://yangsirrr.github.io/tags/Mimikatz/"/>
-    
-    <category term="Bypass" scheme="https://yangsirrr.github.io/tags/Bypass/"/>
-    
-    <category term="Catch Password" scheme="https://yangsirrr.github.io/tags/Catch-Password/"/>
-    
-    <category term="Powershell" scheme="https://yangsirrr.github.io/tags/Powershell/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Exchange Export email methods</title>
-    <link href="https://yangsirrr.github.io/2021/07/30/exchange-export-email-methods/"/>
-    <id>https://yangsirrr.github.io/2021/07/30/exchange-export-email-methods/</id>
-    <published>2021-07-30T08:17:10.000Z</published>
-    <updated>2021-08-01T04:28:13.060Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;pre class=&quot;line-numbers</summary>
-        
-      
-    
-    
-    
-    <category term="Tips" scheme="https://yangsirrr.github.io/categories/Tips/"/>
-    
-    
-    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
-    
-    <category term="Exchange" scheme="https://yangsirrr.github.io/tags/Exchange/"/>
-    
-    <category term="Information collection" scheme="https://yangsirrr.github.io/tags/Information-collection/"/>
-    
-    <category term="Export Email" scheme="https://yangsirrr.github.io/tags/Export-Email/"/>
-    
-    <category term="Search Email" scheme="https://yangsirrr.github.io/tags/Search-Email/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Exchange RCE methods</title>
-    <link href="https://yangsirrr.github.io/2021/07/29/exchange-rce-methods/"/>
-    <id>https://yangsirrr.github.io/2021/07/29/exchange-rce-methods/</id>
-    <published>2021-07-29T08:51:05.000Z</published>
-    <updated>2021-07-29T09:38:53.056Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Get-exchange-version&quot;&gt;&lt;a href=&quot;#Get-exchange-version&quot; class=&quot;headerlink&quot; title=&quot;Get exchange version&quot;&gt;&lt;/a&gt;Get exchange</summary>
-        
-      
-    
-    
-    
-    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
-    
-    
-    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
-    
-    <category term="Exchange" scheme="https://yangsirrr.github.io/tags/Exchange/"/>
-    
-    <category term="RCE" scheme="https://yangsirrr.github.io/tags/RCE/"/>
-    
-    <category term="CVE-2020-17144" scheme="https://yangsirrr.github.io/tags/CVE-2020-17144/"/>
-    
-    <category term="CVE-2020-16875" scheme="https://yangsirrr.github.io/tags/CVE-2020-16875/"/>
-    
-    <category term="CVE-2020-0688" scheme="https://yangsirrr.github.io/tags/CVE-2020-0688/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ProxyLogon Utilization method (Manual use)</title>
-    <link href="https://yangsirrr.github.io/2021/07/27/proxylogon-utilization-method-manual-use/"/>
-    <id>https://yangsirrr.github.io/2021/07/27/proxylogon-utilization-method-manual-use/</id>
-    <published>2021-07-27T08:42:05.000Z</published>
-    <updated>2021-07-29T08:57:02.240Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Some-of-the-words&quot;&gt;&lt;a href=&quot;#Some-of-the-words&quot; class=&quot;headerlink&quot; title=&quot;Some of the words&quot;&gt;&lt;/a&gt;Some of the words&lt;/h2&gt;&lt;pre</summary>
-        
-      
-    
-    
-    
-    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
-    
-    
-    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
-    
-    <category term="Exchange" scheme="https://yangsirrr.github.io/tags/Exchange/"/>
-    
-    <category term="RCE" scheme="https://yangsirrr.github.io/tags/RCE/"/>
-    
-    <category term="ProxyLogon" scheme="https://yangsirrr.github.io/tags/ProxyLogon/"/>
-    
-    <category term="CVE-2021-26855" scheme="https://yangsirrr.github.io/tags/CVE-2021-26855/"/>
-    
-    <category term="CVE-2021-27065" scheme="https://yangsirrr.github.io/tags/CVE-2021-27065/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ProxyLogon Utilization method</title>
-    <link href="https://yangsirrr.github.io/2021/07/26/proxylogon-utilization-method/"/>
-    <id>https://yangsirrr.github.io/2021/07/26/proxylogon-utilization-method/</id>
-    <published>2021-07-26T10:16:50.000Z</published>
-    <updated>2021-07-29T08:57:16.267Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Some-of-the-words&quot;&gt;&lt;a href=&quot;#Some-of-the-words&quot; class=&quot;headerlink&quot; title=&quot;Some of the words&quot;&gt;&lt;/a&gt;Some of the words&lt;/h2&gt;&lt;pre</summary>
-        
-      
-    
-    
-    
-    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
-    
-    
-    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
-    
-    <category term="Exchange" scheme="https://yangsirrr.github.io/tags/Exchange/"/>
-    
-    <category term="RCE" scheme="https://yangsirrr.github.io/tags/RCE/"/>
-    
-    <category term="ProxyLogon" scheme="https://yangsirrr.github.io/tags/ProxyLogon/"/>
-    
-    <category term="CVE-2021-26855" scheme="https://yangsirrr.github.io/tags/CVE-2021-26855/"/>
-    
-    <category term="CVE-2021-27065" scheme="https://yangsirrr.github.io/tags/CVE-2021-27065/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Sqlserver common attack methods</title>
-    <link href="https://yangsirrr.github.io/2021/07/24/sqlserver-common-attack-methods/"/>
-    <id>https://yangsirrr.github.io/2021/07/24/sqlserver-common-attack-methods/</id>
-    <published>2021-07-24T06:09:50.000Z</published>
-    <updated>2021-07-24T06:36:03.410Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;pre class=&quot;line-numbers</summary>
-        
-      
-    
-    
-    
-    <category term="Miscellaneous record" scheme="https://yangsirrr.github.io/categories/Miscellaneous-record/"/>
-    
-    
-    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
-    
-    <category term="Information collection" scheme="https://yangsirrr.github.io/tags/Information-collection/"/>
-    
-    <category term="Sqlserver" scheme="https://yangsirrr.github.io/tags/Sqlserver/"/>
-    
-    <category term="Database" scheme="https://yangsirrr.github.io/tags/Database/"/>
-    
-    <category term="Command execution" scheme="https://yangsirrr.github.io/tags/Command-execution/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Some ways to download files remotely from Github</title>
-    <link href="https://yangsirrr.github.io/2021/07/23/some-ways-to-download-files-remotely-from-github/"/>
-    <id>https://yangsirrr.github.io/2021/07/23/some-ways-to-download-files-remotely-from-github/</id>
-    <published>2021-07-23T15:10:02.000Z</published>
-    <updated>2021-07-24T06:35:56.736Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;pre class=&quot;line-numbers</summary>
-        
-      
-    
-    
-    
-    <category term="Miscellaneous record" scheme="https://yangsirrr.github.io/categories/Miscellaneous-record/"/>
-    
-    
-    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
-    
-    <category term="Bypass" scheme="https://yangsirrr.github.io/tags/Bypass/"/>
-    
-    <category term="File download" scheme="https://yangsirrr.github.io/tags/File-download/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Supplementary information about obtaining LDAP information</title>
-    <link href="https://yangsirrr.github.io/2021/07/23/supplementary-information-about-obtaining-ldap-information/"/>
-    <id>https://yangsirrr.github.io/2021/07/23/supplementary-information-about-obtaining-ldap-information/</id>
-    <published>2021-07-23T14:59:20.000Z</published>
-    <updated>2021-08-21T01:59:09.232Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;pre class=&quot;line-numbers</summary>
-        
-      
-    
-    
-    
-    <category term="Tips" scheme="https://yangsirrr.github.io/categories/Tips/"/>
-    
-    
-    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
-    
-    <category term="Bypass" scheme="https://yangsirrr.github.io/tags/Bypass/"/>
-    
-    <category term="Intranet Information Collection" scheme="https://yangsirrr.github.io/tags/Intranet-Information-Collection/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Xwizard Microsoft program use white and black</title>
-    <link href="https://yangsirrr.github.io/2021/07/23/xwizard-microsoft-program-use-white-and-black/"/>
-    <id>https://yangsirrr.github.io/2021/07/23/xwizard-microsoft-program-use-white-and-black/</id>
-    <published>2021-07-23T14:42:10.000Z</published>
-    <updated>2021-07-23T15:01:06.773Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;pre class=&quot;line-numbers</summary>
-        
-      
-    
-    
-    
-    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
-    
-    
-    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
-    
-    <category term="Bypass" scheme="https://yangsirrr.github.io/tags/Bypass/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Sensitive path information concerns</title>
-    <link href="https://yangsirrr.github.io/2021/07/21/sensitive-path-information-concerns/"/>
-    <id>https://yangsirrr.github.io/2021/07/21/sensitive-path-information-concerns/</id>
-    <published>2021-07-21T13:56:50.000Z</published>
-    <updated>2021-08-21T01:59:22.169Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h6 id=&quot;If-there-is-insufficient-the-follow-up-to-continue&quot;&gt;&lt;a href=&quot;#If-there-is-insufficient-the-follow-up-to-continue&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Tips" scheme="https://yangsirrr.github.io/categories/Tips/"/>
-    
-    
-    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
-    
-    <category term="Information collection" scheme="https://yangsirrr.github.io/tags/Information-collection/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DLL hijacking the whitelist application online</title>
-    <link href="https://yangsirrr.github.io/2021/07/20/dll-hijacking-the-whitelist-application-online/"/>
-    <id>https://yangsirrr.github.io/2021/07/20/dll-hijacking-the-whitelist-application-online/</id>
-    <published>2021-07-20T12:08:29.000Z</published>
-    <updated>2021-07-21T09:00:19.325Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;How-to-use&quot;&gt;&lt;a href=&quot;#How-to-use&quot; class=&quot;headerlink&quot; title=&quot;How to use&quot;&gt;&lt;/a&gt;How to use&lt;/h2&gt;&lt;p&gt;Application EXE unsigned white</summary>
-        
-      
-    
-    
-    
-    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
-    
-    
-    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
-    
-    <category term="Bypass" scheme="https://yangsirrr.github.io/tags/Bypass/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DLL hijacking from hijacking to on-line</title>
-    <link href="https://yangsirrr.github.io/2021/07/19/dll-hijacking-from-hijacking-to-on-line/"/>
-    <id>https://yangsirrr.github.io/2021/07/19/dll-hijacking-from-hijacking-to-on-line/</id>
-    <published>2021-07-19T13:15:31.000Z</published>
-    <updated>2021-07-21T09:00:15.894Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;pre class=&quot;line-numbers</summary>
-        
-      
-    
-    
-    
-    <category term="Learning record" scheme="https://yangsirrr.github.io/categories/Learning-record/"/>
-    
-    
-    <category term="Redteam" scheme="https://yangsirrr.github.io/tags/Redteam/"/>
-    
-    <category term="Bypass" scheme="https://yangsirrr.github.io/tags/Bypass/"/>
     
   </entry>
   

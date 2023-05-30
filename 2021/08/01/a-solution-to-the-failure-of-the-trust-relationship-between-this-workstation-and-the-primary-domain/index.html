@@ -98,33 +98,22 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/about" class="waves-effect waves-light">
-      
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
-      
-      <span>About</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>Contact</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
     <a href="/friends" class="waves-effect waves-light">
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
       <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
     </a>
     
   </li>
@@ -201,33 +190,22 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/about" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-user-circle"></i>
-			
-			About
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			Contact
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
 		<a href="/friends" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
 			Friends
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
 		</a>
           
         </li>
@@ -308,10 +286,23 @@
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/A%20solution%20to%20the%20failure%20of%20the%20trust%20relationship%20between%20this%20workstation%20and%20the%20primary%20domain/image-20210801231855683.png')">
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/A%20solution%20to%20the%20failure%20of%20the%20trust%20relationship%20between%20this%20workstation%20and%20the%20primary%20domain/image-20210801231855683.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -468,7 +459,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-08-01
+                    2021-09-10
                 </div>
                 
 
@@ -507,16 +498,16 @@
             <div id="articleContent">
                 <h2 id="The-cause"><a href="#The-cause" class="headerlink" title="The cause"></a>The cause</h2><pre class="line-numbers language-none"><code class="language-none">The domain controller is faulty and is redeployed. The domain machine is found to have the following problems, It cannot be used normally<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/A%20solution%20to%20the%20failure%20of%20the%20trust%20relationship%20between%20this%20workstation%20and%20the%20primary%20domain/image-20210801231855683.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/A%20solution%20to%20the%20failure%20of%20the%20trust%20relationship%20between%20this%20workstation%20and%20the%20primary%20domain/image-20210801231855683.png"></p>
 <h2 id="The-solution"><a href="#The-solution" class="headerlink" title="The solution"></a>The solution</h2><pre class="line-numbers language-none"><code class="language-none">The local administrator logs in to the faulty machine, adds it to a group, and restarts it<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/A%20solution%20to%20the%20failure%20of%20the%20trust%20relationship%20between%20this%20workstation%20and%20the%20primary%20domain/image-20210801231947795.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/A%20solution%20to%20the%20failure%20of%20the%20trust%20relationship%20between%20this%20workstation%20and%20the%20primary%20domain/image-20210801231947795.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">Restart and then join the domain again<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/A%20solution%20to%20the%20failure%20of%20the%20trust%20relationship%20between%20this%20workstation%20and%20the%20primary%20domain/image-20210801232006784.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/A%20solution%20to%20the%20failure%20of%20the%20trust%20relationship%20between%20this%20workstation%20and%20the%20primary%20domain/image-20210801232006784.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">After the system restarts, it can be used normally<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/A%20solution%20to%20the%20failure%20of%20the%20trust%20relationship%20between%20this%20workstation%20and%20the%20primary%20domain/image-20210801232023351.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/A%20solution%20to%20the%20failure%20of%20the%20trust%20relationship%20between%20this%20workstation%20and%20the%20primary%20domain/image-20210801232023351.png"></p>
 
                 
             </div>
@@ -639,7 +630,7 @@
                 <a href="/2021/08/04/attack-the-outlook-client/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Attack%20the%20Outlook%20client/image-20210803153315676.png" class="responsive-img" alt="Attack the Outlook client">
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Attack%20the%20Outlook%20client/image-20210803153315676.png" class="responsive-img" alt="Attack the Outlook client">
                         
                         <span class="card-title">Attack the Outlook client</span>
                     </div>
@@ -673,16 +664,16 @@
                         <span class="chip bg-color">Redteam</span>
                     </a>
                     
+                    <a href="/tags/RCE/">
+                        <span class="chip bg-color">RCE</span>
+                    </a>
+                    
                     <a href="/tags/Exchange/">
                         <span class="chip bg-color">Exchange</span>
                     </a>
                     
                     <a href="/tags/Ruler/">
                         <span class="chip bg-color">Ruler</span>
-                    </a>
-                    
-                    <a href="/tags/RCE/">
-                        <span class="chip bg-color">RCE</span>
                     </a>
                     
                     <a href="/tags/Outlook/">
@@ -703,7 +694,7 @@
                 <a href="/2021/07/31/powershell-bypass-catch-password/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/6.png" class="responsive-img" alt="Powershell bypass catch password">
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Powershell%20bypass%20catch%20password/6.png" class="responsive-img" alt="Powershell bypass catch password">
                         
                         <span class="card-title">Powershell bypass catch password</span>
                     </div>
@@ -737,20 +728,20 @@
                         <span class="chip bg-color">Redteam</span>
                     </a>
                     
-                    <a href="/tags/Mimikatz/">
-                        <span class="chip bg-color">Mimikatz</span>
-                    </a>
-                    
                     <a href="/tags/Bypass/">
                         <span class="chip bg-color">Bypass</span>
                     </a>
                     
-                    <a href="/tags/Catch-Password/">
-                        <span class="chip bg-color">Catch Password</span>
+                    <a href="/tags/Mimikatz/">
+                        <span class="chip bg-color">Mimikatz</span>
                     </a>
                     
                     <a href="/tags/Powershell/">
                         <span class="chip bg-color">Powershell</span>
+                    </a>
+                    
+                    <a href="/tags/Catch-Password/">
+                        <span class="chip bg-color">Catch Password</span>
                     </a>
                     
                 </div>
@@ -981,7 +972,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021</span>
+                <span id="year">2021-2022</span>
             
             <span id="year">2021</span>
             <a href="/about" target="_blank">Yangsir</a>
@@ -990,7 +981,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">13.8k</span>&nbsp;字
+                class="white-color">62.8k</span>&nbsp;字
             
             
             

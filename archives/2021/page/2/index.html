@@ -98,33 +98,22 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/about" class="waves-effect waves-light">
-      
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
-      
-      <span>About</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>Contact</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
     <a href="/friends" class="waves-effect waves-light">
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
       <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
     </a>
     
   </li>
@@ -201,33 +190,22 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/about" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-user-circle"></i>
-			
-			About
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			Contact
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
 		<a href="/friends" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
 			Friends
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
 		</a>
           
         </li>
@@ -352,9 +330,7 @@
 
 
 <script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+    $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
 </script>
 
 
@@ -412,7 +388,7 @@
         },
         calendar: [{
             left: 'center',
-            range: ["2020-08-21", "2021-08-21"],
+            range: ["2021-05-14", "2022-05-14"],
             cellSize: [13, 13],
             splitLine: {
                 show: false
@@ -439,7 +415,7 @@
             type: 'heatmap',
             coordinateSystem: 'calendar',
             calendarIndex: 0,
-            data: [["2020-08-21", 0], ["2020-08-22", 0], ["2020-08-23", 0], ["2020-08-24", 0], ["2020-08-25", 0], ["2020-08-26", 0], ["2020-08-27", 0], ["2020-08-28", 0], ["2020-08-29", 0], ["2020-08-30", 0], ["2020-08-31", 0], ["2020-09-01", 0], ["2020-09-02", 0], ["2020-09-03", 0], ["2020-09-04", 0], ["2020-09-05", 0], ["2020-09-06", 0], ["2020-09-07", 0], ["2020-09-08", 0], ["2020-09-09", 0], ["2020-09-10", 0], ["2020-09-11", 0], ["2020-09-12", 0], ["2020-09-13", 0], ["2020-09-14", 0], ["2020-09-15", 0], ["2020-09-16", 0], ["2020-09-17", 0], ["2020-09-18", 0], ["2020-09-19", 0], ["2020-09-20", 0], ["2020-09-21", 0], ["2020-09-22", 0], ["2020-09-23", 0], ["2020-09-24", 0], ["2020-09-25", 0], ["2020-09-26", 0], ["2020-09-27", 0], ["2020-09-28", 0], ["2020-09-29", 0], ["2020-09-30", 0], ["2020-10-01", 0], ["2020-10-02", 0], ["2020-10-03", 0], ["2020-10-04", 0], ["2020-10-05", 0], ["2020-10-06", 0], ["2020-10-07", 0], ["2020-10-08", 0], ["2020-10-09", 0], ["2020-10-10", 0], ["2020-10-11", 0], ["2020-10-12", 0], ["2020-10-13", 0], ["2020-10-14", 0], ["2020-10-15", 0], ["2020-10-16", 0], ["2020-10-17", 0], ["2020-10-18", 0], ["2020-10-19", 0], ["2020-10-20", 0], ["2020-10-21", 0], ["2020-10-22", 0], ["2020-10-23", 0], ["2020-10-24", 0], ["2020-10-25", 0], ["2020-10-26", 0], ["2020-10-27", 0], ["2020-10-28", 0], ["2020-10-29", 0], ["2020-10-30", 0], ["2020-10-31", 0], ["2020-11-01", 0], ["2020-11-02", 0], ["2020-11-03", 0], ["2020-11-04", 0], ["2020-11-05", 0], ["2020-11-06", 0], ["2020-11-07", 0], ["2020-11-08", 0], ["2020-11-09", 0], ["2020-11-10", 0], ["2020-11-11", 0], ["2020-11-12", 0], ["2020-11-13", 0], ["2020-11-14", 0], ["2020-11-15", 0], ["2020-11-16", 0], ["2020-11-17", 0], ["2020-11-18", 0], ["2020-11-19", 0], ["2020-11-20", 0], ["2020-11-21", 0], ["2020-11-22", 0], ["2020-11-23", 0], ["2020-11-24", 0], ["2020-11-25", 0], ["2020-11-26", 0], ["2020-11-27", 0], ["2020-11-28", 0], ["2020-11-29", 0], ["2020-11-30", 0], ["2020-12-01", 0], ["2020-12-02", 0], ["2020-12-03", 0], ["2020-12-04", 0], ["2020-12-05", 0], ["2020-12-06", 0], ["2020-12-07", 0], ["2020-12-08", 0], ["2020-12-09", 0], ["2020-12-10", 0], ["2020-12-11", 0], ["2020-12-12", 0], ["2020-12-13", 0], ["2020-12-14", 0], ["2020-12-15", 0], ["2020-12-16", 0], ["2020-12-17", 0], ["2020-12-18", 0], ["2020-12-19", 0], ["2020-12-20", 0], ["2020-12-21", 0], ["2020-12-22", 0], ["2020-12-23", 0], ["2020-12-24", 0], ["2020-12-25", 0], ["2020-12-26", 0], ["2020-12-27", 0], ["2020-12-28", 0], ["2020-12-29", 0], ["2020-12-30", 0], ["2020-12-31", 0], ["2021-01-01", 0], ["2021-01-02", 0], ["2021-01-03", 0], ["2021-01-04", 0], ["2021-01-05", 0], ["2021-01-06", 0], ["2021-01-07", 0], ["2021-01-08", 0], ["2021-01-09", 0], ["2021-01-10", 0], ["2021-01-11", 0], ["2021-01-12", 0], ["2021-01-13", 0], ["2021-01-14", 0], ["2021-01-15", 0], ["2021-01-16", 0], ["2021-01-17", 0], ["2021-01-18", 0], ["2021-01-19", 0], ["2021-01-20", 0], ["2021-01-21", 0], ["2021-01-22", 0], ["2021-01-23", 0], ["2021-01-24", 0], ["2021-01-25", 0], ["2021-01-26", 0], ["2021-01-27", 0], ["2021-01-28", 0], ["2021-01-29", 0], ["2021-01-30", 0], ["2021-01-31", 0], ["2021-02-01", 0], ["2021-02-02", 0], ["2021-02-03", 0], ["2021-02-04", 0], ["2021-02-05", 0], ["2021-02-06", 0], ["2021-02-07", 0], ["2021-02-08", 0], ["2021-02-09", 0], ["2021-02-10", 0], ["2021-02-11", 0], ["2021-02-12", 0], ["2021-02-13", 0], ["2021-02-14", 0], ["2021-02-15", 0], ["2021-02-16", 0], ["2021-02-17", 0], ["2021-02-18", 0], ["2021-02-19", 0], ["2021-02-20", 0], ["2021-02-21", 0], ["2021-02-22", 0], ["2021-02-23", 0], ["2021-02-24", 0], ["2021-02-25", 0], ["2021-02-26", 0], ["2021-02-27", 0], ["2021-02-28", 0], ["2021-03-01", 0], ["2021-03-02", 0], ["2021-03-03", 0], ["2021-03-04", 0], ["2021-03-05", 0], ["2021-03-06", 0], ["2021-03-07", 0], ["2021-03-08", 0], ["2021-03-09", 0], ["2021-03-10", 0], ["2021-03-11", 0], ["2021-03-12", 0], ["2021-03-13", 0], ["2021-03-14", 0], ["2021-03-15", 0], ["2021-03-16", 0], ["2021-03-17", 0], ["2021-03-18", 0], ["2021-03-19", 0], ["2021-03-20", 0], ["2021-03-21", 0], ["2021-03-22", 0], ["2021-03-23", 1], ["2021-03-24", 0], ["2021-03-25", 0], ["2021-03-26", 0], ["2021-03-27", 0], ["2021-03-28", 0], ["2021-03-29", 0], ["2021-03-30", 0], ["2021-03-31", 0], ["2021-04-01", 0], ["2021-04-02", 0], ["2021-04-03", 0], ["2021-04-04", 0], ["2021-04-05", 0], ["2021-04-06", 0], ["2021-04-07", 0], ["2021-04-08", 0], ["2021-04-09", 0], ["2021-04-10", 0], ["2021-04-11", 0], ["2021-04-12", 0], ["2021-04-13", 0], ["2021-04-14", 0], ["2021-04-15", 0], ["2021-04-16", 0], ["2021-04-17", 0], ["2021-04-18", 0], ["2021-04-19", 0], ["2021-04-20", 0], ["2021-04-21", 0], ["2021-04-22", 0], ["2021-04-23", 0], ["2021-04-24", 0], ["2021-04-25", 0], ["2021-04-26", 0], ["2021-04-27", 0], ["2021-04-28", 0], ["2021-04-29", 0], ["2021-04-30", 0], ["2021-05-01", 0], ["2021-05-02", 0], ["2021-05-03", 0], ["2021-05-04", 0], ["2021-05-05", 0], ["2021-05-06", 0], ["2021-05-07", 0], ["2021-05-08", 0], ["2021-05-09", 0], ["2021-05-10", 0], ["2021-05-11", 0], ["2021-05-12", 0], ["2021-05-13", 0], ["2021-05-14", 0], ["2021-05-15", 0], ["2021-05-16", 0], ["2021-05-17", 0], ["2021-05-18", 0], ["2021-05-19", 0], ["2021-05-20", 0], ["2021-05-21", 0], ["2021-05-22", 0], ["2021-05-23", 0], ["2021-05-24", 0], ["2021-05-25", 0], ["2021-05-26", 0], ["2021-05-27", 0], ["2021-05-28", 0], ["2021-05-29", 0], ["2021-05-30", 0], ["2021-05-31", 0], ["2021-06-01", 0], ["2021-06-02", 0], ["2021-06-03", 0], ["2021-06-04", 0], ["2021-06-05", 0], ["2021-06-06", 0], ["2021-06-07", 0], ["2021-06-08", 0], ["2021-06-09", 0], ["2021-06-10", 0], ["2021-06-11", 0], ["2021-06-12", 0], ["2021-06-13", 0], ["2021-06-14", 0], ["2021-06-15", 0], ["2021-06-16", 0], ["2021-06-17", 0], ["2021-06-18", 0], ["2021-06-19", 0], ["2021-06-20", 0], ["2021-06-21", 0], ["2021-06-22", 0], ["2021-06-23", 0], ["2021-06-24", 0], ["2021-06-25", 0], ["2021-06-26", 0], ["2021-06-27", 0], ["2021-06-28", 0], ["2021-06-29", 0], ["2021-06-30", 0], ["2021-07-01", 0], ["2021-07-02", 0], ["2021-07-03", 0], ["2021-07-04", 0], ["2021-07-05", 0], ["2021-07-06", 0], ["2021-07-07", 0], ["2021-07-08", 0], ["2021-07-09", 0], ["2021-07-10", 0], ["2021-07-11", 0], ["2021-07-12", 0], ["2021-07-13", 0], ["2021-07-14", 0], ["2021-07-15", 0], ["2021-07-16", 0], ["2021-07-17", 0], ["2021-07-18", 0], ["2021-07-19", 1], ["2021-07-20", 1], ["2021-07-21", 1], ["2021-07-22", 0], ["2021-07-23", 3], ["2021-07-24", 1], ["2021-07-25", 0], ["2021-07-26", 1], ["2021-07-27", 1], ["2021-07-28", 0], ["2021-07-29", 1], ["2021-07-30", 1], ["2021-07-31", 1], ["2021-08-01", 1], ["2021-08-02", 0], ["2021-08-03", 0], ["2021-08-04", 1], ["2021-08-05", 0], ["2021-08-06", 0], ["2021-08-07", 0], ["2021-08-08", 1], ["2021-08-09", 0], ["2021-08-10", 0], ["2021-08-11", 1], ["2021-08-12", 0], ["2021-08-13", 0], ["2021-08-14", 0], ["2021-08-15", 0], ["2021-08-16", 2], ["2021-08-17", 1], ["2021-08-18", 0], ["2021-08-19", 0], ["2021-08-20", 1], ["2021-08-21", 0]]
+            data: [["2021-05-14", 0], ["2021-05-15", 0], ["2021-05-16", 0], ["2021-05-17", 0], ["2021-05-18", 0], ["2021-05-19", 0], ["2021-05-20", 0], ["2021-05-21", 0], ["2021-05-22", 0], ["2021-05-23", 0], ["2021-05-24", 0], ["2021-05-25", 0], ["2021-05-26", 0], ["2021-05-27", 0], ["2021-05-28", 0], ["2021-05-29", 0], ["2021-05-30", 0], ["2021-05-31", 0], ["2021-06-01", 0], ["2021-06-02", 0], ["2021-06-03", 0], ["2021-06-04", 0], ["2021-06-05", 0], ["2021-06-06", 0], ["2021-06-07", 0], ["2021-06-08", 0], ["2021-06-09", 0], ["2021-06-10", 0], ["2021-06-11", 0], ["2021-06-12", 0], ["2021-06-13", 0], ["2021-06-14", 0], ["2021-06-15", 0], ["2021-06-16", 0], ["2021-06-17", 0], ["2021-06-18", 0], ["2021-06-19", 0], ["2021-06-20", 0], ["2021-06-21", 0], ["2021-06-22", 0], ["2021-06-23", 0], ["2021-06-24", 0], ["2021-06-25", 0], ["2021-06-26", 0], ["2021-06-27", 0], ["2021-06-28", 0], ["2021-06-29", 0], ["2021-06-30", 0], ["2021-07-01", 0], ["2021-07-02", 0], ["2021-07-03", 0], ["2021-07-04", 0], ["2021-07-05", 0], ["2021-07-06", 0], ["2021-07-07", 0], ["2021-07-08", 0], ["2021-07-09", 0], ["2021-07-10", 0], ["2021-07-11", 0], ["2021-07-12", 0], ["2021-07-13", 0], ["2021-07-14", 0], ["2021-07-15", 0], ["2021-07-16", 0], ["2021-07-17", 0], ["2021-07-18", 0], ["2021-07-19", 1], ["2021-07-20", 1], ["2021-07-21", 1], ["2021-07-22", 0], ["2021-07-23", 3], ["2021-07-24", 1], ["2021-07-25", 0], ["2021-07-26", 1], ["2021-07-27", 1], ["2021-07-28", 0], ["2021-07-29", 1], ["2021-07-30", 1], ["2021-07-31", 1], ["2021-08-01", 1], ["2021-08-02", 0], ["2021-08-03", 0], ["2021-08-04", 1], ["2021-08-05", 0], ["2021-08-06", 0], ["2021-08-07", 0], ["2021-08-08", 1], ["2021-08-09", 0], ["2021-08-10", 0], ["2021-08-11", 1], ["2021-08-12", 0], ["2021-08-13", 0], ["2021-08-14", 0], ["2021-08-15", 0], ["2021-08-16", 2], ["2021-08-17", 1], ["2021-08-18", 0], ["2021-08-19", 0], ["2021-08-20", 1], ["2021-08-21", 0], ["2021-08-22", 0], ["2021-08-23", 0], ["2021-08-24", 0], ["2021-08-25", 0], ["2021-08-26", 0], ["2021-08-27", 0], ["2021-08-28", 0], ["2021-08-29", 3], ["2021-08-30", 0], ["2021-08-31", 0], ["2021-09-01", 1], ["2021-09-02", 1], ["2021-09-03", 0], ["2021-09-04", 1], ["2021-09-05", 0], ["2021-09-06", 0], ["2021-09-07", 3], ["2021-09-08", 0], ["2021-09-09", 1], ["2021-09-10", 1], ["2021-09-11", 1], ["2021-09-12", 0], ["2021-09-13", 0], ["2021-09-14", 1], ["2021-09-15", 0], ["2021-09-16", 0], ["2021-09-17", 0], ["2021-09-18", 0], ["2021-09-19", 0], ["2021-09-20", 1], ["2021-09-21", 0], ["2021-09-22", 0], ["2021-09-23", 0], ["2021-09-24", 0], ["2021-09-25", 0], ["2021-09-26", 0], ["2021-09-27", 1], ["2021-09-28", 0], ["2021-09-29", 0], ["2021-09-30", 0], ["2021-10-01", 0], ["2021-10-02", 0], ["2021-10-03", 0], ["2021-10-04", 0], ["2021-10-05", 0], ["2021-10-06", 0], ["2021-10-07", 0], ["2021-10-08", 0], ["2021-10-09", 2], ["2021-10-10", 0], ["2021-10-11", 0], ["2021-10-12", 1], ["2021-10-13", 0], ["2021-10-14", 0], ["2021-10-15", 0], ["2021-10-16", 0], ["2021-10-17", 0], ["2021-10-18", 0], ["2021-10-19", 0], ["2021-10-20", 0], ["2021-10-21", 1], ["2021-10-22", 0], ["2021-10-23", 0], ["2021-10-24", 0], ["2021-10-25", 0], ["2021-10-26", 0], ["2021-10-27", 0], ["2021-10-28", 0], ["2021-10-29", 0], ["2021-10-30", 0], ["2021-10-31", 0], ["2021-11-01", 1], ["2021-11-02", 1], ["2021-11-03", 0], ["2021-11-04", 1], ["2021-11-05", 2], ["2021-11-06", 2], ["2021-11-07", 5], ["2021-11-08", 0], ["2021-11-09", 0], ["2021-11-10", 0], ["2021-11-11", 0], ["2021-11-12", 1], ["2021-11-13", 1], ["2021-11-14", 2], ["2021-11-15", 0], ["2021-11-16", 1], ["2021-11-17", 0], ["2021-11-18", 0], ["2021-11-19", 0], ["2021-11-20", 0], ["2021-11-21", 0], ["2021-11-22", 0], ["2021-11-23", 0], ["2021-11-24", 0], ["2021-11-25", 0], ["2021-11-26", 0], ["2021-11-27", 0], ["2021-11-28", 0], ["2021-11-29", 0], ["2021-11-30", 0], ["2021-12-01", 0], ["2021-12-02", 0], ["2021-12-03", 0], ["2021-12-04", 0], ["2021-12-05", 0], ["2021-12-06", 0], ["2021-12-07", 0], ["2021-12-08", 0], ["2021-12-09", 0], ["2021-12-10", 0], ["2021-12-11", 0], ["2021-12-12", 0], ["2021-12-13", 0], ["2021-12-14", 0], ["2021-12-15", 2], ["2021-12-16", 0], ["2021-12-17", 0], ["2021-12-18", 0], ["2021-12-19", 0], ["2021-12-20", 0], ["2021-12-21", 0], ["2021-12-22", 0], ["2021-12-23", 0], ["2021-12-24", 0], ["2021-12-25", 0], ["2021-12-26", 0], ["2021-12-27", 0], ["2021-12-28", 0], ["2021-12-29", 0], ["2021-12-30", 0], ["2021-12-31", 0], ["2022-01-01", 0], ["2022-01-02", 0], ["2022-01-03", 0], ["2022-01-04", 0], ["2022-01-05", 0], ["2022-01-06", 0], ["2022-01-07", 0], ["2022-01-08", 0], ["2022-01-09", 0], ["2022-01-10", 0], ["2022-01-11", 0], ["2022-01-12", 0], ["2022-01-13", 0], ["2022-01-14", 0], ["2022-01-15", 0], ["2022-01-16", 0], ["2022-01-17", 0], ["2022-01-18", 0], ["2022-01-19", 0], ["2022-01-20", 0], ["2022-01-21", 0], ["2022-01-22", 0], ["2022-01-23", 0], ["2022-01-24", 0], ["2022-01-25", 0], ["2022-01-26", 0], ["2022-01-27", 0], ["2022-01-28", 0], ["2022-01-29", 0], ["2022-01-30", 0], ["2022-01-31", 0], ["2022-02-01", 0], ["2022-02-02", 0], ["2022-02-03", 0], ["2022-02-04", 0], ["2022-02-05", 0], ["2022-02-06", 0], ["2022-02-07", 0], ["2022-02-08", 0], ["2022-02-09", 0], ["2022-02-10", 0], ["2022-02-11", 0], ["2022-02-12", 0], ["2022-02-13", 0], ["2022-02-14", 0], ["2022-02-15", 0], ["2022-02-16", 0], ["2022-02-17", 0], ["2022-02-18", 0], ["2022-02-19", 0], ["2022-02-20", 0], ["2022-02-21", 0], ["2022-02-22", 0], ["2022-02-23", 0], ["2022-02-24", 0], ["2022-02-25", 0], ["2022-02-26", 0], ["2022-02-27", 0], ["2022-02-28", 0], ["2022-03-01", 0], ["2022-03-02", 0], ["2022-03-03", 0], ["2022-03-04", 0], ["2022-03-05", 0], ["2022-03-06", 0], ["2022-03-07", 0], ["2022-03-08", 0], ["2022-03-09", 0], ["2022-03-10", 0], ["2022-03-11", 0], ["2022-03-12", 0], ["2022-03-13", 0], ["2022-03-14", 0], ["2022-03-15", 0], ["2022-03-16", 0], ["2022-03-17", 0], ["2022-03-18", 0], ["2022-03-19", 0], ["2022-03-20", 0], ["2022-03-21", 0], ["2022-03-22", 0], ["2022-03-23", 0], ["2022-03-24", 0], ["2022-03-25", 3], ["2022-03-26", 1], ["2022-03-27", 0], ["2022-03-28", 0], ["2022-03-29", 0], ["2022-03-30", 0], ["2022-03-31", 2], ["2022-04-01", 0], ["2022-04-02", 0], ["2022-04-03", 0], ["2022-04-04", 0], ["2022-04-05", 0], ["2022-04-06", 0], ["2022-04-07", 0], ["2022-04-08", 2], ["2022-04-09", 0], ["2022-04-10", 0], ["2022-04-11", 0], ["2022-04-12", 0], ["2022-04-13", 0], ["2022-04-14", 0], ["2022-04-15", 2], ["2022-04-16", 0], ["2022-04-17", 0], ["2022-04-18", 0], ["2022-04-19", 0], ["2022-04-20", 0], ["2022-04-21", 0], ["2022-04-22", 0], ["2022-04-23", 0], ["2022-04-24", 0], ["2022-04-25", 0], ["2022-04-26", 0], ["2022-04-27", 0], ["2022-04-28", 0], ["2022-04-29", 0], ["2022-04-30", 0], ["2022-05-01", 0], ["2022-05-02", 0], ["2022-05-03", 0], ["2022-05-04", 0], ["2022-05-05", 0], ["2022-05-06", 2], ["2022-05-07", 0], ["2022-05-08", 1], ["2022-05-09", 0], ["2022-05-10", 1], ["2022-05-11", 0], ["2022-05-12", 0], ["2022-05-13", 0], ["2022-05-14", 2]]
         }]
 
     };
@@ -467,35 +443,34 @@
             
             
             <div class="cd-timeline-img month" data-aos="zoom-in-up">
-                <a href="/archives/2021/07">07</a>
+                <a href="/archives/2021/11">11</a>
             </div>
             
 
             
             <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>29</span>
+                <span>07</span>
             </div>
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2021/07/29/exchange-rce-methods/">
+                        <a href="/2021/11/07/insecure-gui-application-windows-privilege-promotion/">
                             <div class="card-image">
                                 
-                                <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20RCE%20method/iShot2021-07-2916.42.37.png" class="responsive-img" alt="Exchange RCE methods">
+                                <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Insecure%20GUI%20Application%20Windows%20Privilege%20Promotion/image-20211106172808300.png" class="responsive-img" alt="Insecure GUI Application Windows Privilege Promotion">
                                 
-                                <span class="card-title">Exchange RCE methods</span>
+                                <span class="card-title">Insecure GUI Application Windows Privilege Promotion</span>
                             </div>
                         </a>
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    Get exchange versionYou can get some thing about version
-https:&#x2F;&#x2F;docs.microsoft.com&#x2F;zh-cn&#x2F;exchange&#
+                                    Some of the wordsElevated privileges in application to try here, part of the GUI application to current higher outside o
                                 
                             </div>
                             <div class="publish-info">
                                 <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2021-07-29
+                                    <i class="far fa-clock fa-fw icon-date"></i>2021-11-07
                                 </span>
                                 <span class="publish-author">
                                     
@@ -515,15 +490,9 @@ https:&#x2F;&#x2F;docs.microsoft.com&#x2F;zh-cn&#x2F;exchange&#
                             
                             <a href="/tags/Redteam/"><span class="chip bg-color">Redteam</span></a>
                             
-                            <a href="/tags/Exchange/"><span class="chip bg-color">Exchange</span></a>
+                            <a href="/tags/Windows-Privilege-Promotion/"><span class="chip bg-color">Windows Privilege Promotion</span></a>
                             
-                            <a href="/tags/RCE/"><span class="chip bg-color">RCE</span></a>
-                            
-                            <a href="/tags/CVE-2020-17144/"><span class="chip bg-color">CVE-2020-17144</span></a>
-                            
-                            <a href="/tags/CVE-2020-16875/"><span class="chip bg-color">CVE-2020-16875</span></a>
-                            
-                            <a href="/tags/CVE-2020-0688/"><span class="chip bg-color">CVE-2020-0688</span></a>
+                            <a href="/tags/LPE/"><span class="chip bg-color">LPE</span></a>
                             
                         </div>
                         
@@ -542,35 +511,35 @@ https:&#x2F;&#x2F;docs.microsoft.com&#x2F;zh-cn&#x2F;exchange&#
 
             
             <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>27</span>
+                <span>07</span>
             </div>
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2021/07/27/proxylogon-utilization-method-manual-use/">
+                        <a href="/2021/11/07/the-msf-creds-note/">
                             <div class="card-image">
                                 
-                                <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method%20(Manual%20use)/iShot2021-07-2716.44.18.png" class="responsive-img" alt="ProxyLogon Utilization method (Manual use)">
+                                <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/The%20Msf%20Creds%20Note/image-20211107154957039.png" class="responsive-img" alt="The Msf Creds Note">
                                 
-                                <span class="card-title">ProxyLogon Utilization method (Manual use)</span>
+                                <span class="card-title">The Msf Creds Note</span>
                             </div>
                         </a>
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    Some of the wordsHaving written a previous article on successful exploits, in order to figure out what was wrong with th
+                                    Some of the wordsWe all know that there is a PostSQL database under MSF for actual use, which stores host and vulnerabil
                                 
                             </div>
                             <div class="publish-info">
                                 <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2021-07-27
+                                    <i class="far fa-clock fa-fw icon-date"></i>2021-11-07
                                 </span>
                                 <span class="publish-author">
                                     
                                     <i class="fas fa-bookmark fa-fw icon-category"></i>
                                     
-                                    <a href="/categories/Learning-record/" class="post-category">
-                                    Learning record
+                                    <a href="/categories/Tips/" class="post-category">
+                                    Tips
                                     </a>
                                     
                                     
@@ -583,15 +552,7 @@ https:&#x2F;&#x2F;docs.microsoft.com&#x2F;zh-cn&#x2F;exchange&#
                             
                             <a href="/tags/Redteam/"><span class="chip bg-color">Redteam</span></a>
                             
-                            <a href="/tags/Exchange/"><span class="chip bg-color">Exchange</span></a>
-                            
-                            <a href="/tags/RCE/"><span class="chip bg-color">RCE</span></a>
-                            
-                            <a href="/tags/ProxyLogon/"><span class="chip bg-color">ProxyLogon</span></a>
-                            
-                            <a href="/tags/CVE-2021-26855/"><span class="chip bg-color">CVE-2021-26855</span></a>
-                            
-                            <a href="/tags/CVE-2021-27065/"><span class="chip bg-color">CVE-2021-27065</span></a>
+                            <a href="/tags/MSF/"><span class="chip bg-color">MSF</span></a>
                             
                         </div>
                         
@@ -610,226 +571,28 @@ https:&#x2F;&#x2F;docs.microsoft.com&#x2F;zh-cn&#x2F;exchange&#
 
             
             <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>26</span>
+                <span>06</span>
             </div>
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2021/07/26/proxylogon-utilization-method/">
+                        <a href="/2021/11/06/powershell-constrained-language-mode-bypass/">
                             <div class="card-image">
                                 
-                                <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/image-20210726161008442.png" class="responsive-img" alt="ProxyLogon Utilization method">
+                                <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Powershell%20Constrained%20Language%20Mode%20Bypass/image-20211106134539038.png" class="responsive-img" alt="Powershell Constrained Language Mode Bypass">
                                 
-                                <span class="card-title">ProxyLogon Utilization method</span>
+                                <span class="card-title">Powershell Constrained Language Mode Bypass</span>
                             </div>
                         </a>
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    Some of the wordsThe way of exploiting loopholes has come out long ago, mainly because there are more pits in the proces
+                                    Some of the wordsUnlike executing scripts.\1.ps1, this Constrained Language mode limits powershell&#39;s function advant
                                 
                             </div>
                             <div class="publish-info">
                                 <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2021-07-26
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/Learning-record/" class="post-category">
-                                    Learning record
-                                    </a>
-                                    
-                                    
-                                </span>
-                            </div>
-                        </div>
-
-                        
-                        <div class="card-action article-tags">
-                            
-                            <a href="/tags/Redteam/"><span class="chip bg-color">Redteam</span></a>
-                            
-                            <a href="/tags/Exchange/"><span class="chip bg-color">Exchange</span></a>
-                            
-                            <a href="/tags/RCE/"><span class="chip bg-color">RCE</span></a>
-                            
-                            <a href="/tags/ProxyLogon/"><span class="chip bg-color">ProxyLogon</span></a>
-                            
-                            <a href="/tags/CVE-2021-26855/"><span class="chip bg-color">CVE-2021-26855</span></a>
-                            
-                            <a href="/tags/CVE-2021-27065/"><span class="chip bg-color">CVE-2021-27065</span></a>
-                            
-                        </div>
-                        
-                    </div>
-                </div>
-            </article>
-        </div>
-        
-        <div class="cd-timeline-block">
-
-            
-            
-
-            
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>24</span>
-            </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2021/07/24/sqlserver-common-attack-methods/">
-                            <div class="card-image">
-                                
-                                <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Sqlserver%20common%20attack%20methods/image-20210724132256320.png" class="responsive-img" alt="Sqlserver common attack methods">
-                                
-                                <span class="card-title">Sqlserver common attack methods</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    IntroductionDefault port 1433, NMAP fingerprint is as follows:
-PORT     STATE SERVICE  VERSION
-1433&#x2F;tcp open  ms-sq
-                                
-                            </div>
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2021-07-24
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/Miscellaneous-record/" class="post-category">
-                                    Miscellaneous record
-                                    </a>
-                                    
-                                    
-                                </span>
-                            </div>
-                        </div>
-
-                        
-                        <div class="card-action article-tags">
-                            
-                            <a href="/tags/Redteam/"><span class="chip bg-color">Redteam</span></a>
-                            
-                            <a href="/tags/Information-collection/"><span class="chip bg-color">Information collection</span></a>
-                            
-                            <a href="/tags/Sqlserver/"><span class="chip bg-color">Sqlserver</span></a>
-                            
-                            <a href="/tags/Database/"><span class="chip bg-color">Database</span></a>
-                            
-                            <a href="/tags/Command-execution/"><span class="chip bg-color">Command execution</span></a>
-                            
-                        </div>
-                        
-                    </div>
-                </div>
-            </article>
-        </div>
-        
-        <div class="cd-timeline-block">
-
-            
-            
-
-            
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>23</span>
-            </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2021/07/23/some-ways-to-download-files-remotely-from-github/">
-                            <div class="card-image">
-                                
-                                <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Some%20ways%20to%20download%20files%20remotely%20from%20Github/image-20210723213650376.png" class="responsive-img" alt="Some ways to download files remotely from Github">
-                                
-                                <span class="card-title">Some ways to download files remotely from Github</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    IntroductionThe goal is to improve the traceability cost, avoid being detected by the traceability, and improve the conc
-                                
-                            </div>
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2021-07-23
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/Miscellaneous-record/" class="post-category">
-                                    Miscellaneous record
-                                    </a>
-                                    
-                                    
-                                </span>
-                            </div>
-                        </div>
-
-                        
-                        <div class="card-action article-tags">
-                            
-                            <a href="/tags/Redteam/"><span class="chip bg-color">Redteam</span></a>
-                            
-                            <a href="/tags/Bypass/"><span class="chip bg-color">Bypass</span></a>
-                            
-                            <a href="/tags/File-download/"><span class="chip bg-color">File download</span></a>
-                            
-                        </div>
-                        
-                    </div>
-                </div>
-            </article>
-        </div>
-        
-        <div class="cd-timeline-block">
-
-            
-            
-
-            
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>23</span>
-            </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2021/07/23/supplementary-information-about-obtaining-ldap-information/">
-                            <div class="card-image">
-                                
-                                <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Supplementary%20information%20about%20obtaining%20LDAP%20information/image-20210722152525595.png" class="responsive-img" alt="Supplementary information about obtaining LDAP information">
-                                
-                                <span class="card-title">Supplementary information about obtaining LDAP information</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    IntroductionThe project encountered a pit point, some complement, the method of obtaining information to complement, in 
-                                
-                            </div>
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2021-07-23
+                                    <i class="far fa-clock fa-fw icon-date"></i>2021-11-06
                                 </span>
                                 <span class="publish-author">
                                     
@@ -851,7 +614,7 @@ PORT     STATE SERVICE  VERSION
                             
                             <a href="/tags/Bypass/"><span class="chip bg-color">Bypass</span></a>
                             
-                            <a href="/tags/Intranet-Information-Collection/"><span class="chip bg-color">Intranet Information Collection</span></a>
+                            <a href="/tags/Powershell/"><span class="chip bg-color">Powershell</span></a>
                             
                         </div>
                         
@@ -870,33 +633,95 @@ PORT     STATE SERVICE  VERSION
 
             
             <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>23</span>
+                <span>06</span>
             </div>
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2021/07/23/xwizard-microsoft-program-use-white-and-black/">
+                        <a href="/2021/11/06/powershell-without-powershell-exe/">
                             <div class="card-image">
                                 
-                                <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Xwizard%20Microsoft%20program%20use%20white%20and%20black/image-20210723145815560.png" class="responsive-img" alt="Xwizard Microsoft program use white and black">
+                                <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Powershell%20Without%20Powershell.exe/image-20211106132305898.png" class="responsive-img" alt="Powershell Without Powershell.exe Bypass">
                                 
-                                <span class="card-title">Xwizard Microsoft program use white and black</span>
+                                <span class="card-title">Powershell Without Powershell.exe Bypass</span>
                             </div>
                         </a>
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    Introductionxwizard.exe use xwizards.dll，Support win7 and above system
-
-
-Actual usesuch as Path: C:\Windows\System32
-
-Us
+                                    Some of the wordsPowershell cannot be used during Intranet penetration of red team personnel. The tool or script you wan
                                 
                             </div>
                             <div class="publish-info">
                                 <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2021-07-23
+                                    <i class="far fa-clock fa-fw icon-date"></i>2021-11-06
+                                </span>
+                                <span class="publish-author">
+                                    
+                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                    
+                                    <a href="/categories/Tips/" class="post-category">
+                                    Tips
+                                    </a>
+                                    
+                                    
+                                </span>
+                            </div>
+                        </div>
+
+                        
+                        <div class="card-action article-tags">
+                            
+                            <a href="/tags/Redteam/"><span class="chip bg-color">Redteam</span></a>
+                            
+                            <a href="/tags/Bypass/"><span class="chip bg-color">Bypass</span></a>
+                            
+                            <a href="/tags/Powershell/"><span class="chip bg-color">Powershell</span></a>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+        <div class="cd-timeline-block">
+
+            
+            
+
+            
+            
+
+            
+            <div class="cd-timeline-img day" data-aos="zoom-in-up">
+                <span>05</span>
+            </div>
+            <article class="cd-timeline-content" data-aos="fade-up">
+                <div class="article col s12 m6">
+                    <div class="card">
+                        <a href="/2021/11/05/windows-service-auto-start-bypassav/">
+                            <div class="card-image">
+                                
+                                <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Windows%20Service%20Auto%20Start(BypassAV)/image-20211105211254595.png" class="responsive-img" alt="Windows Service Auto Start(BypassAV)">
+                                
+                                <span class="card-title">Windows Service Auto Start(BypassAV)</span>
+                            </div>
+                        </a>
+                        <div class="card-content article-content">
+                            <div class="summary block-with-text">
+                                
+                                    前言先前写了下代码层面实现psexec功能点，其中包含建立服务、启动服务功能模块，发现也是个拿来做命令执行或者后门的好方法，此处单独利用windows服务实现开机自启动，增加权限维持杀软对抗思路
+
+先看实现效果，添加服务免杀效果如下
+
+
+添
+                                
+                            </div>
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="far fa-clock fa-fw icon-date"></i>2021-11-05
                                 </span>
                                 <span class="publish-author">
                                     
@@ -918,6 +743,8 @@ Us
                             
                             <a href="/tags/Bypass/"><span class="chip bg-color">Bypass</span></a>
                             
+                            <a href="/tags/Windows-Service/"><span class="chip bg-color">Windows Service</span></a>
+                            
                         </div>
                         
                     </div>
@@ -931,6 +758,267 @@ Us
             
 
             
+            
+
+            
+            <div class="cd-timeline-img day" data-aos="zoom-in-up">
+                <span>05</span>
+            </div>
+            <article class="cd-timeline-content" data-aos="fade-up">
+                <div class="article col s12 m6">
+                    <div class="card">
+                        <a href="/2021/11/05/cmdl32-dai-ti-certutil-cong-er-rao-guo-sha-ruan/">
+                            <div class="card-image">
+                                
+                                <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/cmdl32tobypassav/image-20211105113350856.png" class="responsive-img" alt="cmdl32代替certutil从而绕过杀软">
+                                
+                                <span class="card-title">cmdl32代替certutil从而绕过杀软</span>
+                            </div>
+                        </a>
+                        <div class="card-content article-content">
+                            <div class="summary block-with-text">
+                                
+                                    简介cmdl32.exe，CMAK（连接管理器管理工具包）使用它来设置连接管理器服务配置文件。配置文件通常打包成一个.exe，可以部署到用户系统，该软件包安装可用于启动拨号&#x2F;VPN连接的配置文件
+
+此处可以使用他来做一个下载器进行
+                                
+                            </div>
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="far fa-clock fa-fw icon-date"></i>2021-11-05
+                                </span>
+                                <span class="publish-author">
+                                    
+                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                    
+                                    <a href="/categories/Tips/" class="post-category">
+                                    Tips
+                                    </a>
+                                    
+                                    
+                                </span>
+                            </div>
+                        </div>
+
+                        
+                        <div class="card-action article-tags">
+                            
+                            <a href="/tags/Redteam/"><span class="chip bg-color">Redteam</span></a>
+                            
+                            <a href="/tags/Bypass/"><span class="chip bg-color">Bypass</span></a>
+                            
+                            <a href="/tags/cmdl32/"><span class="chip bg-color">cmdl32</span></a>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+        <div class="cd-timeline-block">
+
+            
+            
+
+            
+            
+
+            
+            <div class="cd-timeline-img day" data-aos="zoom-in-up">
+                <span>04</span>
+            </div>
+            <article class="cd-timeline-content" data-aos="fade-up">
+                <div class="article col s12 m6">
+                    <div class="card">
+                        <a href="/2021/11/04/shi-xian-li-yong-ming-ming-guan-dao-bu-chong-ling-pai-mo-ni/">
+                            <div class="card-image">
+                                
+                                <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/MakeNamedPipe2/image-20211104134457732.png" class="responsive-img" alt="实现&amp;利用命名管道补充&amp;令牌模拟">
+                                
+                                <span class="card-title">实现&amp;利用命名管道补充&amp;令牌模拟</span>
+                            </div>
+                        </a>
+                        <div class="card-content article-content">
+                            <div class="summary block-with-text">
+                                
+                                    前言上一篇已知命名管道从代码层的基本原理实现，及其实际作战中遭遇反弹shell受阻时的使用方式，此处进步针对实际管道应用中进行展开，补充先前所不足
+
+访问控制命名管道支持跨网络的访问连接，但是会受到访问控制列表或者本地策略的管控
+
+在03及
+                                
+                            </div>
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="far fa-clock fa-fw icon-date"></i>2021-11-04
+                                </span>
+                                <span class="publish-author">
+                                    
+                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                    
+                                    <a href="/categories/Learning-record/" class="post-category">
+                                    Learning record
+                                    </a>
+                                    
+                                    
+                                </span>
+                            </div>
+                        </div>
+
+                        
+                        <div class="card-action article-tags">
+                            
+                            <a href="/tags/Redteam/"><span class="chip bg-color">Redteam</span></a>
+                            
+                            <a href="/tags/Bypass/"><span class="chip bg-color">Bypass</span></a>
+                            
+                            <a href="/tags/NamedPipes/"><span class="chip bg-color">NamedPipes</span></a>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+        <div class="cd-timeline-block">
+
+            
+            
+
+            
+            
+
+            
+            <div class="cd-timeline-img day" data-aos="zoom-in-up">
+                <span>02</span>
+            </div>
+            <article class="cd-timeline-content" data-aos="fade-up">
+                <div class="article col s12 m6">
+                    <div class="card">
+                        <a href="/2021/11/02/shi-xian-li-yong-ming-ming-guan-dao/">
+                            <div class="card-image">
+                                
+                                <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/MakeNamedPipe/image-20211102171248002.png" class="responsive-img" alt="实现&amp;利用命名管道">
+                                
+                                <span class="card-title">实现&amp;利用命名管道</span>
+                            </div>
+                        </a>
+                        <div class="card-content article-content">
+                            <div class="summary block-with-text">
+                                
+                                    简介命名管道是一个具有名称，可以单向或双面在一个服务器和一个或多个客户端之间进行通讯的管道。命名管道的所有实例拥有相同的名称，但是每个实例都有其自己的缓冲区和句柄，用来为不同客户端通许提供独立的管道。使用实例可使多个管道客户端同时使用相同的
+                                
+                            </div>
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="far fa-clock fa-fw icon-date"></i>2021-11-02
+                                </span>
+                                <span class="publish-author">
+                                    
+                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                    
+                                    <a href="/categories/Learning-record/" class="post-category">
+                                    Learning record
+                                    </a>
+                                    
+                                    
+                                </span>
+                            </div>
+                        </div>
+
+                        
+                        <div class="card-action article-tags">
+                            
+                            <a href="/tags/Redteam/"><span class="chip bg-color">Redteam</span></a>
+                            
+                            <a href="/tags/Bypass/"><span class="chip bg-color">Bypass</span></a>
+                            
+                            <a href="/tags/NamedPipes/"><span class="chip bg-color">NamedPipes</span></a>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+        <div class="cd-timeline-block">
+
+            
+            
+
+            
+            
+
+            
+            <div class="cd-timeline-img day" data-aos="zoom-in-up">
+                <span>01</span>
+            </div>
+            <article class="cd-timeline-content" data-aos="fade-up">
+                <div class="article col s12 m6">
+                    <div class="card">
+                        <a href="/2021/11/01/shi-xian-yi-ge-fang-zao-de-psexec/">
+                            <div class="card-image">
+                                
+                                <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/PsexecLiker/image-20211101162050666.png" class="responsive-img" alt="实现一个仿造的Psexec">
+                                
+                                <span class="card-title">实现一个仿造的Psexec</span>
+                            </div>
+                        </a>
+                        <div class="card-content article-content">
+                            <div class="summary block-with-text">
+                                
+                                    前言初衷改变些许的流量特征，增强隐蔽性，此处以进行cs上线为案例，同样能够执行其他exe应用程序，未来或许将增加交互功能
+
+常规痕迹此处查看psexec常规日志&amp;流量中的痕迹，安全日志内登录情况如下，触发多个4624包含相关计算机名
+                                
+                            </div>
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="far fa-clock fa-fw icon-date"></i>2021-11-01
+                                </span>
+                                <span class="publish-author">
+                                    
+                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                    
+                                    <a href="/categories/Learning-record/" class="post-category">
+                                    Learning record
+                                    </a>
+                                    
+                                    
+                                </span>
+                            </div>
+                        </div>
+
+                        
+                        <div class="card-action article-tags">
+                            
+                            <a href="/tags/Redteam/"><span class="chip bg-color">Redteam</span></a>
+                            
+                            <a href="/tags/Bypass/"><span class="chip bg-color">Bypass</span></a>
+                            
+                            <a href="/tags/Psexec/"><span class="chip bg-color">Psexec</span></a>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+        <div class="cd-timeline-block">
+
+            
+            
+
+            
+            
+            
+            <div class="cd-timeline-img month" data-aos="zoom-in-up">
+                <a href="/archives/2021/10">10</a>
+            </div>
             
 
             
@@ -940,25 +1028,23 @@ Us
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2021/07/21/sensitive-path-information-concerns/">
+                        <a href="/2021/10/21/linux-reverse-shell-hidden-real-ip/">
                             <div class="card-image">
                                 
+                                <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Linux%20Reverse%20Shell%20Hidden%20Real%20IP/image-20211021162743009.png" class="responsive-img" alt="Linux Reverse Shell Hidden Real IP">
                                 
-                                <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Sensitive path information concerns">
-                                
-                                <span class="card-title">Sensitive path information concerns</span>
+                                <span class="card-title">Linux Reverse Shell Hidden Real IP</span>
                             </div>
                         </a>
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    If there is insufficient, the follow-up to continuelinuxapache&amp;apache2&#x2F;etc&#x2F;apache&#x2F;httpd.conf
-&#x2F;et
+                                    Some of the wordsIn red team, nc reverse shell is usually used with personal real IP, which is extremely easy to be trac
                                 
                             </div>
                             <div class="publish-info">
                                 <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2021-07-21
+                                    <i class="far fa-clock fa-fw icon-date"></i>2021-10-21
                                 </span>
                                 <span class="publish-author">
                                     
@@ -976,131 +1062,9 @@ Us
                         
                         <div class="card-action article-tags">
                             
-                            <a href="/tags/Redteam/"><span class="chip bg-color">Redteam</span></a>
-                            
-                            <a href="/tags/Information-collection/"><span class="chip bg-color">Information collection</span></a>
-                            
-                        </div>
-                        
-                    </div>
-                </div>
-            </article>
-        </div>
-        
-        <div class="cd-timeline-block">
-
-            
-            
-
-            
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>20</span>
-            </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2021/07/20/dll-hijacking-the-whitelist-application-online/">
-                            <div class="card-image">
-                                
-                                <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/DLL%20hijacking%20the%20whitelist%20application%20online/image.png" class="responsive-img" alt="DLL hijacking the whitelist application online">
-                                
-                                <span class="card-title">DLL hijacking the whitelist application online</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    How to useApplication EXE unsigned white program, call their own compiled black DLL, here to QQ housekeeper function as 
-                                
-                            </div>
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2021-07-20
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/Learning-record/" class="post-category">
-                                    Learning record
-                                    </a>
-                                    
-                                    
-                                </span>
-                            </div>
-                        </div>
-
-                        
-                        <div class="card-action article-tags">
-                            
-                            <a href="/tags/Redteam/"><span class="chip bg-color">Redteam</span></a>
-                            
                             <a href="/tags/Bypass/"><span class="chip bg-color">Bypass</span></a>
                             
-                        </div>
-                        
-                    </div>
-                </div>
-            </article>
-        </div>
-        
-        <div class="cd-timeline-block">
-
-            
-            
-
-            
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>19</span>
-            </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2021/07/19/dll-hijacking-from-hijacking-to-on-line/">
-                            <div class="card-image">
-                                
-                                <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/DLL%20hijacking%20from%20hijacking%20to%20on-line/1.png" class="responsive-img" alt="DLL hijacking from hijacking to on-line">
-                                
-                                <span class="card-title">DLL hijacking from hijacking to on-line</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    Introduction用中文写下理论知识，避免翻译的会看不懂了
-
-DLL（Dynamic Link Library），全称动态链接库，是Windows系统上程序正常运行必不可少的功能模块，是实现代码重用的具体形式。简单的说，可以把DLL理
-                                
-                            </div>
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2021-07-19
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/Learning-record/" class="post-category">
-                                    Learning record
-                                    </a>
-                                    
-                                    
-                                </span>
-                            </div>
-                        </div>
-
-                        
-                        <div class="card-action article-tags">
-                            
-                            <a href="/tags/Redteam/"><span class="chip bg-color">Redteam</span></a>
-                            
-                            <a href="/tags/Bypass/"><span class="chip bg-color">Bypass</span></a>
+                            <a href="/tags/Reverse-Shell/"><span class="chip bg-color">Reverse Shell</span></a>
                             
                         </div>
                         
@@ -1125,7 +1089,7 @@ DLL（Dynamic Link Library），全称动态链接库，是Windows系统上程�
             
         </div>
         <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">2 / 3</div>
+            <div class="center-align b-text-gray">2 / 6</div>
         </div>
         <div class="col s6 m4 l4">
             
@@ -1201,7 +1165,7 @@ DLL（Dynamic Link Library），全称动态链接库，是Windows系统上程�
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021</span>
+                <span id="year">2021-2022</span>
             
             <span id="year">2021</span>
             <a href="/about" target="_blank">Yangsir</a>
@@ -1210,7 +1174,7 @@ DLL（Dynamic Link Library），全称动态链接库，是Windows系统上程�
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">13.8k</span>&nbsp;字
+                class="white-color">62.8k</span>&nbsp;字
             
             
             

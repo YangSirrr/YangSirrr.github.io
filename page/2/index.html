@@ -98,33 +98,22 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/about" class="waves-effect waves-light">
-      
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
-      
-      <span>About</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>Contact</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
     <a href="/friends" class="waves-effect waves-light">
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
       <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
     </a>
     
   </li>
@@ -201,33 +190,22 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/about" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-user-circle"></i>
-			
-			About
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			Contact
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
 		<a href="/friends" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
 			Friends
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
 		</a>
           
         </li>
@@ -353,9 +331,7 @@
 
 
 <script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+    $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
 </script>
 
 
@@ -375,24 +351,85 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/07/26/proxylogon-utilization-method/">
+                    <a href="/2022/03/26/cong-trustedinstaller-dao-ting-zhi-windowsdefender/">
                         <div class="card-image">
                             
-                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/image-20210726161008442.png" class="responsive-img" alt="ProxyLogon Utilization method">
+                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/TrustedInstaller-WindowsDefender/w33.png" class="responsive-img" alt="从TrustedInstaller到停止WindowsDefender">
                             
-                            <span class="card-title">ProxyLogon Utilization method</span>
+                            <span class="card-title">从TrustedInstaller到停止WindowsDefender</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Some of the wordsThe way of exploiting loopholes has come out long ago, mainly because there are more pits in the proces
+                                前言前一阵先在雷神众测上发了遍，正好有空再blog也再发下，原地址：
+https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;wkjcmhEg3JDP7GUyB3gI_A
+
+win10都自带了defen
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-26
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-26
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Tips/" class="post-category">
+                                    Tips
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Redteam/">
+                            <span class="chip bg-color">Redteam</span>
+                        </a>
+                        
+                        <a href="/tags/Bypass/">
+                            <span class="chip bg-color">Bypass</span>
+                        </a>
+                        
+                        <a href="/tags/WindowsDefender/">
+                            <span class="chip bg-color">WindowsDefender</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/03/25/kubernetes-zu-jian-chang-jian-lou-dong-li-yong/">
+                        <div class="card-image">
+                            
+                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/k8s3/k12.png" class="responsive-img" alt="Kubernetes组件常见漏洞利用">
+                            
+                            <span class="card-title">Kubernetes组件常见漏洞利用</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                前言Kubernetes大致结构如下，主要集群由master、node组成，master主要进行各种管理，node提供部署环境
+
+简介：
+apiserver：操作各项资源，如部署应用等
+scheduler：按照设定的调度策略，将pod安装到
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-25
                             </span>
                             <span class="publish-author">
                                 
@@ -410,28 +447,16 @@
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/Redteam/">
-                            <span class="chip bg-color">Redteam</span>
-                        </a>
-                        
-                        <a href="/tags/Exchange/">
-                            <span class="chip bg-color">Exchange</span>
+                        <a href="/tags/CloudSecurity/">
+                            <span class="chip bg-color">CloudSecurity</span>
                         </a>
                         
                         <a href="/tags/RCE/">
                             <span class="chip bg-color">RCE</span>
                         </a>
                         
-                        <a href="/tags/ProxyLogon/">
-                            <span class="chip bg-color">ProxyLogon</span>
-                        </a>
-                        
-                        <a href="/tags/CVE-2021-26855/">
-                            <span class="chip bg-color">CVE-2021-26855</span>
-                        </a>
-                        
-                        <a href="/tags/CVE-2021-27065/">
-                            <span class="chip bg-color">CVE-2021-27065</span>
+                        <a href="/tags/Kubernetes/">
+                            <span class="chip bg-color">Kubernetes</span>
                         </a>
                         
                     </div>
@@ -441,33 +466,37 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/07/24/sqlserver-common-attack-methods/">
+                    <a href="/2022/03/25/kubernetes-bu-shu-ying-yong/">
                         <div class="card-image">
                             
-                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Sqlserver%20common%20attack%20methods/image-20210724132256320.png" class="responsive-img" alt="Sqlserver common attack methods">
+                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/k8s1/k7.png" class="responsive-img" alt="Kubernetes部署应用">
                             
-                            <span class="card-title">Sqlserver common attack methods</span>
+                            <span class="card-title">Kubernetes部署应用</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                IntroductionDefault port 1433, NMAP fingerprint is as follows:
-PORT     STATE SERVICE  VERSION
-1433&#x2F;tcp open  ms-sq
+                                简介主要为master &amp; node安装
+
+master:192.168.3.19
+node1:192.168.3.20
+node2:192.168.3.21
+实际安装主从机都要安装 epel-release源
+yum -y ins
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-25
                             </span>
                             <span class="publish-author">
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/Miscellaneous-record/" class="post-category">
-                                    Miscellaneous record
+                                <a href="/categories/Learning-record/" class="post-category">
+                                    Learning record
                                 </a>
                                 
                                 
@@ -478,24 +507,12 @@ PORT     STATE SERVICE  VERSION
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/Redteam/">
-                            <span class="chip bg-color">Redteam</span>
+                        <a href="/tags/CloudSecurity/">
+                            <span class="chip bg-color">CloudSecurity</span>
                         </a>
                         
-                        <a href="/tags/Information-collection/">
-                            <span class="chip bg-color">Information collection</span>
-                        </a>
-                        
-                        <a href="/tags/Sqlserver/">
-                            <span class="chip bg-color">Sqlserver</span>
-                        </a>
-                        
-                        <a href="/tags/Database/">
-                            <span class="chip bg-color">Database</span>
-                        </a>
-                        
-                        <a href="/tags/Command-execution/">
-                            <span class="chip bg-color">Command execution</span>
+                        <a href="/tags/Kubernetes/">
+                            <span class="chip bg-color">Kubernetes</span>
                         </a>
                         
                     </div>
@@ -505,31 +522,33 @@ PORT     STATE SERVICE  VERSION
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/07/23/some-ways-to-download-files-remotely-from-github/">
+                    <a href="/2022/03/25/kubernetes-ji-chu-huan-jing-da-jian/">
                         <div class="card-image">
                             
-                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Some%20ways%20to%20download%20files%20remotely%20from%20Github/image-20210723213650376.png" class="responsive-img" alt="Some ways to download files remotely from Github">
+                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/k8s2/k8.png" class="responsive-img" alt="Kubernetes基础环境搭建">
                             
-                            <span class="card-title">Some ways to download files remotely from Github</span>
+                            <span class="card-title">Kubernetes基础环境搭建</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                IntroductionThe goal is to improve the traceability cost, avoid being detected by the traceability, and improve the conc
+                                前言在已有的集群环境下进行实际应用部署
+
+期间会用到的部分基本命令kubectl  runkubectl run NAME --image&#x3D;image [--env&#x3D;&quot;key&#x3D;value&quot;]
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-25
                             </span>
                             <span class="publish-author">
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/Miscellaneous-record/" class="post-category">
-                                    Miscellaneous record
+                                <a href="/categories/Learning-record/" class="post-category">
+                                    Learning record
                                 </a>
                                 
                                 
@@ -540,16 +559,12 @@ PORT     STATE SERVICE  VERSION
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/Redteam/">
-                            <span class="chip bg-color">Redteam</span>
+                        <a href="/tags/CloudSecurity/">
+                            <span class="chip bg-color">CloudSecurity</span>
                         </a>
                         
-                        <a href="/tags/Bypass/">
-                            <span class="chip bg-color">Bypass</span>
-                        </a>
-                        
-                        <a href="/tags/File-download/">
-                            <span class="chip bg-color">File download</span>
+                        <a href="/tags/Kubernetes/">
+                            <span class="chip bg-color">Kubernetes</span>
                         </a>
                         
                     </div>
@@ -559,83 +574,26 @@ PORT     STATE SERVICE  VERSION
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/07/23/supplementary-information-about-obtaining-ldap-information/">
+                    <a href="/2021/12/15/samaccountname-spoofing-li-yong-jian-dan-fen-xi-xiu-fu-fang-shi/">
                         <div class="card-image">
                             
-                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Supplementary%20information%20about%20obtaining%20LDAP%20information/image-20210722152525595.png" class="responsive-img" alt="Supplementary information about obtaining LDAP information">
+                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/sAMAccountName%20spoofing/image-20211213220845131.png" class="responsive-img" alt="SAMAccountName Spoofing利用&amp;简单分析&amp;修复方式">
                             
-                            <span class="card-title">Supplementary information about obtaining LDAP information</span>
+                            <span class="card-title">SAMAccountName Spoofing利用&amp;简单分析&amp;修复方式</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                IntroductionThe project encountered a pit point, some complement, the method of obtaining information to complement, in 
+                                前言主要需要结合CVE-2021-42278、CVE-2020-42287进行利用
+
+Log4j为攻击者打出了外网的shell，SAMAccountNameSpoofing为攻击者打下了内网的域，网上文章资料也非常多，更多的还是围绕如何脚本
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-23
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Tips/" class="post-category">
-                                    Tips
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Redteam/">
-                            <span class="chip bg-color">Redteam</span>
-                        </a>
-                        
-                        <a href="/tags/Bypass/">
-                            <span class="chip bg-color">Bypass</span>
-                        </a>
-                        
-                        <a href="/tags/Intranet-Information-Collection/">
-                            <span class="chip bg-color">Intranet Information Collection</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/07/23/xwizard-microsoft-program-use-white-and-black/">
-                        <div class="card-image">
-                            
-                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Xwizard%20Microsoft%20program%20use%20white%20and%20black/image-20210723145815560.png" class="responsive-img" alt="Xwizard Microsoft program use white and black">
-                            
-                            <span class="card-title">Xwizard Microsoft program use white and black</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Introductionxwizard.exe use xwizards.dll，Support win7 and above system
-
-
-Actual usesuch as Path: C:\Windows\System32
-
-Us
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-15
                             </span>
                             <span class="publish-author">
                                 
@@ -657,8 +615,28 @@ Us
                             <span class="chip bg-color">Redteam</span>
                         </a>
                         
-                        <a href="/tags/Bypass/">
-                            <span class="chip bg-color">Bypass</span>
+                        <a href="/tags/Windows-Privilege-Promotion/">
+                            <span class="chip bg-color">Windows Privilege Promotion</span>
+                        </a>
+                        
+                        <a href="/tags/Mimikatz/">
+                            <span class="chip bg-color">Mimikatz</span>
+                        </a>
+                        
+                        <a href="/tags/RCE/">
+                            <span class="chip bg-color">RCE</span>
+                        </a>
+                        
+                        <a href="/tags/CVE-2021-42278/">
+                            <span class="chip bg-color">CVE-2021-42278</span>
+                        </a>
+                        
+                        <a href="/tags/CVE-2021-42287/">
+                            <span class="chip bg-color">CVE-2021-42287</span>
+                        </a>
+                        
+                        <a href="/tags/SAMAccountName-Spoofing/">
+                            <span class="chip bg-color">SAMAccountName Spoofing</span>
                         </a>
                         
                     </div>
@@ -668,33 +646,31 @@ Us
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/07/21/sensitive-path-information-concerns/">
+                    <a href="/2021/12/15/log4j-jndi-rce-li-yong-jian-dan-fen-xi/">
                         <div class="card-image">
                             
+                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/log4j-rcevuln/image-20211215142543781.png" class="responsive-img" alt="Log4j JNDI RCE利用&amp;简单分析">
                             
-                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Sensitive path information concerns">
-                            
-                            <span class="card-title">Sensitive path information concerns</span>
+                            <span class="card-title">Log4j JNDI RCE利用&amp;简单分析</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                If there is insufficient, the follow-up to continuelinuxapache&amp;apache2&#x2F;etc&#x2F;apache&#x2F;httpd.conf
-&#x2F;et
+                                务必遵循网络安全法，用于非法目的于本人无关，文章仅限java代码学习使用，所有环境为本人本地环境前言总结相关利用方式，含mac、window、linux环境常用方法，简单分析、学习相关漏洞原理实现，主要还是觉得一键化利用太脚本了，还是得自己
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-15
                             </span>
                             <span class="publish-author">
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/Tips/" class="post-category">
-                                    Tips
+                                <a href="/categories/Learning-record/" class="post-category">
+                                    Learning record
                                 </a>
                                 
                                 
@@ -705,12 +681,12 @@ Us
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/Redteam/">
-                            <span class="chip bg-color">Redteam</span>
+                        <a href="/tags/RCE/">
+                            <span class="chip bg-color">RCE</span>
                         </a>
                         
-                        <a href="/tags/Information-collection/">
-                            <span class="chip bg-color">Information collection</span>
+                        <a href="/tags/Log4j/">
+                            <span class="chip bg-color">Log4j</span>
                         </a>
                         
                     </div>
@@ -720,24 +696,24 @@ Us
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/07/20/dll-hijacking-the-whitelist-application-online/">
+                    <a href="/2021/11/16/shi-xian-ldap-xin-xi-shou-ji/">
                         <div class="card-image">
                             
-                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/DLL%20hijacking%20the%20whitelist%20application%20online/image.png" class="responsive-img" alt="DLL hijacking the whitelist application online">
+                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/LDAPquery/image-20211116174538717.png" class="responsive-img" alt="编程实现LDAP基本信息收集">
                             
-                            <span class="card-title">DLL hijacking the whitelist application online</span>
+                            <span class="card-title">编程实现LDAP基本信息收集</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                How to useApplication EXE unsigned white program, call their own compiled black DLL, here to QQ housekeeper function as 
+                                前言目前实现LDAP信息收集的工具有很多，相关语法结构成熟资料也非常多，在不断的思考下回顾先前学习，总是觉得没从原理深入一遍就只是个会用工具的脚本小子，此处以编程语言封装实现LDAP相关查询功能理解相关连接、查询功能模块，内置部分过滤规则，
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-16
                             </span>
                             <span class="publish-author">
                                 
@@ -759,8 +735,12 @@ Us
                             <span class="chip bg-color">Redteam</span>
                         </a>
                         
-                        <a href="/tags/Bypass/">
-                            <span class="chip bg-color">Bypass</span>
+                        <a href="/tags/Domain-Environment/">
+                            <span class="chip bg-color">Domain Environment</span>
+                        </a>
+                        
+                        <a href="/tags/LDAP/">
+                            <span class="chip bg-color">LDAP</span>
                         </a>
                         
                     </div>
@@ -770,26 +750,26 @@ Us
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/07/19/dll-hijacking-from-hijacking-to-on-line/">
+                    <a href="/2021/11/14/boot-logon-autostart-execution-windows-privilege-promotion/">
                         <div class="card-image">
                             
-                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/DLL%20hijacking%20from%20hijacking%20to%20on-line/1.png" class="responsive-img" alt="DLL hijacking from hijacking to on-line">
+                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Boot%20Logon%20Autostart%20Execution%20Windows%20Privilege%20Promotion/image-20211114153117952.png" class="responsive-img" alt="Boot Logon Autostart Execution Windows Privilege Promotion">
                             
-                            <span class="card-title">DLL hijacking from hijacking to on-line</span>
+                            <span class="card-title">Boot Logon Autostart Execution Windows Privilege Promotion</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Introduction用中文写下理论知识，避免翻译的会看不懂了
+                                Some of the wordsThrough the start folder to modify, so as to achieve the relevant user rights
 
-DLL（Dynamic Link Library），全称动态链接库，是Windows系统上程序正常运行必不可少的功能模块，是实现代码重用的具体形式。简单的说，可以把DLL理
+The Startup folder is a 
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-14
                             </span>
                             <span class="publish-author">
                                 
@@ -811,8 +791,12 @@ DLL（Dynamic Link Library），全称动态链接库，是Windows系统上程�
                             <span class="chip bg-color">Redteam</span>
                         </a>
                         
-                        <a href="/tags/Bypass/">
-                            <span class="chip bg-color">Bypass</span>
+                        <a href="/tags/Windows-Privilege-Promotion/">
+                            <span class="chip bg-color">Windows Privilege Promotion</span>
+                        </a>
+                        
+                        <a href="/tags/LPE/">
+                            <span class="chip bg-color">LPE</span>
                         </a>
                         
                     </div>
@@ -822,35 +806,224 @@ DLL（Dynamic Link Library），全称动态链接库，是Windows系统上程�
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/03/23/zui-jin-tai-mang-liao-deng-guo-liang-tian-you-kong-liao-kai-shi-geng-xin/">
+                    <a href="/2021/11/14/logon-autostart-execution-windows-privilege-promotion/">
                         <div class="card-image">
                             
+                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Logon%20Autostart%20Execution%20Windows%20Privilege%20Promotion/image-20211114155243521.png" class="responsive-img" alt="Logon Autostart Execution Windows Privilege Promotion">
                             
-                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="最近太忙了，等过两天有空了开始更新！">
-                            
-                            <span class="card-title">最近太忙了，等过两天有空了开始更新！</span>
+                            <span class="card-title">Logon Autostart Execution Windows Privilege Promotion</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                博客暂未完全调试好，敬请期待
+                                Some of the wordsThrough the login user&#39;s self-start file modification, so as to achieve permission promotion
+
+About
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-14
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fas fa-user fa-fw"></i>
-                                Yangsir
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Learning-record/" class="post-category">
+                                    Learning record
+                                </a>
+                                
                                 
                             </span>
                         </div>
                     </div>
 
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Redteam/">
+                            <span class="chip bg-color">Redteam</span>
+                        </a>
+                        
+                        <a href="/tags/Windows-Privilege-Promotion/">
+                            <span class="chip bg-color">Windows Privilege Promotion</span>
+                        </a>
+                        
+                        <a href="/tags/LPE/">
+                            <span class="chip bg-color">LPE</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/11/13/ge-ren-cnvd-zheng-shu-cve-bian-hao-huo-qu-zhi-dao/">
+                        <div class="card-image">
+                            
+                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/cnvd-cve/c1.png" class="responsive-img" alt="个人CNVD证书&amp;CVE编号获取之道">
+                            
+                            <span class="card-title">个人CNVD证书&amp;CVE编号获取之道</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                前言时间也过去了很久了，最近说起些如何获得的思路？仅以此文做个思路发散，希望能够帮助到每个梦想路上的人
+
+1、如果你静不下心做一件事，那么你可以划走了，因为你必然挖不到洞
+2、如果你觉得CNVD证书、CVE编号没用，那么你可以划走了，毕竟很
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-13
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Actual-combat-record/" class="post-category">
+                                    Actual combat record
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/CNVD/">
+                            <span class="chip bg-color">CNVD</span>
+                        </a>
+                        
+                        <a href="/tags/CVE/">
+                            <span class="chip bg-color">CVE</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/11/12/tu-dou-ti-quan-yuan-li-fen-xi/">
+                        <div class="card-image">
+                            
+                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Aboutpotato/image-20211111175601816.png" class="responsive-img" alt="土豆提权原理分析">
+                            
+                            <span class="card-title">土豆提权原理分析</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                前言土豆系列的提权原理主要是诱导高权限访问低权限的系统对象，导致低权限的对象可以模拟高权限对象的访问
+令牌（Access Token），进而可以用访问令牌创建进程，达到代码执行。
+
+访问控制模型有两个主要的组成部分，访问令牌（Access 
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-12
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Learning-record/" class="post-category">
+                                    Learning record
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Redteam/">
+                            <span class="chip bg-color">Redteam</span>
+                        </a>
+                        
+                        <a href="/tags/Windows-Privilege-Promotion/">
+                            <span class="chip bg-color">Windows Privilege Promotion</span>
+                        </a>
+                        
+                        <a href="/tags/NamedPipes/">
+                            <span class="chip bg-color">NamedPipes</span>
+                        </a>
+                        
+                        <a href="/tags/Potato/">
+                            <span class="chip bg-color">Potato</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/11/07/weak-service-registry-permission-windows-privilege-promotion/">
+                        <div class="card-image">
+                            
+                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Weak%20Service%20Registry%20Permission%20Windows%20Privilege%20Promotion/image-20211107205258264.png" class="responsive-img" alt="Weak Service Registry Permission Windows Privilege Promotion">
+                            
+                            <span class="card-title">Weak Service Registry Permission Windows Privilege Promotion</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                Some of the wordsBy hijacking the registry keys used by the service, an attacker can implement an application that execu
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-07
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Learning-record/" class="post-category">
+                                    Learning record
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Redteam/">
+                            <span class="chip bg-color">Redteam</span>
+                        </a>
+                        
+                        <a href="/tags/Windows-Privilege-Promotion/">
+                            <span class="chip bg-color">Windows Privilege Promotion</span>
+                        </a>
+                        
+                        <a href="/tags/LPE/">
+                            <span class="chip bg-color">LPE</span>
+                        </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -872,11 +1045,12 @@ DLL（Dynamic Link Library），全称动态链接库，是Windows系统上程�
             
         </div>
         <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">2 / 2</div>
+            <div class="center-align b-text-gray">2 / 7</div>
         </div>
         <div class="col s6 m4 l4">
             
-            <a class="right btn-floating btn-large disabled">
+            <a href="/page/3/"
+               class="right btn-floating btn-large waves-effect waves-light bg-color">
                 <i class="fas fa-angle-right"></i>
             </a>
             
@@ -947,7 +1121,7 @@ DLL（Dynamic Link Library），全称动态链接库，是Windows系统上程�
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021</span>
+                <span id="year">2021-2022</span>
             
             <span id="year">2021</span>
             <a href="/about" target="_blank">Yangsir</a>
@@ -956,7 +1130,7 @@ DLL（Dynamic Link Library），全称动态链接库，是Windows系统上程�
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">13.8k</span>&nbsp;字
+                class="white-color">62.8k</span>&nbsp;字
             
             
             

@@ -1,0 +1,1353 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Docker技术与原理实现, Yangsir">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Docker技术与原理实现 | Yangsir</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Yangsir" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Yangsir</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Index</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>Tags</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>Categories</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Yangsir</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Index
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			Tags
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			Categories
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			Friends
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/YangSirrr" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>github
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/YangSirrr" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="github" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/docker1/d4.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Docker技术与原理实现</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/CloudSecurity/">
+                                <span class="chip bg-color">CloudSecurity</span>
+                            </a>
+                        
+                            <a href="/tags/Docker/">
+                                <span class="chip bg-color">Docker</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Learning-record/" class="post-category">
+                                Learning record
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2022-04-08
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2022-04-08
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    3.1k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    11 Min
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">当前的虚拟化技术、云计算等都能想到docker，可以让开发者打包任何应用以及依赖包到容器中，然后发布到任何流行的Linux机器上，完美的解决了测试环境与生产环境的某些不一致性问题。相比于传统的虚拟化技术，docker容器直接使用宿主机内核，也不存在硬件的虚拟，轻便非常多
+docker为了实现和虚拟机一样的效果，即有独立于宿主机的文件系统，进程系统，内存系统，而采取的设计思想是隔离容器不让它看到主机的文件系统，进程系统，内存系统等等，那么容器就可以理解为一个虚拟机<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h2><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">命名空间namespace是linux提供的用于分离进程树、网络接口、挂载点及进程间通信等资源的方法，日常使用系统时，并没有运行多个完全分离的服务器，但如果在服务器上启动了多个服务，这些服务将会互相影响，每个服务都能看到其他进程的服务，也能够访问宿主机上的任意文件，这并不是想看的的，希望的是能够实现同一台机器上不同服务能够完全隔离，就像运行在多个不同机器上一样
+
+常规情况下，一旦某服务被攻击者入侵，那么攻击者就能获得当前机器上所有的服务和文件，这也不是想看到的，而docker就通过了linux的namespace对不同容器实现了隔离
+
+命名空间机制提供了七种不同选项，从而实现能够在创建新的进程时候设置新进程点应该在哪些资源上和宿主机进行隔离：CLONE_NEWCGROUP、CLONE_NEWIPC、CLONE_NEWNET、CLONE_NEWNS、CLONE_NEWPID、CLONE_NEWUSER 和 CLONE_NEWUTS<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">表示一个正在执行的程序，可通过<span class="token function">ps</span>命令获取
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           1       0  0 Mar02 ?        00:09:03 <span class="token operator">/</span>sbin<span class="token operator">/</span>init noibrs
+root           2       0  0 Mar02 ?        00:00:00 <span class="token namespace">[kthreadd]</span>
+root           3       2  0 Mar02 ?        00:00:00 <span class="token namespace">[rcu_gp]</span>
+root           4       2  0 Mar02 ?        00:00:00 <span class="token namespace">[rcu_par_gp]</span>
+root           6       2  0 Mar02 ?        00:00:00 <span class="token namespace">[kworker/0:0H-kblockd]</span>
+root           9       2  0 Mar02 ?        00:00:00 <span class="token namespace">[mm_percpu_wq]</span>
+root          10       2  0 Mar02 ?        00:01:47 <span class="token namespace">[ksoftirqd/0]</span>
+root          11       2  0 Mar02 ?        01:13:04 <span class="token namespace">[rcu_sched]</span>
+root          12       2  0 Mar02 ?        00:00:13 <span class="token namespace">[migration/0]</span>
+root          13       2  0 Mar02 ?        00:00:00 <span class="token namespace">[idle_inject/0]</span>
+root          14       2  0 Mar02 ?        00:00:00 <span class="token namespace">[cpuhp/0]</span>
+root          15       2  0 Mar02 ?        00:00:00 <span class="token namespace">[cpuhp/1]</span>
+root          16       2  0 Mar02 ?        00:00:00 <span class="token namespace">[idle_inject/1]</span>
+root          17       2  0 Mar02 ?        00:00:13 <span class="token namespace">[migration/1]</span>
+
+特殊进程：<span class="token operator">/</span>sbin<span class="token operator">/</span>init、kthreadd，两个都被linux中上帝进程idle创建出来的，前者负责执行内核的一部分初始化和系统配置，也会创建一些类似getty的注册进程，后者负责管理和调度其他内核进程<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/docker1/d1.png"></p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">在创建的docker容器内查看进程，并不涉及到系统层面的启动，所以他的进程数量也少了非常多，可以拿来判断环境是docker还是常规虚拟机的依据<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/docker1/d2.png"></p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">此处就是利用先前提到的进程空间中CLONE_NEWPID实现，容器内的任意进程对宿主机的进程都是一无所知的，当前docker进程创建可理解如下
+
+init => dockerd => docker<span class="token operator">-</span>containd => docker<span class="token operator">-</span>containerd<span class="token operator">-</span>shim => <span class="token operator">/</span>bin<span class="token operator">/</span>bash &amp; <span class="token function">ps</span> <span class="token operator">-</span>ef
+
+此处容器就是利用上述方法实现与宿主机的进程隔离，在docker run或者docker <span class="token function">start</span>时，会在下面方法中创建一个用于设置进程隔离的spec
+
+func <span class="token punctuation">(</span>daemon <span class="token operator">*</span>Daemon<span class="token punctuation">)</span> createSpec<span class="token punctuation">(</span>c <span class="token operator">*</span>container<span class="token punctuation">.</span>Container<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">*</span>specs<span class="token punctuation">.</span>Spec<span class="token punctuation">,</span> error<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	s := oci<span class="token punctuation">.</span>DefaultSpec<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+	<span class="token operator">/</span><span class="token operator">/</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+	<span class="token keyword">if</span> err := setNamespaces<span class="token punctuation">(</span>daemon<span class="token punctuation">,</span> &amp;s<span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!</span>= nil <span class="token punctuation">&#123;</span>
+		<span class="token keyword">return</span> nil<span class="token punctuation">,</span> fmt<span class="token punctuation">.</span>Errorf<span class="token punctuation">(</span><span class="token string">"linux spec namespaces: %v"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span>
+
+	<span class="token keyword">return</span> &amp;s<span class="token punctuation">,</span> nil
+<span class="token punctuation">&#125;</span>
+
+在setnamespace方法中不仅会设置进程相关的命名空间还会设置用户、网络、ips及uts相关命名空间
+
+func setNamespaces<span class="token punctuation">(</span>daemon <span class="token operator">*</span>Daemon<span class="token punctuation">,</span> s <span class="token operator">*</span>specs<span class="token punctuation">.</span>Spec<span class="token punctuation">,</span> c <span class="token operator">*</span>container<span class="token punctuation">.</span>Container<span class="token punctuation">)</span> error <span class="token punctuation">&#123;</span>
+	<span class="token operator">/</span><span class="token operator">/</span> user
+	<span class="token operator">/</span><span class="token operator">/</span> network
+	<span class="token operator">/</span><span class="token operator">/</span> ipc
+	<span class="token operator">/</span><span class="token operator">/</span> uts
+
+	<span class="token operator">/</span><span class="token operator">/</span> pid
+	<span class="token keyword">if</span> c<span class="token punctuation">.</span>HostConfig<span class="token punctuation">.</span>PidMode<span class="token punctuation">.</span>IsContainer<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		ns := specs<span class="token punctuation">.</span>LinuxNamespace<span class="token punctuation">&#123;</span><span class="token function">Type</span>: <span class="token string">"pid"</span><span class="token punctuation">&#125;</span>
+		pc<span class="token punctuation">,</span> err := daemon<span class="token punctuation">.</span>getPidContainer<span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+		<span class="token keyword">if</span> err <span class="token operator">!</span>= nil <span class="token punctuation">&#123;</span>
+			<span class="token keyword">return</span> err
+		<span class="token punctuation">&#125;</span>
+		ns<span class="token punctuation">.</span>Path = fmt<span class="token punctuation">.</span>Sprintf<span class="token punctuation">(</span><span class="token string">"/proc/%d/ns/pid"</span><span class="token punctuation">,</span> pc<span class="token punctuation">.</span>State<span class="token punctuation">.</span>GetPID<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+		setNamespace<span class="token punctuation">(</span>s<span class="token punctuation">,</span> ns<span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> c<span class="token punctuation">.</span>HostConfig<span class="token punctuation">.</span>PidMode<span class="token punctuation">.</span>IsHost<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		oci<span class="token punctuation">.</span>RemoveNamespace<span class="token punctuation">(</span>s<span class="token punctuation">,</span> specs<span class="token punctuation">.</span>LinuxNamespaceType<span class="token punctuation">(</span><span class="token string">"pid"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+		ns := specs<span class="token punctuation">.</span>LinuxNamespace<span class="token punctuation">&#123;</span><span class="token function">Type</span>: <span class="token string">"pid"</span><span class="token punctuation">&#125;</span>
+		setNamespace<span class="token punctuation">(</span>s<span class="token punctuation">,</span> ns<span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span>
+
+	<span class="token keyword">return</span> nil
+<span class="token punctuation">&#125;</span>
+
+所有命名空间相关的设置spec都会作为create函数在创建新容器时候设定
+
+daemon<span class="token punctuation">.</span>containerd<span class="token punctuation">.</span>Create<span class="token punctuation">(</span>context<span class="token punctuation">.</span>Background<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> container<span class="token punctuation">.</span>ID<span class="token punctuation">,</span> spec<span class="token punctuation">,</span> createOptions<span class="token punctuation">)</span>
+
+综上所述所有命名空间和相关的设置都是在上述两个函数进行创建，也就实现了docker容器通过命名空间创建出来的宿主机进程网络隔离<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">如果docker容器通过linux命名空间完成了与宿主机之间的进程的网络隔离，但却没法通过宿主机的网络和整个互联网连接，所以docker可以通过命名空间创建一个隔离的网络环境，但是docker中服务仍然需要和外接相连才能发挥作用
+
+每个docker run启动的容器都具备单独的命名空间，docker此处提供了四种的网络模式，Host、Container、None、Bridge 
+
+此处主要以docker默认的桥接模式开展，除了会分配隔离的网络命名空间外，还会为所有的容器设置ip，当docekr容器在主机上启动后会新建虚拟网桥docker0随后该主机所有服务默认都和该网桥连接。每个容器在创建时候都会创建一对虚拟网卡，两个虚拟网卡组成了数据通道，其中一个会放在创建的容器内，会加入到名为docker0的网桥中，如下可查看当前网桥接口
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/docker1/d3.png"></p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">docker0会为每个容器分配一个新的ip，并将docker0的ip地址设置为默认网关，网桥docker0通过 iptables中的配置与宿主机器上的网卡相连，所有符合条件的请求都会通过iptables转发到docker0并由网桥分发给对应的机器
+
+查看iptables<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/docker1/d4.png"></p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">进步开启redis
+docker run <span class="token operator">-</span>d <span class="token operator">-</span>p 6379:6379 redis
+
+再次查看iptables中的nat配置则会发现docker的链接中出现了一条新的规则，会将任意发送到当前机器6379的端口的tcp包转发给172<span class="token punctuation">.</span>17<span class="token punctuation">.</span>0<span class="token punctuation">.</span>3的6379上，当前的这个地址就是docker为redis分配的地址，如果从当前的机器直接ping这个地址也是可以通的<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/docker1/d5.png"></p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">通过上述现象，可以发现docker是如何对内部端口进行转发的了，当docker容器需要将服务提供给宿主机时，就会为容器分配一个ip地址，同时向iptables中追加一条新的规则，当上面用客户端访问127<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>1：6379时候，胡本公告iptables的nat将ip定向到了172的地址，重定向过的数据包就可以通过iptables中的<span class="token keyword">filter</span>配置，最终在nat阶段将ip伪装成了127的地址，实际从外面看起来请求的是127的地址却已经是docker容器暴露出来的地址度那块了
+
+如此docker通过linux命名空间实现了网络隔离，通过了iptables进行数据包转发，使得docker容器能够为宿主机或者其他容器提供服务<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="挂载点"><a href="#挂载点" class="headerlink" title="挂载点"></a>挂载点</h2><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">挂载点在不做隔离的情况下，docker容器内依旧可以访问宿主机的所有文件系统，因此在新的进程中创建隔离的挂载点命名空间需要在clone函数中传入CLONE_NEWNS，子进程就能得到父进程挂载点的拷贝，如果不传入这个参数子进程对文件系统的读写都会同步回父进程以及整个主机的文件系统
+
+一个容器需要启动，则一定需要提供一个根文件系统rootfs，容器需要使用这个文件系统来创建一个进程，所有二进制的执行都必须在这个根文件系统中<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/docker1/d6.png"></p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">想要正常启动一个容器就需要再rootfs中股灾以上几个特定目录，并且还需要简历一些符号链接保障系统io正常运行<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/docker1/d7.png"></p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">为了保证容器进程无法访问宿主机上其他目录，还需要通过libcontainer提供的pivot_root或chroot函数改变进程能够访问这个目录的根节点
+
+<span class="token operator">/</span><span class="token operator">/</span> pivor_root
+put_old = mkdir<span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+pivot_root<span class="token punctuation">(</span>rootfs<span class="token punctuation">,</span> put_old<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">chdir</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+unmount<span class="token punctuation">(</span>put_old<span class="token punctuation">,</span> MS_DETACH<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">rmdir</span><span class="token punctuation">(</span>put_old<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token operator">/</span><span class="token operator">/</span> chroot
+<span class="token function">mount</span><span class="token punctuation">(</span>rootfs<span class="token punctuation">,</span> <span class="token string">"/"</span><span class="token punctuation">,</span> NULL<span class="token punctuation">,</span> MS_MOVE<span class="token punctuation">,</span> NULL<span class="token punctuation">)</span><span class="token punctuation">;</span>
+chroot<span class="token punctuation">(</span><span class="token string">"."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">chdir</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+此刻就完成了将目录挂载到容器中，同时也禁止容器进程访问宿主机的目录，实现文件系统隔离<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="chroot"><a href="#chroot" class="headerlink" title="chroot"></a>chroot</h3><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">在linux系统中，系统默认目录是用<span class="token operator">/</span> 根目录来开头的，chroot的使用能够实现更改当前系统根目录结构，通过改变的根目录结构，实现限制用户的权利，在新的根目录下并不能直接访问旧系统根目录的结构文件也就建立了个与原来系统完全隔离的目录结构<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="Control-Groups"><a href="#Control-Groups" class="headerlink" title="Control Groups"></a>Control Groups</h2><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">CPU和内存无法被命名空间进行docker容器和宿主机的隔离，多个容器依旧会共同占用宿主机的这些物理资源
+
+如果其中一个容器执行CPU密集型的任务，那么就会影响其他容器中的性能和执行系哦啊率，导致多个容器互相影响并且抢占资源，此处的CGROUPS就能够实现隔离宿主机上的物理资源，如CPU、内存、磁盘等
+
+每个CGROUPS都是一组被相同标准和参数限制的进程，不同的CGROUP之间是有层级关系的，也就是说可以从父类继承一些用于限制资源使用的标准和参数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/docker1/d8.png"></p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">所以CGROUPS中，所有的任务就是一个系统的进程，而CGROUP是一组按照标准划分的进程，在机制中，所有资源控制都是以CGROUP作为单位实现的，每个进程都可以随时加入或退出一个CGROUP
+
+linux中使用文件系统来实现CGROUP，查看子系统方式如下
+lssubsys <span class="token operator">-</span>m
+
+cpuset <span class="token operator">/</span>sys<span class="token operator">/</span>fs<span class="token operator">/</span>cgroup<span class="token operator">/</span>cpuset
+cpu<span class="token punctuation">,</span>cpuacct <span class="token operator">/</span>sys<span class="token operator">/</span>fs<span class="token operator">/</span>cgroup<span class="token operator">/</span>cpu<span class="token punctuation">,</span>cpuacct
+blkio <span class="token operator">/</span>sys<span class="token operator">/</span>fs<span class="token operator">/</span>cgroup<span class="token operator">/</span>blkio
+memory <span class="token operator">/</span>sys<span class="token operator">/</span>fs<span class="token operator">/</span>cgroup<span class="token operator">/</span>memory
+devices <span class="token operator">/</span>sys<span class="token operator">/</span>fs<span class="token operator">/</span>cgroup<span class="token operator">/</span>devices
+freezer <span class="token operator">/</span>sys<span class="token operator">/</span>fs<span class="token operator">/</span>cgroup<span class="token operator">/</span>freezer
+net_cls<span class="token punctuation">,</span>net_prio <span class="token operator">/</span>sys<span class="token operator">/</span>fs<span class="token operator">/</span>cgroup<span class="token operator">/</span>net_cls<span class="token punctuation">,</span>net_prio
+perf_event <span class="token operator">/</span>sys<span class="token operator">/</span>fs<span class="token operator">/</span>cgroup<span class="token operator">/</span>perf_event
+hugetlb <span class="token operator">/</span>sys<span class="token operator">/</span>fs<span class="token operator">/</span>cgroup<span class="token operator">/</span>hugetlb
+pids <span class="token operator">/</span>sys<span class="token operator">/</span>fs<span class="token operator">/</span>cgroup<span class="token operator">/</span>pids
+rdma <span class="token operator">/</span>sys<span class="token operator">/</span>fs<span class="token operator">/</span>cgroup<span class="token operator">/</span>rdma<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/docker1/d9.png"></p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">linux大多数都有相似子系统，cpuset、cpu这些都是子系统，能够为对应的控制组分配资源并限制资源的使用，如果想要创建一个新的cgroup只需要子啊想要分配或者限制资源的子系统下新建一个任建军，这个文件夹下就会自动出现内容
+
+例如安装docker后，会发现子系统目录下都有一个名为docker的文件夹<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/docker1/d10.png"></p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">此处的7bb8c1880f14da4649就是先前运行的一个docker容器，docker启动时候会为容器创建一个和容器表舒服相同的cgroup，如下
+
+层级关系：cpu => docker => docker标识符<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/docker1/d11.png"></p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">每个cgroup下都有一个tasks文件，存储这属于当前控制组的所有进程pid，作为负责cpu的子系统，cpu<span class="token punctuation">.</span>cfs_quota_us可以对cpu的使用做出限制，如果当前文件内容为50000，则控制组中全部进程cpu占用率不超过50<span class="token operator">%</span>
+
+也就是说想要控制docker某个容器的资源使用率可以用过docker这个父控制组下找到对应的子控制组并改变他们对应的文件内容，当然也可以在运行时候就使用这个参数，让docker进程去改变文件内容，实现合理分配多个容器资源，不会出现互相抢资源的情况
+
+<span class="token function">cat</span>  <span class="token operator">/</span>sys<span class="token operator">/</span>fs<span class="token operator">/</span>cgroup<span class="token operator">/</span>cpu<span class="token operator">/</span>docker<span class="token operator">/</span>9b4b1bdea9856e2def46c1cb6f780e3ec2e010248fda40cd08bc0b6f5e90f836<span class="token operator">/</span>cpu<span class="token punctuation">.</span>cfs_quota_us<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/docker1/d12.png"></p>
+<h2 id="unionFS"><a href="#unionFS" class="headerlink" title="unionFS"></a>unionFS</h2><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">命名空间、控制组分别解决了不同资源的隔离问题，如进程、文件、cpu等，但还有个关键点，镜像
+
+所谓镜像，可以通过docker run将远处下载的镜像跑起来，镜像本质是一个压缩包，导出镜像文件如下，和linux实际操作系统根目录文件相同，也就是说docker镜像其实就是一个文件
+
+docker <span class="token function">ps</span>
+docker export 9b4b1bdea985  > ubuntu<span class="token punctuation">.</span>tar
+tar <span class="token operator">-</span>xvf ubuntu<span class="token punctuation">.</span>tar<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/docker1/d13.png"></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Yangsir</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://yangsirrr.github.io/2022/04/08/docker-ji-zhu-yu-yuan-li-shi-xian/">https://yangsirrr.github.io/2022/04/08/docker-ji-zhu-yu-yuan-li-shi-xian/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint policy. If reproduced, please indicate source
+                    <a href="/about" target="_blank">Yangsir</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/CloudSecurity/">
+                                    <span class="chip bg-color">CloudSecurity</span>
+                                </a>
+                            
+                                <a href="/tags/Docker/">
+                                    <span class="chip bg-color">Docker</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2022/04/08/docker-rong-qi-li-yong-si-lu-yi/">
+                    <div class="card-image">
+                        
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/docker2/d14.png" class="responsive-img" alt="Docker容器利用思路(一)">
+                        
+                        <span class="card-title">Docker容器利用思路(一)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-08
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Learning-record/" class="post-category">
+                                    Learning record
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/CloudSecurity/">
+                        <span class="chip bg-color">CloudSecurity</span>
+                    </a>
+                    
+                    <a href="/tags/Docker/">
+                        <span class="chip bg-color">Docker</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/03/31/kubernetes-an-quan-ji-zhi/">
+                    <div class="card-image">
+                        
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/k8s5/k2.png" class="responsive-img" alt="Kubernetes安全机制">
+                        
+                        <span class="card-title">Kubernetes安全机制</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-31
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Learning-record/" class="post-category">
+                                    Learning record
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/CloudSecurity/">
+                        <span class="chip bg-color">CloudSecurity</span>
+                    </a>
+                    
+                    <a href="/tags/Kubernetes/">
+                        <span class="chip bg-color">Kubernetes</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('5')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + 'From: Yangsir<br />'
+            + 'Author: Yangsir<br />'
+            + 'Link: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者Yangsir所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="song"
+                   id="1804320463"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021-2022</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">Yangsir</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">62.8k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/YangSirrr" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:yang_s1r@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+    <a href="https://twitter.com/Yangsir00" class="tooltipped" target="_blank" data-tooltip="关注我的Twitter: https://twitter.com/Yangsir00" data-position="top" data-delay="50">
+        <i class="fab fa-twitter"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

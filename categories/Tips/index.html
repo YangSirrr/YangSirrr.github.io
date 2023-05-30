@@ -98,33 +98,22 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/about" class="waves-effect waves-light">
-      
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
-      
-      <span>About</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>Contact</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
     <a href="/friends" class="waves-effect waves-light">
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
       <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
     </a>
     
   </li>
@@ -201,33 +190,22 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/about" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-user-circle"></i>
-			
-			About
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			Contact
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
 		<a href="/friends" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
 			Friends
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
 		</a>
           
         </li>
@@ -352,9 +330,7 @@
 
 
 <script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+    $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
 </script>
 
 
@@ -375,29 +351,38 @@
                 
                 
                 
-                <a href="/categories/Tips/" title="Tips: 5">
+                <a href="/categories/Tips/" title="Tips: 19">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
                             style="background-color: #F9EBEA;">Tips
-                        <span class="tag-length">5</span>
+                        <span class="tag-length">19</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/Learning-record/" title="Learning record: 12">
+                <a href="/categories/Actual-combat-record/" title="Actual combat record: 4">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F5EEF8;">Learning record
-                        <span class="tag-length">12</span>
+                            style="background-color: #F5EEF8;">Actual combat record
+                        <span class="tag-length">4</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/Miscellaneous-record/" title="Miscellaneous record: 3">
+                <a href="/categories/Learning-record/" title="Learning record: 50">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #D5F5E3;">Miscellaneous record
-                        <span class="tag-length">3</span>
+                            style="background-color: #D5F5E3;">Learning record
+                        <span class="tag-length">50</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Simple-repetition/" title="Simple repetition: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #E8F8F5;">Simple repetition
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -415,23 +400,145 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/08/08/use-ipc-bypassuac/">
+                    <a href="/2022/05/06/diao-yu-ji-ben-fang-fa-zhi-zi-jie-ya/">
                         <div class="card-image tag-image">
                             
-                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Use%20IPC%20BypassUAC/image-20210808150507232.png" class="responsive-img" alt="Use IPC BypassUAC">
+                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/fishingzijieya/15.png" class="responsive-img" alt="钓鱼基本方法之自解压">
                             
-                            <span class="card-title">Use IPC BypassUAC</span>
+                            <span class="card-title">钓鱼基本方法之自解压</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                After the actual test, some environments can be successfulIn many scenarios, you do not have write permission to the sys
+                                简介利用压缩包自解压实现双击运行后木马上线，记得自行对木马免杀进行处理
+
+方案一两个exe，一个木马，一个正常文件，正常文件的运行释放用以迷惑目标
+
+如下选择自解压
+
+高级设置，路径设置如下
+
+
+进步设置对应程序
+C:\Windows\Te
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-06
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Tips/" class="post-category">
+                                    Tips
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Redteam/">
+                            <span class="chip bg-color">Redteam</span>
+                        </a>
+                        
+                        <a href="/tags/Fishing/">
+                            <span class="chip bg-color">Fishing</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/05/06/diao-yu-ji-ben-fang-fa-zhi-kuai-jie-fang-shi/">
+                        <div class="card-image tag-image">
+                            
+                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/fishingkuaijiefangshi/4.png" class="responsive-img" alt="钓鱼基本方法之快捷方式">
+                            
+                            <span class="card-title">钓鱼基本方法之快捷方式</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                简介利用快捷方式钓鱼，增强隐蔽性，此处需要自行对powershell免杀进行处理
+
+实际利用随便找个图标，打开属性
+
+
+目标处贴powershell命令即可
+
+进步可以修改快捷方式图标
+
+运行后上线如下
+
+
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-06
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Tips/" class="post-category">
+                                    Tips
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Redteam/">
+                            <span class="chip bg-color">Redteam</span>
+                        </a>
+                        
+                        <a href="/tags/Fishing/">
+                            <span class="chip bg-color">Fishing</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/03/26/cong-trustedinstaller-dao-ting-zhi-windowsdefender/">
+                        <div class="card-image tag-image">
+                            
+                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/TrustedInstaller-WindowsDefender/w33.png" class="responsive-img" alt="从TrustedInstaller到停止WindowsDefender">
+                            
+                            <span class="card-title">从TrustedInstaller到停止WindowsDefender</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                前言前一阵先在雷神众测上发了遍，正好有空再blog也再发下，原地址：
+https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;wkjcmhEg3JDP7GUyB3gI_A
+
+win10都自带了defen
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-26
                             </span>
                             <span class="publish-author">
                                 
@@ -457,12 +564,8 @@
                             <span class="chip bg-color">Bypass</span>
                         </a>
                         
-                        <a href="/tags/UAC/">
-                            <span class="chip bg-color">UAC</span>
-                        </a>
-                        
-                        <a href="/tags/IPC/">
-                            <span class="chip bg-color">IPC</span>
+                        <a href="/tags/WindowsDefender/">
+                            <span class="chip bg-color">WindowsDefender</span>
                         </a>
                         
                     </div>
@@ -472,72 +575,23 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/08/01/a-solution-to-the-failure-of-the-trust-relationship-between-this-workstation-and-the-primary-domain/">
+                    <a href="/2021/11/07/the-msf-creds-note/">
                         <div class="card-image tag-image">
                             
-                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/A%20solution%20to%20the%20failure%20of%20the%20trust%20relationship%20between%20this%20workstation%20and%20the%20primary%20domain/image-20210801231855683.png" class="responsive-img" alt="A solution to the failure of the trust relationship between this workstation and the primary domain">
+                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/The%20Msf%20Creds%20Note/image-20211107154957039.png" class="responsive-img" alt="The Msf Creds Note">
                             
-                            <span class="card-title">A solution to the failure of the trust relationship between this workstation and the primary domain</span>
+                            <span class="card-title">The Msf Creds Note</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                The causeThe domain controller is faulty and is redeployed. The domain machine is found to have the following problems, 
+                                Some of the wordsWe all know that there is a PostSQL database under MSF for actual use, which stores host and vulnerabil
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-01
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Tips/" class="post-category">
-                                    Tips
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Domain-environment/">
-                            <span class="chip bg-color">Domain environment</span>
-                        </a>
-                        
-                        <a href="/tags/Operations/">
-                            <span class="chip bg-color">Operations</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/07/30/exchange-export-email-methods/">
-                        <div class="card-image tag-image">
-                            
-                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.20.29.png" class="responsive-img" alt="Exchange Export email methods">
-                            
-                            <span class="card-title">Exchange Export email methods</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                IntroductionAssuming that you have obtained the administrative rights of the Exchange server, what you need to do now is
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-07
                             </span>
                             <span class="publish-author">
                                 
@@ -559,20 +613,8 @@
                             <span class="chip bg-color">Redteam</span>
                         </a>
                         
-                        <a href="/tags/Exchange/">
-                            <span class="chip bg-color">Exchange</span>
-                        </a>
-                        
-                        <a href="/tags/Information-collection/">
-                            <span class="chip bg-color">Information collection</span>
-                        </a>
-                        
-                        <a href="/tags/Export-Email/">
-                            <span class="chip bg-color">Export Email</span>
-                        </a>
-                        
-                        <a href="/tags/Search-Email/">
-                            <span class="chip bg-color">Search Email</span>
+                        <a href="/tags/MSF/">
+                            <span class="chip bg-color">MSF</span>
                         </a>
                         
                     </div>
@@ -582,23 +624,23 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/07/23/supplementary-information-about-obtaining-ldap-information/">
+                    <a href="/2021/11/06/powershell-constrained-language-mode-bypass/">
                         <div class="card-image tag-image">
                             
-                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Supplementary%20information%20about%20obtaining%20LDAP%20information/image-20210722152525595.png" class="responsive-img" alt="Supplementary information about obtaining LDAP information">
+                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Powershell%20Constrained%20Language%20Mode%20Bypass/image-20211106134539038.png" class="responsive-img" alt="Powershell Constrained Language Mode Bypass">
                             
-                            <span class="card-title">Supplementary information about obtaining LDAP information</span>
+                            <span class="card-title">Powershell Constrained Language Mode Bypass</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                IntroductionThe project encountered a pit point, some complement, the method of obtaining information to complement, in 
+                                Some of the wordsUnlike executing scripts.\1.ps1, this Constrained Language mode limits powershell&#39;s function advant
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-06
                             </span>
                             <span class="publish-author">
                                 
@@ -624,8 +666,8 @@
                             <span class="chip bg-color">Bypass</span>
                         </a>
                         
-                        <a href="/tags/Intranet-Information-Collection/">
-                            <span class="chip bg-color">Intranet Information Collection</span>
+                        <a href="/tags/Powershell/">
+                            <span class="chip bg-color">Powershell</span>
                         </a>
                         
                     </div>
@@ -635,25 +677,23 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/07/21/sensitive-path-information-concerns/">
+                    <a href="/2021/11/06/powershell-without-powershell-exe/">
                         <div class="card-image tag-image">
                             
+                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Powershell%20Without%20Powershell.exe/image-20211106132305898.png" class="responsive-img" alt="Powershell Without Powershell.exe Bypass">
                             
-                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Sensitive path information concerns">
-                            
-                            <span class="card-title">Sensitive path information concerns</span>
+                            <span class="card-title">Powershell Without Powershell.exe Bypass</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                If there is insufficient, the follow-up to continuelinuxapache&amp;apache2&#x2F;etc&#x2F;apache&#x2F;httpd.conf
-&#x2F;et
+                                Some of the wordsPowershell cannot be used during Intranet penetration of red team personnel. The tool or script you wan
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-06
                             </span>
                             <span class="publish-author">
                                 
@@ -675,8 +715,210 @@
                             <span class="chip bg-color">Redteam</span>
                         </a>
                         
-                        <a href="/tags/Information-collection/">
-                            <span class="chip bg-color">Information collection</span>
+                        <a href="/tags/Bypass/">
+                            <span class="chip bg-color">Bypass</span>
+                        </a>
+                        
+                        <a href="/tags/Powershell/">
+                            <span class="chip bg-color">Powershell</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/11/05/cmdl32-dai-ti-certutil-cong-er-rao-guo-sha-ruan/">
+                        <div class="card-image tag-image">
+                            
+                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/cmdl32tobypassav/image-20211105113350856.png" class="responsive-img" alt="cmdl32代替certutil从而绕过杀软">
+                            
+                            <span class="card-title">cmdl32代替certutil从而绕过杀软</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                简介cmdl32.exe，CMAK（连接管理器管理工具包）使用它来设置连接管理器服务配置文件。配置文件通常打包成一个.exe，可以部署到用户系统，该软件包安装可用于启动拨号&#x2F;VPN连接的配置文件
+
+此处可以使用他来做一个下载器进行
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-05
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Tips/" class="post-category">
+                                    Tips
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Redteam/">
+                            <span class="chip bg-color">Redteam</span>
+                        </a>
+                        
+                        <a href="/tags/Bypass/">
+                            <span class="chip bg-color">Bypass</span>
+                        </a>
+                        
+                        <a href="/tags/cmdl32/">
+                            <span class="chip bg-color">cmdl32</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/10/21/linux-reverse-shell-hidden-real-ip/">
+                        <div class="card-image tag-image">
+                            
+                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Linux%20Reverse%20Shell%20Hidden%20Real%20IP/image-20211021162743009.png" class="responsive-img" alt="Linux Reverse Shell Hidden Real IP">
+                            
+                            <span class="card-title">Linux Reverse Shell Hidden Real IP</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                Some of the wordsIn red team, nc reverse shell is usually used with personal real IP, which is extremely easy to be trac
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-21
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Tips/" class="post-category">
+                                    Tips
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Bypass/">
+                            <span class="chip bg-color">Bypass</span>
+                        </a>
+                        
+                        <a href="/tags/Reverse-Shell/">
+                            <span class="chip bg-color">Reverse Shell</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/09/04/hashcat-blasting-method/">
+                        <div class="card-image tag-image">
+                            
+                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Hashcat%20Blasting%20Method/h.png" class="responsive-img" alt="Hashcat Blasting Method">
+                            
+                            <span class="card-title">Hashcat Blasting Method</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                IntroductionHashcat claims to be the world&#39;s fastest password recovery tool. It had a proprietary code base until 20
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-04
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Tips/" class="post-category">
+                                    Tips
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Hashcat/">
+                            <span class="chip bg-color">Hashcat</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/08/29/how-to-download-remote-target-file/">
+                        <div class="card-image tag-image">
+                            
+                            <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/How%20to%20download%20remote%20target%20file/3.png" class="responsive-img" alt="How to download remote target file">
+                            
+                            <span class="card-title">How to download remote target file</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                Some of the wordsPlease be sure to obey the law. Don't download what you shouldn't download, watch what you shouldn't re
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-29
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Tips/" class="post-category">
+                                    Tips
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Bypass/">
+                            <span class="chip bg-color">Bypass</span>
+                        </a>
+                        
+                        <a href="/tags/Download-file/">
+                            <span class="chip bg-color">Download file</span>
                         </a>
                         
                     </div>
@@ -687,6 +929,30 @@
         </div>
     </article>
 </main>
+
+
+<div class="container paging">
+    <div class="row">
+        <div class="col s6 m4 l4">
+            
+            <a class="left btn-floating btn-large disabled">
+                <i class="fas fa-angle-left"></i>
+            </a>
+            
+        </div>
+        <div class="page-info col m4 l4 hide-on-small-only">
+            <div class="center-align b-text-gray">1 / 2</div>
+        </div>
+        <div class="col s6 m4 l4">
+            
+            <a href="/categories/Tips/page/2/"
+               class="right btn-floating btn-large waves-effect waves-light bg-color">
+                <i class="fas fa-angle-right"></i>
+            </a>
+            
+        </div>
+    </div>
+</div>
 
 
 
@@ -751,7 +1017,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021</span>
+                <span id="year">2021-2022</span>
             
             <span id="year">2021</span>
             <a href="/about" target="_blank">Yangsir</a>
@@ -760,7 +1026,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">13.8k</span>&nbsp;字
+                class="white-color">62.8k</span>&nbsp;字
             
             
             

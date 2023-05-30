@@ -98,33 +98,22 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/about" class="waves-effect waves-light">
-      
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
-      
-      <span>About</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>Contact</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
     <a href="/friends" class="waves-effect waves-light">
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
       <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
     </a>
     
   </li>
@@ -201,33 +190,22 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/about" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-user-circle"></i>
-			
-			About
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			Contact
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
 		<a href="/friends" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
 			Friends
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
 		</a>
           
         </li>
@@ -352,9 +330,7 @@
 
 
 <script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+    $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
 </script>
 
 
@@ -375,29 +351,38 @@
                 
                 
                 
-                <a href="/categories/Tips/" title="Tips: 5">
+                <a href="/categories/Tips/" title="Tips: 19">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             style="background-color: #F9EBEA;">Tips
-                        <span class="tag-length">5</span>
+                        <span class="tag-length">19</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/Learning-record/" title="Learning record: 12">
+                <a href="/categories/Actual-combat-record/" title="Actual combat record: 4">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F5EEF8;">Learning record
-                        <span class="tag-length">12</span>
+                            style="background-color: #F5EEF8;">Actual combat record
+                        <span class="tag-length">4</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/Miscellaneous-record/" title="Miscellaneous record: 3">
+                <a href="/categories/Learning-record/" title="Learning record: 50">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #D5F5E3;">Miscellaneous record
-                        <span class="tag-length">3</span>
+                            style="background-color: #D5F5E3;">Learning record
+                        <span class="tag-length">50</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Simple-repetition/" title="Simple repetition: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #E8F8F5;">Simple repetition
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -444,7 +429,7 @@
                     color: '#3C4858'
                 }
             },
-            indicator: [{"name":"Tips","max":15},{"name":"Learning record","max":15},{"name":"Miscellaneous record","max":15}],
+            indicator: [{"name":"Tips","max":51},{"name":"Actual combat record","max":51},{"name":"Learning record","max":51},{"name":"Simple repetition","max":51}],
             nameGap: 5,
             center: ['50%','55%'],
             radius: '66%'
@@ -455,7 +440,7 @@
             itemStyle: {normal: {areaStyle: {type: 'default'}}},
             data : [
                 {
-                    value : [5,12,3],
+                    value : [19,4,50,1],
                     name : 'Number of Categories'
                 }
             ]
@@ -530,7 +515,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021</span>
+                <span id="year">2021-2022</span>
             
             <span id="year">2021</span>
             <a href="/about" target="_blank">Yangsir</a>
@@ -539,7 +524,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">13.8k</span>&nbsp;字
+                class="white-color">62.8k</span>&nbsp;字
             
             
             

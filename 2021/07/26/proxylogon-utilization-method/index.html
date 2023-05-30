@@ -98,33 +98,22 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/about" class="waves-effect waves-light">
-      
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
-      
-      <span>About</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>Contact</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
     <a href="/friends" class="waves-effect waves-light">
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
       <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
     </a>
     
   </li>
@@ -201,33 +190,22 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/about" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-user-circle"></i>
-			
-			About
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			Contact
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
 		<a href="/friends" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
 			Friends
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
 		</a>
           
         </li>
@@ -308,10 +286,23 @@
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/image-20210726161008442.png')">
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ProxyLogon%20Utilization%20method/image-20210726161008442.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -436,12 +427,12 @@
                                 <span class="chip bg-color">Redteam</span>
                             </a>
                         
-                            <a href="/tags/Exchange/">
-                                <span class="chip bg-color">Exchange</span>
-                            </a>
-                        
                             <a href="/tags/RCE/">
                                 <span class="chip bg-color">RCE</span>
+                            </a>
+                        
+                            <a href="/tags/Exchange/">
+                                <span class="chip bg-color">Exchange</span>
                             </a>
                         
                             <a href="/tags/ProxyLogon/">
@@ -484,7 +475,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-07-29
+                    2021-09-10
                 </div>
                 
 
@@ -540,10 +531,10 @@ I don&#39;t know if there is no getshell because of my brother&#39;s operation p
 
 I am using server2016+exchange2016，the following<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/image-20210726161008442.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ProxyLogon%20Utilization%20method/image-20210726161008442.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">New machine installation ex16 will report error, as follows, search the relevant dependence on self-installation, basic are very simple, also do not have to search what, what is missing under what<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/image-20210726161114892.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ProxyLogon%20Utilization%20method/image-20210726161114892.png"></p>
 <h2 id="Actual-use"><a href="#Actual-use" class="headerlink" title="Actual use"></a>Actual use</h2><h3 id="DNSlog"><a href="#DNSlog" class="headerlink" title="DNSlog"></a>DNSlog</h3><pre class="line-numbers language-none"><code class="language-none">The URL that tests can use:
 &#x2F;owa&#x2F;auth&#x2F;qqqqq.js
 &#x2F;owa&#x2F;auth&#x2F;Current&#x2F;1.js
@@ -554,24 +545,24 @@ set cookie：X -AnonResource&#x3D;true; X-AnonResource-Backend&#x3D;XXXXXX&#x2F;
 
 You can use hackbar like this:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/iShot2021-07-2618.19.39.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ProxyLogon%20Utilization%20method/iShot2021-07-2618.19.39.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">DNS The following command output is displayed<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/iShot2021-07-2618.20.00.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ProxyLogon%20Utilization%20method/iShot2021-07-2618.20.00.png"></p>
 <h3 id="Mail-the-enumeration"><a href="#Mail-the-enumeration" class="headerlink" title="Mail the enumeration"></a>Mail the enumeration</h3><pre class="line-numbers language-none"><code class="language-none">You can use this:
 https:&#x2F;&#x2F;github.com&#x2F;charlottelatest&#x2F;CVE-2021-26855<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/iShot2021-07-2618.26.12.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ProxyLogon%20Utilization%20method/iShot2021-07-2618.26.12.png"></p>
 <h3 id="Getshell（Many-of-the-public-scripts-have-problems-and-the-successful-one-is-recommended-here）"><a href="#Getshell（Many-of-the-public-scripts-have-problems-and-the-successful-one-is-recommended-here）" class="headerlink" title="Getshell（Many of the public scripts have problems, and the successful one is recommended here）"></a>Getshell（Many of the public scripts have problems, and the successful one is recommended here）</h3><pre class="line-numbers language-none"><code class="language-none">After many tests, it is found that sometimes the target can not be exploited successfully despite the existence of loopholes!!
 
 In addition, the local 2016 environment is still unable to getshell!!
 
 The OABID needs to be modified<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/iShot2021-07-2618.26.40.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ProxyLogon%20Utilization%20method/iShot2021-07-2618.26.40.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">Visit WebShell below<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method/iShot2021-07-2618.21.17.png"></p>
+<p><img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ProxyLogon%20Utilization%20method/iShot2021-07-2618.21.17.png"></p>
 <h4 id="Regular-Webshell-upload-path-easy-to-turn-over-directory"><a href="#Regular-Webshell-upload-path-easy-to-turn-over-directory" class="headerlink" title="Regular Webshell upload path (easy to turn over directory)"></a>Regular Webshell upload path (easy to turn over directory)</h4><pre class="line-numbers language-none"><code class="language-none">\inetpub\wwwroot\aspnet_client\ (any .aspx file under this folder or sub folders)
 \&lt;exchange install path&gt;\FrontEnd\HttpProxy\ecp\auth\ (any file besides TimeoutLogoff.aspx)
 \&lt;exchange install path&gt;\FrontEnd\HttpProxy\owa\auth\ (any file or modified file that is not part of a standard install)
@@ -649,12 +640,12 @@ https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;sGkYS4BSM2ER3ubR6G-xhA<span aria-
                                     <span class="chip bg-color">Redteam</span>
                                 </a>
                             
-                                <a href="/tags/Exchange/">
-                                    <span class="chip bg-color">Exchange</span>
-                                </a>
-                            
                                 <a href="/tags/RCE/">
                                     <span class="chip bg-color">RCE</span>
+                                </a>
+                            
+                                <a href="/tags/Exchange/">
+                                    <span class="chip bg-color">Exchange</span>
                                 </a>
                             
                                 <a href="/tags/ProxyLogon/">
@@ -719,7 +710,7 @@ https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;sGkYS4BSM2ER3ubR6G-xhA<span aria-
                 <a href="/2021/07/27/proxylogon-utilization-method-manual-use/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/ProxyLogon%20Utilization%20method%20(Manual%20use)/iShot2021-07-2716.44.18.png" class="responsive-img" alt="ProxyLogon Utilization method (Manual use)">
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/ProxyLogon%20Utilization%20method%20(Manual%20use)/iShot2021-07-2716.44.18.png" class="responsive-img" alt="ProxyLogon Utilization method (Manual use)">
                         
                         <span class="card-title">ProxyLogon Utilization method (Manual use)</span>
                     </div>
@@ -753,12 +744,12 @@ https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;sGkYS4BSM2ER3ubR6G-xhA<span aria-
                         <span class="chip bg-color">Redteam</span>
                     </a>
                     
-                    <a href="/tags/Exchange/">
-                        <span class="chip bg-color">Exchange</span>
-                    </a>
-                    
                     <a href="/tags/RCE/">
                         <span class="chip bg-color">RCE</span>
+                    </a>
+                    
+                    <a href="/tags/Exchange/">
+                        <span class="chip bg-color">Exchange</span>
                     </a>
                     
                     <a href="/tags/ProxyLogon/">
@@ -787,7 +778,7 @@ https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;sGkYS4BSM2ER3ubR6G-xhA<span aria-
                 <a href="/2021/07/24/sqlserver-common-attack-methods/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/main/Sqlserver%20common%20attack%20methods/image-20210724132256320.png" class="responsive-img" alt="Sqlserver common attack methods">
+                        <img src="https://raw.githubusercontent.com/YangSirrr/Yangsir-blog-img/master/Sqlserver%20common%20attack%20methods/image-20210724132256320.png" class="responsive-img" alt="Sqlserver common attack methods">
                         
                         <span class="card-title">Sqlserver common attack methods</span>
                     </div>
@@ -806,8 +797,8 @@ https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;sGkYS4BSM2ER3ubR6G-xhA<span aria-
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Miscellaneous-record/" class="post-category">
-                                    Miscellaneous record
+                            <a href="/categories/Tips/" class="post-category">
+                                    Tips
                                 </a>
                             
                             
@@ -821,6 +812,10 @@ https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;sGkYS4BSM2ER3ubR6G-xhA<span aria-
                         <span class="chip bg-color">Redteam</span>
                     </a>
                     
+                    <a href="/tags/Command-execution/">
+                        <span class="chip bg-color">Command execution</span>
+                    </a>
+                    
                     <a href="/tags/Information-collection/">
                         <span class="chip bg-color">Information collection</span>
                     </a>
@@ -831,10 +826,6 @@ https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;sGkYS4BSM2ER3ubR6G-xhA<span aria-
                     
                     <a href="/tags/Database/">
                         <span class="chip bg-color">Database</span>
-                    </a>
-                    
-                    <a href="/tags/Command-execution/">
-                        <span class="chip bg-color">Command execution</span>
                     </a>
                     
                 </div>
@@ -1065,7 +1056,7 @@ https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;sGkYS4BSM2ER3ubR6G-xhA<span aria-
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021</span>
+                <span id="year">2021-2022</span>
             
             <span id="year">2021</span>
             <a href="/about" target="_blank">Yangsir</a>
@@ -1074,7 +1065,7 @@ https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;sGkYS4BSM2ER3ubR6G-xhA<span aria-
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">13.8k</span>&nbsp;字
+                class="white-color">62.8k</span>&nbsp;字
             
             
             
